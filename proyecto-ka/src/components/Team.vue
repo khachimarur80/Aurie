@@ -102,7 +102,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 body, html {
   margin: 0;
   padding: 0;
@@ -143,8 +143,6 @@ body, html {
 }
 .section-inner {
   width: 80%;
-  max-width: 800px;
-  min-width: 400px;
 }
 .team {
   display: flex;

@@ -123,4 +123,43 @@ export default {
   align-items: flex-end;
   width: 100%;
 }
+
+@media only screen and (max-width: 500px) {
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 1 !important;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 800px) {
+  .image-container {
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% + 35px));
+  }
+  .text-container {
+    width: 50%;
+    margin-left: 50%;
+  }
+  .title-container {
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+  .chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 0px;
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  .introduction-text-inner {
+    max-width: 600px; 
+  }
+}
 </style>

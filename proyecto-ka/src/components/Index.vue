@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <v-app-bar color="primary" flat prominent>
-      <div class="text-h3 page-banner">
+      <div class="page-banner">
         Proyecto KA
       </div>
     </v-app-bar>
     <div id="contents">
       <div id="introduction" class="section">
         <div class="section-inner">
-          <div class="text-h4 my-5">
+          <div class="text-h4 my-5 section-title">
             Qué somos
           </div>
           <v-divider class="mb-5"></v-divider>
@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class="introduction-logo">
-              <v-img :src="KAicon" height="100%" width="100%">
+              <v-img :src="KAicon" height="100%" width="100%" contain>
               </v-img>
             </div>
           </div>
@@ -27,7 +27,7 @@
       </div>
       <div id="projects" class="section">
         <div class="section-inner">
-           <div class="text-h4 my-5 d-flex">
+           <div class="text-h4 my-5 d-flex section-title">
             <span>Qué hacemos</span>
             <v-spacer></v-spacer>
             <v-btn outlined color="primary" to="/about">
@@ -41,7 +41,7 @@
       </div>
       <div id="team" class="section">
         <div class="section-inner">
-          <div class="text-h4 my-5 d-flex">
+          <div class="text-h4 my-5 d-flex section-title">
             <span>El equipo</span>
             <v-spacer></v-spacer>
             <v-btn outlined color="primary" to="/team">
@@ -57,7 +57,7 @@
       </div>
       <div id="contact" class="section">
         <div class="section-inner">
-          <div class="text-h4 my-5">
+          <div class="text-h4 my-5 section-title">
             Contáctanos
           </div>
           <v-divider class="mb-5"></v-divider>
@@ -214,8 +214,6 @@ body, html {
 }
 .section-inner {
   width: 80%;
-  max-width: 800px;
-  min-width: 400px;
 }
 .team {
   display: flex;
@@ -228,6 +226,7 @@ body, html {
 }
 .introduction-contents {
   display: flex;
+  width: 100h;
 }
 .introduction-text {
   display: flex;
@@ -239,10 +238,49 @@ body, html {
   display: flex;
   justify-content: center;
   width: 50%;
-  min-width: 300px;
-  max-width: 400px;
   align-items: center;
-  font-size: 20px !important;
+  font-size: 20px;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 500px) {
+  .introduction-contents {
+    flex-direction: column-reverse;
+  }
+  .introduction-logo {
+    height: 200px;
+    aspect-ratio: 1 !important;
+  }
+  .introduction-text-inner {
+    width: 100%;
+    font-size: 16px;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .team {
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .page-banner {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 800px) {
+  .section-inner {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  .introduction-text-inner {
+    max-width: 600px; 
+  }
 }
 </style>
