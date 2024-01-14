@@ -40,5 +40,3 @@ Miércoles
 Jueves
 
 Viernes
-
-Sábado
