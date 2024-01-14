@@ -2,7 +2,7 @@
   <v-card class="flip-card" outlined>
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <v-img :src="person.photo" height="100%" width="100%">
+        <v-img :src="person.photo" :lazy-src="person.lazyPhoto" height="100%" width="100%">
         </v-img>
       </div>
       <div class="flip-card-back">

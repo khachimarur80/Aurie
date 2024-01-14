@@ -83,6 +83,7 @@ export default {
         areas: ['Diseño',' 3D'],
         description: 'Nosotros hacemos real la setup de tus sueños, concretamos aquella idea que tienes en mente en un modelo 3D con un plan para que solo tengas que construir y disfrutar.',
         photo: require("@/assets/images/Mysetup.png"),
+        lazyPhoto: require("@/assets/lazy-images/Mysetup.png"),
         enable: false,
         color: "purple lighten-1",
       },
@@ -91,6 +92,7 @@ export default {
         areas: ['Web'],
         description: 'Creamos la página para impulsar tu negocio, con un sistema de encuesta sencillo, y una comunicación ágil para que puedas trasmitir tus ideas sin problemas.',
         photo: require("@/assets/images/sample.png"),
+        lazyPhoto: require("@/assets/lazy-images/sample.png"),
         enable: true,
         color: "blue",
       }
@@ -102,6 +104,8 @@ export default {
         titulation: ['Microinformatica y Redes', ' Administración y Sistemas Informáticos en Red'],
         languages: ['Español', 'Inglés'],
         photo: require("@/assets/images/Retrato_Anton.png"),
+        lazyPhoto: require("@/assets/lazy-images/Retrato_Anton.png"),
+        portofolio: null,
       },
       {
         name: 'Kei Rodríguez Hachimaru',
@@ -109,6 +113,7 @@ export default {
         titulation: ['Ingeniería Informática UCM'],
         languages: ['Español', 'Inglés'],
         photo: require("@/assets/images/Retrato_Kei.png"),
+        lazyPhoto: require("@/assets/lazy-images/Retrato_Kei.png"),
         portofolio: "https://kei-portofolio.vercel.app",
       }
     ],

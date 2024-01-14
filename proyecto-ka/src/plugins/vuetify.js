@@ -11,14 +11,14 @@ export default new Vuetify({
 		},
 		themes: {
 			dark: {
-				"primary": "#4CAF50",
-				"secondary": "#81C784",
-				"accent": "#689F38",
-				"error": "#FF5252",
-				"info": "#2196F3",
-				"success": "#4CAF50",
-				"warning": "#FFC107",
-				"background": "#1B5E20",
+				"primary": "#41B883",
+				"secondary": "#61C495",
+				"accent": "#558B2F",
+				"error": "#FF6F61",
+				"info": "#5C6BC0",
+				"success": "#2196F3",
+				"warning": "#FFD54F",
+				"background": "#121212",
 				"surface": "#388E3C",
 				"onPrimary": "#ffffff",
 				"onSecondary": "#000000",
@@ -28,5 +28,6 @@ export default new Vuetify({
 				"border": "#1B5E20"
 			},
 		}
+
 	}
 });

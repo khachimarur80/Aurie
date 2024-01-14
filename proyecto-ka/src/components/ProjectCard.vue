@@ -1,7 +1,7 @@
 <template>
   <v-card :disabled="!project.enable" class="d-flex my-3">
     <div style="aspect-ratio: 1; height: 300px">
-      <v-img :src="project.photo" height="100%" width="100%">
+      <v-img :src="project.photo" :lazy-src="person.lazyPhoto" height="100%" width="100%">
       </v-img>
     </div>
     <div>
