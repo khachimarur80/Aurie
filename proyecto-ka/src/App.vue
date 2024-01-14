@@ -7,14 +7,20 @@
 <script>
 export default {
   name: 'App',
+  created() {
+    this.setRouteTitle(this.$route);
 
-  components: {
-    
+    this.$router.beforeEach((to, from, next) => {
+      console.log(to.meta)
+      document.title = to.meta.title || 'Proyecto KA';
+      next();
+    });
   },
-
-  data: () => ({
-    //
-  }),
+  methods: {
+    setRouteTitle(route) {
+      document.title = route.meta.title || 'Proyecto KA';
+    },
+  },
 };
 </script>
 <style>

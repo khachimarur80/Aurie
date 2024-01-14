@@ -27,8 +27,12 @@
       </div>
       <div id="projects" class="section">
         <div class="section-inner">
-          <div class="text-h4 my-5">
-            Qué hacemos
+           <div class="text-h4 my-5 d-flex">
+            <span>Qué hacemos</span>
+            <v-spacer></v-spacer>
+            <v-btn outlined color="primary" to="/about">
+              Ver más
+            </v-btn>
           </div>
           <v-divider class="mb-5"></v-divider>
           <ProjectCard v-for="(project, i) in projects" :project="project" :key="i">
@@ -37,8 +41,12 @@
       </div>
       <div id="team" class="section">
         <div class="section-inner">
-          <div class="text-h4 my-5">
-            El Equipo
+          <div class="text-h4 my-5 d-flex">
+            <span>El equipo</span>
+            <v-spacer></v-spacer>
+            <v-btn outlined color="primary" to="/team">
+              Ver más
+            </v-btn>
           </div>
           <v-divider class="mb-5"></v-divider>
           <div class="team">
