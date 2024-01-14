@@ -12,6 +12,7 @@
 		· KA Webs Icon
 		· PersonCard.vue Layout (No flip)
 		· Añadir Dominio
+		. Organizar mejor la información y el contenido
 
 ### Objetivos
 	- Clientes
