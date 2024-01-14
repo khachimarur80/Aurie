@@ -40,3 +40,10 @@ Miércoles
 Jueves
 
 Viernes
+	- Reunión principal SharkTank
+
+### SharkTank Español
+	- Que proyecto usar
+	- Como lo vamos a presentar
+	- Ir apuntando ideas
+
