@@ -1,6 +1,6 @@
 <template>
   <v-form id="contact-form" @submit.prevent="submitForm" class="pb-10" ref="contactForm">
-    <v-card width="100%" height="100%" max-width="600" flat class="d-flex flex-column pa-3">
+    <v-card width="100%" height="100%" max-width="600" flat class="d-flex flex-column pa-5">
       <v-row>
         <v-col cols="12">
           <v-text-field

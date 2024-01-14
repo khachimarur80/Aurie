@@ -34,7 +34,7 @@
             <v-divider></v-divider>
 
             <v-card-text>
-              {{ new Date().getFullYear() }} — <strong>MySetup</strong>
+              {{ new Date().getFullYear() }} — <strong>Proyecto KA</strong>
             </v-card-text>
           </v-card>
       </v-footer>
@@ -55,11 +55,6 @@ export default {
   data: () => ({
     KAicon: require("@/assets/images/sample.png"),
     socials: [
-      {
-        href: "#",
-        icon: "mdi-facebook",
-        alt: "Facebook icon",
-      },
       {
         href: "#",
         icon: "mdi-twitter",

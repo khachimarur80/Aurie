@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-app-bar color="primary" flat prominent>
+    <v-app-bar color="secondary" flat prominent light>
       <div class="page-banner">
         Proyecto KA
       </div>
@@ -9,7 +9,7 @@
       <div id="introduction" class="section">
         <div class="section-inner">
           <div class="text-h4 my-5 section-title">
-            Qué somos
+            Quienes somos
           </div>
           <v-divider class="mb-5"></v-divider>
           <div class="introduction-contents">
@@ -81,7 +81,7 @@
             <v-divider></v-divider>
 
             <v-card-text>
-              {{ new Date().getFullYear() }} — <strong>MySetup</strong>
+              {{ new Date().getFullYear() }} — <strong>Proyecto KA</strong>
             </v-card-text>
           </v-card>
       </v-footer>
@@ -106,11 +106,6 @@ export default {
   data: () => ({
     KAicon: require("@/assets/images/sample.png"),
     socials: [
-      {
-        href: "#",
-        icon: "mdi-facebook",
-        alt: "Facebook icon",
-      },
       {
         href: "#",
         icon: "mdi-twitter",
@@ -203,6 +198,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 40px;
 }
 .section {
   width: 100%;
@@ -275,6 +271,19 @@ body, html {
 @media only screen and (min-width: 501px) and (max-width: 800px) {
   .section-inner {
     width: 80%;
+  }
+  .introduction-contents {
+    height: 250px;
+    display: flex;
+    align-items: center;
+  }
+  .introduction-text-inner {
+    width: 80%;
+    font-size: 16px;
+  }
+  .introduction-logo {
+    height: 200px;
+    aspect-ratio: 1 !important;
   }
 }
 
