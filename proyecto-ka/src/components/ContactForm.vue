@@ -1,7 +1,6 @@
 <template>
   <v-form id="contact-form" @submit.prevent="submitForm" class="pb-10" ref="contactForm">
     <v-card width="100%" height="100%" max-width="600" flat class="d-flex flex-column pa-3">
-      <input type="hidden" name="contact_number" v-model="formData.contact_number">
       <v-row>
         <v-col cols="12">
           <v-text-field
@@ -11,6 +10,7 @@
             :rules="nameRules"
             variant="outlined"
             density="compact"
+            name="from_name"
           ></v-text-field>
         </v-col>
       </v-row>
@@ -24,6 +24,7 @@
             :rules="emailRules"
             variant="outlined"
             density="compact"
+            name="user_email"
           ></v-text-field>
         </v-col>
       </v-row>
@@ -39,6 +40,7 @@
             auto-grow
             variant="outlined"
             density="compact"
+            name="message"
           ></v-textarea>
         </v-col>
       </v-row>
@@ -100,7 +102,6 @@ export default {
 
   data: () => ({
     formData: {
-      contact_number: '',
       from_name: '',
       user_email: '',
       message: '',
