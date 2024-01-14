@@ -15,7 +15,7 @@
           <div class="introduction-contents">
             <div class="text-body-1 introduction-text">
               <div class="introduction-text-inner">
-                Somos una pareja de jóvenes emprendedores apasionados de la tecnología, donde traemos soluciones digitales y tecnológicas para resolver problemas.
+                Somos una pareja de jóvenes emprendedores apasionados de la tecnología, donde traemos soluciones revolucionarias para resolver problemas.
               </div>
             </div>
             <div class="introduction-logo">
@@ -57,6 +57,26 @@
           </ContactForm>
         </div>
       </div>
+      <v-footer color="primary">
+        <v-card flat tile class="text-center" width="100%" color="primary" light>
+            <v-card-text>
+              <v-btn v-for="social in socials" :key="social.icon" class="mx-4" icon :href="social.href">
+                <v-icon size="24px">
+                  {{ social.icon }}
+                </v-icon>
+              </v-btn>
+            </v-card-text>
+
+            <v-card-text class="pt-0">
+            </v-card-text>
+
+            <v-divider></v-divider>
+
+            <v-card-text>
+              {{ new Date().getFullYear() }} — <strong>MySetup</strong>
+            </v-card-text>
+          </v-card>
+      </v-footer>
     </div>
   </div>
 </template>
@@ -77,6 +97,28 @@ export default {
 
   data: () => ({
     KAicon: require("@/assets/images/sample.png"),
+    socials: [
+      {
+        href: "#",
+        icon: "mdi-facebook",
+        alt: "Facebook icon",
+      },
+      {
+        href: "#",
+        icon: "mdi-twitter",
+        alt: "Twitter icon",
+      },
+      {
+        href: "#",
+        icon: "mdi-linkedin",
+        alt: "LinkedIn icon",
+      },
+      {
+        href: "#",
+        icon: "mdi-instagram",
+        alt: "Instagram icon",
+      },
+    ],
     projects: [
       {
         title: 'MySetup',
@@ -144,7 +186,6 @@ body, html {
   width: 100h;
 }
 #contents {
-  padding: 5px;
   height: calc(100% - 128px);
   overflow: scroll;
 }
@@ -183,6 +224,7 @@ body, html {
 .introduction-text {
   display: flex;
   justify-content: center;
+  text-align: justify;
   flex: 1;
 }
 .introduction-text-inner {
