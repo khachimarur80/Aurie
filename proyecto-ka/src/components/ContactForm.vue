@@ -5,7 +5,6 @@
       <v-row>
         <v-col cols="12">
           <v-text-field
-            solo
             v-model="formData.from_name"
             label="Name"
             required
