@@ -92,3 +92,19 @@ Empresa:
 Iniciales 150€
 Anuales 100€
 
+
+# Sábado 20 enero, 2024
+
+La venta tiene que ser como autónomo, no como empresa, ya que no tenemos ninguna empresa registrada, ver mínimos y máximos legales.
+
+- Hacer modelo de contrato de venta
+- Crear speech de la venta
+
+Primer año. 180€/anuales -->15/mes --- 45€/trimestre --- 90€/semestre
+A partir de ahí. 120€/anuales --> 10€/mes --- 30€/trimestre --- 60€/semestre 
+
+
+Primer año. 150€/anuales --> 12.5€/mes
+A partir de ahí. 100€/anuales --> 8€/mes
+
+
