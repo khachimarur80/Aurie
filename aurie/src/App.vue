@@ -11,14 +11,13 @@ export default {
     this.setRouteTitle(this.$route);
 
     this.$router.beforeEach((to, from, next) => {
-      console.log(to.meta)
-      document.title = to.meta.title || 'Proyecto KA';
+      document.title = to.meta.title || 'Aurie';
       next();
     });
   },
   methods: {
     setRouteTitle(route) {
-      document.title = route.meta.title || 'Proyecto KA';
+      document.title = route.meta.title || 'Aurie';
     },
   },
 };
