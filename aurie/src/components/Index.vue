@@ -2,7 +2,7 @@
   <div id="app">
     <v-app-bar color="secondary" flat prominent light>
       <div class="page-banner">
-        Proyecto KA
+        Aurie
       </div>
     </v-app-bar>
     <div id="contents">
@@ -81,7 +81,7 @@
             <v-divider></v-divider>
 
             <v-card-text>
-              {{ new Date().getFullYear() }} — <strong>Proyecto KA</strong>
+              {{ new Date().getFullYear() }} — <strong>Aurie</strong>
             </v-card-text>
           </v-card>
       </v-footer>
