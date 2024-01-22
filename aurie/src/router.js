@@ -9,9 +9,9 @@ import TeamView from '@/components/Team.vue'
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: IndexView, meta: { title: 'Proyecto KA' } },
-  { path: '/about', component: AboutView, meta: { title: 'Proyecto KA | Proyectos' } },
-  { path: '/team', component: TeamView, meta: { title: 'Proyecto KA | Equipo' } },
+  { path: '/', component: IndexView, meta: { title: 'Aurie' } },
+  { path: '/about', component: AboutView, meta: { title: 'Aurie | Proyectos' } },
+  { path: '/team', component: TeamView, meta: { title: 'Aurie | Equipo' } },
 ];
 
 const router = new VueRouter({
