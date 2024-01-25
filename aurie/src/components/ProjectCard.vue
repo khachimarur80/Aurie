@@ -24,7 +24,7 @@
         <v-card-actions class="pr-8">
           <v-spacer>
           </v-spacer>
-          <v-btn outlined :color="project.color" v-if="project.site">
+          <v-btn outlined :color="project.color" v-if="project.site" :href="project.site">
             Ver proyecto
           </v-btn>
         </v-card-actions>

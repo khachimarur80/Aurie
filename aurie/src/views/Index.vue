@@ -83,6 +83,7 @@ export default {
         lazyPhoto: require("@/assets/lazy-images/Mysetup.png"),
         enable: false,
         color: "purple lighten-1",
+        site: "https://my-setup.vercel.app",
       },
       {
         title: 'KA Webs',

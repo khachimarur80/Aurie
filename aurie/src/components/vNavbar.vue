@@ -1,6 +1,8 @@
 <template>
   <v-app-bar color="primary" flat prominent light>
-    <img :src="require('@/assets/images/sample.png')" contain height="80px" width="80px" style="margin-top: 20px; margin-left: 20px;"/>
+    <a href="/">
+      <img :src="require('@/assets/images/sample.png')" contain height="80px" width="80px" style="margin-top: 20px; margin-left: 20px;"/>
+    </a>
     <a class="navbar-title" href="/">
       Aurie
     </a>
