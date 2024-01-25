@@ -2,16 +2,16 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import AboutView from '@/components/About.vue'
+import ServicesView from '@/views/Services.vue'
 import IndexView from '@/views/Index.vue'
-import TeamView from '@/components/Team.vue'
+import ContactView from '@/views/Contact.vue'
 
 Vue.use(VueRouter);
 
 const routes = [
   { path: '/', component: IndexView, meta: { title: 'Aurie' } },
-  { path: '/about', component: AboutView, meta: { title: 'Aurie | Proyectos' } },
-  { path: '/team', component: TeamView, meta: { title: 'Aurie | Equipo' } },
+  { path: '/servicios', component: ServicesView, meta: { title: 'Aurie | Servicios' } },
+  { path: '/contacto', component: ContactView, meta: { title: 'Aurie | Contacto' } },
 ];
 
 const router = new VueRouter({

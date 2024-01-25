@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <v-app-bar color="primary" flat prominent light>
-      <div class="page-banner">
-        Aurie
-      </div>
-    </v-app-bar>
+    <vNavbar/>
     <div id="contents">
       <div id="introduction" class="section">
         <div class="section-inner">
@@ -15,11 +11,11 @@
           <div class="introduction-contents">
             <div class="text-body-1 introduction-text">
               <div class="introduction-text-inner">
-                Somos una pareja de jóvenes emprendedores apasionados de la tecnología, donde traemos soluciones revolucionarias para resolver problemas.
+                Somos un equipo dedicado a la excelencia digital. Con una visión creativa y enfoque técnico, creamos soluciones web innovadoras que impulsan el éxito de tu negocio. Descubre el equipo detrás de tu presencia en línea excepcional.
               </div>
             </div>
             <div class="introduction-logo">
-              <v-img :src="KAicon" height="100%" width="100%" contain>
+              <v-img :src="KAiconInverted" height="100%" width="100%" contain>
               </v-img>
             </div>
           </div>
@@ -28,7 +24,7 @@
       <div id="projects" class="section">
         <div class="section-inner">
            <div class="text-h4 my-5 d-flex section-title">
-            <span>Qué hacemos</span>
+            <span>Nuestros proyectos</span>
             <v-spacer></v-spacer>
             <v-btn outlined color="primary" to="/about">
               Ver más
@@ -55,36 +51,7 @@
           </div>
         </div>
       </div>
-      <div id="contact" class="section">
-        <div class="section-inner">
-          <div class="text-h4 my-5 section-title">
-            Contáctanos
-          </div>
-          <v-divider class="mb-5"></v-divider>
-          <ContactForm>
-          </ContactForm>
-        </div>
-      </div>
-      <v-footer color="primary">
-        <v-card flat tile class="text-center" width="100%" color="primary" light>
-            <v-card-text>
-              <v-btn v-for="social in socials" :key="social.icon" class="mx-4" icon :href="social.href">
-                <v-icon size="24px">
-                  {{ social.icon }}
-                </v-icon>
-              </v-btn>
-            </v-card-text>
-
-            <v-card-text class="pt-0">
-            </v-card-text>
-
-            <v-divider></v-divider>
-
-            <v-card-text>
-              {{ new Date().getFullYear() }} — <strong>Aurie</strong>
-            </v-card-text>
-          </v-card>
-      </v-footer>
+      <PageFooter/>
     </div>
   </div>
 </template>
@@ -92,7 +59,8 @@
 <script>
 import ProjectCard from '@/components/ProjectCard.vue'
 import PersonCard from '@/components/PersonCard.vue'
-import ContactForm from '@/components/ContactForm.vue'
+import vNavbar from '@/components/vNavbar.vue'
+import PageFooter from '@/components/PageFooter.vue'
 
 export default {
   name: 'IndexView',
@@ -100,33 +68,17 @@ export default {
   components: {
     ProjectCard,
     PersonCard,
-    ContactForm,
+    vNavbar,
+    PageFooter,
   },
 
   data: () => ({
-    KAicon: require("@/assets/images/sample.png"),
-    socials: [
-      {
-        href: "#",
-        icon: "mdi-twitter",
-        alt: "Twitter icon",
-      },
-      {
-        href: "#",
-        icon: "mdi-linkedin",
-        alt: "LinkedIn icon",
-      },
-      {
-        href: "#",
-        icon: "mdi-instagram",
-        alt: "Instagram icon",
-      },
-    ],
+    KAiconInverted: require("@/assets/images/sampleInverted.png"),
     projects: [
       {
         title: 'MySetup',
         areas: ['Diseño',' 3D'],
-        description: 'Nosotros hacemos real la setup de tus sueños, concretamos aquella idea que tienes en mente en un modelo 3D con un plan para que solo tengas que construir y disfrutar.',
+        description: 'Nosotros hacemos real el setup de tus sueños, concretamos aquella idea que tienes en mente en un modelo 3D con un plan para que solo tengas que construir y disfrutar.',
         photo: require("@/assets/images/Mysetup.png"),
         lazyPhoto: require("@/assets/lazy-images/Mysetup.png"),
         enable: false,
@@ -134,8 +86,8 @@ export default {
       },
       {
         title: 'KA Webs',
-        areas: ['Web'],
-        description: 'Creamos la página para impulsar tu negocio, con un sistema de encuesta sencillo, y una comunicación ágil para que puedas trasmitir tus ideas sin problemas.',
+        areas: ['Web', 'Diseño'],
+        description: 'Diseñamos y desarrollamos soluciones web personalizadas para potenciar la presencia en línea de tu negocio, fusionando creatividad y tecnología de manera impactante.',
         photo: require("@/assets/images/KAwebs.png"),
         lazyPhoto: require("@/assets/lazy-images/KAwebs.png"),
         enable: true,
@@ -199,6 +151,7 @@ body, html {
   justify-content: center;
   align-items: center;
   font-size: 40px;
+  transform: translateX(-40px);
 }
 .section {
   width: 100%;
@@ -227,7 +180,6 @@ body, html {
 .introduction-text {
   display: flex;
   justify-content: center;
-  text-align: justify;
   flex: 1;
 }
 .introduction-text-inner {
