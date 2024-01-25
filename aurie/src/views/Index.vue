@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-app-bar color="secondary" flat prominent light>
+    <v-app-bar color="primary" flat prominent light>
       <div class="page-banner">
         Aurie
       </div>
@@ -136,8 +136,8 @@ export default {
         title: 'KA Webs',
         areas: ['Web'],
         description: 'Creamos la página para impulsar tu negocio, con un sistema de encuesta sencillo, y una comunicación ágil para que puedas trasmitir tus ideas sin problemas.',
-        photo: require("@/assets/images/sample.png"),
-        lazyPhoto: require("@/assets/lazy-images/sample.png"),
+        photo: require("@/assets/images/KAwebs.png"),
+        lazyPhoto: require("@/assets/lazy-images/KAwebs.png"),
         enable: true,
         color: "blue",
       }
