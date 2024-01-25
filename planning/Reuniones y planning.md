@@ -107,4 +107,32 @@ A partir de ahí. 120€/anuales --> 10€/mes --- 30€/trimestre --- 60€/sem
 Primer año. 150€/anuales --> 12.5€/mes
 A partir de ahí. 100€/anuales --> 8€/mes
 
+Speech de venta:
+
+Contrato de venta:
+
+(**
+3.2 En caso de pagos mensuales, el Cliente se compromete a realizar los pagos mensuales antes del último día de cada mes.
+
+3.3 En caso de pagos trimestrales, el Cliente se compromete a realizar los pagos antes del último día del trimestre correspondiente.
+
+3.4 En caso de pagos semestrales, el Cliente se compromete a realizar los pagos antes del último día del semestre correspondiente.
+
+3.5 En caso de pagos anuales, el Cliente se compromete a realizar el pago antes del inicio del año de servicio.
+**)
+
+
+# Lunes 22 enero, 2024
+
+- Crear cuentas personales para empresa
+- Crear página web para empresa de viviendas y casas modulares
+
+Tenemos un nuevo proyecto de crearle y venderle la web a una empresa de construcción de viviendas y casas modulares.
+
+
+# Martes 23 enero, 2024
+
+Ejemplo speech de venta Antón:
+
+Buenas, mi nombre es Antón Loredo, soy diseñador y programador web y ayudo a impulsar negocios de manera online, tengo aquí un ejemplo de como quedaría tu página web, si quieres te la puedo enseñar y me dices si te interesa o no
 
