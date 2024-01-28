@@ -43,8 +43,9 @@ export default {
 
 <style scoped>
 #banner {
+  margin: 20px;
   margin-top: 120px;
-  width: calc(100% - 80px);
+  width: calc(100%);
   min-height: calc(100vh - 120px - 100px);
   background: var(--primary);
   display: flex;
@@ -157,7 +158,7 @@ h2 {
   animation-iteration-count: infinite;
 }
 
-@media only screen and (max-width: 787px) {
+@media only screen and (max-width: 907px) {
   .rotating-text {
     flex-direction: column;
   }
