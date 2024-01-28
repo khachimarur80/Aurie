@@ -46,7 +46,7 @@ export default {
         description: 'Diseñamos y desarrollamos soluciones web personalizadas para potenciar la presencia en línea de tu negocio, fusionando creatividad y tecnología de manera impactante.',
         photo: require("@/assets/KAwebs.png"),
         enable: true,
-        color: "#7E57C2",
+        color: "#4285F4",
       }
     ],
   }),
