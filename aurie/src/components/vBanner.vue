@@ -46,7 +46,7 @@ export default {
   margin: 20px;
   margin-top: 150px;
   padding: 30px;
-  min-height: calc(100vh - 120px - 100px);
+  min-height: calc(100vh - 350px);
   background: var(--primary);
   display: flex;
   justify-content: center;
