@@ -48,4 +48,10 @@ h1::after {
   width: 800px;
   text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+  .contents {
+    font-size: 16px;
+  }
+}
 </style>
