@@ -138,10 +138,10 @@ h2 {
   0% {
     opacity: 0;
   }
-  10% {
+  25% {
     opacity: 1;
   }
-  90% {
+  75% {
     opacity: 1;
   }
   100% {
@@ -155,6 +155,7 @@ h2 {
   animation-name: breathe;
   animation-delay: .25s;
   animation-duration: 3s;
+  opacity: 0;
   animation-iteration-count: infinite;
 }
 
