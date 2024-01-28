@@ -42,6 +42,7 @@ export default {
     overflow: hidden;
     height: 100vh;
     width: 100h;
-    font-family: "HelveticaNeue-Thin";
+    font-family: "Verdana";
+    font-weight: lighter;
   }
 </style>

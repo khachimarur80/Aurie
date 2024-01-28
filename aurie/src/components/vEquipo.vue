@@ -178,7 +178,7 @@ h2 {
   .member {
     width: 100%;
     flex-direction: column;
-    height: 550px;
+    height: 570px;
     align-items: center;
   }
   .members {
