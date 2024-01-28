@@ -27,7 +27,7 @@ export default {
   name: 'vFooter',
   data: ()=>({
     socials: [
-      {
+    /*  {
         name: 'Facebook',
         icon: 'facebook',
         link: '#',
@@ -42,6 +42,7 @@ export default {
         icon: 'twitter',
         link: '#',
       },
+    */
     ]
   }),
 }
