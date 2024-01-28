@@ -80,27 +80,39 @@ export default {
     }
   },
   mounted() {
-    this.visitedBefore = localStorage.getItem('visitedBefore');
+    let smallScreen = window.innerWidth < 980
 
-    if (!this.visitedBefore) {
-      localStorage.setItem('visitedBefore', true);
-      setTimeout(()=>{
-        document.getElementById('banner').style.opacity = '1'
-        document.getElementById('firstSvg').style.opacity = '1'
-        document.getElementById('navbar').classList.remove('hide')
-        document.getElementById('navbar').classList.add('show')
-        document.getElementById('home').style.overflowY = 'scroll'
-      }, 3000)
-      setTimeout(()=>{
-        document.getElementById('welcome').style.display = 'none'
-      }, 3500)
-    }
-    else {
+    if (smallScreen) {
+      document.getElementById('welcome').style.display = 'none'
       document.getElementById('firstSvg').style.opacity = '1'
       document.getElementById('banner').style.opacity = '1'
       document.getElementById('navbar').classList.remove('hide')
       document.getElementById('navbar').classList.add('show')
       document.getElementById('home').style.overflowY = 'scroll'
+    }
+      else {
+      this.visitedBefore = localStorage.getItem('visitedBefore');
+
+      if (!this.visitedBefore) {
+        localStorage.setItem('visitedBefore', true);
+        setTimeout(()=>{
+          document.getElementById('banner').style.opacity = '1'
+          document.getElementById('firstSvg').style.opacity = '1'
+          document.getElementById('navbar').classList.remove('hide')
+          document.getElementById('navbar').classList.add('show')
+          document.getElementById('home').style.overflowY = 'scroll'
+        }, 3000)
+        setTimeout(()=>{
+          document.getElementById('welcome').style.display = 'none'
+        }, 3500)
+      }
+      else {
+        document.getElementById('firstSvg').style.opacity = '1'
+        document.getElementById('banner').style.opacity = '1'
+        document.getElementById('navbar').classList.remove('hide')
+        document.getElementById('navbar').classList.add('show')
+        document.getElementById('home').style.overflowY = 'scroll'
+      }
     }
   }
 }
