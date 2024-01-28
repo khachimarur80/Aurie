@@ -38,7 +38,7 @@ export default {
 
 <style scoped>
 #navbar {
-  width: 100%;
+  width: 100h;
   height: 100px;
   background: var(--primary);
   z-index: 2;
@@ -47,6 +47,7 @@ export default {
   position: absolute;
   transition: opacity .5s ease-in-out;
   top: 0;
+  right: 0;
   left: 0;
 }
 .spacer {
@@ -72,7 +73,6 @@ export default {
 }
 .navbar-items {
   padding: 10px;
-  margin-right: 50px;
   display: flex;
   gap: 50px;
   align-items: center;
@@ -116,10 +116,11 @@ export default {
   transform-origin: bottom left;
 }
 #navbar-logo {
-    height: 100px;
-    width: 100px;
-  }
-@media only screen and (max-width: 600px) {
+  height: 100px;
+  width: 100px !important;
+}
+
+@media only screen and (max-width: 680px) {
   #navbar {
     height: 90px;
     align-items: center;
@@ -153,7 +154,7 @@ export default {
   }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 980px) {
+@media only screen and (min-width: 681px) and (max-width: 1080px) {
   #navbar-title {
     font-size: 40px;
     margin-top: -100px;
@@ -173,6 +174,7 @@ export default {
   }
   .navbar-items {
     width: 100%;
+    justify-content: center;
     justify-content: center;
   }
   .navbar-item {

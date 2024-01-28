@@ -131,7 +131,7 @@ h1::after {
 .description {
   border-bottom: 1px solid var(--primary);
   border-top: 1px solid var(--primary);
-  text-align: justify;
+  text-align: center;
   padding: 5px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -164,7 +164,7 @@ h1::after {
   padding-right: 10px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 670px) {
   .service {
     max-width: calc(100% - 20px);
     min-width: calc(100% - 20px);
@@ -177,7 +177,7 @@ h1::after {
   }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 980px) {
+@media only screen and (min-width: 671px) and (max-width: 980px) {
   .service {
     max-width: calc(33% - 20px);
   }

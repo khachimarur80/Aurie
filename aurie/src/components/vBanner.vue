@@ -44,8 +44,8 @@ export default {
 <style scoped>
 #banner {
   margin: 20px;
-  margin-top: 120px;
-  width: calc(100%);
+  margin-top: 150px;
+  padding: 30px;
   min-height: calc(100vh - 120px - 100px);
   background: var(--primary);
   display: flex;
