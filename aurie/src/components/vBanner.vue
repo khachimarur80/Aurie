@@ -44,7 +44,7 @@ export default {
 <style scoped>
 #banner {
   margin-top: 120px;
-  width: 100%;
+  width: calc(100% - 80px);
   min-height: calc(100vh - 120px - 100px);
   background: var(--primary);
   display: flex;
@@ -69,7 +69,7 @@ h2 {
 }
 
 .rectangle {
-  width: 300px;
+  width: 325px;
   height: 50px;
   position: relative;
   transform-style: preserve-3d;
@@ -82,7 +82,7 @@ h2 {
   font-weight: bold;
   color: var(--primary);
   text-align: center;
-  width: 300px;
+  width: 325px;
   height: 50px;
   line-height: 50px;
   z-index: 0;
