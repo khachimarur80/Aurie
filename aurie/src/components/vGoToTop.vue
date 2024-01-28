@@ -1,0 +1,54 @@
+<template>
+  <button id="gototop" @click="scrollTop" :class="show ? 'show' : ''">
+    <img src="@/assets/chevron-up.svg" alt="Chevron Up" height="30px"/>
+  </button>
+</template>
+
+<script>
+export default {
+  name: 'vNosotros',
+  props: {
+    show: {
+      required: true,
+      type: Boolean,
+    }
+  },
+  mounted() {
+  },
+  methods: {
+    scrollTop() {
+      document.getElementById('home').scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  }
+}
+</script>
+
+<style scoped>
+#gototop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 35px;
+  width: 35px;
+  background: var(--primary);
+  border: 1px solid var(--background);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  pointer-events: none;
+}
+#gototop:active {
+  border-color: var(--text);
+}
+#gototop.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+</style>

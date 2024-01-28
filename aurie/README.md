@@ -1,4 +1,4 @@
-# proyecto-ka
+# aurie
 
 ## Project setup
 ```

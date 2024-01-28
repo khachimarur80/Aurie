@@ -1,96 +1,185 @@
 <template>
-  <v-app-bar color="primary" flat prominent light>
-    <a href="/">
-      <img :src="require('@/assets/images/sample.png')" contain height="80px" width="80px" style="margin-top: 20px; margin-left: 20px;"/>
+  <div id="navbar" class="hide">
+    <a id="logo" href="/">
+      <img src="@/assets/logo.svg" alt="Aurie logo" height="100%" width="100%"/>
     </a>
-    <a class="navbar-title" href="/">
+    <a id="navbar-title" href="/">
       Aurie
     </a>
+    <div class="spacer">
+    </div>
     <div class="navbar-items">
-      <a class="navbar-item" href="/servicios">
+      <a class="navbar-item" href="#nosotros">
+        Nosotros
+      </a>
+      <a class="navbar-item" href="#servicios">
         Servicios
       </a>
-      <a class="navbar-item" href="/contacto">
+      <a class="navbar-item" href="#proyectos">
+        Proyectos
+      </a>
+      <a class="navbar-item" href="#equipo">
+        Equipo
+      </a>
+      <a class="navbar-item" href="#contacto">
         Contacto
       </a>
     </div>
-  </v-app-bar>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'ContactsView',
-
-  components: {
-  },
-
-  data: () => ({
-  }),
-
-  methods: {
+  name: 'vNavbar',
+  mounted() {
   }
-};
+}
 </script>
-<style>
-  .navbar-items {
-    flex: 1;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 30px;
-    padding-right: 30px;
-  }
 
-  .navbar-title {
-    height: 100%;
-    padding: 30px;
-    display: flex;
+<style scoped>
+#navbar {
+  width: 100%;
+  height: 100px;
+  background: var(--primary);
+  z-index: 2;
+  padding: 10px;
+  display: flex;
+  position: absolute;
+  transition: opacity .5s ease-in-out;
+  top: 0;
+  left: 0;
+}
+.spacer {
+  flex: 1;
+}
+#navbar.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#navbar.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+#navbar-title {
+  font-size: 50px;
+  color: var(--text);
+  font-weight: bold;
+  margin-left: 32px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.navbar-items {
+  padding: 10px;
+  margin-right: 50px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.navbar-item {
+  transform: scaleX(1);
+  position: relative;
+  overflow: hidden;
+  color: var(--text) !important;
+  user-select: none;
+  text-decoration: none;
+  transition: color .5s ease;
+  font-size: 24px;
+  position: relative;
+}
+
+.navbar-item:before {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, var(--text), var(--text));
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.navbar-item:hover {
+  opacity: 1;
+}
+.navbar-item:before {
+  background-image: linear-gradient(to right, var(--text), var(--text));
+}  
+.navbar-item:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+#logo {
+    height: 100px;
+    width: 100px;
+  }
+@media only screen and (max-width: 600px) {
+  #navbar {
+    height: 90px;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    color: black !important;
-    text-decoration: none;
+    flex-direction: column !important;
   }
-
+  #navbar-title {
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: -50px;
+    transform: translateX(20px);
+  }
+  #logo {
+    height: 50px;
+    width: 50px;
+    transform: translateX(-60px);
+  }
   .navbar-item {
-    transform: scaleX(1);
-    position: relative;
-    overflow: hidden;
-    color: black !important;
-    font-size: 24px;
-    user-select: none;
-    text-decoration: none;
-    transition: color .5s ease;
-    color: black;
-    opacity: .8;
+    font-size: 16px;
+  }
+  .navbar-items {
+    justify-content: space-around;
+    padding: 0px;
+    margin: 0px;
+    gap: 10px;
+    margin-top: 20px;
+    flex: 1;
+  }
+  .spacer {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 980px) {
+  #navbar-title {
+    font-size: 40px;
+    margin-top: -100px;
+    transform: translateX(30px);
+  }
+  #logo {
+    height: 80px;
+    width: 80px;
+    float: left;
+    transform: translateX(-60px);
+  }
+  #navbar {
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    flex-direction: column;
+  }
+  .navbar-items {
+    width: 100%;
+    justify-content: center;
+  }
+  .navbar-item {
     font-size: 20px;
-    position: relative;
   }
-
-  .navbar-item:before {
-    content: "";
-    position: absolute;
-    display: block;
-    z-index: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(to right, black, #000);
-    height: 2px;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease;
+  .spacer {
+    display: none;
   }
-
-  .navbar-item:hover {
-    opacity: 1;
-  }
-  .navbar-item:before {
-    background-image: linear-gradient(to right, black, #000);
-  }  
-  .navbar-item:hover:before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+}
 </style>

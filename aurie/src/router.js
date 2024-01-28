@@ -1,17 +1,12 @@
-// src/router.jsç
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import ServicesView from '@/views/Services.vue'
-import IndexView from '@/views/Index.vue'
-import ContactView from '@/views/Contact.vue'
+import HomeView from '@/views/Home.vue'
 
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: IndexView, meta: { title: 'Aurie' } },
-  { path: '/servicios', component: ServicesView, meta: { title: 'Aurie | Servicios' } },
-  { path: '/contacto', component: ContactView, meta: { title: 'Aurie | Contacto' } },
+  { path: '/', component: HomeView, meta: { title: 'Aurie' } },
 ];
 
 const router = new VueRouter({
