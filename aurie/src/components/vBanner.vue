@@ -69,7 +69,7 @@ h2 {
 }
 
 .rectangle {
-  width: 275px;
+  width: 300px;
   height: 50px;
   position: relative;
   transform-style: preserve-3d;
@@ -82,7 +82,7 @@ h2 {
   font-weight: bold;
   color: var(--primary);
   text-align: center;
-  width: 275px;
+  width: 300px;
   height: 50px;
   line-height: 50px;
   z-index: 0;
