@@ -9,7 +9,7 @@
         <div class="face">soluciones.</div>
       </div>
     </div>
-    <img :src="require('@/assets/'+current+'.gif')" id="gif"/>
+    <img :src="require('@/assets/'+current+'.gif')" id="gif" :alt="'gif animado de ' + current"/>
   </div>
 </template>
 

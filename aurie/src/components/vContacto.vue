@@ -13,7 +13,6 @@
             class="outlined-input"
             name="from_name"
             id="from_name"
-            aria-invalid="!nameRules"
           />
         </div>
         <div class="form-row">
@@ -26,7 +25,6 @@
             class="outlined-input"
             name="user_email"
             id="user_email"
-            aria-invalid="!emailRules"
           />
         </div>
         <div class="form-row">
@@ -39,7 +37,6 @@
             noresize
             name="message"
             id="message"
-            aria-invalid="!messageRules"
           ></textarea>
         </div>
         <div style="display: flex; width: 100%">

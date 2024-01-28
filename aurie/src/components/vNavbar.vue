@@ -1,6 +1,6 @@
 <template>
   <div id="navbar" class="hide">
-    <a id="logo" href="/">
+    <a id="navbar-logo" href="/">
       <img src="@/assets/logo.svg" alt="Aurie logo" height="100%" width="100%"/>
     </a>
     <a id="navbar-title" href="/">
@@ -115,7 +115,7 @@ export default {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-#logo {
+#navbar-logo {
     height: 100px;
     width: 100px;
   }
@@ -132,7 +132,7 @@ export default {
     margin-top: -50px;
     transform: translateX(20px);
   }
-  #logo {
+  #navbar-logo {
     height: 50px;
     width: 50px;
     transform: translateX(-60px);
@@ -159,7 +159,7 @@ export default {
     margin-top: -100px;
     transform: translateX(30px);
   }
-  #logo {
+  #navbar-logo {
     height: 80px;
     width: 80px;
     float: left;
