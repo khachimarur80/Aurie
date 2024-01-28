@@ -2,8 +2,8 @@
   <div id="nosotros">
     <h1>Nosotros</h1>
     <div class="contents">
-      Somos un equipo dedicado a la excelencia digital. Con una visión creativa y enfoque técnico, creamos soluciones web innovadoras que impulsan el éxito de tu negocio. Descubre el equipo detrás de tu presencia en línea excepcional.
-    </div>
+      Imagina un grupo apasionado por hacer que tu negocio brille en el mundo digital. Nosotros, con nuestra creatividad y habilidades técnicas, creamos soluciones web innovadoras para impulsar el éxito de tu empresa. Nos aseguramos de que cada paso sea claro y sencillo para el cliente. Nuestra promesa es proporcionar trabajos eficientes y rápidos sin comprometer la calidad. Valoramos la comunicación constante y profesional con nuestros clientes, asegurándonos de entender tus necesidades y expectativas, así, poder lograr resultados excepcionales.
+  </div>
   </div>
 </template>
 
