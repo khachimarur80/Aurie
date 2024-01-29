@@ -2,7 +2,7 @@
   <div id="nosotros">
     <h1>Nosotros</h1>
     <div class="contents">
-      Somos 2 amigos con creatividad y habilidades técnicas, creamos webs profesionales para impulsar tu empresa digitalmente. Nos aseguramos de que cada paso sea claro y sencillo para el cliente. Nuestra promesa es proporcionar trabajos eficientes y rápidos sin comprometer la calidad. Valoramos la comunicación constante y profesional con nuestros clientes, asegurándonos de entender tus necesidades y expectativas, así, poder lograr resultados excepcionales.
+      Somos 2 jovenes con creatividad y habilidades técnicas, creamos webs profesionales para impulsar tu empresa digitalmente. Nos aseguramos de que cada paso sea claro y sencillo para el cliente. Nuestra promesa es proporcionar trabajos eficientes y rápidos sin comprometer la calidad. Valoramos la comunicación constante y profesional con nuestros clientes, asegurándonos de entender sus necesidades y expectativas, y así, poder lograr resultados excepcionales.
   </div>
   </div>
 </template>
