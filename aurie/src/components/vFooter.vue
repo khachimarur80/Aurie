@@ -19,6 +19,9 @@
     <span class="footer-text">
       ©2024 Aurie - Sitio Web creado por Aurie
     </span>
+    <span class="footer-text">
+      <a href="https://lordicon.com/" style="text-decoration: none; color: var(--text)">Icons by Lordicon.com</a>
+    </span>
   </footer>
 </template>
 
@@ -65,7 +68,6 @@ export default {
     color: var(--background-dark);
   }
   .footer-text {
-    font-family: "HelveticaNeue";
     font-size: 14px;
     color: var(--background-dark);
   }

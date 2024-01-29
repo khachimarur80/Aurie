@@ -1,7 +1,10 @@
 <template>
   <div class="section" id="contacto">
     <div class="section-inner">
-      <h1>Contacto</h1>
+      <h1 style="display: flex; justify-content: center; gap: 10px">
+        <img src="@/assets/mail.gif" height="50px"/>
+        Contacto
+      </h1>
       <form class="contact-form" id="contact-form" @submit="submitForm(event)" ref="contactForm">
         <div class="form-row">
           <label for="from_name">Nombre:</label>
@@ -141,13 +144,12 @@ export default {
     margin-top: -5px;
   }
   textarea, input {
-    background: var(--background);
+    background: white;
     color: var(--text);
     border: 1px solid #333;
     outline: none;
     border-radius: 5px;
     padding: 5px;
-    font-family: "HelveticaNeue-Thin";
   }
   textarea:focus, input:focus {
     outline: 1px solid var(--primary);
