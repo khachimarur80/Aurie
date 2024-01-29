@@ -31,49 +31,48 @@ export default {
   data: () => ({
     services: [
       {
-        "name": "Paquete Inicial",
-        "description": "Un paquete fundamental para establecer su presencia en línea. Ideal para pequeñas empresas o startups que buscan un sitio web profesional.",
-        "price": "999",
+        "name": "Paquete Básico",
+        "description": "Un paquete perfecto para pequeñas empresas o startups que buscan un sitio web profesional a modo informativo.",
+        "price": "15€/mes",
         "includes": [
-          "Página de Inicio Personalizada",
-          "Página Acerca de Nosotros",
-          "Integración de Formulario de Contacto",
-          "Adaptabilidad para Dispositivos Móviles"
+          "Diseño Moderno y Funcional",
+          "Optimización de rendimiento",
+          "SEO Básico",
+          "Diseño responsivo",
+          "1 cambio al mes",
+          "Certificación SSL"
         ]
       },
       {
-        "name": "E-Commerce",
-        "description": "Eleve su tienda en línea con esta solución integral de comercio electrónico. Perfecta para empresas que buscan una presencia online sólida.",
-        "price": "2,499",
+        "name": "Paquete Avanzado",
+        "description": "Ideal para empresas que quieran aumentar sus ventas de manera online, de forma cómoda y sencilla.",
+        "price": "20€/mes",
         "includes": [
-          "Configuración del Catálogo de Productos",
-          "Integración del Carrito de Compras",
-          "Integración de Pasarela de Pago",
-          "Diseño Adaptable"
+          "Diseño Moderno y Funcional",
+          "Optimización de rendimiento",
+          "SEO Básico",
+          "Diseño responsivo",
+          "5 cambio al mes",
+          "Certificación SSL",
+          "Página de contacto"
         ]
       },
       {
-        "name": "Web Personalizada",
-        "description": "Soluciones a medida para empresas con requisitos específicos. Nuestro equipo trabajará estrechamente contigo para crear un sitio web único y potente.",
-        "price": "Desde 3,499",
+        "name": "Paquete Premium",
+        "description": "Personaliza y dale tu estilo profesional a tu página web con nuestro Paquete Premium, una solución para empresas que buscan destacar en la web.",
+        "price": "25€/mes",
         "includes": [
-          "Diseño y Maquetación Personalizados",
-          "Integración de Funcionalidades Avanzadas",
-          "Integración de Bases de Datos",
-          "Optimización de Escalabilidad y Rendimiento"
+          "Diseño Moderno y Funcional",
+          "Optimización de rendimiento",
+          "SEO Básico",
+          "Diseño responsivo",
+          "Cambios ilimitados",
+          "Certificación SSL",
+          "Página de contacto",
+          "Imágenes profesionales",
+          "Soporte prioritario"
         ]
       },
-      {
-        "name": "Mantenimiento y Soporte",
-        "description": "Asegure la longevidad y el rendimiento óptimo de su sitio web con nuestros servicios dedicados de mantenimiento y soporte.",
-        "price": "299/mes",
-        "includes": [
-          "Actualizaciones de Seguridad Regulares",
-          "Actualizaciones y Ediciones de Contenido",
-          "Soporte Técnico",
-          "Monitoreo de Rendimiento"
-        ]
-      }
     ]
   })
 }
