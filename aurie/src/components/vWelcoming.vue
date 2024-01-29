@@ -39,7 +39,7 @@ export default {
   }
 
   #welcome {
-    width: 100h;
+    width: 100vw;
     height: 100vh;
     background: var(--background);
     position: relative;

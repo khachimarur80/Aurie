@@ -90,7 +90,7 @@ export default {
       document.getElementById('navbar').classList.add('show')
       document.getElementById('home').style.overflowY = 'scroll'
     }
-      else {
+    else {
       this.visitedBefore = localStorage.getItem('visitedBefore');
 
       if (!this.visitedBefore) {
