@@ -1,8 +1,7 @@
 <template>
   <div class="section" id="contacto">
     <div class="section-inner">
-      <h1 style="display: flex; justify-content: center; gap: 10px">
-        <img src="@/assets/mail.gif" height="50px"/>
+      <h1>
         Contacto
       </h1>
       <form class="contact-form" id="contact-form" @submit="submitForm(event)" ref="contactForm">
