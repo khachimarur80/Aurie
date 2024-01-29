@@ -38,7 +38,7 @@ export default {
         photo: require("@/assets/Mysetup.png"),
         enable: false,
         color: "#7E57C2",
-        site: "https://my-setup.vercel.app",
+        site: "https://mysetup.es",
       },
       {
         title: 'KA Webs',
