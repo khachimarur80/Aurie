@@ -1,15 +1,30 @@
 <template>
   <div id="banner" ref="banner">
-    <div class="rotating-text">
-      <h2>En Aurie ofrecemos</h2>
-      <div :class="['rectangle', face]">
-        <div class="face">velocidad.</div>
-        <div class="face">compromiso.</div>
-        <div class="face">comunicación.</div>
-        <div class="face">soluciones.</div>
+    <div class="text">
+      <h2>Aurie, tu solución digital</h2>
+      <p>
+        En Aurie te ofrecemos soluciones y productos en todas las áreas de la tecnología.
+      </p>
+      <div class="text-row">
+        <h3>
+          ofrecemos
+        </h3>
+        <div :class="['rectangle', face]">
+          <div class="face">velocidad.</div>
+          <div class="face">compromiso.</div>
+          <div class="face">comunicación.</div>
+          <div class="face">soluciones.</div>
+        </div>
+        <img :src="require('@/assets/gifs/'+current+'.gif')" id="gif" :alt="'gif animado de ' + current"/>
       </div>
     </div>
-    <img :src="require('@/assets/'+current+'.gif')" id="gif" :alt="'gif animado de ' + current"/>
+    <div class="hero-image">
+      <img src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.png" width="100%"/>
+    </div>
+    <div id="blob1" class="blob">
+    </div>
+    <div id="blob2" class="blob">
+    </div>
   </div>
 </template>
 
@@ -42,36 +57,78 @@ export default {
 </script>
 
 <style scoped>
-#banner {
-  margin: 20px;
-  margin-top: 150px;
-  padding: 30px;
-  min-height: calc(100vh - 350px);
+#blob1 {
+  top: 150px;
+  left: 0px;
+}
+#blob2 {
+  bottom: 150px;
+  right: 0px;
+}
+.blob {
+  position: absolute;
+  height: 300px;
   background: var(--primary);
+  border-radius: 50%;
+  filter: blur(150px);
+  z-index: -1;
+  aspect-ratio: 2/5 !important;
+}
+
+#banner {
+  height: calc(100vh);
+  background: var(--background);
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   position: relative;
   z-index: 0;
-  opacity: 0;
   transition: opacity .8s ease-in;
+  width: 100h;
 }
 .slogan {
   border: 1px solid red;
 }
-.rotating-text {
+.text {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 30px;
+  width: 500px;
+  padding-left: 50px;
 }
 h2 {
-  font-size: 50px;
+  color: var(--text);
+  font-size: 30px;
+  margin: 0px;
 }
-
+h3 {
+  color: var(--text);
+  font-size: 22px;
+  margin-right: -20px;
+}
+p {
+  margin: 0px;
+  color: var(--text);
+  opacity: .7;
+  width: 80%;
+  margin-left: 15px;
+}
+.text-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: fit-content;
+}
+.hero-image {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 .rectangle {
-  width: 325px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform .75s ease-in;
@@ -79,32 +136,36 @@ h2 {
 
 .face {
   position: absolute;
-  font-size: 40px;
+  font-size: 22px;
   font-weight: bold;
-  color: var(--primary);
   text-align: center;
-  width: 325px;
-  height: 50px;
-  line-height: 50px;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
   z-index: 0;
   border: 1px solid var(--background);
+  background: var(--background);
 }
 
 .face:nth-child(1) { 
-  transform: rotateX(0deg) translateZ(25px);
-  background: var(--success);
+  transform: rotateX(0deg) translateZ(20px);
+  border-color: var(--success);
+  color: var(--success);
 }
 .face:nth-child(2) { 
-  transform: rotateX(180deg) translateZ(25px); 
-  background: var(--error);
+  transform: rotateX(180deg) translateZ(20px); 
+  border-color: var(--error);
+  color: var(--error);
 }
 .face:nth-child(3) { 
-  transform: rotateX( 90deg) translateZ(25px); 
-  background: var(--warning);
+  transform: rotateX( 90deg) translateZ(20px); 
+  border-color: var(--warning);
+  color: var(--warning);
 }
 .face:nth-child(4) { 
-  transform: rotateX(-90deg) translateZ(25px); 
-  background: var(--accent);
+  transform: rotateX(-90deg) translateZ(20px); 
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .front .face:nth-child(1) {
@@ -122,16 +183,16 @@ h2 {
 }
 
 .front { 
-  transform: translateZ(-25px) rotateX(0deg); 
+  transform: translateZ(-20px) rotateX(0deg); 
 }
 .top { 
-  transform: translateZ(-25px) rotateX(-90deg);
+  transform: translateZ(-20px) rotateX(-90deg);
 }
 .back { 
-  transform: translateZ(-25px) rotateX(-180deg); 
+  transform: translateZ(-20px) rotateX(-180deg); 
 }
 .bottom { 
-  transform: translateZ(-25px) rotateX(-270deg); 
+  transform: translateZ(-20px) rotateX(-270deg); 
 }
 
 @keyframes breathe {
@@ -150,26 +211,12 @@ h2 {
 }
 
 #gif {
-  height: 150px;
-  width: 150px;
+  height: 80px;
+  width: 80px;
   animation-name: breathe;
   animation-delay: .25s;
   animation-duration: 3s;
   opacity: 0;
   animation-iteration-count: infinite;
-}
-
-@media only screen and (max-width: 907px) {
-  .rotating-text {
-    flex-direction: column;
-  }
-  h2, .face {
-    font-size: 30px;
-  }
-  #gif {
-    margin-top: 50px;
-    height: 100px;
-    width: 100px;
-  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <button id="gototop" @click="scrollTop" :class="show ? 'show' : ''">
-    <img src="@/assets/chevron-up.svg" alt="Chevron Up" height="30px"/>
+    <img src="@/assets/icons/chevron-up.svg" alt="Chevron Up" height="30px"/>
   </button>
 </template>
 
@@ -31,8 +31,8 @@ export default {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   background: var(--primary);
   border: 1px solid var(--background);
   border-radius: 8px;

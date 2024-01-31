@@ -1,22 +1,24 @@
 <template>
-  <div id="navbar" class="hide">
-    <a id="navbar-logo" href="/">
-      <img src="@/assets/logo.svg" alt="Aurie logo" height="100%" width="100%"/>
-    </a>
-    <a id="navbar-title" href="/">
-      Aurie
-    </a>
+  <div id="navbar">
+    <div class="navbar-header">
+      <a id="navbar-logo" href="/">
+        <img src="@/assets/logos/logo.svg" alt="Aurie logo" height="100%" width="100%"/>
+      </a>
+      <a id="navbar-title" href="/">
+        Aurie
+      </a>
+    </div>
     <div class="spacer">
     </div>
     <div class="navbar-items">
       <a class="navbar-item" href="#nosotros">
         Nosotros
       </a>
-      <a class="navbar-item" href="#servicios">
-        Servicios
-      </a>
       <a class="navbar-item" href="#proyectos">
         Proyectos
+      </a>
+      <a class="navbar-item" href="#servicios">
+        Servicios
       </a>
       <a class="navbar-item" href="#equipo">
         Equipo
@@ -32,37 +34,29 @@
 export default {
   name: 'vNavbar',
   mounted() {
-  }
+  },
 }
 </script>
 
 <style scoped>
 #navbar {
   width: 100h;
-  height: 100px;
-  background: var(--primary);
+  height: 60px;
   z-index: 2;
   padding: 10px;
   display: flex;
   position: absolute;
-  transition: opacity .5s ease-in-out;
+  transition: background .15s ease-in-out;
   top: 0;
   right: 0;
   left: 0;
+  background: var(--background);
 }
 .spacer {
   flex: 1;
 }
-#navbar.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-#navbar.hide {
-  opacity: 0;
-  pointer-events: none;
-}
 #navbar-title {
-  font-size: 50px;
+  font-size: 30px;
   color: var(--text);
   font-weight: bold;
   margin-left: 32px;
@@ -71,13 +65,18 @@ export default {
   align-items: center;
   text-decoration: none;
 }
+
 .navbar-items {
   padding: 10px;
   display: flex;
   gap: 50px;
   align-items: center;
 }
-
+.navbar-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 .navbar-item {
   transform: scaleX(1);
   position: relative;
@@ -86,7 +85,7 @@ export default {
   user-select: none;
   text-decoration: none;
   transition: color .5s ease;
-  font-size: 24px;
+  font-size: 16px;
   position: relative;
 }
 
@@ -116,8 +115,8 @@ export default {
   transform-origin: bottom left;
 }
 #navbar-logo {
-  height: 100px;
-  width: 100px !important;
+  height: 60px;
+  width: 60px !important;
 }
 
 @media only screen and (max-width: 680px) {

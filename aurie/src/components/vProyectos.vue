@@ -35,7 +35,7 @@ export default {
         title: 'MySetup',
         areas: ['Diseño',' 3D'],
         description: 'Nosotros hacemos real el setup de tus sueños, concretamos aquella idea que tienes en mente en un modelo 3D con un plan para que solo tengas que construir y disfrutar.',
-        photo: require("@/assets/Mysetup.png"),
+        photo: require("@/assets/logos/Mysetup.png"),
         enable: false,
         color: "#7E57C2",
         site: "https://mysetup.es",
@@ -44,7 +44,7 @@ export default {
         title: 'KA Webs',
         areas: ['Web', 'Diseño'],
         description: 'Diseñamos y desarrollamos soluciones web personalizadas para potenciar la presencia en línea de tu negocio, fusionando creatividad y tecnología de manera impactante.',
-        photo: require("@/assets/KAwebs.png"),
+        photo: require("@/assets/logos/KAwebs.png"),
         enable: true,
         color: "#4285F4",
       }
@@ -58,7 +58,7 @@ export default {
 <style scoped>
 h1 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   position: relative;
   color: var(--text);
 }
@@ -77,7 +77,6 @@ hr {
 }
 #proyectos {
   margin-top: -5px;
-  background: var(--primary);
   padding: 20px;
 }
 .projects {
@@ -101,6 +100,7 @@ hr {
   background: var(--background);
   color: var(--color);
   user-select: none;
+  box-shadow: 2px 2px 6px 0px #777;
 }
 .project-photo {
   height: 100%;
@@ -156,13 +156,14 @@ hr {
 }
 .chip {
   font-size: 14px;
-  background: var(--primary);
+  background: var(--background);
   padding: 3px;
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 5px;
   margin: 5px;
   white-space: nowrap;
+  border: 1px solid var(--color);
 }
 
 h2 {

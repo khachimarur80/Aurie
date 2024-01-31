@@ -4,7 +4,8 @@
       <h1>
         Contacto
       </h1>
-      <form class="contact-form" id="contact-form" @submit="submitForm(event)" ref="contactForm">
+      <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;">
+        <form class="contact-form" id="contact-form" @submit="submitForm(event)" ref="contactForm">
         <div class="form-row">
           <label for="from_name">Nombre:</label>
           <input
@@ -15,6 +16,7 @@
             class="outlined-input"
             name="from_name"
             id="from_name"
+            placeholder="Introduce tu nombre ..."
           />
         </div>
         <div class="form-row">
@@ -27,6 +29,7 @@
             class="outlined-input"
             name="user_email"
             id="user_email"
+            placeholder="Introduce tu email ..."
           />
         </div>
         <div class="form-row">
@@ -39,6 +42,7 @@
             noresize
             name="message"
             id="message"
+            placeholder="Introduce tu mensaje ..."
           ></textarea>
         </div>
         <div style="display: flex; width: 100%">
@@ -52,7 +56,9 @@
             {{ sendText }}
           </button>
         </div>
-      </form>
+        </form>
+        <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.png" width="40%" />
+      </div>
     </div>
   </div>
 </template>
@@ -139,8 +145,8 @@ export default {
 </script>
 <style scoped>
   #contacto {
-    background: white;
     margin-top: -5px;
+    margin-bottom: 50px;
   }
   textarea, input {
     background: white;
@@ -155,6 +161,7 @@ export default {
   }
   textarea {
     resize: none;
+    font-family: "Arial";
   }
   .contact-form {
     display: flex;
@@ -168,6 +175,7 @@ export default {
     padding: 30px;
     border-radius: 10px;
     outline: 1px solid var(--primary);
+    box-shadow: 2px 2px 6px 0px #777;
   }
   .form-row {
     width: 100%;
@@ -218,14 +226,10 @@ export default {
     color: var(--text);
     text-align: center;
     font-size: 40px;
-    margin-bottom: 50px;
     width: calc(100% - 30px);
-  }
-  h1 {
-    text-align: center;
-    color: var(--text);
+    margin-top: 50px;
+    margin-bottom: 100px;
     position: relative;
-    margin-bottom: 40px;
   }
   h1::after {
     content: '';

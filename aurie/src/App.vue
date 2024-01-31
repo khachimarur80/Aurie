@@ -10,11 +10,11 @@ export default {
   name: 'App',
   data: () => ({
     theme: {
-      primary: "#FFD95A",
+      primary: "#fc5c47",
       secondary: "#C07F00",
-      text: "#4C3D3D",
-      background: "#FFF7D4",
-      backgroundDark: "#4C3D3D",
+      text: "#444",
+      background: "#FFFFFF",
+      backgroundDark: "#121212",
       success: "#0F9D58",
       error: "#DB4437",
       accent: "#4285F4",

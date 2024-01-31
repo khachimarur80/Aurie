@@ -41,7 +41,7 @@ export default {
         age: 19,
         titulation: ['Microinformatica y Redes', ' Administración y Sistemas Informáticos en Red'],
         languages: ['Español', 'Inglés'],
-        photo: require("@/assets/retrato_anton.png"),
+        photo: require("@/assets/images/retrato_anton.png"),
         portofolio: null,
       },
       {
@@ -50,7 +50,7 @@ export default {
         age: 18,
         titulation: ['Ingeniería Informática UCM'],
         languages: ['Español', 'Inglés'],
-        photo: require("@/assets/retrato_kei.png"),
+        photo: require("@/assets/images/retrato_kei.png"),
         portofolio: "https://kei-portofolio.vercel.app",
       }
     ],
@@ -63,7 +63,8 @@ export default {
 <style scoped>
 h1 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-top: 15px;
+  margin-bottom: 50px;
   position: relative;
 }
 h1::after {
@@ -79,7 +80,6 @@ h1::after {
 
 #equipo {
   padding: 20px;
-  background: var(--background);
   margin-top: -5px;
 }
 .members {
@@ -102,7 +102,8 @@ h1::after {
   justify-content: space-between;
   gap: 20px;
   color: var(--text);
-  background: var(--primary);
+  background: var(--background);
+  box-shadow: 2px 2px 6px 0px #777;
 }
 .member-photo {
   height: 100%;
@@ -136,8 +137,8 @@ h1::after {
 .portafolio {
   padding: 5px;
   background: var(--background);
-  border: 1px solid var(--secondary);
-  color: var(--secondary);
+  border: 1px solid var(--primary);
+  color: var(--primary);
   border-radius: 5px;
   width: 100px;
   text-decoration: none;
@@ -146,7 +147,8 @@ h1::after {
 
 .portafolio:hover {
   cursor: pointer;
-  color: var(--background-dark);
+  color: var(--background);
+  background: var(--primary);
 }
 
 .member-position {
@@ -154,10 +156,13 @@ h1::after {
   width: 100%;
   text-align: right;
   height: 0px;
+  font-weight: bold;
+  color: var(--primary);
 }
 .chip {
   font-size: 14px;
   background: var(--background);
+  border: 1px solid var(--primary);
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 5px;

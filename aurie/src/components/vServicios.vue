@@ -1,8 +1,14 @@
 <template>
   <div id="servicios">
     <h1>Servicios</h1>
-    <div class="services-list">
-      <div class="service" v-for="(service, i) in services" :key="i">
+    <div class="projects">
+      <button v-for="(project, i) in projects" :key="i" @click="setProject(project)" :class="['project', project==selectedProject ? 'selected' : '']"  :style="{'--color': project.color}">
+        <img :src="project.icon" height="40px" width="40px"/> {{ project.name }}
+      </button>
+    </div>
+    <br>
+    <div class="services-list" v-if="selectedProject.services">
+      <div class="service" v-for="(service, i) in selectedProject.services" :key="i">
         <h2>
           {{ service.name }}
         </h2>
@@ -22,6 +28,13 @@
         </p>
       </div>
     </div>
+    <div class="no-services" v-if="selectedProject.name && !selectedProject.services">
+      En desarrollo ...
+    </div>
+    <div class="no-services" v-if="!selectedProject.name">
+      Selecciona un projecto
+    </div>
+    <br><br>
   </div>
 </template>
 
@@ -29,7 +42,11 @@
 export default {
   name: 'vServicios',
   data: () => ({
-    services: [
+    projects: [
+      {
+        name: 'KAwebs',
+        icon: require('@/assets/logos/KAwebs.png'),
+        services: [
       {
         "name": "Paquete Básico",
         "description": "Un paquete perfecto para pequeñas empresas o startups que buscan un sitio web profesional a modo informativo.",
@@ -73,8 +90,28 @@ export default {
           "Soporte prioritario"
         ]
       },
-    ]
-  })
+        ],
+        color: "#4285F4",
+      },
+      {
+        name: 'MySetup',
+        icon: require('@/assets/logos/Mysetup.png'),
+        services: false,
+        color: "#7E57C2",
+      }
+    ],
+    selectedProject: []
+  }),
+  methods: {
+    setProject(project) {
+      if (project != this.selectedProject) {
+        this.selectedProject = project
+      }
+      else {
+        this.selectedProject = []
+      }
+    }
+  }
 }
 </script>
 
@@ -89,8 +126,8 @@ h1 {
   text-align: center;
   color: var(--background-dark);
   position: relative;
-  margin-bottom: 40px;
   text-align: center;
+  margin-bottom: 60px;
 }
 h1::after {
   content: '';
@@ -104,7 +141,6 @@ h1::after {
 }
 #servicios {
   padding: 20px;
-  background: white;
   margin: 0px;
   margin-top: -5px;
   color: var(--background-dark);
@@ -125,7 +161,7 @@ h1::after {
   padding: 10px;
   border-radius: 20px;
   padding-top: 15px;
-  background: var(--background-d);
+  background: var(--background);
 }
 .description {
   border-bottom: 1px solid var(--primary);
@@ -146,7 +182,7 @@ h1::after {
 .check {
   height: 20px;
   width: 20px;
-  background: url('@/assets/check.svg');
+  background: url('@/assets/icons/check.svg');
   background-size: cover;
 }
 .includes p, .includes span {
@@ -161,6 +197,51 @@ h1::after {
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.projects {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.project {
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 15px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: 1px solid var(--color);
+  gap: 10px;
+  background: var(--background);
+  transition: background ease-in .15s;
+}
+.project img {
+  background: var(--background);
+  border-radius: 50%;
+}
+
+.project:hover {
+  outline: 1px solid var(--color);
+  cursor: pointer;
+}
+.selected {
+  background: var(--color);
+}
+
+.no-services {
+  width: 100h;
+  display: flex;
+  padding: 100px;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  opacity: .7;
 }
 
 @media only screen and (max-width: 670px) {

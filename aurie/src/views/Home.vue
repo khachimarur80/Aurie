@@ -1,42 +1,20 @@
 <template>
-  <div id="home" @scroll="handleScroll">
+  <div id="home" @scroll="handleScroll" ref="pageContents">
+    <div 
+      class="parallax" 
+      ref="parallaxContainer">
+
+      <div :style="{ backgroundImage: 'url(' + parallax.lazy + ')' }" class="parallax-image" loading="lazy"></div>
+
+      <div ref="highResImage" :style="{ backgroundImage: 'url(' + parallax.image + ')' }" class="parallax-image" loading="lazy" style="display: none;"></div>
+    </div>
+
     <vNavbar/>
-    <vWelcoming v-if="!visitedBefore"/>
     <vBanner/>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" id="firstSvg">
-      <rect width="100%" height="100%" fill="var(--background)" />
-      <path d="M0 50 C100 90, 200 10, 300 50 S500 90, 600 50 S800 10, 1000 50 V0 H0 Z" fill="var(--primary)" />
-    </svg>
-
     <vNosotros/>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
-      <rect width="100%" height="100%" fill="white" />
-      <path d="M0 50 C100 80, 200 20, 300 50 S500 80, 600 50 S800 20, 1000 50 V0 H0 Z" fill="var(--background)"/>
-    </svg>
-
-    <vServicios/>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
-      <rect width="100%" height="100%" fill="var(--primary)" />
-      <path d="M0 50 C100 70, 200 30, 300 50 S500 70, 600 50 S800 30, 1000 50 V0 H0 Z" fill="white" />
-    </svg>
-
     <vProyectos/>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
-      <rect width="100%" height="100%" fill="var(--background)" />
-      <path d="M0 50 C100 60, 200 40, 300 50 S500 60, 600 50 S800 40, 1000 50 V0 H0 Z" fill="var(--primary)" />
-    </svg>
-
+    <vServicios/>
     <vEquipo/>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
-      <rect width="100%" height="100%" fill="white" />
-      <path d="M0 50 C100 40, 200 60, 300 50 S500 40, 600 50 S800 60, 1000 50 V0 H0 Z" fill="var(--background)" />
-    </svg>
-
     <vContacto/>
     <vFooter/>
 
@@ -46,7 +24,6 @@
 
 <script>
 import vNavbar from "@/components/vNavbar.vue"
-import vWelcoming from "@/components/vWelcoming.vue"
 import vBanner from '@/components/vBanner.vue'
 import vNosotros from '@/components/vNosotros.vue'
 import vServicios from '@/components/vServicios.vue'
@@ -60,7 +37,6 @@ export default {
   name: 'HomeView',
   components: {
     vNavbar,
-    vWelcoming,
     vBanner,
     vNosotros,
     vServicios,
@@ -71,48 +47,35 @@ export default {
     vGoToTop,
   },
   data: () => ({
-    visitedBefore: false,
     show: false,
+    parallax: {
+      image: require('@/assets/images/parallax.jpg'),
+      lazy: require('@/assets/images/parallax.jpg')
+    },
+    animationFrameId: null,
   }),
   methods: {
     handleScroll() {
       this.show = parseInt(document.getElementById("home").scrollTop) > 300
+
+      if (!this.animationFrameId) {
+        this.animationFrameId = requestAnimationFrame(() => {
+          const contentScrollTop = this.$refs.pageContents.scrollTop;
+          this.$refs.parallaxContainer.scrollTop = contentScrollTop*.1;
+          this.animationFrameId = null;
+          console.log(contentScrollTop)
+          console.log(this.$refs.parallaxContainer.scrollTop)
+        });
+      }
     }
   },
   mounted() {
-    let smallScreen = window.innerWidth < 980
-
-    if (smallScreen) {
-      document.getElementById('welcome').style.display = 'none'
-      document.getElementById('firstSvg').style.opacity = '1'
-      document.getElementById('banner').style.opacity = '1'
-      document.getElementById('navbar').classList.remove('hide')
-      document.getElementById('navbar').classList.add('show')
-      document.getElementById('home').style.overflowY = 'scroll'
-    }
-    else {
-      this.visitedBefore = localStorage.getItem('visitedBefore');
-
-      if (!this.visitedBefore) {
-        localStorage.setItem('visitedBefore', true);
-        setTimeout(()=>{
-          document.getElementById('banner').style.opacity = '1'
-          document.getElementById('firstSvg').style.opacity = '1'
-          document.getElementById('navbar').classList.remove('hide')
-          document.getElementById('navbar').classList.add('show')
-          document.getElementById('home').style.overflowY = 'scroll'
-        }, 3000)
-        setTimeout(()=>{
-          document.getElementById('welcome').style.display = 'none'
-        }, 3500)
-      }
-      else {
-        document.getElementById('firstSvg').style.opacity = '1'
-        document.getElementById('banner').style.opacity = '1'
-        document.getElementById('navbar').classList.remove('hide')
-        document.getElementById('navbar').classList.add('show')
-        document.getElementById('home').style.overflowY = 'scroll'
-      }
+    const highResImage = this.$refs.highResImage;
+    if (highResImage) {
+      highResImage.addEventListener('load', () => {
+        highResImage.style.display = 'block';
+        this.$el.querySelector('.parallax-image-low-res').style.display = 'none';
+      });
     }
   }
 }
@@ -123,10 +86,10 @@ export default {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-padding-top: 120px;
     user-select: none;
-    background: var(--primary);
   }
   #home::-webkit-scrollbar {
     display: none;
@@ -147,5 +110,18 @@ export default {
   #firstSvg {
     opacity: 0;
     transition: opacity .8s ease-in;
+  }
+  .parallax {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    filter: brightness(1.05);
+  }
+  .parallax-image {
+    height: 1100px;
+    background-size: cover;
+    background-position: 50% 50%;
   }
 </style>
