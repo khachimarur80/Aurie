@@ -74,6 +74,7 @@ h1::after {
   font-size: 24px;
   text-align: center;
   width: 100%;
+  max-width: 1250px;
 }
 .card {
   height: 500px;

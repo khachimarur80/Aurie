@@ -32,7 +32,7 @@
       En desarrollo ...
     </div>
     <div class="no-services" v-if="!selectedProject.name">
-      Selecciona un projecto
+      Selecciona un proyecto
     </div>
     <br><br>
   </div>
