@@ -67,7 +67,7 @@ export default {
         "includes": [
           "Diseño Moderno y Funcional",
           "Optimización de rendimiento",
-          "SEO Básico",
+          "SEO Avanzado",
           "Diseño responsivo",
           "5 cambio al mes",
           "Certificación SSL",
@@ -81,7 +81,7 @@ export default {
         "includes": [
           "Diseño Moderno y Funcional",
           "Optimización de rendimiento",
-          "SEO Básico",
+          "SEO BAvanzado",
           "Diseño responsivo",
           "Cambios ilimitados",
           "Certificación SSL",
