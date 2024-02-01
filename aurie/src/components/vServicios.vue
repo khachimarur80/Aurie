@@ -124,14 +124,14 @@ h2 {
 }
 h1 {
   text-align: center;
-  color: var(--background-dark);
+  color: var(--background);
   position: relative;
   text-align: center;
   margin-bottom: 60px;
 }
 h1::after {
   content: '';
-  background: var(--background-dark);
+  background: var(--background);
   height: 3px;
   bottom: -10px;
   left: 50%;
@@ -240,7 +240,7 @@ h1::after {
   padding: 100px;
   justify-content: center;
   align-items: center;
-  color: var(--text);
+  color: var(--background);
   opacity: .7;
 }
 
