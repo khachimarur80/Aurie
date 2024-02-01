@@ -211,7 +211,7 @@ h1::after {
   border-radius: 10px;
   padding-left: 5px;
   padding-right: 15px;
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,6 +220,8 @@ h1::after {
   gap: 10px;
   background: var(--background);
   transition: background ease-in .15s;
+  width: 150px;
+  height: 55px;
 }
 .project img {
   background: var(--background);
