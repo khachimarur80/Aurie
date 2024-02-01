@@ -223,7 +223,7 @@ export default {
     flex-direction: column;
   }
   h1 {
-    color: var(--text);
+    color: var(--background);
     text-align: center;
     font-size: 40px;
     width: calc(100% - 30px);
@@ -233,7 +233,7 @@ export default {
   }
   h1::after {
     content: '';
-    background: var(--background-dark);
+    background: var(--background);
     height: 3px;
     bottom: -10px;
     left: 50%;

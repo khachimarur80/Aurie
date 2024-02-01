@@ -2,7 +2,7 @@
   <div id="equipo">
     <h1>Equipo</h1>
     <div class="members">
-      <div class="member" v-for="(member, i) in team" :key="i">
+      <div class="member" v-for="(member, i) in team" :key="i" :id="member.position">
         <div class="member-photo">
           <img :src="member.photo" height="100%" width="100%" alt="Retrato Hachimaru Kei"/>
         </div>
@@ -66,10 +66,11 @@ h1 {
   margin-top: 15px;
   margin-bottom: 50px;
   position: relative;
+  color: var(--background);
 }
 h1::after {
   content: '';
-  background: var(--background-dark);
+  background: var(--background);
   height: 3px;
   bottom: -10px;
   left: 50%;
@@ -84,12 +85,13 @@ h1::after {
 }
 .members {
   display: flex;
+  align-items: center;
   justify-content: center;
   width: calc(100% - 40px);
   padding: 20px;
-  flex-wrap: wrap;
   gap: 20px;
   user-select: none;
+  flex-direction: column;
 }
 .member {
   border: 1px solid black;
@@ -229,5 +231,18 @@ h2 {
   #members {
     padding: 0px;
   }
+}
+
+#CEO {
+  transform: translateX(-100%);
+}
+#CTO {
+  transform: translateX(100%);
+}
+#CEO, #CTO {
+  transition: transform .5s ease-out;
+}
+#CEO.show, #CTO.show {
+  transform: translateX(0px);
 }
 </style>

@@ -50,7 +50,7 @@ export default {
     show: false,
     parallax: {
       image: require('@/assets/images/parallax.jpg'),
-      lazy: require('@/assets/images/parallax.jpg')
+      lazy: require('@/assets/images/parallax-lazy.jpg')
     },
     animationFrameId: null,
   }),
@@ -63,9 +63,93 @@ export default {
           const contentScrollTop = this.$refs.pageContents.scrollTop;
           this.$refs.parallaxContainer.scrollTop = contentScrollTop*.1;
           this.animationFrameId = null;
-          console.log(contentScrollTop)
-          console.log(this.$refs.parallaxContainer.scrollTop)
         });
+      }
+
+      let row1 = document.getElementById('row-1')
+      let row2 = document.getElementById('row-2')
+      let mysetup = document.getElementById('MySetup')
+      let kawebs = document.getElementById('KAwebs')
+      let cto = document.getElementById('CTO')
+      let ceo = document.getElementById('CEO')
+
+      if (row1) {
+        const rect = row1.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        const isFrameInViewport = rect.top >= -rect.height/2 && rect.bottom <= windowHeight + rect.height/2
+
+        if (isFrameInViewport) {
+          row1.classList.add('show')
+        }
+        else {
+          row1.classList.remove('show')
+        }
+      }
+      if (row2) {
+        const rect = row2.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        const isFrameInViewport = rect.top >= -rect.height/1.5 && rect.bottom <= windowHeight + rect.height/1.5
+
+        if (isFrameInViewport) {
+          row2.classList.add('show')
+        }
+        else {
+          row2.classList.remove('show')
+        }
+      }
+      if (mysetup) {
+        const rect = mysetup.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        const isFrameInViewport = rect.top >= -rect.height/1.5 && rect.bottom <= windowHeight + rect.height/1.5
+
+        if (isFrameInViewport) {
+          mysetup.classList.add('show')
+        }
+        else {
+          mysetup.classList.remove('show')
+        }
+      }
+      if (kawebs) {
+        const rect = kawebs.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        const isFrameInViewport = rect.top >= -rect.height/2 && rect.bottom <= windowHeight + rect.height/2
+
+        if (isFrameInViewport) {
+          kawebs.classList.add('show')
+        }
+        else {
+          kawebs.classList.remove('show')
+        }
+      }
+      if (ceo) {
+        const rect = ceo.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        const isFrameInViewport = rect.top >= -rect.height/1.5 && rect.bottom <= windowHeight + rect.height/1.5
+
+        if (isFrameInViewport) {
+          ceo.classList.add('show')
+        }
+        else {
+          ceo.classList.remove('show')
+        }
+      }
+      if (cto) {
+        const rect = cto.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        const isFrameInViewport = rect.top >= -rect.height/1.5 && rect.bottom <= windowHeight + rect.height/1.5
+
+        if (isFrameInViewport) {
+          cto.classList.add('show')
+        }
+        else {
+          cto.classList.remove('show')
+        }
       }
     }
   },
@@ -83,17 +167,35 @@ export default {
 
 <style>
   #home {
-    height: 100vh;
+    height: calc(100vh - 80px);
     width: 100%;
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-padding-top: 120px;
     user-select: none;
+    margin-top: 80px;
   }
+
   #home::-webkit-scrollbar {
+    width: 7px;
     display: none;
   }
+  #home::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10rem;
+    border: 1px solid var(--primary);
+  }
+
+
+  #home::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+  }
+
+  #home::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+  }
+
   svg {
     overflow: hidden;
     margin: 0px;

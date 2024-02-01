@@ -2,24 +2,26 @@
   <div id="proyectos">
     <h1>Proyectos</h1>
     <div class="projects">
-      <div class="project" v-for="(project, i) in projects" :key="i" :style="{'--color': project.color}">
-        <div class="project-photo">
-          <img :src="project.photo" height="100%" width="100%" alt="Retrato Hachimaru Kei"/>
-        </div>
-        <div class="project-info">
-          <h2>{{ project.title }}</h2>
-          <hr style="width: 100%">
-          <div style="display: flex; flex-wrap: wrap; align-items: center;">
-            <span class="chip" v-for="(area,i) in project.areas" :key="i">{{ area }}</span> 
+      <div class="project" v-for="(project, i) in projects" :key="i" :style="{'--color': project.color}" :id="project.title">
+        <div class="project-contents">
+          <div class="project-photo">
+            <img :src="project.photo" height="100%" width="100%" alt="Retrato Hachimaru Kei"/>
           </div>
-          <div class="project-info-contents">
-            <p>
-              {{ project.description }}
-            </p>
+          <div class="project-info">
+            <h2>{{ project.title }}</h2>
+            <hr style="width: 100%">
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+              <span class="chip" v-for="(area,i) in project.areas" :key="i">{{ area }}</span> 
+            </div>
+            <div class="project-info-contents">
+              <p>
+                {{ project.description }}
+              </p>
+            </div>
+            <a class="portafolio" v-if="project.site" :href="project.site" target="_blank">
+              Web
+            </a>
           </div>
-          <a class="portafolio" v-if="project.site" :href="project.site" target="_blank">
-            Web
-          </a>
         </div>
       </div>
     </div>
@@ -41,7 +43,7 @@ export default {
         site: "https://mysetup.es",
       },
       {
-        title: 'KA Webs',
+        title: 'KAwebs',
         areas: ['Web', 'Diseño'],
         description: 'Diseñamos y desarrollamos páginas webs personalizadas para potenciar la presencia digital de tu negocio, fusionando creatividad y tecnología de manera impactante.',
         photo: require("@/assets/logos/KAwebs.png"),
@@ -60,11 +62,11 @@ h1 {
   text-align: center;
   margin-bottom: 80px;
   position: relative;
-  color: var(--text);
+  color: var(--background);
 }
 h1::after {
   content: '';
-  background: var(--background-dark);
+  background: var(--background);
   height: 3px;
   bottom: -10px;
   left: 50%;
@@ -84,23 +86,26 @@ hr {
   justify-content: center;
   width: calc(100% - 40px);
   padding: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 .project {
-  border: 1px solid var(--color);
+  color: var(--color);
+  user-select: none;
+}
+.project-contents {
+  background: var(--background);
   border-radius: 10px;
   padding: 20px;
-  max-width: calc(100% - 120px);
-  height: 250px;
-  aspect-ratio: 20/7  !important;
+  border: 1px solid var(--color);
+  box-shadow: 2px 2px 6px 0px #777;
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  background: var(--background);
-  color: var(--color);
-  user-select: none;
-  box-shadow: 2px 2px 6px 0px #777;
+  max-width: calc(100% - 120px);
+  height: 250px;
+  aspect-ratio: 20/7  !important;
 }
 .project-photo {
   height: 100%;
@@ -122,7 +127,7 @@ hr {
 }
 .project-info p {
   margin-left: 10px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .project-info-contents {
@@ -164,15 +169,23 @@ hr {
   margin: 5px;
   white-space: nowrap;
   border: 1px solid var(--color);
+  transform: rotateX(90deg);
+  transition: transform .3s ease-out .3s;
 }
-
+.show .chip {
+  transform: rotateX(0deg);
+}
 h2 {
   margin: 0;
   font-weight: lighter;
   font-size: 30px;
-  color: var(--background-dark)
+  color: var(--background-dark);
+  opacity: 0;
+  transition: opacity .3s ease-out;
 }
-
+.show h2 {
+  opacity: 1;
+}
 @media only screen and (max-width: 800px) {
   .project {
     width: 100%;
@@ -192,4 +205,50 @@ h2 {
     padding: 0px;
   }
 }
+
+#MySetup {
+  margin-bottom: 50px;
+}
+
+#MySetup .project-photo {
+  transform: scale(.3);
+  transition: transform .3s ease-out .3s;
+  opacity: 0;
+}
+#MySetup.show .project-photo {
+  opacity: 1;
+  transform: scale(1);
+}
+#KAwebs .project-photo {
+  transform: scale(.3);
+  transition: transform .3s ease-out .3s;
+  opacity: 0;
+}
+#KAwebs.show .project-photo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+#MySetup .project-contents {
+  transform: translateY(300px);
+  transition: transform .3s ease-out;
+  opacity: 0;
+}
+#MySetup.show .project-contents {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#KAwebs .project-contents {
+  transform: translateY(300px);
+  opacity: 0;
+  transition: transform .3s ease-out;
+}
+#KAwebs.show .project-contents {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 </style>
