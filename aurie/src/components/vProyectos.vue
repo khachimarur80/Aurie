@@ -235,20 +235,24 @@ h2 {
   transform: translateY(300px);
   transition: transform .3s ease-out;
   opacity: 0;
+  pointer-events: none;
 }
 #MySetup.show .project-contents {
   opacity: 1;
   transform: translateY(0px);
+  pointer-events: auto;
 }
 
 #KAwebs .project-contents {
   transform: translateY(300px);
   opacity: 0;
   transition: transform .3s ease-out;
+  pointer-events: none;
 }
 #KAwebs.show .project-contents {
   opacity: 1;
   transform: translateY(0px);
+  pointer-events: auto;
 }
 
 </style>
