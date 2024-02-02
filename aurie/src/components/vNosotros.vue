@@ -6,7 +6,7 @@
         <div class="card" id="creatividad">
           <h2><span>Creatividad</span></h2>
           <div class="card-text">
-            <img src="@/assets/icons/creatividad.png" height="40px"/>
+            <img src="@/assets/icons/creatividad.png" height="40px" alt="Mano con pintura colorida"/>
             <hr style="border-top: 1px solid var(--accent)">
             Transformamos ideas en experiencias visuales únicas. Con nuestra creatividad, daremos vida a la identidad digital de tu empresa.
           </div>
@@ -14,7 +14,7 @@
         <div class="card" id="eficiencia">
           <h2><span>Eficiencia</span></h2>
           <div class="card-text">
-            <img src="@/assets/icons/eficiencia.png" height="40px"/>
+            <img src="@/assets/icons/eficiencia.png" height="40px" alt="MacBook en mesa de cafetería"/>
             <hr style="border-top: 1px solid var(--warning)">
             Nos comprometemos a resultados rápidos y eficientes. Cada paso es optimizado para asegurar un viaje sin contratiempos hacia tu presencia digital.
           </div>
@@ -24,7 +24,7 @@
         <div class="card" id="comunicacion">
           <h2><span>Comunicación</span></h2>
           <div class="card-text">
-            <img src="@/assets/icons/comunicacion.png" height="40px"/>
+            <img src="@/assets/icons/comunicacion.png" height="40px" alt="Antenta de satélite"/>
             <hr style="border-top: 1px solid var(--error)">
             Valoramos la comunicación constante y profesional. Estamos aquí para entender tus necesidades y expectativas, garantizando un proceso claro y transparente.
           </div>
@@ -32,7 +32,7 @@
         <div class="card" id="calidad">
           <h2><span>Calidad</span></h2>
           <div class="card-text">
-            <img src="@/assets/icons/calidad.png" height="40px"/>
+            <img src="@/assets/icons/calidad.png" height="40px" alt="Teclado de cerca"/>
             <hr style="border-top: 1px solid var(--success)">
             Nuestra promesa es ofrecer trabajos de alta calidad. No comprometemos la excelencia mientras impulsamos tu empresa digitalmente.
           </div>
@@ -91,9 +91,9 @@ hr {
   max-width: 1250px;
 }
 .card {
-  height: 500px;
   border: 2px solid var(--primary);
   width: 400px;
+  height: 500px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -335,4 +335,63 @@ h2 {
   opacity: 1;
 }
 
+@media only screen and (max-width: 900px) {
+ .content-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 150px;
+    gap: 100px;
+    height: fit-content;
+  }
+  .card {
+    height: 500px;
+    width: calc(100% - 30px);
+    max-width: 400px;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .card-text {
+    position: revert;
+    width: calc(100% - 100px);
+    max-width: 250px;
+    color: var(--text);
+  }
+  h1 {
+    margin-bottom: 50px;
+  }
+  #nosotros {
+    padding-top: 0px;
+  }
+}
+@media only screen and (min-width: 901px) and (max-width: 1000px) {
+  .card {
+    height: 500px;
+    width: calc(100% - 30px);
+    max-width: 400px;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .card-text {
+    position: revert;
+    width: calc(100% - 100px);
+    max-width: 250px;
+    color: var(--text);
+  }
+  h1 {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+  .card {
+    height: 450px;
+    width: 330px;
+  }
+  .card-text {
+    width: 200px;
+    height: 220px;
+  }
+}
 </style>

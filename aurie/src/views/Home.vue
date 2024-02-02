@@ -167,14 +167,13 @@ export default {
 
 <style>
   #home {
-    height: calc(100vh - 80px);
+    height: calc(100vh);
     width: 100%;
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-padding-top: 120px;
     user-select: none;
-    margin-top: 80px;
   }
 
   #home::-webkit-scrollbar {

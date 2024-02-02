@@ -3,7 +3,7 @@
     <h1>Servicios</h1>
     <div class="projects">
       <button v-for="(project, i) in projects" :key="i" @click="setProject(project)" :class="['project', project==selectedProject ? 'selected' : '']"  :style="{'--color': project.color}">
-        <img :src="project.icon" height="40px" width="40px"/> {{ project.name }}
+        <img :src="project.icon" height="40px" width="40px" :alt="'Logo de '+project.name"/> {{ project.name }}
       </button>
     </div>
     <br>
@@ -16,11 +16,11 @@
           {{ service.description }}
         </p>
         <div v-for="(include, i) in service.includes" :key="i" class="includes">
-          <span class="check">
-          </span>
-          <p>
-            {{ include }}
-          </p>
+        <span class="check">
+        </span>
+        <p>
+          {{ include }}
+        </p>
         </div>
         <div style="flex: 1"></div>
         <p class="price">
@@ -252,7 +252,7 @@ h1::after {
     min-width: calc(100% - 20px);
   }
   h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .description {
     display: none;

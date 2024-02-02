@@ -1,29 +1,31 @@
 <template>
   <div id="banner" ref="banner">
-    <div class="text">
-      <h2>Aurie, tu solución digital</h2>
-      <p>
-        En Aurie te ofrecemos soluciones y productos en todas las áreas de la tecnología.
-      </p>
-      <div class="text-row">
-        <h3>
-          ofrecemos
-        </h3>
-        <div :class="['rectangle', face]">
-          <div class="face">velocidad.</div>
-          <div class="face">compromiso.</div>
-          <div class="face">comunicación.</div>
-          <div class="face">soluciones.</div>
+    <div class="banner-contents">
+      <div class="text">
+        <h2>Aurie, tu solución digital</h2>
+        <p>
+          En Aurie te ofrecemos soluciones y productos en todas las áreas de la tecnología.
+        </p>
+        <div class="text-row">
+          <h3>
+            ofrecemos
+          </h3>
+          <div :class="['rectangle', face]">
+            <div class="face">velocidad.</div>
+            <div class="face">compromiso.</div>
+            <div class="face">comunicación.</div>
+            <div class="face">soluciones.</div>
+          </div>
+          <img :src="require('@/assets/gifs/'+current+'.gif')" id="gif" :alt="'gif animado de ' + current"/>
         </div>
-        <img :src="require('@/assets/gifs/'+current+'.gif')" id="gif" :alt="'gif animado de ' + current"/>
       </div>
-    </div>
-    <div class="hero-image">
-      <img src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.png" width="100%"/>
-    </div>
-    <div id="blob1" class="blob">
-    </div>
-    <div id="blob2" class="blob">
+      <div class="hero-image">
+        <img src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.png" width="100%" alt="Ilustracion misión empresarial"/>
+      </div>
+      <div id="blob1" class="blob">
+      </div>
+      <div id="blob2" class="blob">
+      </div>
     </div>
   </div>
 </template>
@@ -76,8 +78,8 @@ export default {
 }
 
 #banner {
-  height: calc(100vh);
-  background: var(--background);
+  min-height: calc(100vh + 50px);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, .5) 80%, rgba(255, 255, 255, 0) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,6 +88,18 @@ export default {
   transition: opacity .8s ease-in;
   width: 100h;
 }
+.banner-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  transition: opacity .8s ease-in;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+}
+
 .slogan {
   border: 1px solid red;
 }
@@ -218,5 +232,67 @@ p {
   animation-duration: 3s;
   opacity: 0;
   animation-iteration-count: infinite;
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-contents {
+    flex-direction: column;
+    height: fit-content;
+    gap: 50px;
+  }
+  h3 {
+    display: none;
+  }
+  .text-row {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }
+  .text {
+    padding: 0px;
+    padding-bottom: 30px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  h2 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  h2, p {
+    text-align: center;
+  }
+  .hero-image {
+    width: calc(100% - 50px);
+  }
+  #banner {
+    padding-top: 0px;
+    padding-top: 60px;
+    height: fit-content;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .banner-contents {
+    flex-direction: column;
+    height: fit-content;
+    gap: 50px;
+  }
+  .text {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+  }
+  .hero-image {
+    width: calc(100% - 50px);
+    max-width: 600px;
+  }
+  #banner {
+    padding-top: 0px;
+    padding-top: 60px;
+    height: fit-content;
+  }
 }
 </style>

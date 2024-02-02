@@ -5,7 +5,7 @@
       <div class="project" v-for="(project, i) in projects" :key="i" :style="{'--color': project.color}" :id="project.title">
         <div class="project-contents">
           <div class="project-photo">
-            <img :src="project.photo" height="100%" width="100%" alt="Retrato Hachimaru Kei"/>
+            <img :src="project.photo" height="100%" width="100%" :alt="'Logo de '+ project.title"/>
           </div>
           <div class="project-info">
             <h2>{{ project.title }}</h2>
@@ -79,12 +79,11 @@ hr {
 }
 #proyectos {
   margin-top: -5px;
-  padding: 20px;
+  width: 100%;
 }
 .projects {
   display: flex;
   justify-content: center;
-  width: calc(100% - 40px);
   padding: 20px;
   flex-direction: column;
   gap: 20px;
@@ -93,6 +92,8 @@ hr {
 .project {
   color: var(--color);
   user-select: none;
+  display: flex;
+  justify-content: center;
 }
 .project-contents {
   background: var(--background);
@@ -186,23 +187,34 @@ h2 {
 .show h2 {
   opacity: 1;
 }
-@media only screen and (max-width: 800px) {
-  .project {
-    width: 100%;
+
+@media only screen and (max-width: 600px) {
+  .project-contents {
+    width: calc(100%);
     flex-direction: column;
-    height: 600px;
+    height: 500px;
     align-items: center;
   }
-  .projects {
-    width: 100%;
-    padding: 0px;
+  .project {
+    width: calc(100% - 20px);
+    paddign: 0px;
+    margin: 0px;
   }
-  .project-photo {
-    width: 250px;
-    height: 250px;
+  .project-info-contents {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
-  #proyectos {
-    padding: 0px;
+}
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+  .project-contents {
+    width: 500px;
+    flex-direction: column;
+    height: 500px;
+    align-items: center;
+  }
+  .project-info-contents {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 

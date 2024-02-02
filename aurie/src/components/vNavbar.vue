@@ -1,5 +1,5 @@
 <template>
-  <div id="navbar">
+  <div id="navbar" :class="'isSmall' ? 'small' : ''">
     <div class="navbar-header">
       <a id="navbar-logo" href="/">
         <img src="@/assets/logos/logo.svg" alt="Aurie logo" height="100%" width="100%"/>
@@ -10,7 +10,7 @@
     </div>
     <div class="spacer">
     </div>
-    <div class="navbar-items">
+    <div class="navbar-items" v-if="!isSmall">
       <a class="navbar-item" href="#nosotros">
         Nosotros
       </a>
@@ -27,13 +27,46 @@
         Contacto
       </a>
     </div>
+    <div :class="['dropdown', showDropdown ? 'show' : '']" v-else>
+      <div class="dropdown-toggle">
+        <button @click="showDropdown = !showDropdown">
+          <img src="@/assets/icons/menu.svg" height="30px" width="30px"/>
+        </button>
+      </div>
+      <div class="dropdown-items">
+        <a class="dropdown-item" href="#nosotros">
+          Nosotros
+        </a>
+        <a class="dropdown-item" href="#proyectos">
+          Proyectos
+        </a>
+        <a class="dropdown-item" href="#servicios">
+          Servicios
+        </a>
+        <a class="dropdown-item" href="#equipo">
+          Equipo
+        </a>
+        <a class="dropdown-item" href="#contacto">
+          Contacto
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'vNavbar',
+  data: () => ({
+    isSmall: false,
+    showDropdown: false,
+  }),
   mounted() {
+    this.isSmall = parseInt(window.innerWidth) < 800
+
+    window.addEventListener('resize',()=>{
+      this.isSmall = parseInt(window.innerWidth) < 800
+    })
   },
 }
 </script>
@@ -69,7 +102,7 @@ export default {
 .navbar-items {
   padding: 10px;
   display: flex;
-  gap: 50px;
+  gap: 5px;
   align-items: center;
 }
 .navbar-header {
@@ -78,109 +111,95 @@ export default {
   align-items: center;
 }
 .navbar-item {
-  transform: scaleX(1);
-  position: relative;
-  overflow: hidden;
-  color: var(--text) !important;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 5px;
+  margin-top: 0px;
+  border-radius: 5px;
+  color: var(--text);
   user-select: none;
   text-decoration: none;
-  transition: color .5s ease;
+  transition: background .5s ease;
   font-size: 16px;
-  position: relative;
-}
-
-.navbar-item:before {
-  content: "";
-  position: absolute;
-  display: block;
-  z-index: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(to right, var(--text), var(--text));
-  height: 2px;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
 }
 
 .navbar-item:hover {
-  opacity: 1;
+  background: #eee;
 }
-.navbar-item:before {
-  background-image: linear-gradient(to right, var(--text), var(--text));
-}  
-.navbar-item:hover:before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
+
 #navbar-logo {
   height: 60px;
   width: 60px !important;
 }
-
-@media only screen and (max-width: 680px) {
-  #navbar {
-    height: 90px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column !important;
-  }
-  #navbar-title {
-    font-size: 30px;
-    margin-left: 20px;
-    margin-top: -50px;
-    transform: translateX(20px);
-  }
-  #navbar-logo {
-    height: 50px;
-    width: 50px;
-    transform: translateX(-60px);
-  }
-  .navbar-item {
-    font-size: 16px;
-  }
-  .navbar-items {
-    justify-content: space-around;
-    padding: 0px;
-    margin: 0px;
-    gap: 10px;
-    margin-top: 20px;
-    flex: 1;
-  }
-  .spacer {
-    display: none;
-  }
+.dropdown {
+  height: 80px;
+  width: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -30px;
+  margin-top: -10px;
+}
+.dropdown .dropdown-items {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s ease-out, opacity .2s ease-out;
+  transform: translateY(0px);
+  pointer-events: none;
+  z-index: 0;
+  top: 0;
+  right: -10px;
+  position: absolute;
+  background: var(--background);
+  border-bottom-left-radius: 10px;
+}
+.dropdown.show .dropdown-items {
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(80px);
+  pointer-events: auto;
 }
 
-@media only screen and (min-width: 681px) and (max-width: 1080px) {
-  #navbar-title {
-    font-size: 40px;
-    margin-top: -100px;
-    transform: translateX(30px);
-  }
-  #navbar-logo {
-    height: 80px;
-    width: 80px;
-    float: left;
-    transform: translateX(-60px);
-  }
-  #navbar {
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-    flex-direction: column;
-  }
-  .navbar-items {
-    width: 100%;
-    justify-content: center;
-    justify-content: center;
-  }
-  .navbar-item {
-    font-size: 20px;
-  }
-  .spacer {
-    display: none;
-  }
+.dropdown-item {
+  text-decoration: none;
+  color: var(--text);
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 5px;
+  margin-top: 0px;
+  border-radius: 5px;
+  transition: background .15s ease-out
+}
+.dropdown-item:hover {
+  background: #eee;
+}
+
+.dropdown-toggle {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background: var(--background);
+}
+.dropdown-toggle button {
+  height: 45px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+}
+.dropdown-toggle button:hover {
+  background: #ddd;
+  cursor: pointer;
 }
 </style>

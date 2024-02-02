@@ -57,7 +57,7 @@
           </button>
         </div>
         </form>
-        <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.png" width="40%" />
+        <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.png" width="40%" alt="Mujer atendiendo a cliente"/>
       </div>
     </div>
   </div>
@@ -161,7 +161,6 @@ export default {
   }
   textarea {
     resize: none;
-    font-family: "Arial";
   }
   .contact-form {
     display: flex;
@@ -257,6 +256,9 @@ export default {
       max-width: 100%;
       width: 300px;
     }
+    img {
+      display: none;
+    }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .section {
@@ -268,8 +270,25 @@ export default {
     input, textarea {
       width: 400px;
     }
+    img {
+      display: none;
+    }
   }
-  @media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  @media only screen and (min-width: 1024px) and (max-width: 1179px) {
+    img {
+      display: none;
+    }
+    .section {
+      padding: 50px;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    input, textarea {
+      width: 433px;
+    }
+  }
+  @media only screen and (min-width: 1178px) and (max-width: 1279px) {
     .section {
       padding: 50px;
     }

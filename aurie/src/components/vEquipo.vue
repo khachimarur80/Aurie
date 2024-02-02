@@ -4,7 +4,7 @@
     <div class="members">
       <div class="member" v-for="(member, i) in team" :key="i" :id="member.position">
         <div class="member-photo">
-          <img :src="member.photo" height="100%" width="100%" alt="Retrato Hachimaru Kei"/>
+          <img :src="member.photo" height="100%" width="100%" :alt="'Imagen retrato de ' + member.name"/>
         </div>
         <div class="member-info">
           <h2>{{ member.name }}</h2>

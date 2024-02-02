@@ -19,6 +19,7 @@ export default {
       error: "#DB4437",
       accent: "#4285F4",
       warning: "#7E57C2",
+      textFont: "HelveticaNeue-Thin"
     }
   }),
   mounted() {
@@ -31,6 +32,7 @@ export default {
     document.documentElement.style.setProperty('--secondary', this.theme.secondary)
     document.documentElement.style.setProperty('--accent', this.theme.accent)
     document.documentElement.style.setProperty('--warning', this.theme.warning)
+    document.documentElement.style.setProperty('--text-font', this.theme.textFont)
   }
 }
 </script>
@@ -42,7 +44,10 @@ export default {
     overflow: hidden;
     height: 100vh;
     width: 100h;
-    font-family: "Verdana";
+    font-family: var(--text-font);
     font-weight: lighter;
+  }
+  textarea {
+    font-family: var(--text-font);
   }
 </style>
