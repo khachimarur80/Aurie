@@ -19,7 +19,7 @@ export default {
       error: "#DB4437",
       accent: "#4285F4",
       warning: "#7E57C2",
-      textFont: "HelveticaNeue-Thin"
+      textFont: "Poppins"
     }
   }),
   mounted() {
@@ -38,14 +38,21 @@ export default {
 </script>
 
 <style>
+  @font-face {
+    font-family: 'Poppins';
+    src: url('~@/assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
     height: 100vh;
     width: 100h;
-    font-family: var(--text-font);
     font-weight: lighter;
+    font-family: var(--text-font);
   }
   textarea {
     font-family: var(--text-font);
