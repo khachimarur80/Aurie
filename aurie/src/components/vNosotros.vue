@@ -148,7 +148,7 @@ hr {
   line-height: 20px;
   flex-direction: column;
   color: #777;
-  text-align: justify;
+  text-align: center;
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -391,6 +391,7 @@ h2 {
     position: revert;
     width: calc(100% - 100px);
     max-width: 250px;
+    height: 250px;
     color: var(--text);
   }
   h1 {
@@ -398,6 +399,10 @@ h2 {
   }
   #nosotros {
     padding-top: 0px;
+    transform: translateX(-20px);
+  }
+  h2 {
+    font-size: 30px !important;
   }
 }
 @media only screen and (min-width: 901px) and (max-width: 1000px) {

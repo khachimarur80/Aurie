@@ -257,6 +257,31 @@ h1::after {
   .description {
     display: none;
   }
+  .projects {
+    padding: 0px;
+  }
+  .project {
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 1px solid var(--color);
+    gap: 5px;
+    background: var(--background);
+    transition: background ease-in .15s;
+    width: 120px;
+    height: 45px;
+  }
+  #servicios {
+    transform: translateX(-20px);
+  }
+  .no-services {
+    padding: 50px;
+  }
 }
 
 @media only screen and (min-width: 671px) and (max-width: 980px) {

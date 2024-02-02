@@ -182,6 +182,10 @@ h2 {
 }
 
 @media only screen and (max-width: 560px) {
+  #equipo {
+    padding: 0px;
+    transform: translateX(-20px);
+  }
   .member {
     width: 100%;
     flex-direction: column;

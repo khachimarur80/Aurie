@@ -100,7 +100,7 @@ export default {
   position: relative;
   z-index: 0;
   transition: opacity .8s ease-in;
-  width: 100h;
+  width: 100%;
 }
 .banner-contents {
   display: flex;
@@ -252,6 +252,7 @@ p {
   .banner-contents {
     flex-direction: column;
     height: fit-content;
+    align-items: center;
     gap: 50px;
   }
   h3 {
@@ -261,19 +262,21 @@ p {
     justify-content: center;
     display: flex;
     width: 100%;
+    gap: 5px;
   }
   .text {
     padding: 0px;
     padding-bottom: 30px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    border-right: 1px solid red;
+    transform: translateX(-20px);
   }
   h2 {
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 80%;
   }
   h2, p {
     text-align: center;

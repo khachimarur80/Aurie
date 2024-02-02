@@ -51,4 +51,9 @@ export default {
   pointer-events: auto;
   opacity: 1;
 }
+@media only screen and (max-width: 560px) {
+  #gototop {
+    transform: translateX(-30px);
+  }
+}
 </style>

@@ -4,7 +4,7 @@
       <h1>
         Contacto
       </h1>
-      <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;">
+      <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;" class="form-img-container">
         <form class="contact-form" id="contact-form" @submit="submitForm(event)" ref="contactForm">
         <div class="form-row">
           <label for="from_name">Nombre:</label>
@@ -262,6 +262,13 @@ export default {
     }
     img {
       display: none;
+    }
+    #contacto {
+      transform: translateX(-20px);
+    }
+    .form-img-container {
+      width: 90%;
+      align-items: center;
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {

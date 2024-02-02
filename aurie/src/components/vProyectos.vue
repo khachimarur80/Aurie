@@ -196,13 +196,16 @@ h2 {
     align-items: center;
   }
   .project {
-    width: calc(100% - 20px);
+    width: calc(100% + 20px);
     paddign: 0px;
     margin: 0px;
   }
   .project-info-contents {
     padding-top: 15px;
     padding-bottom: 15px;
+  }
+  #proyectos {
+    transform: translateX(-20px) !important;
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 800px) {

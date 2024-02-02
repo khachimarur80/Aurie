@@ -188,7 +188,7 @@ export default {
 <style>
   #home {
     height: calc(100vh);
-    width: 100%;
+    width: 100h !important;
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
