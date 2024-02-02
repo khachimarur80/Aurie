@@ -16,7 +16,7 @@
             <div class="face">comunicación.</div>
             <div class="face">soluciones.</div>
           </div>
-          <img :src="require('@/assets/gifs/'+current+'.gif')" id="gif" :alt="'gif animado de ' + current"/>
+          <img :src="require('@/assets/gifs/'+current+'.gif')" id="gif" :alt="'gif animado de ' + current" style="aspect-ratio: 3/2 !important;"/>
         </div>
       </div>
       <div class="hero-image">
