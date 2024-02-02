@@ -54,7 +54,20 @@ export default {
       }, 250)
 
     }, 3000)
-  }
+  },
+  head() {
+    return {
+      link: [
+        {
+          rel: "preload",
+          fetchpriority: "high",
+          as: "image",
+          href: require("@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.webp"),
+          type: "image/webp"
+        }
+      ],
+    }
+  },
 }
 </script>
 
