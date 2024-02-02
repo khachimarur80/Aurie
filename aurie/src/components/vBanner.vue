@@ -20,7 +20,8 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.webp" width="100%" alt="Ilustracion misión empresarial"/>
+        <img class="big" src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.webp" width="100%" alt="Ilustracion misión empresarial"/>
+        <img class="small" src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342-small.webp" width="100%" alt="Ilustracion misión empresarial"/>
       </div>
       <div id="blob1" class="blob">
       </div>
@@ -285,9 +286,21 @@ p {
     padding-top: 60px;
     height: fit-content;
   }
+  .big {
+    display: none;
+    display: block;
+  }
 }
-
+.small {
+  display: none;
+}
 @media only screen and (min-width: 601px) and (max-width: 900px) {
+  .big {
+    display: none;
+  }
+  .small {
+    display: block;
+  }
   .banner-contents {
     flex-direction: column;
     height: fit-content;
