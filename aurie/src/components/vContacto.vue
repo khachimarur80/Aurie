@@ -57,7 +57,7 @@
           </button>
         </div>
         </form>
-        <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.webp" width="40%" alt="Mujer atendiendo a cliente"/>
+        <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.webp" alt="Mujer atendiendo a cliente"/>
       </div>
     </div>
   </div>
@@ -144,6 +144,9 @@ export default {
 };
 </script>
 <style scoped>
+  img {
+    max-width: 40%;
+  }
   #contacto {
     margin-top: -5px;
     margin-bottom: 50px;
@@ -243,6 +246,7 @@ export default {
   textarea {
     height: 100px;
   }
+
   @media only screen and (max-width: 767px) {
     h1 {
       font-size: 26px;

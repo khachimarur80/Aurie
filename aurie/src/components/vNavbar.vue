@@ -30,7 +30,7 @@
     <div :class="['dropdown', showDropdown ? 'show' : '']" v-else>
       <div class="dropdown-toggle">
         <button @click="showDropdown = !showDropdown">
-          <img src="@/assets/icons/menu.svg" height="30px" width="30px"/>
+          <img src="@/assets/icons/menu.svg" height="30px" width="30px" alt="Menu icon"/>
         </button>
       </div>
       <div class="dropdown-items">
