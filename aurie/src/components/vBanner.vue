@@ -288,6 +288,8 @@ p {
   }
   .big {
     display: none;
+  }
+  .small {
     display: block;
   }
 }
