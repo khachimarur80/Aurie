@@ -6,7 +6,7 @@
         <div class="card" id="creatividad">
           <h2><span>Creatividad</span></h2>
           <div class="card-text">
-            <img src="@/assets/icons/creatividad.png" height="40px" alt="Mano con pintura colorida"/>
+            <img src="@/assets/icons/creatividad.webp" height="40px" alt="Mano con pintura colorida"/>
             <hr style="border-top: 1px solid var(--accent)">
             Transformamos ideas en experiencias visuales únicas. Con nuestra creatividad, daremos vida a la identidad digital de tu empresa.
           </div>
@@ -14,7 +14,7 @@
         <div class="card" id="eficiencia">
           <h2><span>Eficiencia</span></h2>
           <div class="card-text">
-            <img src="@/assets/icons/eficiencia.png" height="40px" alt="MacBook en mesa de cafetería"/>
+            <img src="@/assets/icons/eficiencia.webp" height="40px" alt="MacBook en mesa de cafetería"/>
             <hr style="border-top: 1px solid var(--warning)">
             Nos comprometemos a resultados rápidos y eficientes. Cada paso es optimizado para asegurar un viaje sin contratiempos hacia tu presencia digital.
           </div>
@@ -24,7 +24,7 @@
         <div class="card" id="comunicacion">
           <h2><span>Comunicación</span></h2>
           <div class="card-text">
-            <img src="@/assets/icons/comunicacion.png" height="40px" alt="Antenta de satélite"/>
+            <img src="@/assets/icons/comunicacion.webp" height="40px" alt="Antenta de satélite"/>
             <hr style="border-top: 1px solid var(--error)">
             Valoramos la comunicación constante y profesional. Estamos aquí para entender tus necesidades y expectativas, garantizando un proceso claro y transparente.
           </div>
@@ -32,7 +32,7 @@
         <div class="card" id="calidad">
           <h2><span>Calidad</span></h2>
           <div class="card-text">
-            <img src="@/assets/icons/calidad.png" height="40px" alt="Teclado de cerca"/>
+            <img src="@/assets/icons/calidad.webp" height="40px" alt="Teclado de cerca"/>
             <hr style="border-top: 1px solid var(--success)">
             Nuestra promesa es ofrecer trabajos de alta calidad. No comprometemos la excelencia mientras impulsamos tu empresa digitalmente.
           </div>
@@ -172,22 +172,22 @@ hr {
 }
 
 #creatividad {
-  background: url("@/assets/images/creatividad.jpg");
+  background: url("@/assets/images/creatividad.webp");
   background-size: cover;
   background-position: center center;
 }
 #eficiencia {
-  background: url("@/assets/images/eficiencia.jpg");
+  background: url("@/assets/images/eficiencia.webp");
   background-size: cover;
   background-position: center center;
 }
 #comunicacion {
-  background: url("@/assets/images/comunicacion.jpg");
+  background: url("@/assets/images/comunicacion.webp");
   background-size: cover;
   background-position: center center;
 }
 #calidad {
-  background: url("@/assets/images/calidad.jpg");
+  background: url("@/assets/images/calidad.webp");
   background-size: cover;
   background-position: center center;
 }
@@ -233,7 +233,7 @@ h2 {
 }
 
 #creatividad span { 
-  /*background: url("@/assets/images/creatividad.jpg") -20px -20px repeat;
+  /*background: url("@/assets/images/creatividad.webp") -20px -20px repeat;
   background-position: center;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;*/
@@ -241,7 +241,7 @@ h2 {
   color: black;
 }
 #eficiencia span { 
-  /*background: url("@/assets/images/eficiencia.jpg") -20px -20px repeat;
+  /*background: url("@/assets/images/eficiencia.webp") -20px -20px repeat;
   background-position: center;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;*/
@@ -249,7 +249,7 @@ h2 {
   color: black;
 }
 #comunicacion span { 
-  /*background: url("@/assets/images/comunicacion.jpg") -20px -20px repeat;
+  /*background: url("@/assets/images/comunicacion.webp") -20px -20px repeat;
   background-position: center;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;*/
@@ -257,7 +257,7 @@ h2 {
   display:block;
 }
 #calidad span { 
-  /*background: url("@/assets/images/calidad.jpg") -20px -20px repeat;
+  /*background: url("@/assets/images/calidad.webp") -20px -20px repeat;
   background-position: center;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;*/

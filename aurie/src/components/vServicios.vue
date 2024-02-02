@@ -45,7 +45,7 @@ export default {
     projects: [
       {
         name: 'KAwebs',
-        icon: require('@/assets/logos/KAwebs.png'),
+        icon: require('@/assets/logos/KAwebs.webp'),
         services: [
       {
         "name": "Paquete Básico",
@@ -95,7 +95,7 @@ export default {
       },
       {
         name: 'MySetup',
-        icon: require('@/assets/logos/Mysetup.png'),
+        icon: require('@/assets/logos/Mysetup.webp'),
         services: false,
         color: "#7E57C2",
       }

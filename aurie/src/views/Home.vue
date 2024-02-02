@@ -49,8 +49,8 @@ export default {
   data: () => ({
     show: false,
     parallax: {
-      image: require('@/assets/images/parallax.jpg'),
-      lazy: require('@/assets/images/parallax-lazy.jpg')
+      image: require('@/assets/images/parallax.webp'),
+      lazy: require('@/assets/images/parallax-lazy.webp')
     },
     animationFrameId: null,
   }),

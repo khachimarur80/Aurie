@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.png" width="100%" alt="Ilustracion misión empresarial"/>
+        <img src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.webp" width="100%" alt="Ilustracion misión empresarial"/>
       </div>
       <div id="blob1" class="blob">
       </div>

@@ -57,7 +57,7 @@
           </button>
         </div>
         </form>
-        <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.png" width="40%" alt="Mujer atendiendo a cliente"/>
+        <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.webp" width="40%" alt="Mujer atendiendo a cliente"/>
       </div>
     </div>
   </div>

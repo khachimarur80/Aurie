@@ -41,7 +41,7 @@ export default {
         age: 19,
         titulation: ['Microinformatica y Redes', ' Administración y Sistemas Informáticos en Red'],
         languages: ['Español', 'Inglés'],
-        photo: require("@/assets/images/retrato_anton.png"),
+        photo: require("@/assets/images/retrato_anton.webp"),
         portofolio: null,
       },
       {
@@ -50,7 +50,7 @@ export default {
         age: 18,
         titulation: ['Ingeniería Informática UCM'],
         languages: ['Español', 'Inglés'],
-        photo: require("@/assets/images/retrato_kei.png"),
+        photo: require("@/assets/images/retrato_kei.webp"),
         portofolio: "https://kei-portofolio.vercel.app",
       }
     ],
