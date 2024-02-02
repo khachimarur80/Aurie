@@ -161,7 +161,27 @@ export default {
         this.$el.querySelector('.parallax-image-low-res').style.display = 'none';
       });
     }
-  }
+  },
+  head() {
+      return {
+        link: [
+          {
+            rel: "preload",
+            fetchpriority: "high",
+            as: "image",
+            href: this.parallax.image,
+            type: "image/webp"
+          },
+          {
+            rel: "preload",
+            fetchpriority: "high",
+            as: "image",
+            href: this.parallax.lazy,
+            type: "image/webp"
+          },
+        ],
+      }
+  },
 }
 </script>
 

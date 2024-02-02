@@ -48,7 +48,41 @@ export default {
   props: {
   },
   mounted() {
-  }
+  },
+  head() {
+    return {
+      link: [
+        {
+          rel: "preload",
+          fetchpriority: "high",
+          as: "image",
+          href: require('@/assets/images/creatividad.webp'),
+          type: "image/webp"
+        },
+        {
+          rel: "preload",
+          fetchpriority: "high",
+          as: "image",
+          href: require('@/assets/images/eficiencia.webp'),
+          type: "image/webp"
+        },
+        {
+          rel: "preload",
+          fetchpriority: "high",
+          as: "image",
+          href: require('@/assets/images/calidad.webp'),
+          type: "image/webp"
+        },
+        {
+          rel: "preload",
+          fetchpriority: "high",
+          as: "image",
+          href: require('@/assets/images/comunicacion.webp'),
+          type: "image/webp"
+        },
+      ],
+    }
+  },
 }
 </script>
 
