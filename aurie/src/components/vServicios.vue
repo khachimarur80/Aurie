@@ -324,6 +324,9 @@ h1::after {
 }
 
 @media only screen and (max-width: 670px) {
+  .includes {
+    margin-left: 0%;
+  }
   .service {
     max-width: calc(100% - 20px);
     min-width: calc(100% - 20px);
