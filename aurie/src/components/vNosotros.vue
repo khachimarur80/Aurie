@@ -1,6 +1,7 @@
 <template>
   <div id="nosotros">
     <h1>Nosotros</h1>
+    <br>
     <div class="contents">
       <div class="content-row" id="row-1">
         <div class="card" id="creatividad">
@@ -163,38 +164,38 @@ hr {
   bottom: -100px;
   right: -100px;
   box-shadow: 2px 4px 3px 0px #aaa;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--primary);
 }
 .content-row:nth-child(1) .card:nth-child(2) .card-text {
   top: -120px;
   left: -180px;
   box-shadow: -2px 2px 3px 0px #aaa;
-  border: 2px solid var(--warning);
+  border: 2px solid var(--primary);
 }
 .content-row:nth-child(2) .card:nth-child(1) .card-text {
   bottom: -100px;
   right: -100px;
   box-shadow: 2px 4px 3px 0px #aaa;
-  border: 2px solid var(--error);
+  border: 2px solid var(--primary);
 }
 .content-row:nth-child(2) .card:nth-child(2) .card-text {
   top: -100px;
   left: -200px;
   box-shadow: -2px 2px 3px 0px #aaa;
-  border: 2px solid var(--success);
+  border: 2px solid var(--primary);
 }
 
 #creatividad {
-  border: 2px solid var(--accent);
+  border: 2px solid var(--primary);
 }
 #eficiencia {
-  border: 2px solid var(--warning);
+  border: 2px solid var(--primary);
 }
 #comunicacion {
-  border: 2px solid var(--error);
+  border: 2px solid var(--primary);
 }
 #calidad {
-  border: 2px solid var(--success);
+  border: 2px solid var(--primary);
 }
 
 .content-row {
@@ -234,7 +235,7 @@ h2 {
 }
 
 #creatividad h2 {
-  background-color: var(--accent);
+  background-color: var(--primary);
   overflow:hidden;
   display:inline-block; 
   font-weight:bold;
@@ -242,7 +243,7 @@ h2 {
   font-size: 40px;
 }
 #eficiencia h2 {
-  background-color: var(--warning);
+  background-color: var(--primary);
   overflow:hidden;
   display:inline-block; 
   font-weight:bold;
@@ -250,7 +251,7 @@ h2 {
   font-size: 40px;
 }
 #comunicacion h2 {
-  background-color: var(--error);
+  background-color: var(--primary);
   overflow:hidden;
   display:inline-block; 
   font-weight:bold;
@@ -258,7 +259,7 @@ h2 {
   font-size: 40px;
 }
 #calidad h2 {
-  background-color: var(--success);
+  background-color: var(--primary);
   overflow:hidden;
   display:inline-block; 
   font-weight:bold;
