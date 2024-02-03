@@ -23,9 +23,41 @@
         </p>
         </div>
         <div style="flex: 1"></div>
-        <p class="price">
-          {{ service.price }}
+        <p class="show-price" @click="service.showPrice = !service.showPrice">
+          Ver precio
         </p>
+        <div class="price">
+          <table :class="[service.showPrice ? 'show' : '']">
+            <tr>
+                <td>Plan</td>
+                <td>{{ service.price[0] }}</td>
+            </tr>
+            <tr>
+                <td>Plan</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Mantenimiento</td>
+                <td>{{ service.price[1] }}</td>
+            </tr>
+            <tr>
+                <td>PVP final</td>
+                <td>{{ service.price[2] }}</td>
+            </tr>
+            <tr>
+                <td>PVP final + IVA</td>
+                <td>{{ service.price[3] }}</td>
+            </tr>
+            <tr>
+                <td>Bono anual</td>
+                <td>{{ service.price[4] }}</td>
+            </tr>
+            <tr>
+                <td>Bono + IVA</td>
+                <td>{{ service.price[5] }}</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
     <div class="no-services" v-if="selectedProject.name && !selectedProject.services">
@@ -47,50 +79,78 @@ export default {
         name: 'KAwebs',
         icon: require('@/assets/logos/KAwebs.webp'),
         services: [
-      {
-        "name": "Paquete Básico",
-        "description": "Un paquete perfecto para pequeñas empresas o startups que buscan un sitio web profesional a modo informativo.",
-        "price": "Consultar precio",
-        "includes": [
-          "Diseño Moderno y Funcional",
-          "Optimización de rendimiento",
-          "SEO Básico",
-          "Diseño responsivo",
-          "1 cambio al mes",
-          "Certificación SSL"
-        ]
-      },
-      {
-        "name": "Paquete Avanzado",
-        "description": "Ideal para empresas que quieran aumentar sus ventas de manera online, de forma cómoda y sencilla.",
-        "price": "Consultar precio",
-        "includes": [
-          "Diseño Moderno y Funcional",
-          "Optimización de rendimiento",
-          "SEO Avanzado",
-          "Diseño responsivo",
-          "5 cambio al mes",
-          "Certificación SSL",
-          "Página de contacto"
-        ]
-      },
-      {
-        "name": "Paquete Premium",
-        "description": "Personaliza y dale tu estilo profesional a tu página web con nuestro Paquete Premium, una solución para empresas que buscan destacar en la web.",
-        "price": "Consultar precio",
-        "includes": [
-          "Diseño Moderno y Funcional",
-          "Optimización de rendimiento",
-          "SEO Avanzado",
-          "Diseño responsivo",
-          "Cambios ilimitados",
-          "Certificación SSL",
-          "Página de contacto",
-          "Imágenes profesionales",
-          "Soporte prioritario",
-          "Email profesional"
-        ]
-      },
+          {
+            "name": "Paquete Básico",
+            "description": "Un paquete perfecto para pequeñas empresas o startups que buscan un sitio web profesional a modo informativo.",
+            "price": ["185 €", "5 €/mes", "240 €", "290,40 €", "225 € (3 meses gratis)", "272.25 €"],
+            "includes": [
+              "Diseño Moderno y Funcional",
+              "Optimización de rendimiento",
+              "SEO Básico",
+              "Diseño responsivo",
+              "1 cambio al mes",
+              "Certificación SSL"
+            ],
+            "showPrice": false,
+          },
+          {
+            "name": "Paquete Avanzado",
+            "description": "Ideal para empresas que quieran aumentar sus ventas de manera online, de forma cómoda y sencilla.",
+            "price": ["220 €", "8 €/mes", "288 €", "348,48 €", "272 € (2 meses gratis)", "329.12 €"],
+            "includes": [
+              "Diseño Moderno y Funcional",
+              "Optimización de rendimiento",
+              "SEO Avanzado",
+              "Diseño responsivo",
+              "5 cambio al mes",
+              "Certificación SSL",
+              "Formulario de contacto"
+            ],
+            "showPrice": false,
+          },
+          {
+            "name": "Paquete Premium",
+            "description": "Personaliza y dale tu estilo profesional a tu página web con nuestro Paquete Premium, una solución para empresas que buscan destacar en la web.",
+            "price": ["210 €", "10 €/mes", "320 €", "387,20 €", "300 € (2 meses gratis)", "363 €"],
+            "includes": [
+              "Diseño Moderno y Funcional",
+              "Optimización de rendimiento",
+              "SEO Avanzado",
+              "Diseño responsivo",
+              "Cambios ilimitados",
+              "Certificación SSL",
+              "Formulario de contacto",
+              "Imágenes profesionales",
+              "Soporte prioritario",
+              "Email profesional"
+            ],
+            "showPrice": false,
+          },
+          {
+            "name": "Paquete de Desarrollo",
+            "description": "Impulsa tu presencia en línea a nuevos niveles con nuestro Paquete de Desarrollo. Esta solución más personalizada usa todas las herramientas para hacer que tu sitio web destaque y puedas desarrollar tu actividad más eficientemente.",
+            "price": ["600 €", "15 €/mes", "765 €", "925,65 €", "720 € (3 meses gratis)", "871,20 €"],
+            "includes": [
+              "Diseño Moderno y Funcional",
+              "Optimización de rendimiento",
+              "SEO Avanzado",
+              "Diseño responsivo",
+              "Cambios ilimitados",
+              "Certificación SSL",
+              "Formulario de contacto",
+              "Imágenes profesionales",
+              "Soporte prioritario",
+              "Email profesional",
+              "Estadísticas web",
+              "Página de reserva",
+              "Integración de bases de datos",
+              "Implementación de backend",
+              "Plataforma de pago online",
+              "Autenticación de usuarios",
+              "Interfaz de ventas"
+            ],
+            "showPrice": false,
+          },
         ],
         color: "#4285F4",
       },
@@ -112,6 +172,9 @@ export default {
         this.selectedProject = []
       }
     }
+  },
+  mounted() {
+    this.selectedProject = this.projects[0]
   }
 }
 </script>
@@ -163,6 +226,9 @@ h1::after {
   border-radius: 20px;
   padding-top: 15px;
   background: var(--background);
+  min-width: 360px;
+  position: relative;
+  overflow: hidden;
 }
 .description {
   border-bottom: 1px solid var(--primary);
@@ -179,6 +245,7 @@ h1::after {
   align-items: flex-start;
   margin-bottom: 10px;
   gap: 10px;
+  margin-left: 20%;
 }
 .check {
   height: 20px;
@@ -192,13 +259,22 @@ h1::after {
 .includes p {
   max-width: calc(100% - 40px);
 }
-.price {
+.show-price {
   border-radius: 5px;
-  background: var(--primary);
+  color: var(--primary);
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
+  background: var(--background);
+  border: 1px solid var(--primary);
+  transition: background .3s ease-out;
 }
+.show-price:hover {
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
 
 .projects {
   width: 100%;
@@ -281,6 +357,43 @@ h1::after {
     padding: 50px;
   }
 }
+
+table.show {
+  transform: translateY(0px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+table {
+  pointer-events: none;
+  outline: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 80px;
+  left: 5%;
+  width: 90%;
+  background: var(--background);
+  box-shadow: 0px 0px 5px 2px #000;
+  transform: translateY(calc(100% + 20px));
+  opacity: 0;
+  transition: opacity .3s ease-out, transform .3s ease-out;
+}
+td:nth-child(2) {
+  text-align: end;
+}
+td:nth-child(1) {
+  font-weight: bolder;
+  color: #888;
+}
+td {
+  padding: 5px;
+  padding-bottom: 2px;
+}
+tr {
+  border: 1px solid red;
+}
+
 
 @media only screen and (min-width: 671px) and (max-width: 980px) {
   .service {

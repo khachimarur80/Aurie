@@ -97,7 +97,7 @@ h1::after {
   border: 1px solid black;
   border-radius: 10px;
   padding: 20px;
-  max-width: calc(100% - 120px);
+  width: 800px;
   height: 280px;
   min-height: fit-content;
   display: flex;
@@ -186,9 +186,9 @@ h2 {
     padding: 0px;
   }
   .member {
-    width: 100%;
+    width: 280px;
     flex-direction: column;
-    height: 600px;
+    height: 660px;
     align-items: center;
   }
   .members {
@@ -218,7 +218,7 @@ h2 {
 
 @media only screen and (min-width: 561px) and (max-width: 850px) {
   .member {
-    width: fit-content;
+    width: 400px;
     flex-direction: column;
     height: 600px;
     align-items: center;
