@@ -263,9 +263,6 @@ export default {
     img {
       display: none;
     }
-    #contacto {
-      transform: translateX(-20px);
-    }
     .form-img-container {
       width: 90%;
       align-items: center;

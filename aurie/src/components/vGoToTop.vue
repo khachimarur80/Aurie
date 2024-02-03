@@ -53,7 +53,8 @@ export default {
 }
 @media only screen and (max-width: 560px) {
   #gototop {
-    transform: translateX(-30px);
+    bottom: 15px;
+    right: 15px;
   }
 }
 </style>

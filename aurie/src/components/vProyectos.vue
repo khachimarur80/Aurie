@@ -192,7 +192,7 @@ h2 {
   .project-contents {
     width: calc(100%);
     flex-direction: column;
-    height: 500px;
+    height: 600px;
     align-items: center;
   }
   .project {
@@ -200,12 +200,12 @@ h2 {
     paddign: 0px;
     margin: 0px;
   }
+  .project-photo {
+    height: 200px;
+  }
   .project-info-contents {
     padding-top: 15px;
     padding-bottom: 15px;
-  }
-  #proyectos {
-    transform: translateX(-20px) !important;
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 800px) {

@@ -272,8 +272,6 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    border-right: 1px solid red;
-    transform: translateX(-20px);
   }
   h2 {
     width: 80%;

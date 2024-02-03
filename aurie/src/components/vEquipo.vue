@@ -98,8 +98,8 @@ h1::after {
   border-radius: 10px;
   padding: 20px;
   max-width: calc(100% - 120px);
-  height: 250px;
-  aspect-ratio: 20/7  !important;
+  height: 280px;
+  min-height: fit-content;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -184,12 +184,11 @@ h2 {
 @media only screen and (max-width: 560px) {
   #equipo {
     padding: 0px;
-    transform: translateX(-20px);
   }
   .member {
     width: 100%;
     flex-direction: column;
-    height: 570px;
+    height: 600px;
     align-items: center;
   }
   .members {
@@ -217,9 +216,9 @@ h2 {
   }
 }
 
-@media only screen and (min-width: 561px) and (max-width: 800px) {
+@media only screen and (min-width: 561px) and (max-width: 850px) {
   .member {
-    width: 100%;
+    width: fit-content;
     flex-direction: column;
     height: 600px;
     align-items: center;

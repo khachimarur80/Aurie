@@ -391,7 +391,7 @@ h2 {
     position: revert;
     width: calc(100% - 100px);
     max-width: 250px;
-    height: 250px;
+    height: 290px;
     color: var(--text);
   }
   h1 {
@@ -399,7 +399,6 @@ h2 {
   }
   #nosotros {
     padding-top: 0px;
-    transform: translateX(-20px);
   }
   h2 {
     font-size: 30px !important;
@@ -418,6 +417,7 @@ h2 {
     width: calc(100% - 100px);
     max-width: 250px;
     color: var(--text);
+    height: 280x;
   }
   h1 {
     margin-bottom: 50px;
@@ -430,7 +430,7 @@ h2 {
   }
   .card-text {
     width: 200px;
-    height: 220px;
+    height: 300px;
   }
 }
 </style>

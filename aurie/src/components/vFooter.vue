@@ -99,10 +99,4 @@ export default {
   button:active {
     border: 1px solid var(--background-dark);
   }
-
-  @media only screen and (max-width: 560px) {
-    #footer {
-      transform: translateX(-20px);
-    }
-  }
 </style>

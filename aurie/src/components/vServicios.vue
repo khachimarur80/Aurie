@@ -276,9 +276,6 @@ h1::after {
     width: 120px;
     height: 45px;
   }
-  #servicios {
-    transform: translateX(-20px);
-  }
   .no-services {
     padding: 50px;
   }
