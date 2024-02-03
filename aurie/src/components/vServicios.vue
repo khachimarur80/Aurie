@@ -24,7 +24,7 @@
         </div>
         <div style="flex: 1"></div>
         <p class="price">
-          Desde {{ service.price }} €
+          {{ service.price }}
         </p>
       </div>
     </div>
@@ -50,7 +50,7 @@ export default {
       {
         "name": "Paquete Básico",
         "description": "Un paquete perfecto para pequeñas empresas o startups que buscan un sitio web profesional a modo informativo.",
-        "price": "200€ + 7€/mes",
+        "price": "Consultar precio",
         "includes": [
           "Diseño Moderno y Funcional",
           "Optimización de rendimiento",
@@ -63,7 +63,7 @@ export default {
       {
         "name": "Paquete Avanzado",
         "description": "Ideal para empresas que quieran aumentar sus ventas de manera online, de forma cómoda y sencilla.",
-        "price": "260€ + 10€/mes",
+        "price": "Consultar precio",
         "includes": [
           "Diseño Moderno y Funcional",
           "Optimización de rendimiento",
@@ -77,17 +77,18 @@ export default {
       {
         "name": "Paquete Premium",
         "description": "Personaliza y dale tu estilo profesional a tu página web con nuestro Paquete Premium, una solución para empresas que buscan destacar en la web.",
-        "price": "300€ + 12€/mes",
+        "price": "Consultar precio",
         "includes": [
           "Diseño Moderno y Funcional",
           "Optimización de rendimiento",
-          "SEO BAvanzado",
+          "SEO Avanzado",
           "Diseño responsivo",
           "Cambios ilimitados",
           "Certificación SSL",
           "Página de contacto",
           "Imágenes profesionales",
-          "Soporte prioritario"
+          "Soporte prioritario",
+          "Email profesional"
         ]
       },
         ],
