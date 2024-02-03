@@ -93,7 +93,7 @@ export default {
 
 #banner {
   min-height: calc(100vh + 50px);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, .5) 80%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, .5) 80%, rgba(255, 255, 255, 0) 100%);
   display: flex;
   justify-content: center;
   align-items: center;

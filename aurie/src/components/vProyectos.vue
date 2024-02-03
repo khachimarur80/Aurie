@@ -105,7 +105,7 @@ hr {
   justify-content: space-between;
   gap: 20px;
   max-width: calc(100% - 120px);
-  height: 250px;
+  height: 280px;
   aspect-ratio: 20/7  !important;
 }
 .project-photo {
