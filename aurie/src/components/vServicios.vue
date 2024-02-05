@@ -95,7 +95,7 @@ export default {
           },
           {
             "name": "Paquete Avanzado",
-            "description": "Ideal para empresas que quieran aumentar sus ventas de manera online, de forma cómoda y sencilla.",
+            "description": "c",
             "price": ["220 €", "8 €/mes", "288 €", "348,48 €", "272 € (2 meses gratis)", "329.12 €"],
             "includes": [
               "Diseño Moderno y Funcional",
@@ -128,7 +128,7 @@ export default {
           },
           {
             "name": "Paquete de Desarrollo",
-            "description": "Impulsa tu presencia en línea a nuevos niveles con nuestro Paquete de Desarrollo. Esta solución más personalizada usa todas las herramientas para hacer que tu sitio web destaque y puedas desarrollar tu actividad más eficientemente.",
+            "description": "Impulsa tu presencia en línea a gran nivel con nuestro Paquete de Desarrollo. Esta solución más personalizada usa todas las herramientas para hacer que tu sitio web destaque y puedas desarrollar tu actividad más eficientemente.",
             "price": ["600 €", "15 €/mes", "765 €", "925,65 €", "720 € (3 meses gratis)", "871,20 €"],
             "includes": [
               "Diseño Moderno y Funcional",
