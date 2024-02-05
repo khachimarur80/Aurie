@@ -11,19 +11,19 @@
     <div class="spacer">
     </div>
     <div class="navbar-items" v-if="!isSmall">
-      <a class="navbar-item" href="#nosotros">
+      <a class="navbar-item" href="scrollToSection('nosotros')">
         Nosotros
       </a>
-      <a class="navbar-item" href="#proyectos">
+      <a class="navbar-item" href="scrollToSection('proyectos')">
         Proyectos
       </a>
-      <a class="navbar-item" href="#servicios">
+      <a class="navbar-item" href="scrollToSection('servicios')">
         Servicios
       </a>
-      <a class="navbar-item" href="#equipo">
+      <a class="navbar-item" href="scrollToSection('equipo')">
         Equipo
       </a>
-      <a class="navbar-item" href="#contacto">
+      <a class="navbar-item" href="scrollToSection('contacto')">
         Contacto
       </a>
     </div>
@@ -34,19 +34,19 @@
         </button>
       </div>
       <div class="dropdown-items">
-        <a class="dropdown-item" href="#nosotros">
+        <a class="dropdown-item" href="scrollToSection('nosotros')">
           Nosotros
         </a>
-        <a class="dropdown-item" href="#proyectos">
+        <a class="dropdown-item" href="scrollToSection('proyectos')">
           Proyectos
         </a>
-        <a class="dropdown-item" href="#servicios">
+        <a class="dropdown-item" href="scrollToSection('servicios')">
           Servicios
         </a>
-        <a class="dropdown-item" href="#equipo">
+        <a class="dropdown-item" href="scrollToSection('equipo')">
           Equipo
         </a>
-        <a class="dropdown-item" href="#contacto">
+        <a class="dropdown-item" href="scrollToSection('contacto')">
           Contacto
         </a>
       </div>
@@ -68,6 +68,13 @@ export default {
       this.isSmall = parseInt(window.innerWidth) < 800
     })
   },
+  methods: {
+    scrollToSection(item) {
+      let home = document.getElementById('home')
+      let target = document.getElementById(item.toLowerCase())
+      home.scrollTop = target.offsetTop - 100
+    }
+  }
 }
 </script>
 
