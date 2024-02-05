@@ -4,9 +4,16 @@
       class="parallax" 
       ref="parallaxContainer">
 
-      <div :style="{ backgroundImage: 'url(' + parallax.lazy + ')' }" class="parallax-image" loading="lazy"></div>
-
+      <div :style="{ backgroundImage: 'url(' + parallax.lazy + ')' }" class="parallax-image-low-res" loading="lazy"></div>
       <div ref="highResImage" :style="{ backgroundImage: 'url(' + parallax.image + ')' }" class="parallax-image" loading="lazy" style="display: none;"></div>
+
+      <div :style="{ backgroundImage: 'url(' + parallax1.lazy + ')' }" class="parallax-image-low-res1" loading="lazy"></div>
+      <div ref="highResImage1" :style="{ backgroundImage: 'url(' + parallax1.image + ')' }" class="parallax-image" loading="lazy" style="display: none;"></div>
+
+      <div :style="{ backgroundImage: 'url(' + parallax2.lazy + ')' }" class="parallax-image-low-res2" loading="lazy"></div>
+      <div ref="highResImage2" :style="{ backgroundImage: 'url(' + parallax2.image + ')' }" class="parallax-image" loading="lazy" style="display: none;"></div>
+
+
     </div>
 
     <vNavbar/>
@@ -52,6 +59,14 @@ export default {
       image: require('@/assets/images/parallax.webp'),
       lazy: require('@/assets/images/parallax-lazy.webp')
     },
+    parallax1: {
+      image: require('@/assets/images/parallax1.webp'),
+      lazy: require('@/assets/images/parallax1-lazy.webp')
+    },
+    parallax2: {
+      image: require('@/assets/images/parallax2.webp'),
+      lazy: require('@/assets/images/parallax2-lazy.webp')
+    },
     animationFrameId: null,
   }),
   methods: {
@@ -61,7 +76,7 @@ export default {
       if (!this.animationFrameId) {
         this.animationFrameId = requestAnimationFrame(() => {
           const contentScrollTop = this.$refs.pageContents.scrollTop;
-          this.$refs.parallaxContainer.scrollTop = contentScrollTop*.1;
+          this.$refs.parallaxContainer.scrollTop = contentScrollTop*.8;
           this.animationFrameId = null;
         });
       }
@@ -161,6 +176,22 @@ export default {
         this.$el.querySelector('.parallax-image-low-res').style.display = 'none';
       });
     }
+
+    const highResImage1 = this.$refs.highResImage1;
+    if (highResImage1) {
+      highResImage1.addEventListener('load', () => {
+        highResImage1.style.display = 'block';
+        this.$el.querySelector('.parallax-image-low-res1').style.display = 'none';
+      });
+    }
+
+    const highResImage2 = this.$refs.highResImage2;
+    if (highResImage2) {
+      highResImage2.addEventListener('load', () => {
+        highResImage2.style.display = 'block';
+        this.$el.querySelector('.parallax-image-low-res2').style.display = 'none';
+      });
+    }
   },
   head() {
       return {
@@ -240,9 +271,19 @@ export default {
     z-index: -1;
     filter: brightness(1.05);
   }
-  .parallax-image {
-    height: 1100px;
+  .parallax-image, .parallax-image-low-res {
     background-size: cover;
     background-position: 50% 50%;
   }
+  .parallax-image:nth-child(1), .parallax-image:nth-child(1) {
+    height: 2450px;
+  }
+  .parallax-image:nth-child(2), .parallax-image-low-res:nth-child(2) {
+    height: 2400px;
+    margin-top: -100px;
+  }
+  .parallax-image:nth-child(3), .parallax-image-low-res:nth-child(3) {
+    height: 1200px;
+  }
+
 </style>

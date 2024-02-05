@@ -66,11 +66,11 @@ h1 {
   margin-top: 15px;
   margin-bottom: 50px;
   position: relative;
-  color: var(--background);
+  color: var(--text);
 }
 h1::after {
   content: '';
-  background: var(--background);
+  background: var(--text);
   height: 3px;
   bottom: -10px;
   left: 50%;
@@ -82,6 +82,7 @@ h1::after {
 #equipo {
   padding: 20px;
   margin-top: -5px;
+  background: var(--background);
 }
 .members {
   display: flex;
@@ -238,14 +239,17 @@ h2 {
 
 #CEO {
   transform: translateX(-100%);
+  opacity: 0;
 }
 #CTO {
   transform: translateX(100%);
+  opacity: 1;
 }
 #CEO, #CTO {
-  transition: transform .5s ease-out;
+  transition: transform .5s ease-out, opacity .3s ease-out;
 }
 #CEO.show, #CTO.show {
   transform: translateX(0px);
+  opacity: 1;
 }
 </style>

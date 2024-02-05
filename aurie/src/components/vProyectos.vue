@@ -62,11 +62,11 @@ h1 {
   text-align: center;
   margin-bottom: 80px;
   position: relative;
-  color: var(--background);
+  color: var(--text);
 }
 h1::after {
   content: '';
-  background: var(--background);
+  background: var(--text);
   height: 3px;
   bottom: -10px;
   left: 50%;
@@ -80,6 +80,9 @@ hr {
 #proyectos {
   margin-top: -5px;
   width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: var(--background);
 }
 .projects {
   display: flex;

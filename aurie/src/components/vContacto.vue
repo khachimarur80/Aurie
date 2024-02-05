@@ -5,59 +5,68 @@
         Contacto
       </h1>
       <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;" class="form-img-container">
-        <form class="contact-form" id="contact-form" @submit="submitForm(event)" ref="contactForm">
-        <div class="form-row">
-          <label for="from_name">Nombre:</label>
-          <input
-            type="text"
-            v-model="formData.from_name"
-            required
-            :rules="nameRules"
-            class="outlined-input"
-            name="from_name"
-            id="from_name"
-            placeholder="Introduce tu nombre ..."
-          />
-        </div>
-        <div class="form-row">
-          <label for="user_email">Email:</label>
-          <input
-            type="email"
-            v-model="formData.user_email"
-            required
-            :rules="emailRules"
-            class="outlined-input"
-            name="user_email"
-            id="user_email"
-            placeholder="Introduce tu email ..."
-          />
-        </div>
-        <div class="form-row">
-          <label for="message">Mensaje:</label>
-          <textarea
-            v-model="formData.message"
-            required
-            :rules="messageRules"
-            class="outlined-textarea"
-            noresize
-            name="message"
-            id="message"
-            placeholder="Introduce tu mensaje ..."
-          ></textarea>
-        </div>
-        <div style="display: flex; width: 100%">
-          <div style="flex-grow: 1;"></div>
-          <button
-            type="submit"
-            :style="{'background' : sendColor}"
-            id="send"
-            :disabled="(sendText!='Enviar') || (!validFields)"
-          >
-            {{ sendText }}
-          </button>
-        </div>
+        <form class="contact-form" id="contact-form" @submit="submitForm" ref="contactForm">
+          <div class="form-contents">
+            <div class="form-row">
+              <label for="from_name">Nombre:</label>
+              <input 
+                type="text" 
+                id="from_name" 
+                name="from_name" 
+                required 
+                aria-describedby="username-error" 
+                placeholder="Introduce tu nombre" 
+                v-model="formData.from_name" 
+                @focusout="validateField('from_name')" 
+                @keyup="validateField('from_name')">
+              <div id="name-error" class="error-message" aria-live="polite">{{ errors.from_name }}</div>
+            </div>
+            <div class="form-row">
+              <label for="user_email">Email:</label>
+              <input 
+                type="email" 
+                id="user_email" 
+                name="user_email" 
+                required 
+                aria-describedby="email-error" 
+                placeholder="Introduce tu email" 
+                v-model="formData.user_email" 
+                @focusout="validateField('user_email')" 
+                @keyup="validateField('user_email')">
+              <div id="email-error" class="error-message" aria-live="polite">{{ errors.user_email }}</div>
+            </div>
+            <div class="form-row">
+              <label for="message">Mensaje:</label>
+              <textarea
+                type="text" 
+                id="message" 
+                name="message" 
+                required 
+                aria-describedby="message-error" 
+                placeholder="Introduce tu mensaje" 
+                v-model="formData.message" 
+                @focusout="validateField('message')" 
+                @keyup="validateField('message')"></textarea>
+              <div id="message-error" class="error-message" aria-live="polite">{{ errors.message }}</div>
+            </div>
+            <div style="display: flex; width: 100%">
+              <div style="flex-grow: 1;"></div>
+              <button
+                type="submit"
+                :style="{'--color' : sendColor}"
+                id="send"
+                tabindex="-1" 
+                :disabled="!validForm"
+              >
+                <span v-if="!sending">{{ sendText }}</span>
+                <span class="loader" v-else></span>
+              </button>
+            </div>
+          </div>
+          <div class="contact-image">
+            <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.webp" alt="Mujer atendiendo a cliente"/>
+          </div>
         </form>
-        <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.webp" alt="Mujer atendiendo a cliente"/>
       </div>
     </div>
   </div>
@@ -69,18 +78,41 @@ import emailjs from 'emailjs-com';
 export default {
   name: 'ContactForm',
 
+  data: () => ({
+    validForm: false,
+    formData: {
+      from_name: '',
+      user_email: '',
+      message: '',
+    },    
+    errors: {
+      from_name: '',
+      user_email: '',
+      message: '',
+    },
+    sending: false,
+    sendText: 'Enviar',
+    sendColor: 'var(--primary)',
+  }),
+
   methods: {
     resetForm() {
       this.$refs.contactForm.reset();
+      this.formData = {
+        from_name: '',
+        user_email: '',
+        message: '',
+      };
     },
-    submitForm() {
+    submitForm(event) {
+      event.preventDefault()
+      this.validForm = false
       this.sending = true
       const vm = this
       emailjs.init('Ifjg_oR_H0mMlRnTI')
 
       emailjs.sendForm("service_p4b392o", "template_wokpaeh", '#contact-form')
       .then(function () {
-        document.getElementById('contact-form').reset();
         vm.sendColor = 'var(--success)'
         vm.sendText = 'Enviado!'
 
@@ -92,61 +124,81 @@ export default {
 
         vm.sending = false
       })
-      .catch(function (error) {
-        document.getElementById('contact-form').reset();
+      .catch(function () {
         vm.sendColor = 'var(--error)'
         vm.sendText = 'Error'
 
         setTimeout(()=>{
+          vm.sendColor = 'var(--primary)'
           vm.sendText = 'Enviar'
           vm.resetForm();
         }, 3000)
 
         vm.sending = false
-        console.error("Email sending failed:", error);
       });
     },
-  },
+    validateAllFields() {
+      let valid = true
 
-  data: () => ({
-    formData: {
-      from_name: '',
-      user_email: '',
-      message: '',
+      if (!this.formData.user_email.trim()) {
+        valid = false
+      } 
+      else if (!/\S+@\S+\.\S+/.test(this.formData.user_email)) {
+        valid = false
+      } 
+      if (!this.formData.from_name.trim()) {
+        valid = false
+      } 
+      if (!this.formData.message.trim()) {
+        valid = false
+      } 
+
+      return valid
     },
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 50) || 'Name must be less than 50 characters',
-    ],
-    emailRules: [
-      v => !!v || 'Email is required',
-      v => /.+@.+\..+/.test(v) || 'Email must be valid',
-    ],
-    messageRules: [
-      v => !!v || 'Message is required',
-      v => (v && v.length <= 500) || 'Message must be less than 500 characters',
-    ],
-    sending: false,
-    sendText: 'Enviar',
-    sendColor: null,
-  }),
+    validateField(field) {
+      let fields = ['user_email', 'from_name', 'message']
 
-  computed: {
-    validFields() {
-      const isNameValid = this.nameRules.every(rule => rule(this.formData.from_name) === true);
-      const isEmailValid = this.emailRules.every(rule => rule(this.formData.user_email) === true);
-      const isMessageValid = this.messageRules.every(rule => rule(this.formData.message) === true);
+      switch (fields.indexOf(field)) {
+        case 0:
+          if (!this.formData.user_email.trim()) {
+            this.errors.email = 'Introduce tu email!';
+          } 
+          else if (!/\S+@\S+\.\S+/.test(this.formData.user_email)) {
+            this.errors.user_email = 'Email inválido!';
+          } 
+          else {
+            this.errors.user_email = '';
+          }
+          break;
+        case 1:
+          if (!this.formData.from_name.trim()) {
+            this.errors.from_name = 'Introduce tu  nombre!';
+          } 
+          else {
+            this.errors.from_name = '';
+          }
+          break;
+        case 2:
+          if (!this.formData.message.trim()) {
+            this.errors.message = 'Escribe tu mensaje!';
+          } 
+          else {
+            this.errors.message = '';
+          }
+          break;
+      }
 
-      return isNameValid && isEmailValid && isMessageValid;
-    }
-  }
+      this.validForm = this.validateAllFields()
+
+      if (this.validForm) {
+        this.sendColor = "var(--accent)"
+      }
+    },
+  },
 
 };
 </script>
 <style scoped>
-  img {
-    max-width: 40%;
-  }
   #contacto {
     margin-top: -5px;
     margin-bottom: 50px;
@@ -154,10 +206,13 @@ export default {
   textarea, input {
     background: white;
     color: var(--text);
-    border: 1px solid #333;
+    border: 1px solid #555;
     outline: none;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    background: transparent;
+    margin-top: -30px;
   }
   textarea:focus, input:focus {
     outline: 1px solid var(--primary);
@@ -167,17 +222,34 @@ export default {
   }
   .contact-form {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom right, rgba(255, 200, 200) 50%, rgba(255, 255, 255) 100%);
+    padding: 30px;
+    border-radius: 10px;
+    outline: 1px solid var(--primary);
+    box-shadow: 2px 2px 6px 0px #777;
+    max-height: 400px;
+  }
+  .contact-image {
+    height: 400px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  img {
+    height: 100%;
+  }
+  .form-contents {
+    display: flex;
     justify-content: center;
     align-items: center;
     color: var(--text);
     height: fit-content;
     width: fit-content;
     flex-direction: column;
-    background: var(--background);
-    padding: 30px;
-    border-radius: 10px;
-    outline: 1px solid var(--primary);
-    box-shadow: 2px 2px 6px 0px #777;
   }
   .form-row {
     width: 100%;
@@ -190,13 +262,16 @@ export default {
 
 
   #send {
-    height: 30px;
-    width: 80px;
-    font-size: 15px;
+    cursor: pointer;
+    background: var(--color);
+    padding: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 8px;
     border: none;
-    border-radius: 5px;
-    filter: brightness(1);
-    background: var(--primary);
+    width: 80px;
+    height: 35px;
+    color: white;
   }
 
   #send:not([disabled]) {
@@ -328,5 +403,53 @@ export default {
     input, textarea {
       width: 500px;
     }
+  }
+
+  .error-message {
+    color: var(--error);
+    font-size: 12px;
+    margin: 0px;
+    margin-top: -15px;
+    margin-bottom: -10px;
+    width: 100%;
+    height: 24px;
+    font-weight: bold;
+  }
+  #send[disabled] {
+    cursor: not-allowed;
+  }
+
+  .loader {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+
+  label {
+    transform: translateX(30px);
+    font-size: 13px;
+    width: fit-content;
+    padding-left: 10px;
+    color: #555;
+    position: relative;
+  }
+  label::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(255, 200, 200);
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    left: 6px;
+    transform: translateY(calc(-50%));
   }
 </style>

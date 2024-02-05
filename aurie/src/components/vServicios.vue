@@ -95,7 +95,7 @@ export default {
           },
           {
             "name": "Paquete Avanzado",
-            "description": "c",
+            "description": "Ideal para empresas que quieran aumentar sus ventas de manera online, de forma cómoda y sencilla.",
             "price": ["220 €", "8 €/mes", "288 €", "348,48 €", "272 € (2 meses gratis)", "329.12 €"],
             "includes": [
               "Diseño Moderno y Funcional",

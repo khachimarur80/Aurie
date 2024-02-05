@@ -304,11 +304,11 @@ h2 {
 }
 
 #creatividad {
-  transform: rotate(-15deg) translate(-200px, 40px);
+  transform: translate(-200px, 40px);
   transition: transform .3s ease-in-out;
 }
 #eficiencia {
-  transform: rotate(15deg) translate(200px, 40px);
+  transform: translate(200px, 40px);
   transition: transform .3s ease-in-out;
 }
 #row-1 {
@@ -319,7 +319,7 @@ h2 {
   transition: opacity .6s ease-in-out;
 }
 #row-1 .card-text {
-  opacity: 0;
+  opacity: 1;
   transition: opacity .6s ease-in-out;
 }
 
@@ -338,11 +338,11 @@ h2 {
 
 
 #comunicacion {
-  transform: rotate(-15deg) translate(-200px, 40px);
+  transform: translate(-200px, 40px);
   transition: transform .3s ease-in-out;
 }
 #calidad {
-  transform: rotate(15deg) translate(200px, 40px);
+  transform: translate(200px, 40px);
   transition: transform .3s ease-in-out;
 }
 #row-2 {
@@ -353,7 +353,7 @@ h2 {
   transition: opacity .6s ease-in-out;
 }
 #row-2 .card-text {
-  opacity: 0;
+  opacity: 1;
   transition: opacity .6s ease-in-out;
 }
 
@@ -423,15 +423,21 @@ h2 {
   h1 {
     margin-bottom: 50px;
   }
+  h2 {
+    font-size: 33px !important;
+  }
 }
 @media only screen and (min-width: 1001px) and (max-width: 1200px) {
+  h2 {
+    font-size: 36px !important;
+  }
   .card {
     height: 450px;
     width: 330px;
   }
   .card-text {
-    width: 200px;
-    height: 300px;
+    width: 230px;
+    height: 250px;
   }
 }
 </style>
