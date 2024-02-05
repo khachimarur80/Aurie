@@ -11,19 +11,19 @@
     <div class="spacer">
     </div>
     <div class="navbar-items" v-if="!isSmall">
-      <a class="navbar-item" href="scrollToSection('nosotros')">
+      <a class="navbar-item" @click="scrollToSection('nosotros')">
         Nosotros
       </a>
-      <a class="navbar-item" href="scrollToSection('proyectos')">
+      <a class="navbar-item" @click="scrollToSection('proyectos')">
         Proyectos
       </a>
-      <a class="navbar-item" href="scrollToSection('servicios')">
+      <a class="navbar-item" @click="scrollToSection('servicios')">
         Servicios
       </a>
-      <a class="navbar-item" href="scrollToSection('equipo')">
+      <a class="navbar-item" @click="scrollToSection('equipo')">
         Equipo
       </a>
-      <a class="navbar-item" href="scrollToSection('contacto')">
+      <a class="navbar-item" @click="scrollToSection('contacto')">
         Contacto
       </a>
     </div>
