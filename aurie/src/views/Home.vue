@@ -7,11 +7,11 @@
       <div :style="{ backgroundImage: 'url(' + parallax.lazy + ')' }" class="parallax-image" ref="lowResImage"></div>
       <div ref="highResImage" :style="{ backgroundImage: 'url(' + parallax.image + ')' }" class="parallax-image" loading="lazy"></div>
 
-      <div :style="{ backgroundImage: 'url(' + parallax1.lazy + ')' }" class="parallax-image" ref="lowResImage1"></div>
+      <!--<div :style="{ backgroundImage: 'url(' + parallax1.lazy + ')' }" class="parallax-image" ref="lowResImage1"></div>
      <div ref="highResImage1" :style="{ backgroundImage: 'url(' + parallax1.image + ')' }" class="parallax-image" loading="lazy"></div>
 
       <div :style="{ backgroundImage: 'url(' + parallax2.lazy + ')' }" class="parallax-image" ref="lowResImage2"></div>
-      <div ref="highResImage2" :style="{ backgroundImage: 'url(' + parallax2.image + ')' }" class="parallax-image" loading="lazy"></div>
+      <div ref="highResImage2" :style="{ backgroundImage: 'url(' + parallax2.image + ')' }" class="parallax-image" loading="lazy"></div>-->
 
 
     </div>
@@ -177,7 +177,7 @@ export default {
       }, 1000);
     }
 
-    const highResImage1 = this.$refs.highResImage1;
+    /*const highResImage1 = this.$refs.highResImage1;
     if (highResImage1) {
       setTimeout(() => {
         highResImage1.style.display = 'block';
@@ -191,7 +191,7 @@ export default {
         highResImage2.style.display = 'block';
         this.$refs.lowResImage2.style.display = 'none';
       }, 1000);
-    }
+    }*/
   },
   head() {
       return {
