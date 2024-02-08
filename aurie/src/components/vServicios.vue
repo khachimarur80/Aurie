@@ -33,10 +33,6 @@
                 <td>{{ service.price[0] }}</td>
             </tr>
             <tr>
-                <td>Plan</td>
-                <td></td>
-            </tr>
-            <tr>
                 <td>Mantenimiento</td>
                 <td>{{ service.price[1] }}</td>
             </tr>
