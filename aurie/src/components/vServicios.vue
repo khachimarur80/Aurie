@@ -98,6 +98,7 @@ export default {
               "Optimización de rendimiento",
               "SEO Avanzado",
               "Diseño responsivo",
+              "Redes Sociales",
               "5 cambio al mes",
               "Certificación SSL",
               "Formulario de contacto"
@@ -113,6 +114,7 @@ export default {
               "Optimización de rendimiento",
               "SEO Avanzado",
               "Diseño responsivo",
+              "Redes Sociales",
               "Cambios ilimitados",
               "Certificación SSL",
               "Formulario de contacto",
@@ -131,6 +133,7 @@ export default {
               "Optimización de rendimiento",
               "SEO Avanzado",
               "Diseño responsivo",
+              "Redes Sociales",
               "Cambios ilimitados",
               "Certificación SSL",
               "Formulario de contacto",
