@@ -377,6 +377,9 @@ h2 {
   #row-2 h2, #row-1 h2 {
     opacity: 1;
   }
+  #row-2, #row-1 {
+    opacity: 1;
+  }
  .content-row {
     display: flex;
     justify-content: center;
