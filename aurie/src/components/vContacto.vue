@@ -333,7 +333,7 @@ export default {
     }
     input, textarea {
       max-width: 100%;
-      width: 300px;
+      width: 220px;
     }
     img {
       display: none;

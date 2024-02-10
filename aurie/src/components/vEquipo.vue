@@ -185,6 +185,7 @@ h2 {
 @media only screen and (max-width: 560px) {
   #equipo {
     padding: 0px;
+    padding-bottom: 20px;
   }
   .member {
     width: 280px;

@@ -371,6 +371,12 @@ h2 {
 }
 
 @media only screen and (max-width: 900px) {
+  #comunicacion, #calidad, #eficiencia, #creatividad {
+    transform: none !important;
+  }
+  #row-2 h2, #row-1 h2 {
+    opacity: 1;
+  }
  .content-row {
     display: flex;
     justify-content: center;
@@ -388,6 +394,7 @@ h2 {
     flex-direction: column;
     justify-content: space-around;
   }
+
   .card-text {
     position: revert;
     width: calc(100% - 100px);
