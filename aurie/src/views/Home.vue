@@ -4,8 +4,8 @@
       class="parallax" 
       ref="parallaxContainer">
 
-      <div :style="{ backgroundImage: 'url(' + parallax.lazy + ')' }" class="parallax-image" ref="lowResImage"></div>
-      <div ref="highResImage" :style="{ backgroundImage: 'url(' + parallax.image + ')' }" class="parallax-image" loading="lazy"></div>
+      <!--<div :style="{ backgroundImage: 'url(' + parallax.lazy + ')' }" class="parallax-image" ref="lowResImage"></div>
+      <div ref="highResImage" :style="{ backgroundImage: 'url(' + parallax.image + ')' }" class="parallax-image" loading="lazy"></div>-->
 
       <!--<div :style="{ backgroundImage: 'url(' + parallax1.lazy + ')' }" class="parallax-image" ref="lowResImage1"></div>
      <div ref="highResImage1" :style="{ backgroundImage: 'url(' + parallax1.image + ')' }" class="parallax-image" loading="lazy"></div>
@@ -169,13 +169,13 @@ export default {
     }
   },
   mounted() {
-    const highResImage = this.$refs.highResImage;
+    /*const highResImage = this.$refs.highResImage;
     if (highResImage) {
       setTimeout(() => {
         highResImage.style.display = 'block';
         this.$refs.lowResImage.style.display = 'none';
       }, 1000);
-    }
+    }*/
 
     /*const highResImage1 = this.$refs.highResImage1;
     if (highResImage1) {
