@@ -146,25 +146,23 @@ hr {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  box-shadow: 1px 2px 3px 0px #444;
 }
 #creatividad {
   background: linear-gradient(to bottom left, var(--background) 0%, rgba(66, 133, 244, 0.8) 100%);
 }
 #eficiencia {
   background: linear-gradient(to bottom left, var(--background) 0%, rgba(165, 119, 196, 0.8) 100%);
-  flex-direction: row-reverse;
 }
 #comunicacion {
   background: linear-gradient(to bottom right, var(--background) 0%, rgba(15, 157, 88, 0.8) 100%);
+  flex-direction: row-reverse;
 }
 #calidad {
    background: linear-gradient(to bottom right, var(--background) 0%, rgba(219, 68, 55, 0.8) 100%);
   flex-direction: row-reverse;
 }
 
-.card:nth-child(2n+1) {
-  flex-direction: row-reverse;
-}
 .card-text {
   width: 300px;
   height: 100%;

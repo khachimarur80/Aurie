@@ -4,7 +4,7 @@
       <div class="text">
         <h2>Aurie, tu solución digital</h2>
         <p>
-          En Aurie te ofrecemos soluciones y productos en todas las áreas de la tecnología.
+          En Aurie te ofrecemos servicios y productos en todas las áreas de la tecnología.
         </p>
         <div class="text-row">
           <h3>

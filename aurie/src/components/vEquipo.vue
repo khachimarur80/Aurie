@@ -104,6 +104,10 @@ h1::after {
   color: var(--text);
   background: var(--background);
   box-shadow: 1px 1px 3px 0px #777;
+  transition: transform .3s ease-out;
+}
+.member:hover {
+  transform: scale(1.01);
 }
 .member-photo {
   height: 100%;

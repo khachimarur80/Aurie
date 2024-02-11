@@ -51,7 +51,7 @@ export default {
     initializeBlobs() {
       let height = document.getElementById('footer').getBoundingClientRect().top;
       let width = document.body.getBoundingClientRect().width;
-      for (let i = 0; i < Math.floor(height / 700); i++) {
+      for (let i = 0; i < Math.floor(height / 400); i++) {
           if (i % 2 == 0) {
               this.blobs.push({
                   top: i * 500 + Math.floor(Math.random() * 100) - 50,
