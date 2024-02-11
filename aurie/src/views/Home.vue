@@ -1,30 +1,15 @@
 <template>
   <div id="home" @scroll="handleScroll" ref="pageContents">
-    <div 
-      class="parallax" 
-      ref="parallaxContainer">
-
-      <!--<div :style="{ backgroundImage: 'url(' + parallax.lazy + ')' }" class="parallax-image" ref="lowResImage"></div>
-      <div ref="highResImage" :style="{ backgroundImage: 'url(' + parallax.image + ')' }" class="parallax-image" loading="lazy"></div>-->
-
-      <!--<div :style="{ backgroundImage: 'url(' + parallax1.lazy + ')' }" class="parallax-image" ref="lowResImage1"></div>
-     <div ref="highResImage1" :style="{ backgroundImage: 'url(' + parallax1.image + ')' }" class="parallax-image" loading="lazy"></div>
-
-      <div :style="{ backgroundImage: 'url(' + parallax2.lazy + ')' }" class="parallax-image" ref="lowResImage2"></div>
-      <div ref="highResImage2" :style="{ backgroundImage: 'url(' + parallax2.image + ')' }" class="parallax-image" loading="lazy"></div>-->
-
-
+    <div class="blob" v-for="(blob, i) in blobs" :style="{'top':blob.top+'px', 'left':blob.left+'px'}" :key="i">
     </div>
-
     <vNavbar/>
     <vBanner/>
     <vNosotros/>
-    <vProyectos/>
     <vServicios/>
+    <vProyectos/>
     <vEquipo/>
     <vContacto/>
     <vFooter/>
-
     <vGoToTop :show="show"/>
   </div>
 </template>
@@ -55,196 +40,64 @@ export default {
   },
   data: () => ({
     show: false,
-    parallax: {
-      image: require('@/assets/images/parallax.webp'),
-      lazy: require('@/assets/images/parallax-lazy.webp')
-    },
-    parallax1: {
-      image: require('@/assets/images/parallax1.webp'),
-      lazy: require('@/assets/images/parallax1-lazy.webp')
-    },
-    parallax2: {
-      image: require('@/assets/images/parallax2.webp'),
-      lazy: require('@/assets/images/parallax2-lazy.webp')
-    },
     animationFrameId: null,
+    blobs: [],
+    speed: 20,
   }),
   methods: {
     handleScroll() {
       this.show = parseInt(document.getElementById("home").scrollTop) > 300
-
-      if (!this.animationFrameId) {
-        this.animationFrameId = requestAnimationFrame(() => {
-          const contentScrollTop = this.$refs.pageContents.scrollTop;
-          this.$refs.parallaxContainer.scrollTop = contentScrollTop*.8;
-          this.animationFrameId = null;
-        });
+    },
+    initializeBlobs() {
+      let height = document.getElementById('footer').getBoundingClientRect().top;
+      let width = document.body.getBoundingClientRect().width;
+      for (let i = 0; i < Math.floor(height / 700); i++) {
+          if (i % 2 == 0) {
+              this.blobs.push({
+                  top: i * 500 + Math.floor(Math.random() * 100) - 50,
+                  left: Math.floor(Math.random() * -width / 2) + width / 4
+              });
+          } else {
+              this.blobs.push({
+                  top: i * 500 + Math.floor(Math.random() * 100) - 50,
+                  left: Math.floor(Math.random() * -width / 2) + width / 4 + width
+              });
+          }
       }
+    },
+    updateBlobPosition() {
+      let height = document.getElementById('footer').getBoundingClientRect().top;
+      let width = document.body.getBoundingClientRect().width;
 
-      let row1 = document.getElementById('row-1')
-      let row2 = document.getElementById('row-2')
-      let mysetup = document.getElementById('MySetup')
-      let kawebs = document.getElementById('KAwebs')
-      let cto = document.getElementById('CTO')
-      let ceo = document.getElementById('CEO')
+      this.blobs.forEach(blob => {
+          blob.top += (Math.random() - 0.5) * this.speed;
+          blob.left += (Math.random() - 0.5) * this.speed;
 
-      if (row1) {
-        const rect = row1.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          blob.top = Math.max(0, Math.min(height - 100, blob.top));
+          blob.left = Math.max(0, Math.min(width - 100, blob.left));
+      });
 
-        const isFrameInViewport = rect.top >= -rect.height/2 && rect.bottom <= windowHeight + rect.height/2
-
-        if (isFrameInViewport) {
-          row1.classList.add('show')
-        }
-        else {
-          row1.classList.remove('show')
-        }
-      }
-      if (row2) {
-        const rect = row2.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-        const isFrameInViewport = rect.top >= -rect.height/1.5 && rect.bottom <= windowHeight + rect.height/1.5
-
-        if (isFrameInViewport) {
-          row2.classList.add('show')
-        }
-        else {
-          row2.classList.remove('show')
-        }
-      }
-      if (mysetup) {
-        const rect = mysetup.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-        const isFrameInViewport = rect.top >= -rect.height/1.5 && rect.bottom <= windowHeight + rect.height/1.5
-
-        if (isFrameInViewport) {
-          mysetup.classList.add('show')
-        }
-        else {
-          mysetup.classList.remove('show')
-        }
-      }
-      if (kawebs) {
-        const rect = kawebs.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-        const isFrameInViewport = rect.top >= -rect.height/2 && rect.bottom <= windowHeight + rect.height/2
-
-        if (isFrameInViewport) {
-          kawebs.classList.add('show')
-        }
-        else {
-          kawebs.classList.remove('show')
-        }
-      }
-      if (ceo) {
-        const rect = ceo.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-        const isFrameInViewport = rect.top >= -rect.height/1.5 && rect.bottom <= windowHeight + rect.height/1.5
-
-        if (isFrameInViewport) {
-          ceo.classList.add('show')
-        }
-        else {
-          ceo.classList.remove('show')
-        }
-      }
-      if (cto) {
-        const rect = cto.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-        const isFrameInViewport = rect.top >= -rect.height/1.5 && rect.bottom <= windowHeight + rect.height/1.5
-
-        if (isFrameInViewport) {
-          cto.classList.add('show')
-        }
-        else {
-          cto.classList.remove('show')
-        }
-      }
+      requestAnimationFrame(this.updateBlobPosition);
     }
   },
   mounted() {
-    /*const highResImage = this.$refs.highResImage;
-    if (highResImage) {
-      setTimeout(() => {
-        highResImage.style.display = 'block';
-        this.$refs.lowResImage.style.display = 'none';
-      }, 1000);
-    }*/
-
-    /*const highResImage1 = this.$refs.highResImage1;
-    if (highResImage1) {
-      setTimeout(() => {
-        highResImage1.style.display = 'block';
-        this.$refs.lowResImage1.style.display = 'none';
-      }, 1000);
-    }
-
-    const highResImage2 = this.$refs.highResImage2;
-    if (highResImage2) {
-      setTimeout(() => {
-        highResImage2.style.display = 'block';
-        this.$refs.lowResImage2.style.display = 'none';
-      }, 1000);
-    }*/
+    this.initializeBlobs();
+    //this.updateBlobPosition();
   },
-  head() {
-      return {
-        link: [
-          {
-            rel: "preload",
-            fetchpriority: "high",
-            as: "image",
-            href: this.parallax.image,
-            type: "image/webp"
-          },
-          {
-            rel: "preload",
-            fetchpriority: "high",
-            as: "image",
-            href: this.parallax.lazy,
-            type: "image/webp"
-          },
-          {
-            rel: "preload",
-            fetchpriority: "high",
-            as: "image",
-            href: this.parallax1.image,
-            type: "image/webp"
-          },
-          {
-            rel: "preload",
-            fetchpriority: "high",
-            as: "image",
-            href: this.parallax1.lazy,
-            type: "image/webp"
-          },
-          {
-            rel: "preload",
-            fetchpriority: "high",
-            as: "image",
-            href: this.parallax2.image,
-            type: "image/webp"
-          },
-          {
-            rel: "preload",
-            fetchpriority: "high",
-            as: "image",
-            href: this.parallax2.lazy,
-            type: "image/webp"
-          },
-        ],
-      }
-  },
+
 }
 </script>
 
 <style>
+  .blob {
+    position: absolute;
+    height: 300px;
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: -1;
+    aspect-ratio: 2/5 !important;
+  }
   #home {
     height: calc(100vh);
     width: 100h !important;
@@ -253,6 +106,7 @@ export default {
     scroll-behavior: smooth;
     scroll-padding-top: 120px;
     user-select: none;
+    position: relative;
   }
 
   #home::-webkit-scrollbar {

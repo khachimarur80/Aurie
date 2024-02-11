@@ -23,10 +23,6 @@
         <img class="big" src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.webp" width="100%" alt="Ilustracion misión empresarial"/>
         <img class="small" src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342-small.webp" width="100%" alt="Ilustracion misión empresarial"/>
       </div>
-      <div id="blob1" class="blob">
-      </div>
-      <div id="blob2" class="blob">
-      </div>
     </div>
   </div>
 </template>
@@ -73,24 +69,6 @@ export default {
 </script>
 
 <style scoped>
-#blob1 {
-  top: 150px;
-  left: 0px;
-}
-#blob2 {
-  bottom: 150px;
-  right: 0px;
-}
-.blob {
-  position: absolute;
-  height: 300px;
-  background: var(--primary);
-  border-radius: 50%;
-  filter: blur(150px);
-  z-index: -1;
-  aspect-ratio: 2/5 !important;
-}
-
 #banner {
   min-height: calc(100vh + 50px);
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, .5) 80%, rgba(255, 255, 255, 0) 100%);

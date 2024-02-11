@@ -34,19 +34,19 @@
         </button>
       </div>
       <div class="dropdown-items">
-        <a class="dropdown-item" href="scrollToSection('nosotros')">
+        <a class="dropdown-item" @click="scrollToSection('nosotros')">
           Nosotros
         </a>
-        <a class="dropdown-item" href="scrollToSection('proyectos')">
+        <a class="dropdown-item" @click="scrollToSection('proyectos')">
           Proyectos
         </a>
-        <a class="dropdown-item" href="scrollToSection('servicios')">
+        <a class="dropdown-item" @click="scrollToSection('servicios')">
           Servicios
         </a>
-        <a class="dropdown-item" href="scrollToSection('equipo')">
+        <a class="dropdown-item" @click="scrollToSection('equipo')">
           Equipo
         </a>
-        <a class="dropdown-item" href="scrollToSection('contacto')">
+        <a class="dropdown-item" @click="scrollToSection('contacto')">
           Contacto
         </a>
       </div>
@@ -190,7 +190,7 @@ export default {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   z-index: 1;
   background: var(--background);

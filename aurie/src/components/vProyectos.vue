@@ -1,6 +1,7 @@
 <template>
   <div id="proyectos">
     <h1>Proyectos</h1>
+    <br>
     <div class="projects">
       <div class="project" v-for="(project, i) in projects" :key="i" :style="{'--color': project.color}" :id="project.title">
         <div class="project-contents">
@@ -60,7 +61,6 @@ export default {
 <style scoped>
 h1 {
   text-align: center;
-  margin-bottom: 80px;
   position: relative;
   color: var(--text);
 }
@@ -82,7 +82,6 @@ hr {
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
-  background: var(--background);
 }
 .projects {
   display: flex;
@@ -100,10 +99,8 @@ hr {
 }
 .project-contents {
   background: var(--background);
-  border-radius: 10px;
   padding: 20px;
-  border: 1px solid var(--color);
-  box-shadow: 2px 2px 6px 0px #777;
+  box-shadow: 1px 1px 3px 0px #777;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -173,21 +170,13 @@ hr {
   margin: 5px;
   white-space: nowrap;
   border: 1px solid var(--color);
-  transform: rotateX(90deg);
-  transition: transform .3s ease-out .3s;
 }
-.show .chip {
-  transform: rotateX(0deg);
-}
+
 h2 {
   margin: 0;
   font-weight: lighter;
   font-size: 30px;
   color: var(--background-dark);
-  opacity: 0;
-  transition: opacity .3s ease-out;
-}
-.show h2 {
   opacity: 1;
 }
 
@@ -199,9 +188,12 @@ h2 {
     align-items: center;
   }
   .project {
-    width: calc(100% + 20px);
+    width: 100%;
     paddign: 0px;
     margin: 0px;
+  }
+  .projects {
+    padding: 0px;
   }
   .project-photo {
     height: 200px;
@@ -222,55 +214,6 @@ h2 {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-}
-
-#MySetup {
-  margin-bottom: 50px;
-}
-
-#MySetup .project-photo {
-  transform: scale(.3);
-  transition: transform .3s ease-out .3s;
-  opacity: 0;
-}
-#MySetup.show .project-photo {
-  opacity: 1;
-  transform: scale(1);
-}
-#KAwebs .project-photo {
-  transform: scale(.3);
-  transition: transform .3s ease-out .3s;
-  opacity: 0;
-}
-#KAwebs.show .project-photo {
-  opacity: 1;
-  transform: scale(1);
-}
-
-
-
-#MySetup .project-contents {
-  transform: translateY(300px);
-  transition: transform .3s ease-out;
-  opacity: 0;
-  pointer-events: none;
-}
-#MySetup.show .project-contents {
-  opacity: 1;
-  transform: translateY(0px);
-  pointer-events: auto;
-}
-
-#KAwebs .project-contents {
-  transform: translateY(300px);
-  opacity: 0;
-  transition: transform .3s ease-out;
-  pointer-events: none;
-}
-#KAwebs.show .project-contents {
-  opacity: 1;
-  transform: translateY(0px);
-  pointer-events: auto;
 }
 
 </style>

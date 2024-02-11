@@ -227,8 +227,7 @@ export default {
     background: linear-gradient(to bottom right, rgba(255, 200, 200) 50%, rgba(255, 255, 255) 100%);
     padding: 30px;
     border-radius: 10px;
-    outline: 1px solid var(--primary);
-    box-shadow: 2px 2px 6px 0px #777;
+    box-shadow: 1px 1px 3px 0px #777;
     max-height: 400px;
   }
   .contact-image {
@@ -300,17 +299,15 @@ export default {
     flex-direction: column;
   }
   h1 {
-    color: var(--background);
     text-align: center;
-    font-size: 40px;
-    width: calc(100% - 30px);
-    margin-top: 50px;
-    margin-bottom: 100px;
     position: relative;
+    color: var(--text);
+    margin-bottom: 50px;
+    margin-top: 50px;
   }
   h1::after {
     content: '';
-    background: var(--background);
+    background: var(--text);
     height: 3px;
     bottom: -10px;
     left: 50%;
@@ -328,19 +325,19 @@ export default {
       text-align: center;
     }
     .contact-form {
-      max-width: 80%;
-      margin-bottom: 50px;
+      width: 100%;
+    }
+    .form-contents {
+      width: calc(100% - 20px);
     }
     input, textarea {
-      max-width: 100%;
-      width: 220px;
+      width: 100%;
     }
-    img {
+    img, .contact-image {
       display: none;
     }
     .form-img-container {
-      width: 90%;
-      align-items: center;
+      width: 100%;
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -353,12 +350,12 @@ export default {
     input, textarea {
       width: 400px;
     }
-    img {
+    img, .contact-image  {
       display: none;
     }
   }
   @media only screen and (min-width: 1024px) and (max-width: 1179px) {
-    img {
+    img, .contact-image  {
       display: none;
     }
     .section {

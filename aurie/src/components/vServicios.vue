@@ -1,11 +1,6 @@
 <template>
   <div id="servicios">
     <h1>Servicios</h1>
-    <div class="projects">
-      <button v-for="(project, i) in projects" :key="i" @click="setProject(project)" :class="['project', project==selectedProject ? 'selected' : '']"  :style="{'--color': project.color}">
-        <img :src="project.icon" height="40px" width="40px" :alt="'Logo de '+project.name"/> {{ project.name }}
-      </button>
-    </div>
     <br>
     <div class="services-list" v-if="selectedProject.services">
       <div class="service" v-for="(service, i) in selectedProject.services" :key="i">
@@ -15,13 +10,17 @@
         <p class="description">
           {{ service.description }}
         </p>
-        <div v-for="(include, i) in service.includes" :key="i" class="includes">
-        <span class="check">
-        </span>
-        <p>
-          {{ include }}
-        </p>
+        <div v-for="(include, i) in serviceIncludes(service)" :key="i" class="includes">
+          <span class="check">
+          </span>
+          <p>
+            {{ include }}
+          </p>
         </div>
+        <button class="seemore" @click="service.seemore = !service.seemore">
+          <span v-if="!service.seemore">Ver más</span>
+          <span v-else>Ver menos</span>
+        </button>
         <div style="flex: 1"></div>
         <p class="show-price" @click="service.showPrice = !service.showPrice">
           Ver precio
@@ -88,6 +87,7 @@ export default {
               "Certificación SSL"
             ],
             "showPrice": false,
+            "seemore": false,
           },
           {
             "name": "Paquete Avanzado",
@@ -104,6 +104,7 @@ export default {
               "Formulario de contacto"
             ],
             "showPrice": false,
+            "seemore": false,
           },
           {
             "name": "Paquete Premium",
@@ -123,10 +124,11 @@ export default {
               "Email profesional"
             ],
             "showPrice": false,
+            "seemore": false,
           },
           {
             "name": "Paquete de Desarrollo",
-            "description": "Impulsa tu presencia en línea a gran nivel con nuestro Paquete de Desarrollo. Esta solución más personalizada usa todas las herramientas para hacer que tu sitio web destaque y puedas desarrollar tu actividad más eficientemente.",
+            "description": "Esta solución más personalizada usa todas las herramientas para hacer que tu sitio web destaque y puedas desarrollar tu actividad más eficientemente.",
             "price": ["600 €", "15 €/mes", "765 €", "925,65 €", "720 € (3 meses gratis)", "871,20 €"],
             "includes": [
               "Diseño Moderno y Funcional",
@@ -149,6 +151,7 @@ export default {
               "Interfaz de ventas"
             ],
             "showPrice": false,
+            "seemore": false,
           },
         ],
         color: "#4285F4",
@@ -170,11 +173,19 @@ export default {
       else {
         this.selectedProject = []
       }
+    },
+    serviceIncludes(service) {
+      if (service.seemore) {
+        return service.includes
+      }
+      else {
+        return service.includes.slice(0,5)
+      }
     }
   },
   mounted() {
     this.selectedProject = this.projects[0]
-  }
+  },
 }
 </script>
 
@@ -187,14 +198,12 @@ h2 {
 }
 h1 {
   text-align: center;
-  color: var(--background);
   position: relative;
-  text-align: center;
-  margin-bottom: 60px;
+  color: var(--text);
 }
 h1::after {
   content: '';
-  background: var(--background);
+  background: var(--text);
   height: 3px;
   bottom: -10px;
   left: 50%;
@@ -376,7 +385,7 @@ table {
   left: 5%;
   width: 90%;
   background: var(--background);
-  box-shadow: 0px 0px 5px 2px #000;
+  box-shadow: 1px 2px 3px 0px #444;
   transform: translateY(calc(100% + 20px));
   opacity: 0;
   transition: opacity .3s ease-out, transform .3s ease-out;
@@ -396,6 +405,20 @@ tr {
   border: 1px solid red;
 }
 
+.seemore {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  padding: 6px 12px 6px 12px;
+  border-radius: 5px;
+  color: var(--accent);
+}
+.seemore:hover {
+  background: #eee;
+  cursor: pointer;
+}
 
 @media only screen and (min-width: 671px) and (max-width: 980px) {
   .service {

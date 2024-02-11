@@ -3,43 +3,55 @@
     <h1>Nosotros</h1>
     <br>
     <div class="contents">
-      <div class="content-row" id="row-1">
-        <div class="card" id="creatividad">
-          <h2><span>Creatividad</span></h2>
-          <div class="card-text">
+      <div class="card" id="creatividad">
+        <div class="card-img">
+        </div>
+        <div class="card-text">
+          <h2>
             <img src="@/assets/icons/creatividad.webp" height="40px" alt="Mano con pintura colorida"/>
-            <hr style="border-top: 1px solid var(--accent)">
-            Transformamos ideas en experiencias visuales únicas. Con nuestra creatividad, daremos vida a la identidad digital de tu empresa.
-          </div>
-        </div>
-        <div class="card" id="eficiencia">
-          <h2><span>Eficiencia</span></h2>
-          <div class="card-text">
-            <img src="@/assets/icons/eficiencia.webp" height="40px" alt="MacBook en mesa de cafetería"/>
-            <hr style="border-top: 1px solid var(--warning)">
-            Nos comprometemos a resultados rápidos y eficientes. Cada paso es optimizado para asegurar un viaje sin contratiempos hacia tu presencia digital.
-          </div>
+            <span>Creatividad</span>
+          </h2>
+          <hr style="border-top: 1px solid var(--accent)">
+          <p>Transformamos ideas en experiencias visuales únicas. Con nuestra creatividad, daremos vida a la identidad digital de tu empresa.</p>
         </div>
       </div>
-      <div class="content-row" id="row-2">
-        <div class="card" id="comunicacion">
-          <h2><span>Comunicación</span></h2>
-          <div class="card-text">
-            <img src="@/assets/icons/comunicacion.webp" height="40px" alt="Antenta de satélite"/>
-            <hr style="border-top: 1px solid var(--error)">
-            Valoramos la comunicación constante y profesional. Estamos aquí para entender tus necesidades y expectativas, garantizando un proceso claro y transparente.
-          </div>
+      <div class="card" id="calidad">
+        <div class="card-img">
         </div>
-        <div class="card" id="calidad">
-          <h2><span>Calidad</span></h2>
-          <div class="card-text">
+        <div class="card-text">
+          <h2>
             <img src="@/assets/icons/calidad.webp" height="40px" alt="Teclado de cerca"/>
-            <hr style="border-top: 1px solid var(--success)">
-            Nuestra promesa es ofrecer trabajos de alta calidad. No comprometemos la excelencia mientras impulsamos tu empresa digitalmente.
-          </div>
+            <span>Calidad</span>
+          </h2>
+          <hr style="border-top: 1px solid var(--error)">
+          <p>Nuestra promesa es ofrecer trabajos de alta calidad. No comprometemos la excelencia mientras impulsamos tu empresa digitalmente.</p>
         </div>
       </div>
-  </div>
+      <div class="card" id="eficiencia">
+        <div class="card-img">
+        </div>
+        <div class="card-text">
+          <h2>
+            <img src="@/assets/icons/eficiencia.webp" height="40px" alt="MacBook en mesa de cafetería"/>
+            <span>Eficiencia</span>
+          </h2>
+          <hr style="border-top: 1px solid var(--warning)">
+          <p>Nos comprometemos a resultados rápidos y eficientes. Cada paso es optimizado para asegurar un viaje sin contratiempos hacia tu presencia digital.</p>
+        </div>
+      </div>
+      <div class="card" id="comunicacion">
+        <div class="card-img">
+        </div>
+        <div class="card-text">
+          <h2>
+            <img src="@/assets/icons/comunicacion.webp" height="40px" alt="Antenta de satélite"/>
+            <span>Comunicación</span>
+          </h2>
+          <hr style="border-top: 1px solid var(--success)">
+          <p>Valoramos la comunicación constante y profesional. Estamos aquí para entender tus necesidades y expectativas, garantizando un proceso claro y transparente.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -91,13 +103,11 @@ export default {
 h1 {
   text-align: center;
   position: relative;
-  margin-top: 0px;
-  margin-bottom: 150px;
-  color: var(--background);
+  color: var(--text);
 }
 h1::after {
   content: '';
-  background: var(--background);
+  background: var(--text);
   height: 3px;
   bottom: -10px;
   left: 50%;
@@ -107,16 +117,15 @@ h1::after {
 }
 hr {
   width: calc(100% - 50px);
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 #nosotros {
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-top: -5px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 50px;
   width: 100h;
 }
 .contents {
@@ -124,104 +133,78 @@ hr {
   text-align: center;
   width: 100%;
   max-width: 1250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
 }
 .card {
-  border: 2px solid var(--primary);
-  width: 400px;
-  height: 500px;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  border-radius: 20px;
+}
+#creatividad {
+  background: linear-gradient(to bottom left, var(--background) 0%, rgba(66, 133, 244, 0.8) 100%);
+}
+#eficiencia {
+  background: linear-gradient(to bottom left, var(--background) 0%, rgba(165, 119, 196, 0.8) 100%);
+  flex-direction: row-reverse;
+}
+#comunicacion {
+  background: linear-gradient(to bottom right, var(--background) 0%, rgba(15, 157, 88, 0.8) 100%);
+}
+#calidad {
+   background: linear-gradient(to bottom right, var(--background) 0%, rgba(219, 68, 55, 0.8) 100%);
+  flex-direction: row-reverse;
+}
+
+.card:nth-child(2n+1) {
+  flex-direction: row-reverse;
 }
 .card-text {
-  width: 250px;
-  aspect-ratio: 25/21;
+  width: 300px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  border-radius: 20px;
   padding: 10px;
-  position: absolute;
-  background: var(--background);
   line-height: 20px;
   flex-direction: column;
-  color: #777;
+  color: var(--text);
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 35px;
 }
-.card:nth-child(2) {
-  transform: translateY(100px);
-}
-.card:nth-child(3) {
-  transform: translateY(100px);
-}
-
-.content-row:nth-child(1) .card:nth-child(1) .card-text {
-  bottom: -100px;
-  right: -100px;
-  box-shadow: 2px 4px 3px 0px #aaa;
-  border: 2px solid var(--primary);
-}
-.content-row:nth-child(1) .card:nth-child(2) .card-text {
-  top: -120px;
-  left: -180px;
-  box-shadow: -2px 2px 3px 0px #aaa;
-  border: 2px solid var(--primary);
-}
-.content-row:nth-child(2) .card:nth-child(1) .card-text {
-  bottom: -100px;
-  right: -100px;
-  box-shadow: 2px 4px 3px 0px #aaa;
-  border: 2px solid var(--primary);
-}
-.content-row:nth-child(2) .card:nth-child(2) .card-text {
-  top: -100px;
-  left: -200px;
-  box-shadow: -2px 2px 3px 0px #aaa;
-  border: 2px solid var(--primary);
+.card-img {
+  flex: 1;
+  height: 80%;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px 0px #444;
 }
 
-#creatividad {
-  border: 2px solid var(--primary);
-}
-#eficiencia {
-  border: 2px solid var(--primary);
-}
-#comunicacion {
-  border: 2px solid var(--primary);
-}
-#calidad {
-  border: 2px solid var(--primary);
-}
-
-.content-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  margin-bottom: 150px;
-  height: 600px;
-}
-
-#creatividad {
+#creatividad .card-img {
   background: url("@/assets/images/creatividad.webp");
   background-size: cover;
   background-position: center center;
 }
-#eficiencia {
+#eficiencia .card-img {
   background: url("@/assets/images/eficiencia.webp");
   background-size: cover;
   background-position: center center;
 }
-#comunicacion {
+#comunicacion .card-img {
   background: url("@/assets/images/comunicacion.webp");
   background-size: cover;
   background-position: center center;
 }
-#calidad {
+#calidad .card-img {
   background: url("@/assets/images/calidad.webp");
   background-size: cover;
   background-position: center center;
@@ -229,225 +212,76 @@ hr {
 
 h2 {
   padding: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 8px;
-}
-
-#creatividad h2 {
-  background-color: var(--primary);
-  overflow:hidden;
-  display:inline-block; 
   font-weight:bold;
   color:transparent;
-  font-size: 40px;
-}
-#eficiencia h2 {
-  background-color: var(--primary);
-  overflow:hidden;
-  display:inline-block; 
-  font-weight:bold;
-  color:transparent;
-  font-size: 40px;
-}
-#comunicacion h2 {
-  background-color: var(--primary);
-  overflow:hidden;
-  display:inline-block; 
-  font-weight:bold;
-  color:transparent;
-  font-size: 40px;
-}
-#calidad h2 {
-  background-color: var(--primary);
-  overflow:hidden;
-  display:inline-block; 
-  font-weight:bold;
-  color:transparent;
-  font-size: 40px;
+  font-size: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  gap: 20px;
+  margin-bottom: 0px;
 }
 
-#creatividad span { 
-  /*background: url("@/assets/images/creatividad.webp") -20px -20px repeat;
-  background-position: center;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;*/
-  display:block;
-  color: black;
-}
-#eficiencia span { 
-  /*background: url("@/assets/images/eficiencia.webp") -20px -20px repeat;
-  background-position: center;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;*/
-  display:block;
-  color: black;
-}
-#comunicacion span { 
-  /*background: url("@/assets/images/comunicacion.webp") -20px -20px repeat;
-  background-position: center;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;*/
-  color: black;
-  display:block;
-}
-#calidad span { 
-  /*background: url("@/assets/images/calidad.webp") -20px -20px repeat;
-  background-position: center;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;*/
-  color: black;
-  display:block;
+p {
+  width: calc(100% - 60px);
 }
 
-.show {
-}
-
-#creatividad {
-  transform: translate(-200px, 40px);
-  transition: transform .3s ease-in-out;
-}
-#eficiencia {
-  transform: translate(200px, 40px);
-  transition: transform .3s ease-in-out;
-}
-#row-1 {
-  opacity: .5;
-}
-#row-1 h2 {
-  opacity: 0;
-  transition: opacity .6s ease-in-out;
-}
-#row-1 .card-text {
-  opacity: 1;
-  transition: opacity .6s ease-in-out;
-}
-
-#row-1.show #creatividad, #row-1.show #eficiencia {
-  transform: none;
-}
-#row-1.show h2 {
-  opacity: 1;
-}
-#row-1.show .card-text {
-  opacity: 1;
-}
-#row-1.show {
-  opacity: 1;
-}
-
-
-#comunicacion {
-  transform: translate(-200px, 40px);
-  transition: transform .3s ease-in-out;
-}
-#calidad {
-  transform: translate(200px, 40px);
-  transition: transform .3s ease-in-out;
-}
-#row-2 {
-  opacity: .5;
-}
-#row-2 h2 {
-  opacity: 0;
-  transition: opacity .6s ease-in-out;
-}
-#row-2 .card-text {
-  opacity: 1;
-  transition: opacity .6s ease-in-out;
-}
-
-#row-2.show #comunicacion, #row-2.show #calidad {
-  transform: none;
-}
-#row-2.show h2 {
-  opacity: 1;
-}
-#row-2.show .card-text {
-  opacity: 1;
-}
-#row-2.show {
-  opacity: 1;
-}
-
-@media only screen and (max-width: 900px) {
-  #comunicacion, #calidad, #eficiencia, #creatividad {
-    transform: none !important;
+@media only screen and (max-width: 790px) {
+  .contents {
+    gap: 5px;
   }
-  #row-2 h2, #row-1 h2 {
-    opacity: 1;
-  }
-  #row-2, #row-1 {
-    opacity: 1;
-  }
- .content-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-    margin-bottom: 150px;
-    gap: 100px;
+  .card {
     height: fit-content;
   }
-  .card {
-    height: 500px;
-    width: calc(100% - 30px);
-    max-width: 400px;
-    flex-direction: column;
-    justify-content: space-around;
+  .card .card-text {
+    flex-direction: column !important;
+    height: fit-content;
   }
-
+  #creatividad .card-text {
+  background: linear-gradient(to bottom left, var(--background) 0%, rgba(66, 133, 244, 0.8) 100%);
+  }
+  #eficiencia .card-text {
+    background: linear-gradient(to bottom left, var(--background) 0%, rgba(165, 119, 196, 0.8) 100%);
+    flex-direction: row-reverse;
+  }
+  #comunicacion .card-text {
+    background: linear-gradient(to bottom right, var(--background) 0%, rgba(15, 157, 88, 0.8) 100%);
+  }
+  #calidad .card-text {
+     background: linear-gradient(to bottom right, var(--background) 0%, rgba(219, 68, 55, 0.8) 100%);
+    flex-direction: row-reverse;
+  }
   .card-text {
-    position: revert;
-    width: calc(100% - 100px);
-    max-width: 250px;
-    height: 290px;
-    color: var(--text);
-  }
-  h1 {
-    margin-bottom: 50px;
-  }
-  #nosotros {
-    padding-top: 0px;
+    width: 70%;
+    max-width: 400px;
+    min-height: 240px;
+    position: absolute;
+    padding: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
   }
   h2 {
-    font-size: 30px !important;
+    font-size: 20px;
+    width: 65%;
+  }
+  p {
+    font-size: 14px;
+  }
+  .card-img {
+    width: 100%;
+    height: 350px;
+    border-radius: 0px;
+    box-shadow: none;
+    margin-top: 0px;
+    margin: 0px;
   }
 }
-@media only screen and (min-width: 901px) and (max-width: 1000px) {
-  .card {
-    height: 500px;
-    width: calc(100% - 30px);
-    max-width: 400px;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .card-text {
-    position: revert;
-    width: calc(100% - 100px);
-    max-width: 250px;
-    color: var(--text);
-    height: 280x;
-  }
-  h1 {
-    margin-bottom: 50px;
-  }
-  h2 {
-    font-size: 33px !important;
-  }
-}
-@media only screen and (min-width: 1001px) and (max-width: 1200px) {
-  h2 {
-    font-size: 36px !important;
-  }
-  .card {
-    height: 450px;
-    width: 330px;
-  }
-  .card-text {
-    width: 230px;
-    height: 250px;
+@media only screen and (min-width: 791px) and (max-width: 820px) {
+  .contents {
+    gap: 0px;
   }
 }
 </style>

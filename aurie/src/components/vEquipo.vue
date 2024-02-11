@@ -11,7 +11,7 @@
           <hr style="width: 100%">
           <div class="member-position">{{ member.position }}</div>
           <div class="member-info-contents">
-            <p>Edad: {{ member.age }}</p>
+            <p style="margin-bottom: 0px;">Edad: {{ member.age }}</p>
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
               <p>Titulación: </p>
               <span class="chip" v-for="(title,i) in member.titulation" :key="i">{{ title }}</span> 
@@ -82,7 +82,6 @@ h1::after {
 #equipo {
   padding: 20px;
   margin-top: -5px;
-  background: var(--background);
 }
 .members {
   display: flex;
@@ -95,8 +94,6 @@ h1::after {
   flex-direction: column;
 }
 .member {
-  border: 1px solid black;
-  border-radius: 10px;
   padding: 20px;
   width: 800px;
   height: 280px;
@@ -106,7 +103,7 @@ h1::after {
   gap: 20px;
   color: var(--text);
   background: var(--background);
-  box-shadow: 2px 2px 6px 0px #777;
+  box-shadow: 1px 1px 3px 0px #777;
 }
 .member-photo {
   height: 100%;
@@ -135,7 +132,7 @@ h1::after {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 .portafolio {
   padding: 5px;
@@ -190,7 +187,7 @@ h2 {
   .member {
     width: 280px;
     flex-direction: column;
-    height: 660px;
+    height: 560px;
     align-items: center;
   }
   .members {
@@ -236,21 +233,5 @@ h2 {
   #members {
     padding: 0px;
   }
-}
-
-#CEO {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-#CTO {
-  transform: translateX(100%);
-  opacity: 1;
-}
-#CEO, #CTO {
-  transition: transform .5s ease-out, opacity .3s ease-out;
-}
-#CEO.show, #CTO.show {
-  transform: translateX(0px);
-  opacity: 1;
 }
 </style>
