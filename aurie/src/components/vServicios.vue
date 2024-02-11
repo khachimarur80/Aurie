@@ -8,14 +8,18 @@
           {{ service.name }}
         </h2>
         <p class="description">
-          {{ service.description }}
+          <span class="inner">
+            {{ service.description }}
+          </span>
         </p>
-        <div v-for="(include, i) in serviceIncludes(service)" :key="i" class="includes">
+        <div class="includes-container">
+          <div v-for="(include, i) in serviceIncludes(service)" :key="i" class="includes">
           <span class="check">
           </span>
           <p>
             {{ include }}
           </p>
+          </div>
         </div>
         <button class="seemore" @click="service.seemore = !service.seemore">
           <span v-if="!service.seemore">Ver más</span>
@@ -255,6 +259,9 @@ h1::after {
   gap: 10px;
   margin-left: 20%;
 }
+.includes-container {
+  width: 100%;
+}
 .check {
   height: 20px;
   width: 20px;
@@ -331,44 +338,6 @@ h1::after {
   opacity: .7;
 }
 
-@media only screen and (max-width: 670px) {
-  .includes {
-    margin-left: 0%;
-  }
-  .service {
-    max-width: calc(100% - 20px);
-    min-width: calc(100% - 20px);
-  }
-  h2 {
-    margin-bottom: 30px;
-  }
-  .description {
-    display: none;
-  }
-  .projects {
-    padding: 0px;
-  }
-  .project {
-    border-radius: 5px;
-    padding-left: 3px;
-    padding-right: 10px;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    border: 1px solid var(--color);
-    gap: 5px;
-    background: var(--background);
-    transition: background ease-in .15s;
-    width: 120px;
-    height: 45px;
-  }
-  .no-services {
-    padding: 50px;
-  }
-}
-
 table.show {
   transform: translateY(0px);
   opacity: 1;
@@ -418,6 +387,44 @@ tr {
 .seemore:hover {
   background: #eee;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 670px) {
+  .includes {
+    margin-left: 0%;
+  }
+  .service {
+    max-width: calc(100% - 20px);
+    min-width: calc(100% - 20px);
+  }
+  h2 {
+    margin-bottom: 30px;
+  }
+  .description {
+    display: none;
+  }
+  .projects {
+    padding: 0px;
+  }
+  .project {
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 1px solid var(--color);
+    gap: 5px;
+    background: var(--background);
+    transition: background ease-in .15s;
+    width: 120px;
+    height: 45px;
+  }
+  .no-services {
+    padding: 50px;
+  }
 }
 
 @media only screen and (min-width: 671px) and (max-width: 980px) {
