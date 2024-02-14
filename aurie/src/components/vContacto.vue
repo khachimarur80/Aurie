@@ -442,7 +442,7 @@ export default {
     content: '';
     width: 100%;
     height: 2px;
-    background: rgb(255, 200, 200);
+    background: rgba(255, 230, 230);
     position: absolute;
     top: 50%;
     z-index: -1;
