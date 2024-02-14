@@ -224,7 +224,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom right, rgba(255, 200, 200) 50%, rgba(255, 255, 255) 100%);
+    background: linear-gradient(to bottom right, rgba(255, 230, 230) 50%, rgba(255, 255, 255) 100%);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 1px 1px 3px 0px #777;

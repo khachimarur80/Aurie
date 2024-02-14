@@ -11,7 +11,7 @@
           <hr style="width: 100%">
           <div class="member-position">{{ member.position }}</div>
           <div class="member-info-contents">
-            <p style="margin-bottom: 0px;">Edad: {{ member.age }}</p>
+            <!--<p style="margin-bottom: 0px;">Edad: {{ member.age }}</p>-->
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
               <p>Titulación: </p>
               <span class="chip" v-for="(title,i) in member.titulation" :key="i">{{ title }}</span> 
