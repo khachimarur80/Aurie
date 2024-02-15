@@ -104,19 +104,18 @@ export default {
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    scroll-padding-top: 120px;
     user-select: none;
     position: relative;
   }
 
   #home::-webkit-scrollbar {
     width: 7px;
-    display: none;
+    background: rgba(255, 150, 150, .5);
   }
   #home::-webkit-scrollbar-thumb {
     background-color: var(--primary);
-    border-radius: 10rem;
-    border: 1px solid var(--primary);
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, .5);
   }
 
 
