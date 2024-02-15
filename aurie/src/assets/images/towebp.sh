@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-for image_file in ./*.jpg ./*.png; do
+for image_file in ./*.jpg ./*.png ./*.jpeg; do
   if [ -f "$image_file" ]; then
     filename=$(basename -- "$image_file")
     filename_no_ext="${filename%.*}"
