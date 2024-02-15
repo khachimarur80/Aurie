@@ -34,7 +34,7 @@
         </p>
         <div class="price">
           <table :class="[service.showPrice ? 'show' : '']">
-            <tr>
+            <!--<tr>
                 <td>Plan</td>
                 <td>{{ service.price[0] }}</td>
             </tr>
@@ -45,19 +45,19 @@
             <tr>
                 <td>PVP final</td>
                 <td>{{ service.price[2] }}</td>
-            </tr>
+            </tr>-->
             <tr>
-                <td>PVP final + IVA</td>
+                <td>Precio (IVA inc.)</td>
                 <td>{{ service.price[3] }}</td>
             </tr>
-            <tr>
+            <!--<tr>
                 <td>Bono anual</td>
                 <td>{{ service.price[4] }}</td>
-            </tr>
-            <tr>
-                <td>Bono + IVA</td>
+            </tr>-->
+            <!--<tr>
+                <td>Bono anual (IVA inc.)</td>
                 <td>{{ service.price[5] }}</td>
-            </tr>
+            </tr>-->
           </table>
         </div>
       </div>
