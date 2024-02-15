@@ -26,8 +26,11 @@
           <span v-else>Ver menos</span>
         </button>
         <div style="flex: 1"></div>
-        <p class="show-price" @click="service.showPrice = !service.showPrice">
+        <p class="show-price" @click="service.showPrice = !service.showPrice" v-if="service.price.length">
           Ver precio
+        </p>
+        <p class="show-price" @click="scrollToSection('contacto')" v-else>
+          Consúltanos
         </p>
         <div class="price">
           <table :class="[service.showPrice ? 'show' : '']">
@@ -81,7 +84,7 @@ export default {
           {
             "name": "Paquete Básico",
             "description": "Un paquete perfecto para pequeñas empresas o startups que buscan un sitio web profesional a modo informativo.",
-            "price": ["212 €", "8 €/mes", "300 €", "363 €", "276 € (3 meses gratis)", "333,96 €"],
+            "price": ["201,26 €", "8 €/mes", "289,26 €", "350 €", "265,26 € (3 meses gratis)", "320,96 €"],
             "includes": [
               "Diseño Moderno y Funcional",
               "Optimización de rendimiento",
@@ -96,7 +99,7 @@ export default {
           {
             "name": "Paquete Avanzado",
             "description": "Ideal para empresas que quieran aumentar sus ventas de manera online, de forma cómoda y sencilla.",
-            "price": ["270 €", "10 €/mes", "380 €", "459,8 €", "360 € (2 meses gratis)", "435,6 €"],
+            "price": ["262 €", "10 €/mes", "372 €", "450 €", "352 € (2 meses gratis)", "425,92 €"],
             "includes": [
               "Diseño Moderno y Funcional",
               "Optimización de rendimiento",
@@ -113,7 +116,7 @@ export default {
           {
             "name": "Paquete Premium",
             "description": "Personaliza y dale tu estilo profesional a tu página web con nuestro Paquete Premium, una solución para empresas que buscan destacar en la web.",
-            "price": ["358 €", "12 €/mes", "490 €", "592,9 €", "466 € (2 meses gratis)", "563,86 €"],
+            "price": ["297,76 €", "12 €/mes", "429,76 €", "520 €", "405,76 € (2 meses gratis)", "490,91 €"],
             "includes": [
               "Diseño Moderno y Funcional",
               "Optimización de rendimiento",
@@ -133,7 +136,7 @@ export default {
           {
             "name": "Paquete Personalizado",
             "description": "Esta solución más personalizada usa todas las herramientas para hacer que tu sitio web destaque y puedas desarrollar tu actividad más eficientemente.",
-            "price": ["600 €", "15 €/mes", "765 €", "925,65 €", "720 € (3 meses gratis)", "871,20 €"],
+            "price": [""],
             "includes": [
               "Diseño Moderno y Funcional",
               "Optimización de rendimiento",
@@ -170,6 +173,11 @@ export default {
     selectedProject: []
   }),
   methods: {
+    scrollToSection(item) {
+      let home = document.getElementById('home')
+      let target = document.getElementById(item.toLowerCase())
+      home.scrollTop = target.offsetTop - 100
+    },
     setProject(project) {
       if (project != this.selectedProject) {
         this.selectedProject = project
