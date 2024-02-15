@@ -136,7 +136,7 @@ export default {
           {
             "name": "Paquete Personalizado",
             "description": "Esta solución más personalizada usa todas las herramientas para hacer que tu sitio web destaque y puedas desarrollar tu actividad más eficientemente.",
-            "price": [""],
+            "price": [],
             "includes": [
               "Diseño Moderno y Funcional",
               "Optimización de rendimiento",
