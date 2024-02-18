@@ -57,4 +57,8 @@ export default {
   textarea {
     font-family: var(--text-font);
   }
+
+  ::-webkit-scrollbar {
+    height: 0;
+  }
 </style>

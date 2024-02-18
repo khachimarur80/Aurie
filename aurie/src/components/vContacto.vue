@@ -339,6 +339,11 @@ export default {
     .form-img-container {
       width: 100%;
     }
+    label::before {
+      height: 4px !important;
+      transform: translateY(-2px) !important;
+      background: rgb(255, 230, 230) !important;
+    }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .section {
