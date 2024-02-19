@@ -2,14 +2,14 @@
   <div id="banner" ref="banner">
     <div class="banner-contents">
       <div class="text">
-        <h2>Aurie, tu solución digital</h2>
+        <h1>Aurie, tu solución digital</h1>
         <p>
           En Aurie te ofrecemos servicios y productos en todas las áreas de la tecnología.
         </p>
         <div class="text-row">
-          <h3>
+          <h2>
             ofrecemos
-          </h3>
+          </h2>
           <div :class="['rectangle', face]">
             <div class="face">velocidad.</div>
             <div class="face">compromiso.</div>
@@ -102,12 +102,12 @@ export default {
   width: 500px;
   padding-left: 50px;
 }
-h2 {
+h1 {
   color: var(--text);
   font-size: 30px;
   margin: 0px;
 }
-h3 {
+h2 {
   color: var(--text);
   font-size: 22px;
   margin-right: -20px;
