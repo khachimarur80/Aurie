@@ -233,7 +233,7 @@ p {
     align-items: center;
     gap: 50px;
   }
-  h3 {
+  h2 {
     display: none;
   }
   .text-row {
