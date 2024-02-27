@@ -109,9 +109,9 @@ export default {
       this.validForm = false
       this.sending = true
       const vm = this
-      emailjs.init('Ifjg_oR_H0mMlRnTI')
+      emailjs.init('WkI3DSJE1qYxuj1gL')
 
-      emailjs.sendForm("service_p4b392o", "template_wokpaeh", '#contact-form')
+      emailjs.sendForm("service_ugxtn1e", "template_awg5k4o", '#contact-form')
       .then(function () {
         vm.sendColor = 'var(--success)'
         vm.sendText = 'Enviado!'
