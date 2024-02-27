@@ -111,7 +111,7 @@ export default {
       const vm = this
       emailjs.init('WkI3DSJE1qYxuj1gL')
 
-      emailjs.sendForm("service_ugxtn1e", "template_awg5k4o", '#contact-form')
+      emailjs.sendForm("service_ugxtn1e", "template_3qsuwob", '#contact-form')
       .then(function () {
         vm.sendColor = 'var(--success)'
         vm.sendText = 'Enviado!'
