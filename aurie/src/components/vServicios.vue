@@ -84,7 +84,7 @@ export default {
           {
             "name": "Paquete Básico",
             "description": "Un paquete perfecto para pequeñas empresas o startups que buscan un sitio web profesional a modo informativo.",
-            "price": ["201,26 €", "8 €/mes", "289,26 €", "350 €", "265,26 € (3 meses gratis)", "320,96 €"],
+            "price": ["201,26 €", "10 €/mes", "289,26 €", "450 €", "265,26 € (3 meses gratis)", "570 €"],
             "includes": [
               "Diseño Moderno y Funcional",
               "Optimización de rendimiento",
@@ -99,7 +99,7 @@ export default {
           {
             "name": "Paquete Avanzado",
             "description": "Ideal para empresas que quieran aumentar sus ventas de manera online, de forma cómoda y sencilla.",
-            "price": ["262 €", "10 €/mes", "372 €", "450 €", "352 € (2 meses gratis)", "425,92 €"],
+            "price": ["262 €", "12 €/mes", "372 €", "600 €", "352 € (2 meses gratis)", "744 €"],
             "includes": [
               "Diseño Moderno y Funcional",
               "Optimización de rendimiento",
@@ -116,7 +116,7 @@ export default {
           {
             "name": "Paquete Premium",
             "description": "Personaliza y dale tu estilo profesional a tu página web con nuestro Paquete Premium, una solución para empresas que buscan destacar en la web.",
-            "price": ["297,76 €", "12 €/mes", "429,76 €", "520 €", "405,76 € (2 meses gratis)", "490,91 €"],
+            "price": ["297,76 €", "14 €/mes", "429,76 €", "720 €", "405,76 € (2 meses gratis)", "888 €"],
             "includes": [
               "Diseño Moderno y Funcional",
               "Optimización de rendimiento",
