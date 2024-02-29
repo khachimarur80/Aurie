@@ -54,10 +54,10 @@
                 <td>Bono anual</td>
                 <td>{{ service.price[4] }}</td>
             </tr>-->
-            <tr>
+            <!--<tr>
                 <td>Bono anual (IVA inc.)</td>
                 <td>{{ service.price[5] }}</td>
-            </tr>
+            </tr>-->
           </table>
         </div>
       </div>
