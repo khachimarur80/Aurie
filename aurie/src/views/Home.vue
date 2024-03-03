@@ -126,7 +126,8 @@ export default {
     z-index: 3;
     aspect-ratio: 2/5 !important;
     transition: top .25s ease-out, left .25s ease-out, transform .25s ease-out;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    pointer-events: none;
   }
   #home {
     height: calc(100vh);

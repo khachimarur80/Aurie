@@ -193,7 +193,7 @@ h2 {
     padding-bottom: 20px;
   }
   .member {
-    width: 280px;
+    width: 280px !important;
     flex-direction: column;
     height: 560px;
     align-items: center;
@@ -226,7 +226,7 @@ h2 {
 
 @media only screen and (min-width: 561px) and (max-width: 850px) {
   .member {
-    width: 400px;
+    width: 400px !important;
     flex-direction: column;
     height: 600px;
     align-items: center;
