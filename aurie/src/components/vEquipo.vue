@@ -82,23 +82,30 @@ h1::after {
 #equipo {
   padding: 20px;
   margin-top: -5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .members {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% - 40px);
-  padding: 20px;
+  width: calc(100%- 40px);
   gap: 20px;
+  max-width: 760px;
   user-select: none;
-  flex-direction: column;
+  flex-direction: row;
 }
 .member {
   padding: 20px;
-  width: 800px;
-  height: 280px;
+  box-sizing: border-box;
+  width: calc(50% - 10px) !important;
+  flex: 1;
+  height: 750px;
   min-height: fit-content;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 20px;
   color: var(--text);
@@ -106,11 +113,8 @@ h1::after {
   box-shadow: 1px 1px 3px 0px #777;
   transition: transform .3s ease-out;
 }
-.member:hover {
-  transform: scale(1.01);
-}
 .member-photo {
-  height: 100%;
+  max-width: 100%;
   border: 1px solid var(--background);
   aspect-ratio: 1;
   border-radius: 5px;
@@ -197,6 +201,7 @@ h2 {
   .members {
     width: 100%;
     padding: 0px;
+    flex-direction: column;
   }
   .member-photo {
     width: 250px;
@@ -229,6 +234,7 @@ h2 {
   .members {
     width: 100%;
     padding: 0px;
+    flex-direction: column;
   }
   .member-photo {
     width: 300px;

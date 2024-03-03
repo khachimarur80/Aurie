@@ -1,7 +1,8 @@
 <template>
-  <div id="home" @scroll="handleScroll" ref="pageContents">
+  <div id="home" @scroll="handleScroll" ref="pageContents" @mousemove="handleMouse">
     <div class="blob" v-for="(blob, i) in blobs" :style="{'top':blob.top+'px', 'left':blob.left+'px'}" :key="i">
     </div>
+    <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>
     <vNavbar/>
     <vBanner/>
     <vNosotros/>
@@ -43,9 +44,27 @@ export default {
     animationFrameId: null,
     blobs: [],
     speed: 20,
+    blob: {
+      top: 100,
+      left: 100,
+      scale: 1,
+    },
+    currentScroll: 0,
   }),
   methods: {
+    handleMouse(event) {
+      this.blob = {
+        top: event.y + document.getElementById('home').scrollTop,
+        left: event.x,
+        scale: 2,
+      }
+      setTimeout(()=>{
+        this.blob.scale = 1
+      }, 250)
+    },
     handleScroll() {
+      this.blob.top += document.getElementById("home").scrollTop - this.currentScroll
+      this.currentScroll = document.getElementById("home").scrollTop
       this.show = parseInt(document.getElementById("home").scrollTop) > 300
     },
     initializeBlobs() {
@@ -90,13 +109,24 @@ export default {
 
 <style>
   .blob {
-    position: absolute;
+    position: fixed;
     height: 300px;
     background: var(--primary);
     border-radius: 50%;
     filter: blur(150px);
     z-index: -1;
     aspect-ratio: 2/5 !important;
+  }
+  #blob {
+    position: absolute;
+    height: 100px;
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 3;
+    aspect-ratio: 2/5 !important;
+    transition: top .25s ease-out, left .25s ease-out, transform .25s ease-out;
+    transform: translate(-50%, -50%)
   }
   #home {
     height: calc(100vh);
