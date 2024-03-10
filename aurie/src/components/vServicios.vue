@@ -2,7 +2,6 @@
   <div id="servicios">
     <h1>Servicios</h1>
     <br>
-    <h2>Paquetes populares</h2><br><br>
     <div class="services-list" v-if="selectedProject.services">
       <div class="service" v-for="(service, i) in selectedProject.services" :key="i">
         <h2>
@@ -63,7 +62,6 @@
         </div>
       </div>
     </div>
-    
     <div class="no-services" v-if="selectedProject.name && !selectedProject.services">
       En desarrollo ...
     </div>

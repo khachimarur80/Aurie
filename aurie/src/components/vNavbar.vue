@@ -14,9 +14,9 @@
       <a class="navbar-item" @click="scrollToSection('nosotros')">
         Nosotros
       </a>
-      <!--<a class="navbar-item" @click="scrollToSection('proyectos')">
+      <a class="navbar-item" @click="scrollToSection('proyectos')">
         Proyectos
-      </a>-->
+      </a>
       <a class="navbar-item" @click="scrollToSection('servicios')">
         Servicios
       </a>
@@ -37,9 +37,9 @@
         <a class="dropdown-item" @click="scrollToSection('nosotros')">
           Nosotros
         </a>
-        <!--<a class="dropdown-item" @click="scrollToSection('proyectos')">
+        <a class="dropdown-item" @click="scrollToSection('proyectos')">
           Proyectos
-        </a>-->
+        </a>
         <a class="dropdown-item" @click="scrollToSection('servicios')">
           Servicios
         </a>
