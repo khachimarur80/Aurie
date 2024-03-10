@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "93e42963267a4a39",
+        "id": "b9ab23565285571c",
         "type": "tabs",
         "children": [
           {
-            "id": "d367e3bc80ba626e",
+            "id": "ffcddfaea9c2c419",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {}
             }
           }
@@ -138,8 +138,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d367e3bc80ba626e",
+  "active": "ffcddfaea9c2c419",
   "lastOpenFiles": [
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "2024-02-20.md",
     "Reuniones y planning.md"
   ]
 }
