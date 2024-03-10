@@ -110,8 +110,9 @@ h1::after {
   gap: 20px;
   color: var(--text);
   background: var(--background);
-  box-shadow: 1px 1px 3px 0px #777;
+  box-shadow: 0px 0px 3px 0px #777;
   transition: transform .3s ease-out;
+  border-radius: 5px;
 }
 .member-photo {
   max-width: 100%;

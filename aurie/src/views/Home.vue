@@ -7,7 +7,7 @@
     <vBanner/>
     <vNosotros/>
     <vServicios/>
-    <vProyectos/>
+    <!--<vProyectos/>-->
     <vEquipo/>
     <vContacto/>
     <vFooter/>
@@ -20,7 +20,7 @@ import vNavbar from "@/components/vNavbar.vue"
 import vBanner from '@/components/vBanner.vue'
 import vNosotros from '@/components/vNosotros.vue'
 import vServicios from '@/components/vServicios.vue'
-import vProyectos from '@/components/vProyectos.vue'
+//import vProyectos from '@/components/vProyectos.vue'
 import vEquipo from '@/components/vEquipo.vue'
 import vContacto from '@/components/vContacto.vue'
 import vFooter from '@/components/vFooter.vue'
@@ -33,7 +33,7 @@ export default {
     vBanner,
     vNosotros,
     vServicios,
-    vProyectos,
+    //vProyectos,
     vEquipo,
     vContacto,
     vFooter,
@@ -119,10 +119,11 @@ export default {
   }
   #blob {
     position: absolute;
-    height: 100px;
+    height: 50px;
+    width: 50px;
     background: var(--primary);
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(50px);
     z-index: 3;
     aspect-ratio: 2/5 !important;
     transition: top .25s ease-out, left .25s ease-out, transform .25s ease-out;
