@@ -7,7 +7,7 @@
     <vBanner/>
     <vNosotros/>
     <vServicios/>
-    <vProyectos/>
+    <!--<vProyectos/>-->
     <vEquipo/>
     <vContacto/>
     <vFooter/>
@@ -20,7 +20,7 @@ import vNavbar from "@/components/vNavbar.vue"
 import vBanner from '@/components/vBanner.vue'
 import vNosotros from '@/components/vNosotros.vue'
 import vServicios from '@/components/vServicios.vue'
-import vProyectos from '@/components/vProyectos.vue'
+//import vProyectos from '@/components/vProyectos.vue'
 import vEquipo from '@/components/vEquipo.vue'
 import vContacto from '@/components/vContacto.vue'
 import vFooter from '@/components/vFooter.vue'
@@ -33,7 +33,7 @@ export default {
     vBanner,
     vNosotros,
     vServicios,
-    vProyectos,
+    //vProyectos,
     vEquipo,
     vContacto,
     vFooter,
