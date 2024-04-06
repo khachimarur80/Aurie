@@ -3,62 +3,22 @@
     <h1>Servicios</h1>
     <br>
     <div class="services-list" v-if="selectedProject.services">
-      <div class="service" v-for="(service, i) in selectedProject.services" :key="i">
-        <h2>
-          {{ service.name }}
-        </h2>
-        <p class="description">
-          <span class="inner">
-            {{ service.description }}
-          </span>
-        </p>
-        <div class="includes-container">
-          <div v-for="(include, i) in serviceIncludes(service)" :key="i" class="includes">
-          <span class="check">
-          </span>
-          <p>
-            {{ include }}
-          </p>
-          </div>
+      <div :class="['service', service.showPrice ? 'more' : '']" v-for="(service, i) in selectedProject.services" :key="i">
+        <div class="service-img" :style="{'background' : 'url('+service.image+')'}">
         </div>
-        <button class="seemore" @click="service.seemore = !service.seemore">
-          <span v-if="!service.seemore">Ver más</span>
-          <span v-else>Ver menos</span>
-        </button>
-        <div style="flex: 1"></div>
-        <p class="show-price" @click="service.showPrice = !service.showPrice" v-if="service.price.length">
-          Ver precio
-        </p>
-        <p class="show-price" @click="scrollToSection('contacto')" v-else>
-          Consúltanos
-        </p>
-        <div class="price">
-          <table :class="[service.showPrice ? 'show' : '']">
-            <!--<tr>
-                <td>Plan</td>
-                <td>{{ service.price[0] }}</td>
-            </tr>
-            <tr>
-                <td>Mantenimiento</td>
-                <td>{{ service.price[1] }}</td>
-            </tr>
-            <tr>
-                <td>PVP final</td>
-                <td>{{ service.price[2] }}</td>
-            </tr>-->
-            <tr>
-                <td>Precio (IVA inc.)</td>
-                <td>{{ service.price[3] }}</td>
-            </tr>
-            <!--<tr>
-                <td>Bono anual</td>
-                <td>{{ service.price[4] }}</td>
-            </tr>-->
-            <!--<tr>
-                <td>Bono anual (IVA inc.)</td>
-                <td>{{ service.price[5] }}</td>
-            </tr>-->
-          </table>
+        <div class="description">
+          <div class="service-name">
+            {{ service.name }}
+          </div>
+          <div class="service-description" v-if="service.showPrice">
+            {{ service.description }}
+          </div>
+          <button v-if="!service.showPrice" @click="service.showPrice = true">
+            Ver más
+          </button>
+          <button v-else  @click="service.showPrice = false">
+            Ver menos
+          </button>
         </div>
       </div>
     </div>
@@ -82,84 +42,93 @@ export default {
         icon: require('@/assets/logos/KAwebs.webp'),
         services: [
           {
-            "name": "Paquete Básico",
-            "description": "Un paquete perfecto para pequeñas empresas o startups que buscan un sitio web profesional a modo informativo.",
-            "price": ["201,26 €", "10 €/mes", "289,26 €", "450 €", "265,26 € (3 meses gratis)", "570 €"],
-            "includes": [
-              "Diseño Moderno y Funcional",
-              "Optimización de rendimiento",
-              "SEO Básico",
-              "Diseño responsivo",
-              "1 cambio al mes",
-              "Certificación SSL"
-            ],
+            "name": "Diseño Web",
+            "description":  "Crea una presencia digital con diseño web profesional y atractivo para cautivar a tus visitantes.",
+            "price": "",
+            "image": require("@/assets/vectors/diseño-web/4300580.webp"),
             "showPrice": false,
-            "seemore": false,
+            "seemore": false
           },
           {
-            "name": "Paquete Avanzado",
-            "description": "Ideal para empresas que quieran aumentar sus ventas de manera online, de forma cómoda y sencilla.",
-            "price": ["262 €", "12 €/mes", "372 €", "600 €", "352 € (2 meses gratis)", "744 €"],
-            "includes": [
-              "Diseño Moderno y Funcional",
-              "Optimización de rendimiento",
-              "SEO Avanzado",
-              "Diseño responsivo",
-              "Redes Sociales",
-              "5 cambio al mes",
-              "Certificación SSL",
-              "Formulario de contacto"
-            ],
+            "name": "eCommerce",
+            "description":  "Lleva tu negocio al siguiente nivel con una plataforma de comercio electrónico robusta y escalable.",
+            "price": "",
+            "image": require("@/assets/vectors/ecommerce/6509976.webp"),
             "showPrice": false,
-            "seemore": false,
+            "seemore": false
           },
           {
-            "name": "Paquete Premium",
-            "description": "Personaliza y dale tu estilo profesional a tu página web con nuestro Paquete Premium, una solución para empresas que buscan destacar en la web.",
-            "price": ["297,76 €", "14 €/mes", "429,76 €", "720 €", "405,76 € (2 meses gratis)", "888 €"],
-            "includes": [
-              "Diseño Moderno y Funcional",
-              "Optimización de rendimiento",
-              "SEO Avanzado",
-              "Diseño responsivo",
-              "Redes Sociales",
-              "Cambios ilimitados",
-              "Certificación SSL",
-              "Formulario de contacto",
-              "Imágenes profesionales",
-              "Soporte prioritario",
-              "Email profesional"
-            ],
+            "name": "Envíos Online",
+            "description":  "Simplifica el proceso de envío y logística de tu negocio con nuestra solución de envíos online.",
+            "price": "",
+            "image": require("@/assets/vectors/envios-online/3938497.webp"),
             "showPrice": false,
-            "seemore": false,
+            "seemore": false
           },
           {
-            "name": "Paquete Personalizado",
-            "description": "Esta solución más personalizada usa todas las herramientas para hacer que tu sitio web destaque y puedas desarrollar tu actividad más eficientemente.",
-            "price": [],
-            "includes": [
-              "Diseño Moderno y Funcional",
-              "Optimización de rendimiento",
-              "SEO Avanzado",
-              "Diseño responsivo",
-              "Redes Sociales",
-              "Cambios ilimitados",
-              "Certificación SSL",
-              "Formulario de contacto",
-              "Imágenes profesionales",
-              "Soporte prioritario",
-              "Email profesional",
-              "Estadísticas web",
-              "Página de reserva",
-              "Integración de bases de datos",
-              "Implementación de backend",
-              "Plataforma de pago online",
-              "Autenticación de usuarios",
-              "Interfaz de ventas"
-            ],
+            "name": "Hosting",
+            "description":  "Confía en nuestra infraestructura de hosting de alto rendimiento para alojar tu sitio web y aplicaciones en línea.",
+            "price": "",
+            "image": require("@/assets/vectors/hosting/25087.webp"),
             "showPrice": false,
-            "seemore": false,
+            "seemore": false
           },
+          {
+            "name": "Multidioma",
+            "description":  "Amplía tu alcance global con una plataforma web multilingüe que conecta con audiencias de todo el mundo.",
+            "price": "",
+            "image": require("@/assets/vectors/multidioma/20945116.webp"),
+            "showPrice": false,
+            "seemore": false
+          },
+          {
+            "name": "Optimización Web",
+            "description":  "Mejora el rendimiento y la visibilidad de tu sitio web en los motores de búsqueda con nuestra estrategia de optimización web.",
+            "price": "",
+            "image": require("@/assets/vectors/optimizacion-web/2903846.webp"),
+            "showPrice": false,
+            "seemore": false
+          },
+          {
+            "name": "Pago Online",
+            "description":  "Facilita las transacciones en línea con nuestro sistema de pago seguro y fácil de usar.",
+            "price": "",
+            "image": require("@/assets/vectors/pago-online/60019.webp"),
+            "showPrice": false,
+            "seemore": false
+          },
+          {
+            "name": "SEO Avanzado",
+            "description":  "Aumenta la visibilidad y el tráfico orgánico de tu sitio web con nuestra estrategia de SEO avanzado.",
+            "price": "",
+            "image": require("@/assets/vectors/seo-avanzado/32010.webp"),
+            "showPrice": false,
+            "seemore": false
+          },
+          {
+            "name": "SEO Básico",
+            "description":  "Establece una base sólida para tu estrategia de SEO con nuestro servicio básico.",
+            "price": "",
+            "image": require("@/assets/vectors/seo-basico/3203.webp"),
+            "showPrice": false,
+            "seemore": false
+          },
+          {
+            "name": "Web Responsive",
+            "description":  "Garantiza una experiencia de usuario óptima en todos los dispositivos con un diseño web responsive.",
+            "price": "",
+            "image": require("@/assets/vectors/web-responsive/7438219.webp"),
+            "showPrice": false,
+            "seemore": false
+          },
+          {
+            "name": "Autogestionable",
+            "description":  "Permite a tu empresa realizar cambios de contenido en su sitio web de manera rápida y sencilla, sin depender de nosotros.",
+            "price": "Desde 100 €",
+            "image": require("@/assets/vectors/autogestionable/20943879.webp"),
+            "showPrice": false,
+            "seemore": false
+          }
         ],
         color: "#4285F4",
       },
@@ -209,19 +178,25 @@ h2 {
   text-align: center;
 }
 h1 {
-  text-align: center;
-  position: relative;
-  color: var(--text);
+    color: rgb(253, 76, 56);
+    font-size: 35px;
+    margin: 0px;
+    font-weight: 900;
+    text-shadow: 0px 0px 4px rgb(253, 76, 56);
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    text-align: center;
 }
 h1::after {
-  content: '';
-  background: var(--text);
-  height: 3px;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  position: absolute;
+    content: '';
+    background: rgb(253, 76, 56);
+    height: 4px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    position: absolute;
 }
 #servicios {
   padding: 20px;
@@ -232,31 +207,77 @@ h1::after {
 .services-list {
   width: 100%;
   display: flex;
-  gap: 10px;
+  gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
 }
 .service {
-  border: 1px solid var(--primary);
-  max-width: calc(25% - 20px);
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  gap: 15px;
+}
+.more .service-img {
+  height: 100px;
+  filter: blur(1px);
+  opacity: .75;
+}
+.more .description {
+  height: 300px;
+  border-color: var(--primary);
+  justify-content: space-around;
+}
+.more button {
+  color: var(--accent);
+}
+.more button:hover {
+  border-color: var(--accent);
+}
+.service-img {
+  height: 300px;
+  width: 100%;
+  background-size: cover !important;
+  border-radius: 20px 20px 10px 10px;
+  transition: all .3s ease-out;
+  background-position: center center !important;
+}
+.service-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+button {
+  border: 1px solid transparent;
+  background: none;
+  color: var(--primary);
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px 8px 5px 8px;
+  width: fit-content;
+}
+button:hover {
+  border-color: var(--primary);
+}
+.description {
+  background: #262626;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px 10px 20px 20px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px;
+  transition: all .3s ease-out;
+  border: 1px solid transparent;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
-  border-radius: 20px;
-  padding-top: 15px;
-  background: var(--background);
-  min-width: 360px;
-  position: relative;
-  overflow: hidden;
-}
-.description {
-  border-bottom: 1px solid var(--primary);
-  border-top: 1px solid var(--primary);
-  text-align: center;
-  padding: 5px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 .includes {
   margin: 0px;
@@ -398,41 +419,7 @@ tr {
 }
 
 @media only screen and (max-width: 670px) {
-  .includes {
-    margin-left: 0%;
-  }
-  .service {
-    max-width: calc(100% - 20px);
-    min-width: calc(100% - 20px);
-  }
-  h2 {
-    margin-bottom: 30px;
-  }
-  .description {
-    display: none;
-  }
-  .projects {
-    padding: 0px;
-  }
-  .project {
-    border-radius: 5px;
-    padding-left: 3px;
-    padding-right: 10px;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    border: 1px solid var(--color);
-    gap: 5px;
-    background: var(--background);
-    transition: background ease-in .15s;
-    width: 120px;
-    height: 45px;
-  }
-  .no-services {
-    padding: 50px;
-  }
+
 }
 
 @media only screen and (min-width: 671px) and (max-width: 980px) {

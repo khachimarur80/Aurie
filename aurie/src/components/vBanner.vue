@@ -1,15 +1,17 @@
 <template>
   <div id="banner" ref="banner">
+    <div class="hero-background">
+    </div>
     <div class="banner-contents">
       <div class="text">
-        <h1>Aurie, tu solución digital</h1>
-        <p>
-          En Aurie te ofrecemos servicios y productos en todas las áreas de la tecnología.
-        </p>
+        <div class="text-row" style="flex-direction: column; gap: 0px;">
+          <h1>Aurie</h1>
+          <h2>Innovación digital</h2>
+          <p>
+            En Aurie te ofrecemos servicios y productos en todas las áreas de la tecnología.
+          </p>
+        </div>
         <div class="text-row">
-          <h2>
-            ofrecemos
-          </h2>
           <div :class="['rectangle', face]">
             <div class="face">velocidad.</div>
             <div class="face">compromiso.</div>
@@ -19,10 +21,10 @@
           <img :src="require('@/assets/gifs/'+current+'.gif')" id="gif" :alt="'gif animado de ' + current" style="aspect-ratio: 3/2 !important;"/>
         </div>
       </div>
-      <div class="hero-image">
+      <!--<div class="hero-image">
         <img class="big" src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.webp" width="100%" alt="Ilustracion misión empresarial"/>
         <img class="small" src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342-small.webp" width="100%" alt="Ilustracion misión empresarial"/>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -70,8 +72,7 @@ export default {
 
 <style scoped>
 #banner {
-  min-height: calc(100vh + 50px);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, .5) 80%, rgba(255, 255, 255, 0) 100%);
+  min-height: calc(100vh);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,6 +80,22 @@ export default {
   z-index: 0;
   transition: opacity .8s ease-in;
   width: 100%;
+  max-height: 500px !important;
+  background-size: cover;
+  position: relative;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+.hero-background {
+  background: url('@/assets/images/hero.webp');
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: .15;
+  filter: blur(4px);
 }
 .banner-contents {
   display: flex;
@@ -98,31 +115,37 @@ export default {
 .text {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
   width: 500px;
   padding-left: 50px;
 }
 h1 {
-  color: var(--text);
-  font-size: 30px;
+  color: rgb(253, 76, 56);
+  font-size: 45px;
   margin: 0px;
+  font-weight: 900;
+  margin-bottom: -30px;
+  text-shadow: 0px 0px 4px rgb(253, 76, 56);
 }
 h2 {
-  color: var(--text);
-  font-size: 22px;
+  color: #E3E3E3;
+  font-size: 30px;
   margin-right: -20px;
+  font-weight: 300;
 }
 p {
   margin: 0px;
-  color: var(--text);
+  color: #E3E3E3;
   opacity: .7;
   width: 80%;
   margin-left: 15px;
+  text-align: center;
 }
 .text-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 40px;
   width: fit-content;
 }
@@ -149,29 +172,29 @@ p {
   height: 40px;
   line-height: 40px;
   z-index: 0;
-  border: 1px solid var(--background);
-  background: var(--background);
+  border: 1px solid #171717;
+  background: #171717;
 }
 
 .face:nth-child(1) { 
   transform: rotateX(0deg) translateZ(20px);
-  border-color: var(--success);
-  color: var(--success);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 .face:nth-child(2) { 
   transform: rotateX(180deg) translateZ(20px); 
-  border-color: var(--error);
-  color: var(--error);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 .face:nth-child(3) { 
   transform: rotateX( 90deg) translateZ(20px); 
-  border-color: var(--warning);
-  color: var(--warning);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 .face:nth-child(4) { 
   transform: rotateX(-90deg) translateZ(20px); 
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .front .face:nth-child(1) {
@@ -224,6 +247,7 @@ p {
   animation-duration: 3s;
   opacity: 0;
   animation-iteration-count: infinite;
+  filter: invert(55%) sepia(67%) saturate(4276%) hue-rotate(333deg) brightness(101%) contrast(98%);
 }
 
 @media only screen and (max-width: 600px) {
@@ -232,15 +256,13 @@ p {
     height: fit-content;
     align-items: center;
     gap: 50px;
-  }
-  h2 {
-    display: none;
+    padding-top: 90px;
   }
   .text-row {
     justify-content: center;
     display: flex;
     width: 100%;
-    gap: 5px;
+    height: fit-content;
   }
   .text {
     padding: 0px;
@@ -249,7 +271,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
   }
   h2 {
     width: 80%;

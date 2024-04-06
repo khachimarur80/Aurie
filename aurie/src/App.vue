@@ -12,9 +12,9 @@ export default {
     theme: {
       primary: "#fc5c47",
       secondary: "#C07F00",
-      text: "#444",
-      background: "#FFFFFF",
-      backgroundDark: "#121212",
+      text: "#E3E3E3",
+      background: "#171717",
+      backgroundDark: "#DDD",
       success: "#0F9D58",
       error: "#DB4437",
       accent: "#4285F4",

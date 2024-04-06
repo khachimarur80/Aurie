@@ -11,43 +11,19 @@
     <div class="spacer">
     </div>
     <div class="navbar-items" v-if="!isSmall">
-      <a class="navbar-item" @click="scrollToSection('nosotros')">
-        Nosotros
-      </a>
-      <!--<a class="navbar-item" @click="scrollToSection('proyectos')">
-        Proyectos
-      </a>-->
-      <a class="navbar-item" @click="scrollToSection('servicios')">
-        Servicios
-      </a>
-      <a class="navbar-item" @click="scrollToSection('equipo')">
-        Equipo
-      </a>
-      <a class="navbar-item" @click="scrollToSection('contacto')">
-        Contacto
+      <a class="navbar-item"  @click="scrollToSection(link.url)" v-for="(link, i) in links" :key="i">
+        {{ link.name }}
       </a>
     </div>
     <div :class="['dropdown', showDropdown ? 'show' : '']" v-else>
       <div class="dropdown-toggle">
         <button @click="showDropdown = !showDropdown">
-          <img src="@/assets/icons/menu.svg" height="30px" width="30px" alt="Menu icon"/>
+          <img src="@/assets/icons/menu.svg" height="30px" width="30px" alt="Menu icon" style="filter: invert(100%)"/>
         </button>
       </div>
       <div class="dropdown-items">
-        <a class="dropdown-item" @click="scrollToSection('nosotros')">
-          Nosotros
-        </a>
-        <!--<a class="dropdown-item" @click="scrollToSection('proyectos')">
-          Proyectos
-        </a>-->
-        <a class="dropdown-item" @click="scrollToSection('servicios')">
-          Servicios
-        </a>
-        <a class="dropdown-item" @click="scrollToSection('equipo')">
-          Equipo
-        </a>
-        <a class="dropdown-item" @click="scrollToSection('contacto')">
-          Contacto
+        <a class="dropdown-item" @click="scrollToSection(link.url)" v-for="(link, i) in links" :key="i">
+          {{ link.name }}
         </a>
       </div>
     </div>
@@ -61,6 +37,11 @@ export default {
     isSmall: false,
     showDropdown: false,
   }),
+  props: {
+    links: {
+      required: true
+    }
+  },
   mounted() {
     this.isSmall = parseInt(window.innerWidth) < 800
 
@@ -81,7 +62,8 @@ export default {
 <style scoped>
 #navbar {
   width: 100h;
-  height: 60px;
+  height: 100px;
+  box-sizing: border-box;
   z-index: 2;
   padding: 10px;
   display: flex;
@@ -90,14 +72,14 @@ export default {
   top: 0;
   right: 0;
   left: 0;
-  background: var(--background);
+  background: rgba(253, 76, 56, .15);
 }
 .spacer {
   flex: 1;
 }
 #navbar-title {
   font-size: 30px;
-  color: var(--text);
+  color: #E3E3E3;
   font-weight: bold;
   margin-left: 32px;
   height: 100%;
@@ -124,7 +106,7 @@ export default {
   margin: 5px;
   margin-top: 0px;
   border-radius: 5px;
-  color: var(--text);
+  color: #E3E3E3;
   user-select: none;
   text-decoration: none;
   transition: background .5s ease;
@@ -132,7 +114,7 @@ export default {
 }
 
 .navbar-item:hover {
-  background: #eee;
+  background: rgba(0, 0, 0, .3);
 }
 
 #navbar-logo {
@@ -146,8 +128,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -30px;
-  margin-top: -10px;
 }
 .dropdown .dropdown-items {
   opacity: 0;
@@ -160,14 +140,14 @@ export default {
   top: 0;
   right: -10px;
   position: absolute;
-  background: var(--background);
+  background: rgba(38, 38, 38, .5);
   border-bottom-left-radius: 10px;
 }
 .dropdown.show .dropdown-items {
   opacity: 1;
   display: flex;
   flex-direction: column;
-  transform: translateY(80px);
+  transform: translateY(90px);
   pointer-events: auto;
 }
 
@@ -183,17 +163,23 @@ export default {
   transition: background .15s ease-out
 }
 .dropdown-item:hover {
-  background: #eee;
+  background: #262626;
 }
 
 .dropdown-toggle {
-  height: 100%;
-  width: 100%;
+  height: calc(100% + 20px);
+  width: calc(100% + 10px);
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  padding-left: 20px;
   z-index: 1;
-  background: var(--background);
+  margin-right: -20px;
+  background: transparent;
+}
+.show .dropdown-toggle {
+  background: rgba(38, 38, 38, .5);
 }
 .dropdown-toggle button {
   height: 45px;
@@ -206,7 +192,7 @@ export default {
   border-radius: 50%;
 }
 .dropdown-toggle button:hover {
-  background: #ddd;
+  background: #262626;
   cursor: pointer;
 }
 </style>

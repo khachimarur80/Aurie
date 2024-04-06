@@ -206,7 +206,7 @@ export default {
   textarea, input {
     background: white;
     color: var(--text);
-    border: 1px solid #555;
+    border: 1px solid #333;
     outline: none;
     border-radius: 10px;
     padding: 10px;
@@ -224,10 +224,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom right, rgba(255, 230, 230) 50%, rgba(255, 255, 255) 100%);
+    background: linear-gradient(to bottom right, #171717 50%, #311212 100%);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 1px 1px 3px 0px #777;
+    box-shadow: 1px 1px 3px 0px #333;
     max-height: 400px;
   }
   .contact-image {
@@ -299,16 +299,19 @@ export default {
     flex-direction: column;
   }
   h1 {
-    text-align: center;
+    color: rgb(253, 76, 56);
+    font-size: 35px;
+    margin: 0px;
+    font-weight: 900;
+    text-shadow: 0px 0px 4px rgb(253, 76, 56);
     position: relative;
-    color: var(--text);
-    margin-bottom: 50px;
     margin-top: 50px;
+    margin-bottom: 80px;
   }
   h1::after {
     content: '';
-    background: var(--text);
-    height: 3px;
+    background: rgb(253, 76, 56);
+    height: 4px;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
@@ -342,7 +345,7 @@ export default {
     label::before {
       height: 4px !important;
       transform: translateY(-2px) !important;
-      background: rgb(255, 230, 230) !important;
+      background: #171717 !important;
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -440,14 +443,14 @@ export default {
     font-size: 13px;
     width: fit-content;
     padding-left: 10px;
-    color: #555;
+    color: #AAA;
     position: relative;
   }
   label::before {
     content: '';
     width: 100%;
     height: 2px;
-    background: rgba(255, 230, 230);
+    background: #171717;
     position: absolute;
     top: 50%;
     z-index: -1;

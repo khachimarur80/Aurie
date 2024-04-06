@@ -62,23 +62,25 @@ export default {
 
 <style scoped>
 h1 {
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 50px;
+  color: rgb(253, 76, 56);
+  font-size: 35px;
+  margin: 0px;
+  font-weight: 900;
+  text-shadow: 0px 0px 4px rgb(253, 76, 56);
   position: relative;
-  color: var(--text);
+  margin-top: 20px;
+  margin-bottom: 80px;
 }
 h1::after {
   content: '';
-  background: var(--text);
-  height: 3px;
+  background: rgb(253, 76, 56);
+  height: 4px;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 50px;
   position: absolute;
 }
-
 #equipo {
   padding: 20px;
   margin-top: -5px;
@@ -110,8 +112,9 @@ h1::after {
   gap: 20px;
   color: var(--text);
   background: var(--background);
-  box-shadow: 1px 1px 3px 0px #777;
+  box-shadow: 1px 1px 3px 0px #333;
   transition: transform .3s ease-out;
+  border-radius: 5px;
 }
 .member-photo {
   max-width: 100%;

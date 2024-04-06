@@ -1,13 +1,13 @@
 <template>
   <div id="home" @scroll="handleScroll" ref="pageContents" @mousemove="handleMouse">
-    <div class="blob" v-for="(blob, i) in blobs" :style="{'top':blob.top+'px', 'left':blob.left+'px'}" :key="i">
+    <!--<div class="blob" v-for="(blob, i) in blobs" :style="{'top':blob.top+'px', 'left':blob.left+'px'}" :key="i">
     </div>
-    <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>
-    <vNavbar/>
+    <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>-->
+    <vNavbar :links="links"/>
     <vBanner/>
     <vNosotros/>
     <vServicios/>
-    <!--<vProyectos/>-->
+    <vPaquetes/>
     <vEquipo/>
     <vContacto/>
     <vFooter/>
@@ -20,7 +20,7 @@ import vNavbar from "@/components/vNavbar.vue"
 import vBanner from '@/components/vBanner.vue'
 import vNosotros from '@/components/vNosotros.vue'
 import vServicios from '@/components/vServicios.vue'
-//import vProyectos from '@/components/vProyectos.vue'
+import vPaquetes from '@/components/vPaquetes.vue'
 import vEquipo from '@/components/vEquipo.vue'
 import vContacto from '@/components/vContacto.vue'
 import vFooter from '@/components/vFooter.vue'
@@ -33,13 +33,35 @@ export default {
     vBanner,
     vNosotros,
     vServicios,
-    //vProyectos,
+    vPaquetes,
     vEquipo,
     vContacto,
     vFooter,
     vGoToTop,
   },
   data: () => ({
+    links: [
+      {
+        'name': 'Nosotros',
+        'url': 'nosotros',
+      },
+      {
+        'name': 'Servicios',
+        'url': 'servicios',
+      },
+      {
+        'name': 'Kit Digital',
+        'url': 'kitdigital',
+      },
+      {
+        'name': 'Equipo',
+        'url': 'equipo',
+      },
+      {
+        'name': 'Contact',
+        'url': 'contacto',
+      }
+    ],
     show: false,
     animationFrameId: null,
     blobs: [],
@@ -114,7 +136,7 @@ export default {
     background: var(--primary);
     border-radius: 50%;
     filter: blur(150px);
-    z-index: -1;
+    z-index: -3;
     aspect-ratio: 2/5 !important;
   }
   #blob {
@@ -123,7 +145,7 @@ export default {
     background: var(--primary);
     border-radius: 50%;
     filter: blur(80px);
-    z-index: 3;
+    z-index: 0;
     aspect-ratio: 2/5 !important;
     transition: top .25s ease-out, left .25s ease-out, transform .25s ease-out;
     transform: translate(-50%, -50%);
@@ -137,6 +159,7 @@ export default {
     scroll-behavior: smooth;
     user-select: none;
     position: relative;
+    background-color: #171717;
   }
 
   #home::-webkit-scrollbar {
