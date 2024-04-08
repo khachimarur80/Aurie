@@ -51,7 +51,7 @@ export default {
       },
       {
         'name': 'Kit Digital',
-        'url': 'kitdigital',
+        'url': 'paquetes',
       },
       {
         'name': 'Equipo',

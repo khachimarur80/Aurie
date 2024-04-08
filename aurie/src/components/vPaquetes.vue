@@ -1,5 +1,5 @@
 <template>
-    <div id="kitdigital">
+    <div id="paquetes">
       <h1>Paquetes Kit digital</h1>
       <br>
       <div class="section-text">
@@ -246,7 +246,7 @@
       margin-left: 15px;
       text-align: center;
     }
-  #kitdigital {
+  #paquetes {
     padding: 20px;
     margin: 0px;
     margin-top: -5px;
