@@ -3,7 +3,7 @@
     <h1>Servicios</h1>
     <br>
     <div class="services-list" v-if="selectedProject.services">
-      <div :class="['service', service.showPrice ? 'more' : '']" v-for="(service, i) in selectedProject.services" :key="i">
+      <div :class="['service', service.showPrice ? 'more' : '']" v-for="(service, i) in selectedProject.services.slice(0, currentMax)" :key="i">
         <div class="service-img" :style="{'background' : 'url('+service.image+')'}">
         </div>
         <div class="description">
@@ -21,6 +21,14 @@
           </button>
         </div>
       </div>
+      <div class="service" v-if="small">
+        <button v-if="more" @click="setCurrentMax(false)">
+          Ver menos
+        </button>
+        <button v-else @click="setCurrentMax(true)">
+          Ver más
+        </button>
+      </div>
     </div>
     <div class="no-services" v-if="selectedProject.name && !selectedProject.services">
       En desarrollo ...
@@ -36,6 +44,9 @@
 export default {
   name: 'vServicios',
   data: () => ({
+    small: false,
+    more: false,
+    currentMax: 0,
     projects: [
       {
         name: 'KAwebs',
@@ -142,6 +153,15 @@ export default {
     selectedProject: []
   }),
   methods: {
+    setCurrentMax(val) {
+      if (val) {
+        this.currentMax = this.selectedProject.services.length
+      }
+      else {
+        this.currentMax = 3
+      }
+      this.more = val
+    },
     scrollToSection(item) {
       let home = document.getElementById('home')
       let target = document.getElementById(item.toLowerCase())
@@ -166,6 +186,14 @@ export default {
   },
   mounted() {
     this.selectedProject = this.projects[0]
+    if (parseInt(window.innerWidth)<500) {
+      this.small = true
+      this.currentMax = 3
+    }
+    else {
+      this.currentMax = this.selectedProject.services.length
+
+    }
   },
 }
 </script>
@@ -203,9 +231,14 @@ h1::after {
   margin: 0px;
   margin-top: -5px;
   color: var(--background-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .services-list {
   width: 100%;
+  align-items: center;
+  max-width: 1200px;
   display: flex;
   gap: 30px;
   flex-wrap: wrap;

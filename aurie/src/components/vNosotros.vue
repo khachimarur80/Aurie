@@ -402,7 +402,7 @@ button:hover {
   padding: 10px;
   line-height: 30px;
   flex-direction: column;
-  color: var(--text);
+  color: white;
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
@@ -427,7 +427,7 @@ button:hover {
   top: 0px;
   left: 0px;
   background-size: cover !important;
-  filter: brightness(.5);
+  filter: brightness(.3);
   background-position: 0%;
 }
 .card-description {

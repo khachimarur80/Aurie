@@ -58,7 +58,7 @@ export default {
         'url': 'equipo',
       },
       {
-        'name': 'Contact',
+        'name': 'Contacto',
         'url': 'contacto',
       }
     ],

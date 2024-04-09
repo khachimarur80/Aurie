@@ -9,7 +9,7 @@
         Más información
       </a><br><br>
       <div class="services-list" v-if="selectedProject.services">
-        <div class="service" v-for="(service, i) in selectedProject.services" :key="i">
+        <div class="service" v-for="(service, i) in selectedProject.services.slice(0, currentMax)" :key="i">
           <h2>
             {{ service.name }}
           </h2>
@@ -47,6 +47,15 @@
             </table>
           </div>
         </div>
+        <div class="servicea" v-if="small">
+          <br>
+          <button class="button" v-if="more" @click="setCurrentMax(false)">
+            Ver menos
+          </button>
+          <button class="button" v-else @click="setCurrentMax(true)">
+            Ver más
+          </button>
+        </div>
       </div>
       <div class="no-services" v-if="selectedProject.name && !selectedProject.services">
         En desarrollo ...
@@ -62,6 +71,9 @@
   export default {
     name: 'vServicios',
     data: () => ({
+      small: false,
+      more: false,
+      currentMax: 0,
       projects: [
         {
           name: 'KAwebs',
@@ -142,7 +154,7 @@
             {
               "name": "Redes sociales",
               "description": "Estrategia, monitorización, publicaciones.",
-              "price": ["Hasta 2000 €"],
+              "price": ["Hasta 2500 €"],
               "includes": [
                 "Social Media Plan",
                 "Monitorización de redes sociales",
@@ -167,6 +179,15 @@
       selectedProject: []
     }),
     methods: {
+      setCurrentMax(val) {
+        if (val) {
+          this.currentMax = this.selectedProject.services.length
+        }
+        else {
+          this.currentMax = 2
+        }
+        this.more = val
+      },
       scrollToSection(item) {
         let home = document.getElementById('home')
         let target = document.getElementById(item.toLowerCase())
@@ -191,11 +212,31 @@
     },
     mounted() {
       this.selectedProject = this.projects[0]
+      if (parseInt(window.innerWidth)<500) {
+        this.small = true
+        this.currentMax = 2
+      }
+      else {
+        this.currentMax = this.selectedProject.services.length
+
+      }
     },
   }
   </script>
   
   <style scoped>
+    .button {
+      border: 1px solid transparent;
+      background: none;
+      color: var(--primary);
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 5px 8px 5px 8px;
+      width: fit-content;
+    }
+    .button:hover {
+      border-color: var(--primary);
+    }
     .ver-mas {
       border: 2px solid var(--primary);
       border-radius: 8px;
@@ -257,6 +298,7 @@
   }
   .services-list {
     width: 100%;
+    max-width: 1200px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
@@ -264,7 +306,7 @@
   }
   .service {
     border: 1px solid var(--primary);
-    max-width: calc(25% - 20px);
+    width: calc(25% - 20px);
     display: flex;
     align-items: center;
     flex-direction: column;

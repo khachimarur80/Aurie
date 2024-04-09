@@ -247,7 +247,7 @@ p {
   animation-duration: 3s;
   opacity: 0;
   animation-iteration-count: infinite;
-  filter: invert(55%) sepia(67%) saturate(4276%) hue-rotate(333deg) brightness(101%) contrast(98%);
+  filter: brightness(0) saturate(100%) invert(48%) sepia(17%) saturate(6648%) hue-rotate(334deg) brightness(102%) contrast(98%);
 }
 
 @media only screen and (max-width: 600px) {
