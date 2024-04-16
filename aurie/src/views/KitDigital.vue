@@ -6,7 +6,7 @@
         <vSolicitar/>
         <vLabor/>
         <vPaquetes/>
-        <vFooter/>
+        <vFooter :links="footerLinks"/>
         <vGoToTop :show="show"/>
     </div>
   </template>
@@ -17,7 +17,7 @@
   import vSolicitar from "@/components/kitdigital/vSolicitar.vue"
   import vLabor from "@/components/kitdigital/vLabor.vue"
   import vPaquetes from "@/components/kitdigital/vPaquetes.vue"
-  import vFooter from "@/components/kitdigital/vFooter.vue"
+  import vFooter from "@/components/vFooter.vue"
   import vGoToTop from '@/components/vGoToTop.vue'
   
   export default {
@@ -45,6 +45,20 @@
         {
             'name': 'Paquetes',
             'url': 'paquetes',
+        },
+      ],
+      footerLinks: [
+        {
+          'name': 'Solicitar',
+          'url': '#solicitar',
+        },
+        {
+          'name': 'Labor',
+          'url': '#labor',
+        },
+        {
+          'name': 'Paquetes',
+          'url': '#paquetes',
         },
       ]
     }),

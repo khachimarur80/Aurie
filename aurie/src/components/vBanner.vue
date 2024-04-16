@@ -251,6 +251,9 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
+  h1 {
+    text-shadow: 0px 0px 2px rgb(253, 76, 56);
+  }
   .banner-contents {
     flex-direction: column;
     height: fit-content;

@@ -8,9 +8,7 @@
     <vNosotros/>
     <vServicios/>
     <vPaquetes/>
-    <vEquipo/>
-    <vContacto/>
-    <vFooter/>
+    <vFooter :links="footerLinks"/>
     <vGoToTop :show="show"/>
   </div>
 </template>
@@ -21,8 +19,6 @@ import vBanner from '@/components/vBanner.vue'
 import vNosotros from '@/components/vNosotros.vue'
 import vServicios from '@/components/vServicios.vue'
 import vPaquetes from '@/components/vPaquetes.vue'
-import vEquipo from '@/components/vEquipo.vue'
-import vContacto from '@/components/vContacto.vue'
 import vFooter from '@/components/vFooter.vue'
 import vGoToTop from '@/components/vGoToTop.vue'
 
@@ -34,8 +30,6 @@ export default {
     vNosotros,
     vServicios,
     vPaquetes,
-    vEquipo,
-    vContacto,
     vFooter,
     vGoToTop,
   },
@@ -53,14 +47,24 @@ export default {
         'name': 'Kit Digital',
         'url': 'paquetes',
       },
+    ],
+    footerLinks: [
       {
-        'name': 'Equipo',
-        'url': 'equipo',
+        'name': 'Nosotros',
+        'url': '#nosotros',
+      },
+      {
+        'name': 'Servicios',
+        'url': '#servicios',
+      },
+      {
+        'name': 'Paquetes',
+        'url': '#paquetes',
       },
       {
         'name': 'Contacto',
-        'url': 'contacto',
-      }
+        'url': '/contacto',
+      },
     ],
     show: false,
     animationFrameId: null,

@@ -9,7 +9,7 @@
         <div class="member-info">
           <h2>{{ member.name }}</h2>
           <hr style="width: 100%">
-          <div class="member-position">{{ member.position }}</div>
+          <!--<div class="member-position">{{ member.position }}</div>-->
           <div class="member-info-contents">
             <!--<p style="margin-bottom: 0px;">Edad: {{ member.age }}</p>-->
             <div style="display: flex; flex-wrap: wrap; align-items: center;">

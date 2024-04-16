@@ -30,11 +30,10 @@
       <div class="footer-top-2">
         <div class="footer-col">
           <h4>Navegación</h4>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#kitdigital">KIT Digital</a>
-          <a href="#equipo">Equipo</a>
-          <a href="#nosotros">Contacto</a>
+          <a href="/">Inicio</a>
+          <a :href="link.url" v-for="(link, i) in links" :key="i">
+            {{ link.name }}
+          </a>
         </div>
         <div class="footer-col">
           <h4>Información</h4>
@@ -85,6 +84,11 @@ export default {
       },
     ]
   }),
+  props: {
+    links: {
+      required: true
+    }
+  }
 }
 </script>
 

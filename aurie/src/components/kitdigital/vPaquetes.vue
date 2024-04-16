@@ -458,7 +458,7 @@
     color: var(--accent);
   }
   .seemore:hover {
-    background: #eee;
+    background: #333;
     cursor: pointer;
   }
   
