@@ -48,7 +48,7 @@
         <a href="https://lordicon.com/" style="text-decoration: none; color: var(--text); font-weight: normal !important;">Icons by Lordicon.com</a>
       </span>
       <span class="footer-text">
-        ©2024 Aurie - Sitio Web creado por <a href="https://www.aurie.es" target="_blank">Aurie</a>
+        ©2024 Aurie
       </span>
       <span class="footer-text">
         <a href="https://lordicon.com/" style="text-decoration: none; color: var(--text); font-weight: normal !important;">Icons by Lordicon.com</a>
