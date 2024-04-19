@@ -227,7 +227,7 @@ h1::after {
   text-align: center;
 }
 #nosotros {
-  padding-top: 30px;
+  padding-top: 130px;
   padding-bottom: 30px;
   margin-top: -5px;
   display: flex;

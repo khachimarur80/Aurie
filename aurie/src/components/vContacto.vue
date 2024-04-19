@@ -4,6 +4,13 @@
       <h1>
         Contacto
       </h1>
+      <div class="info">
+        <img class="icon" src="@/assets/icons/phone.webp" height="30px" width="30px"><span>contacto@aurie.es</span>
+      </div>
+      <div class="info">
+        <img class="icon" src="@/assets/icons/mail.png" height="30px" width="30px"><span>+ 664 54 25 94</span>
+      </div>
+      <br><br>
       <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;" class="form-img-container">
         <form class="contact-form" id="contact-form" @submit="submitForm" ref="contactForm">
           <div class="form-contents">
@@ -199,6 +206,15 @@ export default {
 };
 </script>
 <style scoped>
+  .info {
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
+  .info img {
+    filter: invert(55%) sepia(67%) saturate(4276%) hue-rotate(333deg) brightness(101%) contrast(98%);
+  }
   #contacto {
     margin-top: -5px;
     margin-bottom: 50px;
@@ -336,7 +352,7 @@ export default {
     input, textarea {
       width: 100%;
     }
-    img, .contact-image {
+    img:not(.icon), .contact-image {
       display: none;
     }
     .form-img-container {
@@ -358,12 +374,12 @@ export default {
     input, textarea {
       width: 400px;
     }
-    img, .contact-image  {
+    img:not(.icon), .contact-image  {
       display: none;
     }
   }
   @media only screen and (min-width: 1024px) and (max-width: 1179px) {
-    img, .contact-image  {
+    img:not(.icon), .contact-image  {
       display: none;
     }
     .section {

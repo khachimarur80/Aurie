@@ -10,6 +10,7 @@
           <h2>INQUIETAS</h2><br><br>
         </div>
       </div>
+      <a class="ver-mas" href="#nosotros">Conócenos</a>
     </div>
   </div>
 </template>
@@ -103,7 +104,7 @@ export default {
 .banner-contents {
   display: flex;
   flex-direction: row !important;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: relative;
   z-index: 0;

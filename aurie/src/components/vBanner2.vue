@@ -104,7 +104,7 @@
   .banner-contents {
     display: flex;
     flex-direction: row !important;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     position: relative;
     z-index: 0;

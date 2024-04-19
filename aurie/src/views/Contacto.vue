@@ -4,7 +4,6 @@
       </div>
       <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>-->
       <vNavbar :links="links"/>
-      <br><br><br><br>
       <vContacto/>
       <br><br>
       <vFooter :links="footerLinks"/>
@@ -28,16 +27,8 @@
     },
     data: () => ({
       links: [
-        {
-          'name': 'Contacto',
-          'url': 'contacto',
-        }
       ],
       footerLinks: [
-        {
-          'name': 'Contacto',
-          'url': '#contacto',
-        }
       ],
       show: false,
       animationFrameId: null,
