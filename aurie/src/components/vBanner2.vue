@@ -5,13 +5,12 @@
       <div class="banner-contents">
         <div class="text">
           <div class="text-row" style="flex-direction: column; gap: 0px;">
-            <h2>Alimentando mentes inquietas</h2>
+            <h2>Alimentando</h2>
+            <h2>Mentes</h2>
+            <h2>Inquietas</h2><br><br>
           </div>
         </div>
-        <!--<div class="hero-image">
-          <img class="big" src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342.webp" width="100%" alt="Ilustracion misión empresarial"/>
-          <img class="small" src="@/assets/vectors/ilustracion-concepto-mision-empresarial/5995342-small.webp" width="100%" alt="Ilustracion misión empresarial"/>
-        </div>-->
+        <a class="ver-mas" href="/nosotros">Conócenos</a>
       </div>
     </div>
   </template>
@@ -58,16 +57,30 @@
   </script>
   
   <style scoped>
+  .ver-mas {
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 5px 10px 5px 10px;
+    background: none;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 18px;
+    transition: all .2s ease-out;
+  }
+  .ver-mas:hover {
+    color: #171717;
+    background-color: var(--primary);
+}
   #banner {
     min-height: 450px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     z-index: 0;
     transition: opacity .8s ease-in;
     width: 100%;
-    max-height: 500px !important;
+    aspect-ratio: 5/2;
     background-size: cover;
     position: relative;
     padding-top: 100px;
@@ -79,15 +92,16 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 50%;
+    background-size: 80%;
     top: 0;
     bottom: 0;
-    right: 0;
-    left: 0;
+    right: 40%;
+    left: 10%;
     opacity: .5;
   }
   .banner-contents {
     display: flex;
+    flex-direction: row !important;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -95,7 +109,6 @@
     transition: opacity .8s ease-in;
     width: 100%;
     height: 100%;
-    max-width: 1200px;
   }
   
   .slogan {
@@ -106,8 +119,7 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    width: 500px;
-    padding-left: 50px;
+    width: 50%;
   }
   h1 {
     color: rgb(253, 76, 56);
@@ -122,6 +134,11 @@
     font-size: 30px;
     margin-right: -20px;
     font-weight: 300;
+    margin: 0px;
+    width: 100%;
+  }
+  h2:nth-child(2) {
+    text-align: end;
   }
   p {
     margin: 0px;
@@ -135,8 +152,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    width: fit-content;
+    flex-direction: column;
+    width: calc(100% - 40px);
+    max-width: 300px;
   }
   .hero-image {
     width: 50%;
@@ -173,6 +191,14 @@
   }
   
   @media only screen and (max-width: 600px) {
+    .hero-background {
+      left: 0%;
+      right: 0%;
+    }
+    .banner-contents {
+      flex-direction: column !important;
+      padding-bottom: 50px;
+    }
     h1 {
       text-shadow: 0px 0px 2px rgb(253, 76, 56);
     }
@@ -247,6 +273,17 @@
       padding-top: 0px;
       padding-top: 60px;
       height: fit-content;
+    }
+    h2 {
+      font-size: 40px;
+    }
+  }
+  @media only screen and (min-width: 900px) {
+    h2 {
+      font-size: 50px;
+    }
+    .text-row {
+      max-width: 500px;
     }
   }
   </style>

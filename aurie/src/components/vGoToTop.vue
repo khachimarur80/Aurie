@@ -43,6 +43,7 @@ export default {
   opacity: 0;
   transition: opacity .3s ease-in-out;
   pointer-events: none;
+  z-index: 5;
 }
 #gototop:active {
   border-color: var(--text);

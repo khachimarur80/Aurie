@@ -16,7 +16,7 @@
   
   <script>
   import vNavbar from "@/components/nosotros/vNavbar.vue"
-  import vBanner2 from '@/components/vBanner2.vue'
+  import vBanner2 from '@/components/nosotros/vBanner2.vue'
   import vNosotros from '@/components/nosotros/vNosotros.vue'
   import vEquipo from '@/components/vEquipo.vue'
   import vFooter from '@/components/vFooter.vue'
