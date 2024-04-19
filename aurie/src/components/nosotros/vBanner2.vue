@@ -5,9 +5,9 @@
     <div class="banner-contents">
       <div class="text">
         <div class="text-row" style="flex-direction: column; gap: 0px;">
-          <h2>Alimentando</h2>
-          <h2>Mentes</h2>
-          <h2>Inquietas</h2><br><br>
+          <h2>ALIMENTANDO</h2>
+          <h2>MENTES</h2>
+          <h2>INQUIETAS</h2><br><br>
         </div>
       </div>
     </div>
@@ -63,7 +63,8 @@ export default {
   background: none;
   color: var(--primary);
   text-decoration: none;
-  font-size: 18px;
+  font-size: 24px;
+  margin-left: 50px;
   transition: all .2s ease-out;
 }
 .ver-mas:hover {
@@ -86,7 +87,7 @@ export default {
   box-sizing: border-box;
 }
 .hero-background {
-  background: url('@/assets/images/cerebro.png');
+  background: url('@/assets/images/cerebro1.png');
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
@@ -96,7 +97,8 @@ export default {
   bottom: 0;
   right: 40%;
   left: 10%;
-  opacity: .5;
+  opacity: .3;
+  filter: blur(1px);
 }
 .banner-contents {
   display: flex;
@@ -130,11 +132,11 @@ h1 {
 }
 h2 {
   color: #E3E3E3;
-  font-size: 30px;
-  margin-right: -20px;
+  font-size: 40px;
   font-weight: 300;
   margin: 0px;
   width: 100%;
+  font-style: italic;
 }
 h2:nth-child(2) {
   text-align: end;
@@ -193,6 +195,10 @@ p {
   .hero-background {
     left: 0%;
     right: 0%;
+  }
+  .ver-mas {
+    margin-left: 0px;
+    font-size: 18px;
   }
   .banner-contents {
     flex-direction: column !important;
@@ -274,12 +280,12 @@ p {
     height: fit-content;
   }
   h2 {
-    font-size: 40px;
+    font-size: 60px;
   }
 }
 @media only screen and (min-width: 900px) {
   h2 {
-    font-size: 50px;
+    font-size: 80px;
   }
   .text-row {
     max-width: 500px;
