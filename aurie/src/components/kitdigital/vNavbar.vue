@@ -72,7 +72,7 @@ export default {
   top: 0;
   right: 0;
   left: 0;
-  background: rgba(253, 76, 56, .15);
+  background: rgb(66, 31, 27);
 }
 .spacer {
   flex: 1;

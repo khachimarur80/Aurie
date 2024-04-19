@@ -10,7 +10,7 @@
             <h2>Inquietas</h2><br><br>
           </div>
         </div>
-        <a class="ver-mas" href="/nosotros">Conócenos</a>
+        <a class="ver-mas" href="#nosotros">Conócenos</a>
       </div>
     </div>
   </template>
