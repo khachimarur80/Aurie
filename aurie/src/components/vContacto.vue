@@ -2,7 +2,7 @@
   <div class="section" id="contacto">
     <div class="section-inner">
       <h1>
-        Contacto
+        ¿Necesitas ayuda con tu proyecto?
       </h1>
       <div style="display: flex; gap: 20px;">
         <div class="info">
@@ -205,6 +205,14 @@ export default {
 };
 </script>
 <style scoped>
+  .section-text {
+    margin: 0px;
+    color: #E3E3E3;
+    opacity: .9;
+    width: 50%;
+    text-align: center;
+    max-width: 800px;
+  }
   .info {
     color: var(--text);
     display: flex;

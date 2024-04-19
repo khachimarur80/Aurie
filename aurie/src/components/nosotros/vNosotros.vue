@@ -1,86 +1,11 @@
 <template>
   <div id="nosotros">
-    <h1>Nosotros</h1>
+    <h1>¿Qué es Aurie?</h1>
     <div class="section-text">
-      Te ayudamos a impulsar digitalmente tu empresa.
+      Somos más que una empresa de servicios web. En Aurie, creamos experiencias digitales excepcionales que impulsan el éxito de nuestros clientes.
+Fundada con la visión de hacer una diferencia, en Aurie, estamos comprometidos a transformar ideas en realidad y a llevar el potencial digital al siguiente nivel. 
+Continuamos avanzando en la creación de proyectos que fortalezcan nuestra comunidad y nos posicionen como referentes en este sector, ampliando así nuestra gama de servicios para satisfacer las necesidades de nuestros clientes. GRACIAS por confiar en nosotros ;)
     </div><br><br>
-    <div class="contents">
-      <div class="card eficiencia" id="eficiencia" ref="eficiencia">
-        <div class="card-background">
-          <div class="card-background-inner"></div>
-        </div>
-        <div class="card-icon">
-            <img src="@/assets/icons/eficiencia.webp" height="100%" alt="MacBook en mesa de cafetería"/>
-        </div>
-        <div class="card-title">
-          Eficiencia
-        </div>
-        <button v-if="!eficiencia" @click="openCard('eficiencia')">
-          Ver más
-        </button>
-        <button v-else @click="closeCard('eficiencia')">
-          Ver menos
-        </button>
-      </div>
-      <div class="card comunicacion" id="comunicacion" ref="comunicacion">
-        <div class="card-background">
-          <div class="card-background-inner"></div>
-        </div>
-        <div class="card-icon">
-          <img src="@/assets/icons/comunicacion.webp" height="100%" alt="Antenta de satélite"/>
-        </div>
-        <div class="card-title">
-          Comunicación
-        </div>
-        <button v-if="!comunicacion" @click="openCard('comunicacion')">
-          Ver más
-        </button>
-        <button v-else @click="closeCard('comunicacion')">
-          Ver menos
-        </button>
-      </div>
-      <div class="card creatividad" id="creatividad" ref="creatividad">
-        <div class="card-background">
-          <div class="card-background-inner"></div>
-        </div>
-        <div class="card-icon">
-          <img src="@/assets/icons/creatividad.webp" height="100%"/>
-        </div>
-        <div class="card-title">
-          Creatividad
-        </div>
-        <button v-if="!creatividad" @click="openCard('creatividad')">
-          Ver más
-        </button>
-        <button v-else @click="closeCard('creatividad')">
-          Ver menos
-        </button>
-      </div>
-      <div class="card calidad" id="calidad" ref="calidad">
-        <div class="card-background">
-          <div class="card-background-inner"></div>
-        </div>
-        <div class="card-icon">
-          <img src="@/assets/icons/calidad.webp" height="100%" alt="Teclado de cerca"/>
-        </div>
-        <div class="card-title">
-          Calidad
-        </div>
-        <button v-if="!calidad" @click="openCard('calidad')">
-          Ver más
-        </button>
-        <button v-else @click="closeCard('calidad')">
-          Ver menos
-        </button>
-      </div>
-      <div class="card-description" v-if="eficiencia || comunicacion || calidad || creatividad">
-        <div class="card-text">
-          {{ currentText }}
-        </div>
-      </div>
-      <div id="background" ref="background">
-      </div>
-    </div>
   </div>
 </template>
 
@@ -218,10 +143,13 @@ h1::after {
 .section-text {
   margin: 0px;
   color: #E3E3E3;
-  opacity: .7;
+  opacity: .9;
   width: 50%;
   margin-left: 15px;
+  line-height: 30px;
+  font-size: 20px;
   text-align: center;
+  max-width: 800px;
 }
 #nosotros {
   padding-top: 130px;
@@ -474,6 +402,10 @@ p {
 }
 
 @media only screen and (max-width: 790px) {
+  .section-text {
+    font-size: 18px;
+    width: 80%;
+  }
   .card {
     width: 50%;
     height: 350px;
