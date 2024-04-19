@@ -88,7 +88,7 @@ export default {
   box-sizing: border-box;
 }
 .hero-background {
-  background: url('@/assets/images/cerebro1.png');
+  background: url('@/assets/images/cerebro2.webp');
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
