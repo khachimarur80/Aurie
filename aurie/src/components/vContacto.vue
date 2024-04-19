@@ -4,11 +4,13 @@
       <h1>
         Contacto
       </h1>
-      <div class="info">
-        <img class="icon" src="@/assets/icons/phone.webp" height="30px" width="30px"><span>contacto@aurie.es</span>
-      </div>
-      <div class="info">
-        <img class="icon" src="@/assets/icons/mail.png" height="30px" width="30px"><span>+ 664 54 25 94</span>
+      <div style="display: flex; gap: 20px;">
+        <div class="info">
+          <img class="icon" src="@/assets/icons/mail.png" height="30px" width="30px"><span>contacto@aurie.es</span>
+        </div>
+        <div class="info">
+          <img class="icon" src="@/assets/icons/phone.webp" height="30px" width="30px"><span>664 54 25 94</span>
+        </div>
       </div>
       <br><br>
       <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;" class="form-img-container">
@@ -209,8 +211,7 @@ export default {
   .info {
     color: var(--text);
     display: flex;
-    justify-content: space-between;
-    width: 200px;
+    gap: 20px;
   }
   .info img {
     filter: invert(55%) sepia(67%) saturate(4276%) hue-rotate(333deg) brightness(101%) contrast(98%);

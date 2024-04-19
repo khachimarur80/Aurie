@@ -14,7 +14,7 @@
           <img src="@/assets/icons/phone.webp" height="36px" width="36px" id="phone"/>
           <div class="phone">
             <div class="contact-phone">
-              + 664 54 25 94
+              664 54 25 94
             </div>
             <div class="phone-info">
               Lunes a Viernes de 9:00 a 20:30
