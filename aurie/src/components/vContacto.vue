@@ -72,9 +72,6 @@
               </button>
             </div>
           </div>
-          <div class="contact-image">
-            <img src="@/assets/vectors/ilustracion-concepto-contactanos/3778874.webp" alt="Mujer atendiendo a cliente"/>
-          </div>
         </form>
       </div>
     </div>
@@ -241,7 +238,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom right, #171717 50%, #311212 100%);
+    background: linear-gradient(to bottom right, #171717 75%, #311212 100%);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 1px 1px 3px 0px #333;
