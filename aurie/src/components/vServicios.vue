@@ -69,14 +69,6 @@ export default {
             "seemore": false
           },
           {
-            "name": "Envíos Online",
-            "description":  "Simplifica el proceso de envío y logística de tu negocio con nuestra solución de envíos online.",
-            "price": "",
-            "image": require("@/assets/vectors/envios-online/3938497.webp"),
-            "showPrice": false,
-            "seemore": false
-          },
-          {
             "name": "Hosting",
             "description":  "Confía en nuestra infraestructura de hosting de alto rendimiento para alojar tu sitio web y aplicaciones en línea.",
             "price": "",

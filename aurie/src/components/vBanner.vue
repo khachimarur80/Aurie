@@ -8,7 +8,7 @@
           <h1>Aurie</h1>
           <h2>Innovación digital</h2>
           <p>
-            En Aurie te ofrecemos servicios y productos en todas las áreas de la tecnología.
+            En Aurie ofrecemos servicios y productos en todas las áreas de la tecnología.
           </p>
         </div>
         <div class="text-row">

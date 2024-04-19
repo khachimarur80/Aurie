@@ -319,7 +319,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0px 0px 3px #333;
-    background: #131313;
+    background: #151515;
   }
   .description {
     text-align: center;
