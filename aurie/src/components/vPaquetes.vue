@@ -13,31 +13,20 @@
           <h2>
             {{ service.name }}
           </h2>
+          <p class="description" style="margin-top: -10px; margin-bottom: -20px;">
+            <span class="inner" style="color: var(--primary); font-weight: bold;">
+              {{ service.price[0] }}
+            </span>
+          </p>
           <p class="description">
             <span class="inner">
               {{ service.description }}
             </span>
           </p>
-          <div class="includes-container">
-            <div v-for="(include, i) in serviceIncludes(service)" :key="i" class="includes">
-            <span class="check">
-            </span>
-            <p>
-              {{ include }}
-            </p>
-            </div>
-          </div>
-          <button class="seemore" @click="service.seemore = !service.seemore" v-if="service.includes.length > 5">
-            <span v-if="!service.seemore">Ver más</span>
-            <span v-else>Ver menos</span>
-          </button>
           <div style="flex: 1"></div>
-          <p class="show-price" @click="service.showPrice = !service.showPrice" v-if="service.price.length">
-            Ver precio
-          </p>
-          <p class="show-price" @click="scrollToSection('contacto')" v-else>
-            Consúltanos
-          </p>
+          <a class="show-price" style="text-decoration: none;" :href="'/kit-digital#'+service.id">
+            Más info
+          </a>
           <div class="price">
             <table :class="[service.showPrice ? 'show' : '']">
               <tr>
@@ -80,6 +69,8 @@
           icon: require('@/assets/logos/KAwebs.webp'),
           services: [
             {
+              "image": require('@/assets/vectors/sitio-web-basico/v954-mo-02.webp'),
+              "id": 'basica',
               "name": "Sitio web básico",
               "description": "Dominio, hosting, diseño web.",
               "price": ["Hasta 2000 €"],
@@ -91,9 +82,11 @@
                 "Optimización SEO básica"
               ],
               "showPrice": false,
-              "seemore": false
+              "seemore": false,
             },
             {
+              "image": require('@/assets/vectors/sitio-web-avanzado/765215--01.webp'),
+              "id": 'avanzada',
               "name": "Presencia avanzada",
               "description": "Análisis, optimización SEO.",
               "price": ["Hasta 2000 €"],
@@ -108,6 +101,8 @@
               "seemore": false
             },
             {
+              "image": require('@/assets/vectors/comercio-electronico/Big_phone_with_cart.webp'),
+              "id": "ecommerce",
               "name": "Comercio electrónico",
               "description": "Tienda online, métodos de pago.",
               "price": ["Hasta 2000 €"],
@@ -124,6 +119,8 @@
               "seemore": false
             },
             {
+              "image": require('@/assets/vectors/marketplace/6666912.webp'),
+              "id": "marketplace",
               "name": "Marketplace",
               "description": "Alta en plataformas de venta.",
               "price": ["Hasta 2000 €"],
@@ -139,6 +136,8 @@
               "seemore": false
             },
             {
+              "image": require('@/assets/vectors/oficina-virtual/5216292.webp'),
+              "id": "oficina",
               "name": "Oficina virtual",
               "description": "Colaboración, almacenamiento, compatibilidad.",
               "price": ["Hasta 250 €/usuario"],
@@ -152,6 +151,8 @@
               "seemore": false
             },
             {
+              "image": require('@/assets/vectors/redes-sociales/4950546.webp'),
+              "id": "redes",
               "name": "Redes sociales",
               "description": "Estrategia, monitorización, publicaciones.",
               "price": ["Hasta 2500 €"],
@@ -305,22 +306,22 @@
     justify-content: center;
   }
   .service {
-    border: 1px solid var(--primary);
     width: calc(25% - 20px);
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 10px;
     border-radius: 20px;
-    padding-top: 15px;
+    padding-top: 45px;
+    padding-bottom: 20px;
     background: var(--background);
     min-width: 360px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 0px 3px #333;
+    background: #131313;
   }
   .description {
-    border-bottom: 1px solid var(--primary);
-    border-top: 1px solid var(--primary);
     text-align: center;
     padding: 5px;
     padding-top: 20px;

@@ -67,7 +67,7 @@ export default {
   z-index: 2;
   padding: 10px;
   display: flex;
-  position: absolute;
+  position: sticky;
   transition: background .15s ease-in-out;
   top: 0;
   right: 0;
@@ -81,7 +81,7 @@ export default {
   font-size: 30px;
   color: #E3E3E3;
   font-weight: bold;
-  margin-left: 32px;
+  margin-left: 16px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -95,6 +95,7 @@ export default {
   align-items: center;
 }
 .navbar-header {
+  padding-left: 25px;
   height: 100%;
   display: flex;
   align-items: center;

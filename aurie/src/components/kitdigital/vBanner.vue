@@ -70,7 +70,7 @@ export default {
   max-height: 500px !important;
   background-size: cover;
   position: relative;
-  padding-top: 100px;
+  padding-top: 0px;
   box-sizing: border-box;
 }
 .hero-background {

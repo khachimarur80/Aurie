@@ -6,7 +6,7 @@
       <vNavbar :links="links"/>
       <br><br><br><br>
       <vContacto/>
-      <vEquipo/>
+      <br><br>
       <vFooter :links="footerLinks"/>
       <vGoToTop :show="show"/>
     </div>
@@ -14,7 +14,6 @@
   
   <script>
   import vNavbar from "@/components/contacto/vNavbar.vue"
-  import vEquipo from '@/components/vEquipo.vue'
   import vContacto from '@/components/vContacto.vue'
   import vFooter from '@/components/vFooter.vue'
   import vGoToTop from '@/components/vGoToTop.vue'
@@ -23,7 +22,6 @@
     name: 'HomeView',
     components: {
       vNavbar,
-      vEquipo,
       vContacto,
       vFooter,
       vGoToTop,
@@ -31,19 +29,11 @@
     data: () => ({
       links: [
         {
-          'name': 'Equipo',
-          'url': 'equipo',
-        },
-        {
           'name': 'Contacto',
           'url': 'contacto',
         }
       ],
       footerLinks: [
-        {
-          'name': 'Equipo',
-          'url': '#equipo',
-        },
         {
           'name': 'Contacto',
           'url': '#contacto',

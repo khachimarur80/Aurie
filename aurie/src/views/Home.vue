@@ -5,6 +5,7 @@
     <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>-->
     <vNavbar :links="links"/>
     <vBanner/>
+    <vBanner2/>
     <vNosotros/>
     <vServicios/>
     <vPaquetes/>
@@ -16,6 +17,7 @@
 <script>
 import vNavbar from "@/components/vNavbar.vue"
 import vBanner from '@/components/vBanner.vue'
+import vBanner2 from '@/components/vBanner2.vue'
 import vNosotros from '@/components/vNosotros.vue'
 import vServicios from '@/components/vServicios.vue'
 import vPaquetes from '@/components/vPaquetes.vue'
@@ -32,6 +34,7 @@ export default {
     vPaquetes,
     vFooter,
     vGoToTop,
+    vBanner2,
   },
   data: () => ({
     links: [

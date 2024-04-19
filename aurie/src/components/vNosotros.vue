@@ -3,7 +3,10 @@
     <h1>Nosotros</h1>
     <div class="section-text">
       Te ayudamos a impulsar digitalmente tu empresa.
-    </div><br><br><br>
+    </div><br>
+    <a class="ver-mas" href="/nosotros">
+      Más información
+    </a><br><br>
     <div class="contents">
       <div class="card eficiencia" id="eficiencia" ref="eficiencia">
         <div class="card-background">
@@ -180,6 +183,21 @@ export default {
 </script>
 
 <style scoped>
+.ver-mas {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 5px 10px 5px 10px;
+  background: none;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 18px;
+  transition: all .2s ease-out;
+}
+.ver-mas:hover {
+  color: #171717;
+  background-color: var(--primary);
+  font-weight: bold;
+}
 h1 {
   color: rgb(253, 76, 56);
   font-size: 35px;
