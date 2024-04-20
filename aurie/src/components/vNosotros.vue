@@ -1,9 +1,9 @@
 <template>
   <div id="nosotros">
     <h1>Nosotros</h1>
-    <div class="section-text">
+    <!--<div class="section-text">
       Te ayudamos a impulsar digitalmente tu empresa.
-    </div><br>
+    </div>--><br>
     <a class="ver-mas" href="/nosotros">
       Más información
     </a><br><br>

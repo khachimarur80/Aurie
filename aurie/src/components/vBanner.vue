@@ -72,7 +72,7 @@ export default {
 
 <style scoped>
 #banner {
-  min-height: calc(100vh);
+  min-height: calc(100vh - 100px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,7 +83,6 @@ export default {
   max-height: 500px !important;
   background-size: cover;
   position: relative;
-  padding-top: 100px;
   box-sizing: border-box;
 }
 .hero-background {
@@ -325,6 +324,17 @@ p {
     padding-top: 0px;
     padding-top: 60px;
     height: fit-content;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 24px;
   }
 }
 </style>

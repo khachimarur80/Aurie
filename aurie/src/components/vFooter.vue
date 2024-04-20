@@ -21,6 +21,17 @@
             </div>
           </div>
         </div>
+        <div class="footer-contact">
+          <img src="@/assets/icons/mail.png" height="36px" width="36px" id="phone"/>
+          <div class="phone">
+            <div class="contact-phone">
+              contacto@aurie.es
+            </div>
+            <div class="phone-info">
+              Contáctanos sin compromiso
+            </div>
+          </div>
+        </div>
         <div class="footer-socials">
           <a :class="['social', social.link=='' ? 'inactive' : '']"  v-for="(social, i) in socials" :href="social.link" :key="i">
             <img :src="social.icon" :alt="social.name+' logo'" height="100%" width="100%"/>
@@ -107,6 +118,7 @@ export default {
     padding-left: 30px;
     align-items: center;
     gap: 10px;
+    width: 300px;
   }
   .phone {
     padding-left: 10px;
