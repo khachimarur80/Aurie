@@ -31,12 +31,12 @@
     data: () => ({
       links: [
       {
-          'name': 'Kit Digital',
-          'url': '/kit-digital',
-        },
-        {
           'name': 'Inicio',
           'url': '/',
+        },
+        {
+          'name': 'Kit Digital',
+          'url': '/kit-digital',
         },
         {
           'name': 'Contacto',

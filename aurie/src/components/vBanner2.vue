@@ -299,6 +299,9 @@
     .text-row {
       max-width: 500px;
     }
+    .text {
+      transform: translateX(-100px);
+    }
   }
   </style>
   

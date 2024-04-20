@@ -35,12 +35,12 @@
       show: false,
       links: [
         {
-          'name': 'Nosotros',
-          'url': '/nosotros',
-        },
-        {
           'name': 'Inicio',
           'url': '/',
+        },
+        {
+          'name': 'Nosotros',
+          'url': '/nosotros',
         },
         {
           'name': 'Contacto',

@@ -39,12 +39,12 @@ export default {
   data: () => ({
     links: [
       {
-        'name': 'Nosotros',
-        'url': '/nosotros',
-      },
-      {
         'name': 'Kit Digital',
         'url': '/kit-digital',
+      },
+      {
+        'name': 'Nosotros',
+        'url': '/nosotros',
       },
       {
         'name': 'Contacto',
