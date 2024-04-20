@@ -12,7 +12,7 @@
   </template>
   
   <script>
-  import vNavbar from "@/components/contacto/vNavbar.vue"
+  import vNavbar from "@/components/vNavbar.vue"
   import vContacto from '@/components/vContacto.vue'
   import vFooter from '@/components/vFooter.vue'
   import vGoToTop from '@/components/vGoToTop.vue'
@@ -27,6 +27,10 @@
     },
     data: () => ({
       links: [
+        {
+          name: 'Inicio',
+          url: '/'
+        }
       ],
       footerLinks: [
       ],

@@ -4,8 +4,6 @@
       </div>
       <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>-->
       <vNavbar :links="links"/>
-      <br><br><br><br><br>
-      <vBanner2/>
       <vNosotros/>
       <vEquipo/>
       <br><br>
@@ -15,8 +13,7 @@
   </template>
   
   <script>
-  import vNavbar from "@/components/nosotros/vNavbar.vue"
-  import vBanner2 from '@/components/nosotros/vBanner2.vue'
+  import vNavbar from "@/components/vNavbar.vue"
   import vNosotros from '@/components/nosotros/vNosotros.vue'
   import vEquipo from '@/components/vEquipo.vue'
   import vFooter from '@/components/vFooter.vue'
@@ -26,7 +23,6 @@
     name: 'HomeView',
     components: {
       vNavbar,
-      vBanner2,
       vNosotros,
       vEquipo,
       vFooter,
@@ -34,13 +30,17 @@
     },
     data: () => ({
       links: [
-        {
-          'name': 'Nosotros',
-          'url': 'nosotros',
+      {
+          'name': 'Kit Digital',
+          'url': '/kit-digital',
         },
         {
-          'name': 'Equipo',
-          'url': 'equipo',
+          'name': 'Inicio',
+          'url': '/',
+        },
+        {
+          'name': 'Contacto',
+          'url': '/contacto',
         },
       ],
       footerLinks: [

@@ -1,7 +1,13 @@
 <template>
   <div id="servicios">
     <h1>Servicios</h1>
-    <br>
+    <div>
+      ¿Estás interesado en alguno de nuestros servicios? Contáctanos para una consulta totalmente gratuita con el objetivo de mejorar tu experiencia.
+    </div><br>
+    <a class="ver-mas" href="/contacto">
+      Consúltanos
+    </a>
+    <br><br>
     <div class="services-list" v-if="selectedProject.services">
       <div :class="['service', service.showPrice ? 'more' : '']" v-for="(service, i) in selectedProject.services.slice(0, currentMax)" :key="i">
         <div class="service-img" :style="{'background' : 'url('+service.image+')'}">
@@ -191,6 +197,22 @@ export default {
 </script>
 
 <style scoped>
+.ver-mas {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 5px 10px 5px 10px;
+  background: none;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 18px;
+  transition: all .2s ease-out;
+  z-index: 3;
+}
+.ver-mas:hover {
+  color: #171717;
+  background-color: var(--primary);
+  font-weight: bold;
+}
 h2 {
   margin: 0;
   font-weight: lighter;
@@ -399,7 +421,6 @@ table.show {
 }
 
 table {
-  pointer-events: none;
   outline: 1px solid #ddd;
   padding: 5px;
   border-radius: 10px;

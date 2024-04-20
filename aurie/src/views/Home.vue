@@ -40,15 +40,15 @@ export default {
     links: [
       {
         'name': 'Nosotros',
-        'url': 'nosotros',
-      },
-      {
-        'name': 'Servicios',
-        'url': 'servicios',
+        'url': '/nosotros',
       },
       {
         'name': 'Kit Digital',
-        'url': 'paquetes',
+        'url': '/kit-digital',
+      },
+      {
+        'name': 'Contacto',
+        'url': '/contacto',
       },
     ],
     footerLinks: [

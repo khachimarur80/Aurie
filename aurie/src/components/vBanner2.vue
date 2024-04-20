@@ -284,9 +284,17 @@
       font-size: 60px;
     }
   }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 901px) and (max-width: 1700px) {
     h2 {
-      font-size: 80px;
+      font-size: 90px;
+    }
+    .text-row {
+      max-width: 500px;
+    }
+  }
+  @media only screen and (min-width: 1701px) {
+    h2 {
+      font-size: 120px;
     }
     .text-row {
       max-width: 500px;

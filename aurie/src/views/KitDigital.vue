@@ -12,7 +12,7 @@
   </template>
   
   <script>
-  import vNavbar from "@/components/kitdigital/vNavbar.vue"
+  import vNavbar from "@/components/vNavbar.vue"
   import vBanner from "@/components/kitdigital/vBanner.vue"
   import vSolicitar from "@/components/kitdigital/vSolicitar.vue"
   import vLabor from "@/components/kitdigital/vLabor.vue"
@@ -35,16 +35,16 @@
       show: false,
       links: [
         {
-            'name': 'Cómo solicitar',
-            'url': 'solicitar',
+          'name': 'Nosotros',
+          'url': '/nosotros',
         },
         {
-            'name': 'Nuestra labor',
-            'url': 'labor',
+          'name': 'Inicio',
+          'url': '/',
         },
         {
-            'name': 'Paquetes',
-            'url': 'paquetes',
+          'name': 'Contacto',
+          'url': '/contacto',
         },
       ],
       footerLinks: [

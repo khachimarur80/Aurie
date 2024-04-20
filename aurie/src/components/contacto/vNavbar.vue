@@ -14,6 +14,9 @@
       <a class="navbar-item"  @click="scrollToSection(link.url)" v-for="(link, i) in links" :key="i">
         {{ link.name }}
       </a>
+      <a class="navbar-item" href="/">
+        Inicio
+      </a>
     </div>
     <div :class="['dropdown', showDropdown ? 'show' : '']" v-else>
       <div class="dropdown-toggle">
@@ -24,6 +27,9 @@
       <div class="dropdown-items">
         <a class="dropdown-item" @click="scrollToSection(link.url)" v-for="(link, i) in links" :key="i">
           {{ link.name }}
+        </a>
+        <a class="dropdown-item" href="/">
+          Inicio
         </a>
       </div>
     </div>

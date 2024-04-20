@@ -11,12 +11,9 @@
     <div class="spacer">
     </div>
     <div class="navbar-items" v-if="!isSmall">
-      <a class="navbar-item"  @click="scrollToSection(link.url)" v-for="(link, i) in links" :key="i">
+      <a class="navbar-item"  :href="link.url" v-for="(link, i) in links" :key="i">
         {{ link.name }}
       </a>
-      <a class="navbar-item" href="/contacto" target="_blank">
-          Contacto
-        </a>
     </div>
     <div :class="['dropdown', showDropdown ? 'show' : '']" v-else>
       <div class="dropdown-toggle">
@@ -25,11 +22,8 @@
         </button>
       </div>
       <div class="dropdown-items">
-        <a class="dropdown-item" @click="scrollToSection(link.url)" v-for="(link, i) in links" :key="i">
+        <a class="dropdown-item" :href="link.url" v-for="(link, i) in links" :key="i">
           {{ link.name }}
-        </a>
-        <a class="dropdown-item" href="/contacto" target="_blank">
-          Contacto
         </a>
       </div>
     </div>
