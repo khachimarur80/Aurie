@@ -322,7 +322,7 @@ export default {
   }
   h1 {
     color: rgb(253, 76, 56);
-    font-size: 35px;
+    font-size: 30px;
     margin: 0px;
     font-weight: 900;
     text-shadow: 0px 0px 4px rgb(253, 76, 56);
