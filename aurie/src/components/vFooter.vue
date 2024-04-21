@@ -14,7 +14,7 @@
           <img src="@/assets/icons/phone.webp" height="36px" width="36px" id="phone"/>
           <div class="phone">
             <div class="contact-phone">
-              664 54 25 94
+              +34 664 54 25 94
             </div>
             <div class="phone-info">
               Lunes a Viernes de 9:00 a 20:30
@@ -26,9 +26,6 @@
           <div class="phone">
             <div class="contact-phone">
               contacto@aurie.es
-            </div>
-            <div class="phone-info">
-              Contáctanos sin compromiso
             </div>
           </div>
         </div>
@@ -116,7 +113,7 @@ export default {
   .footer-contact {
     display: flex;
     padding-left: 30px;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     width: 300px;
   }

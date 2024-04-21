@@ -30,6 +30,14 @@
         {
           name: 'Inicio',
           url: '/'
+        },
+        {
+          'name': 'Kit Digital',
+          'url': '/kit-digital',
+        },
+        {
+          'name': 'Nosotros',
+          'url': '/nosotros',
         }
       ],
       footerLinks: [
