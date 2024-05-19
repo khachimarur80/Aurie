@@ -3,6 +3,9 @@
         <vNavbar :links="links"/>
         <vBanner/>
         <br><br>
+        <div style="width: 100%; display: flex; justify-content: center">
+          <img id="bannerkitdigital" src="@/assets/images/Logo-digitalizadores.png"/>
+        </div>
         <vSolicitar/>
         <vLabor/>
         <vPaquetes/>
@@ -74,6 +77,10 @@
   </script>
   
   <style>
+    #bannerkitdigital {
+      width: 90%;
+      max-width: 800px;
+    }
     .section-text {
         margin: 0px;
         color: #E3E3E3;
