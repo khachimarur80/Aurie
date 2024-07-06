@@ -5,6 +5,8 @@ import HomeView from '@/views/Home.vue'
 import KitDigitalView from '@/views/KitDigital.vue'
 import ContactoView from '@/views/Contacto.vue'
 import NosotrosView from '@/views/Nosotros.vue'
+import ProyectosView from '@/views/Proyectos.vue'
+import ServiciosView from '@/views/Servicios.vue'
 
 Vue.use(VueRouter);
 
@@ -13,6 +15,8 @@ const routes = [
   { path: '/kit-digital', component: KitDigitalView, meta: { title: 'Aurie | Kit Digital' } },
   { path: '/nosotros', component: NosotrosView, meta: { title: 'Aurie | Nosotros' } },
   { path: '/contacto', component: ContactoView, meta: { title: 'Aurie | Contacto' } },
+  { path: '/proyectos', component: ProyectosView, meta: { title: 'Aurie | Proyectos' } },
+  { path: '/servicios', component: ServiciosView, meta: { title: 'Aurie | Servicios' } },
 ];
 
 const router = new VueRouter({

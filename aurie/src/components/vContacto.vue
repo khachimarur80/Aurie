@@ -1,80 +1,44 @@
 <template>
   <div class="section" id="contacto">
-    <div class="section-inner">
-      <h1>
-        ¿Necesitas ayuda con tu proyecto?
-      </h1>
-      <div style="display: flex; gap: 20px;">
-        <div class="info">
-          <img class="icon" src="@/assets/icons/mail.png" height="30px" width="30px"><span>contacto@aurie.es</span>
-        </div>
-        <div class="info">
-          <img class="icon" src="@/assets/icons/phone.webp" height="30px" width="30px"><span>664 54 25 94</span>
+    <h1>
+      Contacto
+    </h1>
+    <p class="slogan">Hablemos sobre todo lo que podemos construir y crear juntos</p>
+    <br><br><br>
+    <div class="moon">
+      <div class="col">
+        <div class="circle">
+          +34 664 54 25 94
         </div>
       </div>
-      <br><br>
-      <div style="display: flex; gap: 10px; align-items: center; justify-content: space-between;" class="form-img-container">
-        <form class="contact-form" id="contact-form" @submit="submitForm" ref="contactForm">
-          <div class="form-contents">
-            <div class="form-row">
-              <label for="from_name">Nombre:</label>
-              <input 
-                type="text" 
-                id="from_name" 
-                name="from_name" 
-                required 
-                aria-describedby="username-error" 
-                placeholder="Introduce tu nombre" 
-                v-model="formData.from_name" 
-                @focusout="validateField('from_name')" 
-                @keyup="validateField('from_name')">
-              <div id="name-error" class="error-message" aria-live="polite">{{ errors.from_name }}</div>
-            </div>
-            <div class="form-row">
-              <label for="user_email">Email:</label>
-              <input 
-                type="email" 
-                id="user_email" 
-                name="user_email" 
-                required 
-                aria-describedby="email-error" 
-                placeholder="Introduce tu email" 
-                v-model="formData.user_email" 
-                @focusout="validateField('user_email')" 
-                @keyup="validateField('user_email')">
-              <div id="email-error" class="error-message" aria-live="polite">{{ errors.user_email }}</div>
-            </div>
-            <div class="form-row">
-              <label for="message">Mensaje:</label>
-              <textarea
-                type="text" 
-                id="message" 
-                name="message" 
-                required 
-                aria-describedby="message-error" 
-                placeholder="Introduce tu mensaje" 
-                v-model="formData.message" 
-                @focusout="validateField('message')" 
-                @keyup="validateField('message')"></textarea>
-              <div id="message-error" class="error-message" aria-live="polite">{{ errors.message }}</div>
-            </div>
-            <div style="display: flex; width: 100%">
-              <div style="flex-grow: 1;"></div>
-              <button
-                type="submit"
-                :style="{'--color' : sendColor}"
-                id="send"
-                tabindex="-1" 
-                :disabled="!validForm"
-              >
-                <span v-if="!sending">{{ sendText }}</span>
-                <span class="loader" v-else></span>
-              </button>
-            </div>
+      <div class="col">
+        <div class="circle">
+          contacto@aurie.es
+        </div>
+      </div>
+      <div class="col">
+        <div class="circle">
+          <img src="@/assets/icons/reunion_1.webp" height="50px" a>
+          <div class="next-button">
+            <img src="@/assets/icons/arrow.png" style="transform: rotate(180deg)" height="15px" width="15px">
           </div>
-        </form>
+        </div>
+      </div>
+      <div class="col">
+        <div class="circle">
+          <div class="grid">
+            <img src="@/assets/icons/linkedin.png" height="30px">
+            <img src="@/assets/icons/instagram.webp" height="30px">
+            <img src="@/assets/icons/youtube.webp" height="30px">
+            <img src="@/assets/icons/tiktok.png" height="30px">
+          </div>
+        </div>
+      </div>
+      <div class="moon-inner">
+
       </div>
     </div>
+    <br><br>
   </div>
 </template>
 
@@ -205,134 +169,121 @@ export default {
 };
 </script>
 <style scoped>
-  .section-text {
-    margin: 0px;
-    color: #E3E3E3;
-    opacity: .9;
-    width: 50%;
-    text-align: center;
-    max-width: 800px;
+  .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
   }
-  .info {
-    color: var(--text);
+  .next-button {
+    background: white;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2px;
+    transform: rotate(180deg);
+    cursor: pointer;
+    box-sizing: border-box;
   }
-  .info img {
-    filter: invert(55%) sepia(67%) saturate(4276%) hue-rotate(333deg) brightness(101%) contrast(98%);
+  .next-button:hover {
+    outline: 2px solid var(--primary);
+  }
+  .circle {
+    width: 60%;
+    aspect-ratio: 1;
+    background: #171717;
+    position: absolute;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0px 0px 10px 1px #333;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+  }
+  .col:nth-child(1) .circle, .col:nth-child(4) .circle{
+    top: 45%;
+  }
+  .col:nth-child(2) .circle, .col:nth-child(3) .circle{
+    top: 22%;
+  }
+  .col:nth-child(1) .circle::before {
+    content: 'Llámanos';
+    position: absolute;
+    top: -30px;
+  }
+  .col:nth-child(2) .circle::before  {
+    content: 'Escríbenos';
+    position: absolute;
+    top: -50px;
+  }
+  .col:nth-child(3) .circle::before  {
+    content: 'Programa una reunión';
+    position: absolute;
+    top: -50px;
+    text-align: center;
+  }
+  .col:nth-child(4) .circle::before  {
+    content: 'Síguenos';
+    position: absolute;
+    top: -30px;
+  }
+  .col {
+    width: 25%;
+    height: 100%;
+    position: relative;
+  }
+  .moon {
+    width: 100%;
+    aspect-ratio: 30/9;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+  .moon-inner {
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    transform: translateX(50%);
+    width: 150%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  .slogan {
+    font-size: 25px;
+    color: var(--text);
+    font-weight: 100;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   #contacto {
-    margin-top: -5px;
-    margin-bottom: 50px;
-  }
-  textarea, input {
-    background: white;
-    color: var(--text);
-    border: 1px solid #333;
-    outline: none;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 15px;
-    background: transparent;
-    margin-top: -30px;
-  }
-  textarea:focus, input:focus {
-    outline: 1px solid var(--primary);
-  }
-  textarea {
-    resize: none;
-  }
-  .contact-form {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(to bottom right, #171717 75%, #311212 100%);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px 0px #333;
-    max-height: 400px;
-  }
-  .contact-image {
-    height: 400px;
-    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-  }
-  img {
-    height: 100%;
-  }
-  .form-contents {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--text);
-    height: fit-content;
-    width: fit-content;
-    flex-direction: column;
-  }
-  .form-row {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-
-
-  #send {
-    cursor: pointer;
-    background: var(--color);
-    padding: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 8px;
-    border: none;
-    width: 80px;
-    height: 35px;
-    color: white;
-  }
-
-  #send:not([disabled]) {
-    cursor: pointer;
-  }
-
-  #send:not([disabled]):active {
-    outline: 1px solid var(--primary);
-    background: var(--background-dark);
-    color: var(--primary);
-  }
-
-  .section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
-    padding-top: 0px !important;
-  }
-  .section-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 90%;
     flex-direction: column;
   }
   h1 {
-    color: rgb(253, 76, 56);
+    color: var(--text);
     font-size: 30px;
     margin: 0px;
     font-weight: 900;
-    text-shadow: 0px 0px 4px rgb(253, 76, 56);
     position: relative;
     margin-top: 50px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
+    text-align: center;
   }
   h1::after {
     content: '';
-    background: rgb(253, 76, 56);
+    background: var(--text);
     height: 4px;
     bottom: -10px;
     left: 50%;
@@ -340,143 +291,116 @@ export default {
     width: 50px;
     position: absolute;
   }
-  textarea {
-    height: 100px;
-  }
-
-  @media only screen and (max-width: 767px) {
-    h1 {
-      font-size: 26px;
+  @media only screen and (max-width: 800px) {
+    .moon {
+      flex-direction: column;
+      height: fit-content;
+      min-height: unset;
+      aspect-ratio: unset;
+      align-items: center;
+      gap: 60px;
+      overflow: unset;
+    }
+    .col {
+      width: 50%;
+      max-width: 250px;
+    }
+    .moon-inner {
+      display: none;
+    }
+    .circle {
+      width: 100%;
+      position: unset;
+      transform: none;
+    }
+    .grid img {
+      height: 40px;
+      width: 40px;
+    }
+    .grid {
+      gap: 20px;
+    }
+    img[a] {
+      height: 80px;
+      width: 80px;
+    }
+    .col:nth-child(1) .circle::before {
+      top: 50px;
+    }
+    .col:nth-child(2) .circle::before  {
+      top: 50px;
+    }
+    .col:nth-child(3) .circle::before  {
+      top: -30px;
       text-align: center;
     }
-    .contact-form {
-      width: 100%;
+    .col:nth-child(4) .circle::before  {
+      top: -30px;
     }
-    .form-contents {
-      width: calc(100% - 20px);
-    }
-    input, textarea {
-      width: 100%;
-    }
-    img:not(.icon), .contact-image {
-      display: none;
-    }
-    .form-img-container {
-      width: 100%;
-    }
-    label::before {
-      height: 4px !important;
-      transform: translateY(-2px) !important;
-      background: #171717 !important;
+    .moon::before {
+      content: '';
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      background: white;
     }
   }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .section {
-      padding: 35px;
+  @media only screen and (min-width: 801px) and (max-width: 1000px) {
+    .circle {
+      width: 75%;
     }
-    h1 {
-      font-size: 30px;
+    .col:nth-child(1) .circle, .col:nth-child(4) .circle{
+      top: 35%;
     }
-    input, textarea {
-      width: 400px;
+    .col:nth-child(2) .circle, .col:nth-child(3) .circle{
+      top: 22%;
     }
-    img:not(.icon), .contact-image  {
-      display: none;
-    }
-  }
-  @media only screen and (min-width: 1024px) and (max-width: 1179px) {
-    img:not(.icon), .contact-image  {
-      display: none;
-    }
-    .section {
-      padding: 50px;
-    }
-    h1 {
-      font-size: 40px;
-    }
-    input, textarea {
-      width: 433px;
+    .moon {
+      aspect-ratio: 20/9;
     }
   }
-  @media only screen and (min-width: 1178px) and (max-width: 1279px) {
-    .section {
-      padding: 50px;
+  @media only screen and (min-width: 1401px) and (max-width: 1700px) {
+    .circle {
+      font-size: 20px;
     }
-    h1 {
-      font-size: 40px;
+    .circle img[a] {
+      height: 75px;
+      width: 75px;
     }
-    input, textarea {
-      width: 433px;
+    .next-button {
+      height: 35px;
+      width: 35px;
     }
-  }
-  @media only screen and (min-width: 1280px) and (max-width: 1439px) {
-    .section {
-      padding: 70px;
+    .next-button img {
+      height: 20px;
+      width: 20px;
     }
-    h1 {
-      font-size: 50px;
-    }
-    input, textarea {
-      width: 466px;
-    }
-  }
-  @media only screen and (min-width: 1440px) {
-    .section {
-      padding: 100px;
-    }
-    h1 {
-      font-size: 60px;
-    }
-    input, textarea {
-      width: 500px;
+    .grid img {
+      height: 40px;
+      width: 40px;
     }
   }
-
-  .error-message {
-    color: var(--error);
-    font-size: 12px;
-    margin: 0px;
-    margin-top: -15px;
-    margin-bottom: -10px;
-    width: 100%;
-    height: 24px;
-    font-weight: bold;
-  }
-  #send[disabled] {
-    cursor: not-allowed;
-  }
-
-  .loader {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border: 3px solid var(--primary);
-    border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
-  }
-
-  label {
-    transform: translateX(30px);
-    font-size: 13px;
-    width: fit-content;
-    padding-left: 10px;
-    color: #AAA;
-    position: relative;
-  }
-  label::before {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: #171717;
-    position: absolute;
-    top: 50%;
-    z-index: -1;
-    left: 6px;
-    transform: translateY(calc(-50%));
+  @media only screen and (min-width: 1701px) {
+    .circle {
+      font-size: 25px;
+    }
+    .circle img[a] {
+      height: 75px;
+      width: 75px;
+    }
+    .next-button {
+      height: 35px;
+      width: 35px;
+    }
+    .next-button img {
+      height: 20px;
+      width: 20px;
+    }
+    .grid img {
+      height: 40px;
+      width: 40px;
+    }
   }
 </style>

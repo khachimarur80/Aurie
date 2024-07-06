@@ -27,6 +27,9 @@ export default {
 </script>
 
 <style scoped>
+img {
+  filter: invert(100%);
+}
 #gototop {
   position: fixed;
   bottom: 20px;

@@ -10,16 +10,17 @@ export default {
   name: 'App',
   data: () => ({
     theme: {
-      primary: "#fc5c47",
+      primary: "#6913a1",
       secondary: "#C07F00",
-      text: "#E3E3E3",
+      text: "#FFFFFF",
       background: "#171717",
-      backgroundDark: "#DDD",
+      backgroundDark: "#000000",
       success: "#0F9D58",
       error: "#DB4437",
       accent: "#4285F4",
       warning: "#7E57C2",
-      textFont: "Poppins"
+      backgroundLight: "#FFFFFF",
+      textDark: "#000000",
     }
   }),
   mounted() {
@@ -32,7 +33,8 @@ export default {
     document.documentElement.style.setProperty('--secondary', this.theme.secondary)
     document.documentElement.style.setProperty('--accent', this.theme.accent)
     document.documentElement.style.setProperty('--warning', this.theme.warning)
-    document.documentElement.style.setProperty('--text-font', this.theme.textFont)
+    document.documentElement.style.setProperty('--background-light', this.theme.backgroundLight)
+    document.documentElement.style.setProperty('--text-dark', this.theme.textDark)
   }
 }
 </script>
@@ -44,7 +46,12 @@ export default {
     font-weight: normal;
     font-style: normal;
   }
-
+  @font-face {
+    font-family: 'Hanson';
+    src: url('~@/assets/fonts/Hanson/Hanson-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
   body, html {
     margin: 0;
     padding: 0;
@@ -60,5 +67,11 @@ export default {
 
   ::-webkit-scrollbar {
     height: 0;
+  }
+  * {
+    font-family: 'Helvetica';
+  }
+  h1, h2, h3, h4,  h5, h6 {
+    font-family: 'Hanson';
   }
 </style>

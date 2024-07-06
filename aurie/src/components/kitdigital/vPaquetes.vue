@@ -5,8 +5,41 @@
       <div class="section-text">
         Ayudas Para Pymes: Aprovecha Las Ayudas De Hasta 12.000€ De Los Fondos Europeos Next Generation.
       </div><br><br><br>
+      <div style="display: flex; width: 80%; justify-content: space-around;" class="segments">
+        <div class="segment">
+          <div class="segment-header">
+            SEGMENTO I
+          </div>
+          <div class="segment-contents">
+            Empresas de 10 a 49 empleados
+            <strong>Hasta</strong>
+            <p>12.000 €</p>
+          </div>
+        </div>
+        <div class="segment">
+          <div class="segment-header">
+            SEGMENTO II
+          </div>
+          <div class="segment-contents">
+            Empresas de 3 a 9 empleados
+            <strong>Hasta</strong>
+            <p>6.000 €</p>
+          </div>
+        </div>
+        <div class="segment">
+          <div class="segment-header">
+            SEGMENTO III
+          </div>
+          <div class="segment-contents">
+            Empresas de 0 a 2 empleados
+            <strong>Hasta</strong>
+            <p>2.000 €</p>
+          </div>
+        </div>
+      </div>
+      <br><br><br>
       <div class="services-list">
-        <div class="service" v-for="(service, i) in servicios" :key="i">
+        <div class="service" v-for="(service, i) in servicios" :key="i" :id="service.id">
           <div class="service-left">
             <h2 style="margin-bottom: -30px; margin-top: 0px;">Hasta</h2>
             <h2>{{ service.price }}</h2>
@@ -15,7 +48,8 @@
             </a>
           </div>
           <div class="service-right">
-            <h2 :id="service.id">{{ service.title }}</h2>
+            <h3 :id="service.id">{{ service.title }}</h3>
+            <hr style="border-color: #ddd; transform: translateY(-10px)">
             <div style="display: flex; margin-bottom: 15px; gap: 15px;" v-for="(value, name) in service.features" :key="name">
               <img height="24px" width="24px" src="@/assets/icons/check.svg">
               <p style="margin: 0px;">
@@ -41,7 +75,7 @@
         {
           price: "2000 €",
           link: "https://www.acelerapyme.gob.es/kit-digital/sitio-web",
-          id: "basica",
+          id: "web",
           title: "Presencia Básica en Internet",
           features: {
             "Dominio": "Se proporciona un dominio por un mínimo de doce meses.",
@@ -172,6 +206,46 @@
   </script>
   
   <style scoped>
+    .segment {
+      width: 30%;
+      max-width: 300px;
+      min-width: 250px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .segment-header {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 10px;
+      background: #515151;
+      text-align: center;
+      color: white;
+      padding: 25px 5px 25px 5px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .segment-contents {
+      transform: translateY(-10px);
+      background: #d5d5d5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 25px 5px 5px 5px;
+      border-radius: 10px;
+      text-align: center;
+      gap: 10px;
+      width: 80%
+    }
+    .segment-contents p {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 10px;
+      color: var(--primary);
+    }
     li {
       width: 80%;
       margin-left: 10%;
@@ -226,11 +300,10 @@
       font-size: 30px;
     }
     h1 {
-        color: rgb(253, 76, 56);
+        color: var(--primary);
         font-size: 35px;
         margin: 0px;
         font-weight: 900;
-        text-shadow: 0px 0px 4px rgb(253, 76, 56);
         position: relative;
         margin-top: 20px;
         margin-bottom: 80px;
@@ -238,7 +311,7 @@
     }
     h1::after {
         content: '';
-        background: rgb(253, 76, 56);
+        background: var(--primary);
         height: 4px;
         bottom: -10px;
         left: 50%;
@@ -277,9 +350,12 @@
     max-width: 1100px;
     display: flex;
     gap: 30px;
+    flex-direction: row-reverse;
+    width: 80%;
   }
   .service-right {
     width: 70%;
+    color: var(--text);
   }
   .service-left {
     flex-direction: column;
@@ -297,7 +373,12 @@
     font-weight: bold;
     color: var(--primary);
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
+    .segments {
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
     h2 {
       text-align: center;
     }

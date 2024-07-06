@@ -189,21 +189,19 @@
       font-weight: bold;
     }
     h2 {
-        color: rgb(253, 76, 56);
+        color: var(--primary);
         margin: 0px;
         font-weight: 900;
-        text-shadow: 0px 0px 4px rgb(253, 76, 56);
         position: relative;
         margin-top: 20px;
         margin-bottom: 80px;
         text-align: center;
     }
     h1 {
-        color: rgb(253, 76, 56);
+        color: var(--primary);
         font-size: 35px;
         margin: 0px;
         font-weight: 900;
-        text-shadow: 0px 0px 4px rgb(253, 76, 56);
         position: relative;
         margin-top: 20px;
         margin-bottom: 80px;
@@ -211,7 +209,7 @@
     }
     h1::after {
         content: '';
-        background: rgb(253, 76, 56);
+        background: var(--primary);
         height: 4px;
         bottom: -10px;
         left: 50%;
@@ -230,7 +228,7 @@
   #solicitar {
     padding: 20px;
     margin: 0px;
-    margin-top: -5px;
+    margin-top: 25px;
     color: var(--background-dark);
     display: flex;
     align-items: center;

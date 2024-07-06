@@ -1,31 +1,45 @@
 <template>
   <div id="equipo">
-    <h1>Equipo</h1>
-    <div class="members">
-      <div class="member" v-for="(member, i) in team" :key="i" :id="member.position">
-        <div class="member-photo">
-          <img :src="member.photo" height="100%" width="100%" :alt="'Imagen retrato de ' + member.name"/>
+    <div class="col">
+      <div class="name-card">
+        Antón Loredo González
+      </div>
+      <p>
+        Actualmente cursando un grado superior en ASIR y cuento con un grado medio en Microinformática y redes.
+      </p>
+      <p>
+        Soy un apasionado del hardware y los videojuegos.
+      </p>
+      <p>
+        En mi tiempo libre, disfruto haciendo deporte, escuchando música y aprendiendo habilidades nuevas.
+      </p>
+    </div>
+    <div class="col col-img" >
+      <div class="image-row">
+        <div class="img" b>
+
         </div>
-        <div class="member-info">
-          <h2>{{ member.name }}</h2>
-          <hr style="width: 100%">
-          <!--<div class="member-position">{{ member.position }}</div>-->
-          <div class="member-info-contents">
-            <!--<p style="margin-bottom: 0px;">Edad: {{ member.age }}</p>-->
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-              <p>Titulación: </p>
-              <span class="chip" v-for="(title,i) in member.titulation" :key="i">{{ title }}</span> 
-            </div>
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-              <p>Idiomas: </p>
-              <span class="chip" v-for="(language,i) in member.languages" :key="i">{{ language }}</span> 
-            </div>
-          </div>
-          <a class="portafolio" v-if="member.portofolio" :href="member.portofolio" target="_blank">
-            Portafolio
-          </a>
+        <div class="conector">
+
+        </div>
+        <div class="img" a>
+
         </div>
       </div>
+    </div>
+    <div class="col">
+      <div class="name-card" style="text-align: end" b>
+        Kei Rodríguez Hachimaru
+      </div>
+      <p>
+        Actualmente cursando un grado superior en ASIR y cuento con un grado medio en Microinformática y redes.
+      </p>
+      <p>
+        Soy un apasionado del hardware y los videojuegos.
+      </p>
+      <p>
+        En mi tiempo libre, disfruto haciendo deporte, escuchando música y aprendiendo habilidades nuevas.
+      </p>
     </div>
   </div>
 </template>
@@ -33,218 +47,103 @@
 <script>
 export default {
   name: 'vEquipo',
-  data: () => ({
-    team: [
-      {
-        name: 'Antón Loredo González ',
-        position: 'CEO',
-        age: 19,
-        titulation: ['Microinformatica y Redes', ' Administración y Sistemas Informáticos en Red'],
-        languages: ['Español', 'Inglés'],
-        photo: require("@/assets/images/retrato_anton.webp"),
-        portofolio: null,
-      },
-      {
-        name: 'Kei Rodríguez Hachimaru',
-        position: 'CTO',
-        age: 18,
-        titulation: ['Ingeniería Informática UCM'],
-        languages: ['Español', 'Inglés'],
-        photo: require("@/assets/images/retrato_kei.webp"),
-        portofolio: "https://kei-portofolio.vercel.app",
-      }
-    ],
-  }),
   mounted() {
   }
 }
 </script>
 
 <style scoped>
-h1 {
-  color: rgb(253, 76, 56);
-  font-size: 35px;
-  margin: 0px;
-  font-weight: 900;
-  text-shadow: 0px 0px 4px rgb(253, 76, 56);
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 80px;
-}
-h1::after {
-  content: '';
-  background: rgb(253, 76, 56);
-  height: 4px;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  position: absolute;
+.col-img {
+  width: 50%; 
+  justify-content: center; 
+  display: flex;
 }
 #equipo {
-  padding: 20px;
-  margin-top: -5px;
+  padding: 30px;
   display: flex;
-  flex-direction: column;
+  color: white;
   align-items: center;
   justify-content: center;
 }
-.members {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100%- 40px);
-  gap: 20px;
-  max-width: 760px;
-  user-select: none;
-  flex-direction: row;
-}
-.member {
-  padding: 20px;
-  box-sizing: border-box;
-  width: calc(50% - 10px) !important;
-  flex: 1;
-  height: 750px;
-  min-height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-  color: var(--text);
-  background: var(--background);
-  box-shadow: 1px 1px 3px 0px #333;
-  transition: transform .3s ease-out;
-  border-radius: 5px;
-}
-.member-photo {
-  max-width: 100%;
-  border: 1px solid var(--background);
-  aspect-ratio: 1;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.member-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.member-info h2 {
-  width: 100%;
-  text-align: left;
-}
-.member-info p {
-  margin-left: 10px;
-  font-size: 18px;
-}
-
-.member-info-contents {
-  width: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.portafolio {
-  padding: 5px;
-  background: var(--background);
-  border: 1px solid var(--primary);
-  color: var(--primary);
-  border-radius: 5px;
-  width: 100px;
-  text-decoration: none;
-  text-align: center;
-}
-
-.portafolio:hover {
-  cursor: pointer;
-  color: var(--background);
-  background: var(--primary);
-}
-
-.member-position {
-  font-size: 14px;
-  width: 100%;
-  text-align: right;
-  height: 0px;
+.name-card {
+  font-size: 26px;
   font-weight: bold;
-  color: var(--primary);
+  padding: 10px 25px 10px 25px;
+  border: 1px solid #5B5B5B;
+  border-radius: 20px;
 }
-.chip {
-  font-size: 14px;
-  background: var(--background);
-  border: 1px solid var(--primary);
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 5px;
-  margin: 5px;
-  white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+p {
+  opacity: .7;
 }
-
-h2 {
-  margin: 0;
-  font-weight: lighter;
-  font-size: 30px;
+.col:nth-child(2n+1) {
+  width: 25%;
+  max-width: 300px;
 }
-
-@media only screen and (max-width: 560px) {
+.image-row {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  border: 1px solid white;
+  aspect-ratio: 1 !important;
+  flex: 1;
+  z-index: 2;
+  background-size: cover;
+}
+.img[b] {
+  background: url('@/assets/images/retrato_anton.webp');
+  background-size: cover;
+}
+.img[a] {
+  background: url('@/assets/images/retrato_kei.webp');
+  background-size: cover;
+}
+.conector {
+  width: 10%;
+  height: 2px;
+  background: white;
+  box-shadow: 0px 0px 4px 4px rgb(135, 17, 231);
+}
+@media only screen and (max-width: 1000px) {
   #equipo {
-    padding: 0px;
-    padding-bottom: 20px;
-  }
-  .member {
-    width: 280px !important;
     flex-direction: column;
-    height: 560px;
+    gap: 30px;
     align-items: center;
   }
-  .members {
-    width: 100%;
-    padding: 0px;
+  .col {
+    max-width: 500px;
+  }
+  .col:nth-child(2n+1) {
+    width: 25%;
+    max-width: 500px;
+  }
+  .image-row {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
   }
-  .member-photo {
-    width: 250px;
-    height: 250px;
+  .col-img {
+    width: 60%;
   }
-  #members {
-    padding: 0px;
+  .conector {
+    width: 1px;
+    height: 50px;
   }
-  h2 {
-    font-size: 22px;
-    text-align: center !important;
+  .img {
+    min-width: 250px;
+    max-width: 300px;
     width: 100%;
   }
-  .member-info p {
-    font-size: 16px;
+  .col:nth-child(2n+1) {
+    width: 90%;
+    margin-left: 5%;
   }
-  .member-info {
-    max-width: 100%;
-    overflow: hidden;
+  .name-card, .name-card[b] {
+    text-align: center !important;
   }
 }
 
-@media only screen and (min-width: 561px) and (max-width: 850px) {
-  .member {
-    width: 400px !important;
-    flex-direction: column;
-    height: 600px;
-    align-items: center;
-  }
-  .members {
-    width: 100%;
-    padding: 0px;
-    flex-direction: column;
-  }
-  .member-photo {
-    width: 300px;
-    height: 300px;
-  }
-  #members {
-    padding: 0px;
-  }
-}
 </style>

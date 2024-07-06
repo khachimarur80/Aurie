@@ -1,13 +1,12 @@
 <template>
     <div id="kitdigital" @scroll="handleScroll" ref="pageContents">
         <vNavbar :links="links"/>
-        <vBanner/>
         <br><br>
+        <h1 style="color: white; text-align: center;">KIT DIGITAL</h1>
         <div style="width: 100%; display: flex; justify-content: center">
           <img id="bannerkitdigital" src="@/assets/images/Logo-digitalizadores.png"/>
         </div>
         <vSolicitar/>
-        <vLabor/>
         <vPaquetes/>
         <vFooter :links="footerLinks"/>
         <vGoToTop :show="show"/>
@@ -15,35 +14,39 @@
   </template>
   
   <script>
-  import vNavbar from "@/components/vNavbar.vue"
-  import vBanner from "@/components/kitdigital/vBanner.vue"
+  import vNavbar from "@/components/kitdigital/vNavbar.vue"
   import vSolicitar from "@/components/kitdigital/vSolicitar.vue"
-  import vLabor from "@/components/kitdigital/vLabor.vue"
   import vPaquetes from "@/components/kitdigital/vPaquetes.vue"
   import vFooter from "@/components/vFooter.vue"
-  import vGoToTop from '@/components/vGoToTop.vue'
+  import vGoToTop from '@/components/kitdigital/vGoToTop.vue'
   
   export default {
     name: 'KitDigitalView',
     components: {
         vNavbar,
         vSolicitar,
-        vLabor,
         vPaquetes,
         vFooter,
         vGoToTop,
-        vBanner,
     },
     data: () => ({
       show: false,
       links: [
         {
-          'name': 'Inicio',
-          'url': '/',
+          name: 'Inicio',
+          url: '/'
+        },
+        {
+          'name': 'Servicios',
+          'url': '/servicios',
         },
         {
           'name': 'Nosotros',
           'url': '/nosotros',
+        },
+        {
+          'name': 'Proyectos',
+          'url': '/proyectos',
         },
         {
           'name': 'Contacto',
@@ -97,12 +100,12 @@
       scroll-behavior: smooth;
       user-select: none;
       position: relative;
-      background-color: #171717;
+      background-color: #000;
     }
   
     #kitdigital::-webkit-scrollbar {
       width: 7px;
-      background: rgba(255, 150, 150, .5);
+      background: rgba(208, 150, 255, 0.5) !important;
     }
     #kitdigital::-webkit-scrollbar-thumb {
       background-color: var(--primary);

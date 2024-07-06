@@ -2,10 +2,25 @@
   <div id="nosotros">
     <h1>¿Qué es Aurie?</h1>
     <div class="section-text">
-      Somos más que una empresa de servicios web. En Aurie, creamos experiencias digitales excepcionales que impulsan el éxito de nuestros clientes.
-Fundada con la visión de hacer una diferencia, en Aurie, estamos comprometidos a transformar ideas en realidad y a llevar el potencial digital al siguiente nivel. 
-Continuamos avanzando en la creación de proyectos que fortalezcan nuestra comunidad y nos posicionen como referentes en este sector, ampliando así nuestra gama de servicios para satisfacer las necesidades de nuestros clientes. GRACIAS por confiar en nosotros ;)
-    </div><br><br>
+      Aurie es más que una empresa de diseño; es un catalizador de sueños. Creemos que si puedes imaginarlo, 
+podemos crearlo, redefiniendo los límites de lo posible con cada diseño.
+    </div><br>
+    <div class="section-text">
+      Nuestra misión es hacer que cada diseño no solo cumpla, sino supere, tus más altas expectativas.
+    </div><br>
+    <div class="section-text">
+      Creamos Aurie con la idea de continuar avanzando en la creación de proyectos que fortalezcan nuestra 
+comunidad y nos posicionen como referentes en este sector, ampliando así nuestra gama de servicios para
+satisfacer las necesidades de nuestros clientes. GRACIAS por confiar en nosotros ;)
+    </div>
+    <br><br>
+    <h1>El equipo</h1>
+    <div class="section-text">
+      Actualmente, Aurie esta formado por dos chicos que se conocen desde que eran pequeños y que en 2023 empezaron un proyecto que marcaría un antes y un después; Proyecto Aurie.
+    </div><br>
+    <div class="section-text">
+      Nuestro equipo está formado por Antón (la mente maestra detrás de cada proyecto) y Kei (el motor imparable que los impulsa). Juntos, somos la combinación perfecta para diseñar y llevar a cabo proyectos con precisión y creatividad.
+    </div>
   </div>
 </template>
 
@@ -121,18 +136,17 @@ export default {
   font-weight: bold;
 }
 h1 {
-  color: rgb(253, 76, 56);
+  color: var(--primary);
   font-size: 35px;
   margin: 0px;
   font-weight: 900;
-  text-shadow: 0px 0px 4px rgb(253, 76, 56);
   position: relative;
   margin-top: 20px;
   margin-bottom: 80px;
 }
 h1::after {
   content: '';
-  background: rgb(253, 76, 56);
+  background: var(--primary);
   height: 4px;
   bottom: -10px;
   left: 50%;
@@ -144,7 +158,7 @@ h1::after {
   margin: 0px;
   color: #E3E3E3;
   opacity: .9;
-  width: 50%;
+  width: 70%;
   margin-left: 15px;
   line-height: 30px;
   font-size: 20px;
@@ -152,7 +166,7 @@ h1::after {
   max-width: 800px;
 }
 #nosotros {
-  padding-top: 130px;
+  padding-top: 30px;
   padding-bottom: 30px;
   margin-top: -5px;
   display: flex;

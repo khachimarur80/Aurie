@@ -1,56 +1,74 @@
 <template>
     <div id="paquetes">
-      <h1>Paquetes Kit digital</h1>
-      <br>
-      <div class="section-text">
-        Ayudas Para Pymes: Aprovecha Las Ayudas De Hasta 12.000€ De Los Fondos Europeos Next Generation.
-      </div><br>
-      <a class="ver-mas" href="/kit-digital">
-        Más información
-      </a><br><br>
-      <div class="services-list" v-if="selectedProject.services">
-        <div class="service" v-for="(service, i) in selectedProject.services.slice(0, currentMax)" :key="i">
-          <h2>
-            {{ service.name }}
-          </h2>
-          <p class="description" style="margin-top: -10px; margin-bottom: -20px;">
-            <span class="inner" style="color: var(--primary); font-weight: bold;">
-              {{ service.price[0] }}
-            </span>
-          </p>
-          <p class="description">
-            <span class="inner">
-              {{ service.description }}
-            </span>
-          </p>
-          <div style="flex: 1"></div>
-          <a class="show-price" style="text-decoration: none;" :href="'/kit-digital#'+service.id">
-            Más info
-          </a>
-          <div class="price">
-            <table :class="[service.showPrice ? 'show' : '']">
-              <tr>
-                  <td>Precio (IVA inc.)</td>
-                  <td>{{ service.price[0] }}</td>
-              </tr>
-            </table>
+      <div class="hand">
+      </div>
+      <div class="hand2">
+      </div>
+      <h1>KIT DIGITAL</h1>
+      <div style="width: 100%; display: flex; justify-content: center">
+        <img id="bannerkitdigital" src="@/assets/images/Logo-digitalizadores.png"/>
+      </div>
+      <br><br><br><br>
+      <div class="services">
+        <h3>SERVICIOS KIT DIGITAL</h3>
+        <div class="services-list">
+          <div class="service">
+            <div class="service-header">
+              <p>Sitio Web Básico</p><a class="redirect" href="/kit-digital#web"></a>
+            </div>
+            <div class="line"></div>
+            <p t>Dominio, hosting, diseño web</p>
+            <img src="@/assets/icons/domain.png"/>
+            <a class="info" href="/kit-digital#web"> + INFO</a>
+          </div>
+          <div class="service">
+            <div class="service-header">
+              <p>Presencia Avanzada</p><a class="redirect" href="/kit-digital#avanzada"></a>
+            </div>
+            <div class="line"></div>
+            <p t>Análisis, optimización y posicionamiento</p>
+            <img src="@/assets/icons/web-page.png"/>
+            <a class="info" href="/kit-digital#avanzada"> + INFO</a>
+          </div>
+          <div class="service">
+            <div class="service-header">
+              <p>Comercio Electrónico</p><a class="redirect" href="/kit-digital#ecommerce"></a>
+            </div>
+            <div class="line"></div>
+            <p t>Tienda online, métodos de pago</p>
+            <img src="@/assets/icons/digital-marketing.png"/>
+            <a class="info" href="/kit-digital#ecommerce"> + INFO</a>
           </div>
         </div>
-        <div class="servicea" v-if="small">
-          <br>
-          <button class="button" v-if="more" @click="setCurrentMax(false)">
-            Ver menos
-          </button>
-          <button class="button" v-else @click="setCurrentMax(true)">
-            Ver más
-          </button>
+        <div class="services-list">
+          <div class="service">
+            <div  class="service-header">
+              <p>Marketplace</p><a class="redirect" href="/kit-digital#marketplace"></a>
+            </div>
+            <div class="line"></div>
+            <p t>Alta en plataformas de venta, estudio y diseño del catálogo.</p>
+            <img src="@/assets/icons/online-shopping.png"/>
+            <a class="info" href="/kit-digital#marketplace"> + INFO</a>
+          </div>
+          <div class="service">
+            <div  class="service-header">
+              <p>Oficina Virtual</p><a class="redirect" href="/kit-digital#oficina"></a>
+            </div>
+            <div class="line"></div>
+            <p t>Herramientas para ayudar a gestionar trabajos, proyectos, equipo ...</p>
+            <img src="@/assets/icons/information.png"/>
+            <a class="info" href="/kit-digital#oficina"> + INFO</a>
+          </div>
+          <div class="service">
+            <div  class="service-header">
+              <p>Redes Sociales</p><a class="redirect" href="/kit-digital#redes"></a>
+            </div>
+            <div class="line"></div>
+            <p t>Estragetia, monitorización, publicaciones.</p>
+            <img src="@/assets/icons/social-media.png"/>
+            <a class="info" href="/kit-digital#redes"> + INFO</a>
+          </div>
         </div>
-      </div>
-      <div class="no-services" v-if="selectedProject.name && !selectedProject.services">
-        En desarrollo ...
-      </div>
-      <div class="no-services" v-if="!selectedProject.name">
-        Selecciona un proyecto
       </div>
       <br><br>
     </div>
@@ -226,68 +244,156 @@
   </script>
   
   <style scoped>
-    .button {
-      border: 1px solid transparent;
-      background: none;
-      color: var(--primary);
-      font-size: 16px;
-      border-radius: 5px;
-      padding: 5px 8px 5px 8px;
-      width: fit-content;
-    }
-    .button:hover {
-      border-color: var(--primary);
-    }
-    .ver-mas {
-      border: 2px solid var(--primary);
-      border-radius: 8px;
-      padding: 5px 10px 5px 10px;
-      background: none;
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 18px;
-      transition: all .2s ease-out;
-    }
-    .ver-mas:hover {
-      color: #171717;
-      background-color: var(--primary);
-      font-weight: bold;
-    }
-    h2 {
-        margin: 0;
-        font-weight: lighter;
-        font-size: 30px;
-        text-align: center;
-    }
-    h1 {
-        color: rgb(253, 76, 56);
-        font-size: 35px;
-        margin: 0px;
-        font-weight: 900;
-        text-shadow: 0px 0px 4px rgb(253, 76, 56);
-        position: relative;
-        margin-top: 20px;
-        margin-bottom: 80px;
-        text-align: center;
-    }
-    h1::after {
-        content: '';
-        background: rgb(253, 76, 56);
-        height: 4px;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50px;
-        position: absolute;
-    }
-    .section-text {
-      margin: 0px;
-      color: #E3E3E3;
-      opacity: .7;
-      width: 50%;
-      margin-left: 15px;
-      text-align: center;
-    }
+  a {
+    text-decoration: none;
+  }
+  .hand {
+    position: absolute;
+    width: 25%;
+    aspect-ratio: 3/4;
+    background: url('@/assets/images/hand.webp');
+    background-size: cover;
+    transform: translateX(-30%) rotateZ(90deg) rotateY(180deg);
+    top: 200px;
+    left: 0px;
+    filter: brightness(.7);
+    display: none;
+  }
+  .hand2 {
+    position: absolute;
+    width: 25%;
+    aspect-ratio: 3/4;
+    background: url('@/assets/images/hand.webp');
+    background-size: cover;
+    transform: translateX(30%) rotateZ(-90deg) rotateY(180deg);
+    bottom: -100px;
+    right: 0px;
+    filter: brightness(.7);
+    display: none;
+  }
+  .info {
+    background: #111;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 15px 5px 15px;
+  }
+  .service-header {
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+  }
+  .redirect {
+    height: 12px;
+    width: 12px;
+    background: url('@/assets/icons/external-link.png');
+    background-size: cover;
+    filter: invert(100%);
+  }
+  .services .services-list:nth-child(3) {
+    margin-top: 1px;
+    align-items: flex-start;
+  }
+  .services-list {
+    height: calc(45% - 25px);
+    display: flex;
+    align-items: center;
+    gap: 10px !important;
+  }
+  .service {
+    height: 80%;
+    border: 1px solid #777676;
+    border-radius: 10%;
+    aspect-ratio: 4/5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+    background: #1a1a1a;
+  }
+  .line {
+    width: 90%;
+    height: 1px;
+    background: #ddd;
+  }
+  .service h6 {
+    position: absolute;
+    bottom: -10px;
+  }
+  .service img {
+    height: 40px;
+    width: 40px;
+    filter: invert(100%);
+  }
+  .service p {
+    font-size: 12px;
+    text-align: center;
+  }
+  .services {
+    background: url('@/assets/images/ipad.png');
+    border-top: 1px solid #777676;
+    width: 90vh ;
+    aspect-ratio: 12/9 !important;
+    overflow: hidden;
+    background-size: 100%;
+    background-position: center;
+    box-shadow: 0px 0px 100px 0px var(--primary);
+    border-radius: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .services h3 {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  .button {
+    border: 1px solid transparent;
+    background: none;
+    color: var(--primary);
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px 8px 5px 8px;
+    width: fit-content;
+  }
+  .button:hover {
+    border-color: var(--primary);
+  }
+  .ver-mas {
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 5px 10px 5px 10px;
+    background: none;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 18px;
+    transition: all .2s ease-out;
+  }
+  .ver-mas:hover {
+    color: #171717;
+    background-color: var(--primary);
+    font-weight: bold;
+  }
+  h1 {
+    color: var(--text);
+    font-size: 30px;
+    margin: 0px;
+    font-weight: 900;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+  .section-text {
+    margin: 0px;
+    color: #E3E3E3;
+    opacity: .7;
+    width: 50%;
+    margin-left: 15px;
+    text-align: center;
+  }
   #paquetes {
     padding: 20px;
     margin: 0px;
@@ -296,6 +402,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: relative;
   }
   .services-list {
     width: 100%;
@@ -304,22 +411,6 @@
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .service {
-    width: calc(25% - 20px);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 20px;
-    padding-top: 45px;
-    padding-bottom: 20px;
-    background: var(--background);
-    min-width: 360px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0px 0px 3px #333;
-    background: #151515;
   }
   .description {
     text-align: center;
@@ -366,8 +457,6 @@
     color: white;
     cursor: pointer;
   }
-  
-  
   .projects {
     width: 100%;
     display: flex;
@@ -375,7 +464,6 @@
     gap: 20px;
     margin-bottom: 20px;
   }
-  
   .project {
     border-radius: 10px;
     padding-left: 5px;
@@ -397,119 +485,97 @@
     border-radius: 50%;
   }
   
-  .project:hover {
-    outline: 1px solid var(--color);
-    cursor: pointer;
-  }
-  .selected {
-    background: var(--color);
-  }
-  
-  .no-services {
-    width: 100h;
-    display: flex;
-    padding: 100px;
-    justify-content: center;
-    align-items: center;
-    color: var(--background);
-    opacity: .7;
-  }
-  
-  table.show {
-    transform: translateY(0px);
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
-  table {
-    pointer-events: none;
-    outline: 1px solid #ddd;
-    padding: 5px;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 80px;
-    left: 5%;
-    width: 90%;
-    background: var(--background);
-    box-shadow: 1px 2px 3px 0px #444;
-    transform: translateY(calc(100% + 20px));
-    opacity: 0;
-    transition: opacity .3s ease-out, transform .3s ease-out;
-  }
-  td:nth-child(2) {
-    text-align: end;
-  }
-  td:nth-child(1) {
-    font-weight: bolder;
-    color: #888;
-  }
-  td {
-    padding: 5px;
-    padding-bottom: 2px;
-  }
-  tr {
-    border: 1px solid red;
-  }
-  
-  .seemore {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    background: none;
-    font-size: 16px;
-    padding: 6px 12px 6px 12px;
-    border-radius: 5px;
-    color: var(--accent);
-  }
-  .seemore:hover {
-    background: #333;
-    cursor: pointer;
-  }
-  
-  @media only screen and (max-width: 670px) {
-    .section-text {
-      width: 90%;
+  @media only screen and (max-width: 600px) {
+    .services {
+      width: calc(100% - 10px);
+      border-radius: 10px;
     }
-    .includes {
-      margin-left: 10%;
+    .services h3 {
+      font-size: 18px !important;
+    }
+    .services-list {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      box-sizing: border-box;
     }
     .service {
-      max-width: calc(100% - 20px);
-      min-width: calc(100% - 20px);
-    }
-    h2 {
-      margin-bottom: 30px;
-    }
-    .description {
-      display: none;
-    }
-    .projects {
+      aspect-ratio: unset;
+      width: 25%;
       padding: 0px;
-    }
-    .project {
-      border-radius: 5px;
-      padding-left: 3px;
-      padding-right: 10px;
-      font-size: 16px;
+      height: 90%;
+      box-shadow: none;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: none;
-      border: 1px solid var(--color);
-      gap: 5px;
-      background: var(--background);
-      transition: background ease-in .15s;
-      width: 120px;
-      height: 45px;
     }
-    .no-services {
-      padding: 50px;
+    .service-header {
+      padding-left: 5px;
+      padding-right: 5px;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 0px;
+    }
+    .service img, .service p[t], .info, .line {
+      display: none;
     }
   }
-  
-  @media only screen and (min-width: 671px) and (max-width: 980px) {
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    .services {
+      width: calc(100% - 10px);
+      border-radius: 10px;
+    }
+    .services h3 {
+      font-size: 18px !important;
+    }
+    .services-list {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      box-sizing: border-box;
+    }
     .service {
-      max-width: calc(33% - 20px);
+      aspect-ratio: unset;
+      width: 25%;
+      padding: 0px;
+      height: 90%;
+      box-shadow: none;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .service-header {
+      padding-left: 5px;
+      padding-right: 5px;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 0px;
+    }
+    .redirect {
+      display: none;
+    }
+    .service p[t], .line {
+      display: none;
+    }
+    .redirect {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 901px) and (max-width: 1400px) {
+    .redirect {
+      display: none;
+    }
+    .line {
+      margin-top: -15%;
+    }
+  }
+  @media only screen and (min-width: 1401px) {
+    .hand, .hand2 {
+      display: block;
+    }
+    .redirect {
+      display: none;
+    }
+    .line {
+      margin-top: -15%;
     }
   }
   </style>

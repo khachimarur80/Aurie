@@ -1,48 +1,92 @@
 <template>
   <div id="servicios">
-    <h1>Servicios</h1>
-    <div>
-      ¿Estás interesado en alguno de nuestros servicios? Contáctanos para una consulta totalmente gratuita con el objetivo de mejorar tu experiencia.
-    </div><br>
-    <a class="ver-mas" href="/contacto">
-      Consúltanos
-    </a>
-    <br><br>
-    <div class="services-list" v-if="selectedProject.services">
-      <div :class="['service', service.showPrice ? 'more' : '']" v-for="(service, i) in selectedProject.services.slice(0, currentMax)" :key="i">
-        <div class="service-img" :style="{'background' : 'url('+service.image+')'}">
+    <div class="starry-night">
+      <h1>Servicios</h1>
+      <a class="ver-mas" href="/contacto">
+        CONSULTORÍA GRATUITA
+      </a>
+      <br><br><br><br>
+
+      <h2>Diseño y Desarrollo Web</h2>
+      <div class="contents">
+        <div class="left a">
+
         </div>
-        <div class="description">
-          <div class="service-name">
-            {{ service.name }}
-          </div>
-          <div class="service-description" v-if="service.showPrice">
-            {{ service.description }}
-          </div>
-          <button v-if="!service.showPrice" @click="service.showPrice = true">
-            Ver más
-          </button>
-          <button v-else  @click="service.showPrice = false">
-            Ver menos
-          </button>
+        <div class="right">
+          <h3>DISEÑO PERSONALIZADO</h3>
+          <p>Diseñamos páginas web intuitivas
+  y visualmente atractivas, 
+  optimizadas para ofrecer una
+  experiencia de usuario 
+  excelente y facilitar la 
+  navegación de tus visitantes.</p>
         </div>
       </div>
-      <div class="service" v-if="small">
-        <button v-if="more" @click="setCurrentMax(false)">
-          Ver menos
-        </button>
-        <button v-else @click="setCurrentMax(true)">
-          Ver más
-        </button>
+      <div class="spacing"></div>
+      <div class="contents">
+        <div class="left b" style="left: 50%">
+
+        </div>
+        <div class="right" style="right: 50%; left: unset;">
+          <h3>DISEÑO 3D</h3>
+          <p>Sumérgete en el futuro del diseño
+  web con nuestros diseños 3D, 
+  creando entornos inmersivos que 
+  transportan a tus clientes a 
+  locales, zonas o cualquier lugar 
+  que puedas imaginar.</p>
+        </div>
       </div>
+      <br><br>
+      <a class="interested" href="/contacto">¡Me interesa!</a>
+      <br><br><br>
     </div>
-    <div class="no-services" v-if="selectedProject.name && !selectedProject.services">
-      En desarrollo ...
+    <div class="marketing">
+      <div class="marketing-background"></div>
+      <h2>Marketing digital</h2>
+      <br><br>
+      <div class="cards">
+        <div class="card">
+          <p>
+            Creación y gestión de campañas publicitarias
+          </p>
+          <div class="img">
+          </div>
+          <a href="/servicios">Saber más ></a>
+        </div>
+        <div class="card">
+          <p>
+            Optimización On-Page
+          </p>
+          <div class="img">
+          </div>
+          <a href="/servicios">Saber más ></a>
+        </div>
+        <div class="card">
+          <p>
+            Optimización Off-Page
+          </p>
+          <div class="img">
+          </div>
+          <a href="/servicios">Saber más ></a>
+        </div>
+        <div class="card">
+          <p>
+            Gestión de redes sociales
+          </p>
+          <div class="img">
+          </div>
+          <a href="/servicios">Saber más ></a>
+        </div>
+      </div>
+      <br><br><br>
+      <h1 style="max-width: 500px; text-align: center;">Una plataforma diseñada para crecer</h1>
+      <p style="color: var(--text); opacity: .7; margin-top: -30px; text-align: center;">Con herramientas que te ayudaran a escalar tu negocio</p>
+      <br><br><br>
+      <a class="start" href="/servicios">EMPECEMOS</a>
     </div>
-    <div class="no-services" v-if="!selectedProject.name">
-      Selecciona un proyecto
-    </div>
-    <br><br>
+    <br><br><br>
+    <br><br><br>
   </div>
 </template>
 
@@ -197,48 +241,285 @@ export default {
 </script>
 
 <style scoped>
-.ver-mas {
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  padding: 5px 10px 5px 10px;
-  background: none;
-  color: var(--primary);
+.starry-night {
+  width: 100%;
+  padding: 20px;
+  margin: 0px;
+  margin-top: -5px;
+  background:  linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('@/assets/images/night.webp');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card:nth-child(1) .img {
+  background: url('@/assets/icons/cartelera.webp');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+.card:nth-child(1) .img::before {
+  background: url('@/assets/icons/cartelera.webp');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  content: '';
+  filter: blur(3px) brightness(10%) saturate(100%) invert(24%) sepia(100%) saturate(1722%) hue-rotate(27deg) brightness(97%) contrast(106%);
+}
+.card:nth-child(2) .img {
+  background: url('@/assets/icons/optimizacion-web.webp');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.card:nth-child(2) .img::before {
+  background: url('@/assets/icons/optimizacion-web.webp');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  content: '';
+  filter: blur(3px) brightness(0) saturate(100%) invert(17%) sepia(100%) saturate(3194%) hue-rotate(289deg) brightness(77%) contrast(122%);
+}
+.card:nth-child(3) .img {
+  background: url('@/assets/icons/pagina-web.webp');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.card:nth-child(3) .img::before {
+  background: url('@/assets/icons/pagina-web.webp');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  content: '';
+  filter: blur(3px) brightness(0) saturate(100%) invert(12%) sepia(78%) saturate(6240%) hue-rotate(268deg) brightness(82%) contrast(123%);
+}
+.card:nth-child(4) .img {
+  background: url('@/assets/icons/redes-sociales.webp');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.card:nth-child(4) .img::before {
+  background: url('@/assets/icons/redes-sociales.webp');
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  content: '';
+  filter: blur(3px) brightness(0) saturate(100%) invert(12%) sepia(65%) saturate(6218%) hue-rotate(219deg) brightness(94%) contrast(101%);
+}
+.marketing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.marketing-background {
+  background: url('@/assets/images/marketing-background.webp');
+  background-size: cover;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  position: absolute;
+  opacity: .3;
+}
+.a:nth-child(1) {
+  background: url('@/assets/images/mysetupbanner.png');
+  background-size: cover;
+}
+.b:nth-child(1) {
+  background: url('@/assets/images/diseno3d.png');
+  background-size: cover;
+}
+.start {
+  border: 1px solid #4200DB;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  background: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px 2px #4200DB;
+  transition: all ease-in-out .3s;
+  z-index: 4;
   text-decoration: none;
-  font-size: 18px;
-  transition: all .2s ease-out;
-  z-index: 3;
 }
-.ver-mas:hover {
-  color: #171717;
-  background-color: var(--primary);
-  font-weight: bold;
+.start:hover {
+  filter: brightness(150%);
+  cursor: pointer;
 }
-h2 {
-  margin: 0;
-  font-weight: lighter;
-  font-size: 30px;
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  width: 20%;
+  aspect-ratio: 7/8;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  padding-bottom: 30px;
+}
+.card a {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  bottom: 10px; 
+  left: 15px;
+}
+.card .img {
+  width: 40%;
+  aspect-ratio: 1;
+  transform: translateY(-10%);
+}
+.card p {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 30%;
+}
+.card:nth-child(1) {
+  border: 1px solid #A14E00;
+}
+.card:nth-child(2) {
+  border: 1px solid #A700AA;
+}
+.card:nth-child(3) {
+  border: 1px solid #5B00CF;
+}
+.card:nth-child(4) {
+  border: 1px solid #003FB9;
+}
+.interested {
+  padding: 5px 15px 5px 15px;
+  border-radius: 5px;
+  border: 2px solid var(--primary);
+  color: white;
+  filter: brightness(150%);
+  text-decoration: none;
+}
+.interested:hover {
+  outline: 1px solid var(--primary);
+}
+.contents {
+  width: calc(100% - 30px);
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  aspect-ratio: 16/9;
+  max-height: 280px;
+}
+.left {
+  width: 50%;
+  aspect-ratio: 16/9;
+  border: 1px solid #ddd;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+h3 {
+  color: var(--text);
   text-align: center;
 }
-h1 {
-    color: rgb(253, 76, 56);
-    font-size: 35px;
-    margin: 0px;
-    font-weight: 900;
-    text-shadow: 0px 0px 4px rgb(253, 76, 56);
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 80px;
-    text-align: center;
+.contents p {
+  color: var(--text);
+  opacity: .7;
+  text-align: center;
 }
-h1::after {
-    content: '';
-    background: rgb(253, 76, 56);
-    height: 4px;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    position: absolute;
+.right {
+  width: 45%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  aspect-ratio: 16/9;
+  background: #171717;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ver-mas {
+  border: 2px solid #69008E;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+  background: none;
+  background: var(--primary);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all .2s ease-out;
+  z-index: 3;
+  margin-top: -10px;
+}
+.ver-mas:hover {
+  background-color: transparent;
+  border-color: var(--text);
+}
+h2 {
+  font-weight: lighter;
+  text-align: center;
+  color: var(--text);
+  font-weight: 900;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+h2::after {
+  content: '';
+  background: var(--text);
+  height: 1px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  position: absolute;
+}
+h1 {
+  color: var(--text);
+  font-size: 30px;
+  margin: 0px;
+  font-weight: 900;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 #servicios {
   padding: 20px;
@@ -249,228 +530,60 @@ h1::after {
   flex-direction: column;
   align-items: center;
 }
-.services-list {
-  width: 100%;
-  align-items: center;
-  max-width: 1200px;
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
+@media only screen and (max-width: 900px) {
+  .left, .right {
+    position: unset;
+    width: 100%;
+    transform: unset;
+  }
+  .contents {
+    max-height: 1000px;
+  }
+  .left {
+    transform: unset;
+    width: 85%;
+    aspect-ratio: 16/9 !important;
+    max-width: 600px;
+  }
+  .right {
+    width: 85%;
+  }
+  .contents {
+    flex-direction: column !important;
+    max-height: unset;
+  }
+  .cards {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .card {
+    width: 40%;
+  }
+  .right {
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .spacing {
+    height: 30px;
+  }
 }
-.service {
-  width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: transparent;
-  position: relative;
-  overflow: hidden;
-  gap: 15px;
-}
-.more .service-img {
-  height: 100px;
-  filter: blur(1px);
-  opacity: .75;
-}
-.more .description {
-  height: 300px;
-  border-color: var(--primary);
-  justify-content: space-around;
-}
-.more button {
-  color: var(--accent);
-}
-.more button:hover {
-  border-color: var(--accent);
-}
-.service-img {
-  height: 300px;
-  width: 100%;
-  background-size: cover !important;
-  border-radius: 20px 20px 10px 10px;
-  transition: all .3s ease-out;
-  background-position: center center !important;
-}
-.service-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-button {
-  border: 1px solid transparent;
-  background: none;
-  color: var(--primary);
-  font-size: 16px;
-  border-radius: 5px;
-  padding: 5px 8px 5px 8px;
-  width: fit-content;
-}
-button:hover {
-  border-color: var(--primary);
-}
-.description {
-  background: #262626;
-  text-align: center;
-  padding: 5px;
-  border-radius: 10px 10px 20px 20px;
-  padding-top: 15px;
-  padding-bottom: 20px;
-  width: 100%;
-  box-sizing: border-box;
-  height: 100px;
-  transition: all .3s ease-out;
-  border: 1px solid transparent;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.includes {
-  margin: 0px;
-  width: calc(100% - 20px);
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 10px;
-  gap: 10px;
-  margin-left: 20%;
-}
-.includes-container {
-  width: 100%;
-}
-.check {
-  height: 20px;
-  width: 20px;
-  background: url('@/assets/icons/check.svg');
-  background-size: cover;
-}
-.includes p, .includes span {
-  margin: 0;
-}
-.includes p {
-  max-width: calc(100% - 40px);
-}
-.show-price {
-  border-radius: 5px;
-  color: var(--primary);
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  background: var(--background);
-  border: 1px solid var(--primary);
-  transition: background .3s ease-out;
-}
-.show-price:hover {
-  background: var(--primary);
-  color: white;
-  cursor: pointer;
-}
-
-
-.projects {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.project {
-  border-radius: 10px;
-  padding-left: 5px;
-  padding-right: 15px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: none;
-  border: 1px solid var(--color);
-  gap: 10px;
-  background: var(--background);
-  transition: background ease-in .15s;
-  width: 150px;
-  height: 55px;
-}
-.project img {
-  background: var(--background);
-  border-radius: 50%;
-}
-
-.project:hover {
-  outline: 1px solid var(--color);
-  cursor: pointer;
-}
-.selected {
-  background: var(--color);
-}
-
-.no-services {
-  width: 100h;
-  display: flex;
-  padding: 100px;
-  justify-content: center;
-  align-items: center;
-  color: var(--background);
-  opacity: .7;
-}
-
-table.show {
-  transform: translateY(0px);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-table {
-  outline: 1px solid #ddd;
-  padding: 5px;
-  border-radius: 10px;
-  position: absolute;
-  bottom: 80px;
-  left: 5%;
-  width: 90%;
-  background: var(--background);
-  box-shadow: 1px 2px 3px 0px #444;
-  transform: translateY(calc(100% + 20px));
-  opacity: 0;
-  transition: opacity .3s ease-out, transform .3s ease-out;
-}
-td:nth-child(2) {
-  text-align: end;
-}
-td:nth-child(1) {
-  font-weight: bolder;
-  color: #888;
-}
-td {
-  padding: 5px;
-  padding-bottom: 2px;
-}
-tr {
-  border: 1px solid red;
-}
-
-.seemore {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: none;
-  background: none;
-  font-size: 16px;
-  padding: 6px 12px 6px 12px;
-  border-radius: 5px;
-  color: var(--accent);
-}
-.seemore:hover {
-  background: #eee;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 670px) {
-
-}
-
-@media only screen and (min-width: 671px) and (max-width: 980px) {
-  .service {
-    max-width: calc(33% - 20px);
+@media only screen and (min-width: 1200px) {
+  .contents {
+    width: calc(100% - 30px);
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    aspect-ratio: 16/9;
+    max-height: 500px;
+  }
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>

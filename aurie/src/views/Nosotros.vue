@@ -6,15 +6,16 @@
       <vNavbar :links="links"/>
       <vNosotros/>
       <vEquipo/>
-      <br><br>
+      <vNosotros1/>
       <vFooter :links="footerLinks"/>
       <vGoToTop :show="show"/>
     </div>
   </template>
   
   <script>
-  import vNavbar from "@/components/vNavbar.vue"
+  import vNavbar from "@/components/nosotros/vNavbar.vue"
   import vNosotros from '@/components/nosotros/vNosotros.vue'
+  import vNosotros1 from '@/components/nosotros/vNosotros1.vue'
   import vEquipo from '@/components/vEquipo.vue'
   import vFooter from '@/components/vFooter.vue'
   import vGoToTop from '@/components/vGoToTop.vue'
@@ -27,6 +28,7 @@
       vEquipo,
       vFooter,
       vGoToTop,
+      vNosotros1
     },
     data: () => ({
       links: [
@@ -37,6 +39,14 @@
         {
           'name': 'Kit Digital',
           'url': '/kit-digital',
+        },
+        {
+          'name': 'Servicios',
+          'url': '/servicios',
+        },
+        {
+          'name': 'Proyectos',
+          'url': '/proyectos',
         },
         {
           'name': 'Contacto',
@@ -153,7 +163,6 @@
       overflow-y: scroll;
       scroll-behavior: smooth;
       user-select: none;
-      position: relative;
       background-color: #171717;
     }
   

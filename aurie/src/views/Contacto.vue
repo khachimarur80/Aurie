@@ -5,14 +5,14 @@
       <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>-->
       <vNavbar :links="links"/>
       <vContacto/>
-      <br><br>
+      
       <vFooter :links="footerLinks"/>
       <vGoToTop :show="show"/>
     </div>
   </template>
   
   <script>
-  import vNavbar from "@/components/vNavbar.vue"
+  import vNavbar from "@/components/contacto/vNavbar.vue"
   import vContacto from '@/components/vContacto.vue'
   import vFooter from '@/components/vFooter.vue'
   import vGoToTop from '@/components/vGoToTop.vue'
@@ -36,8 +36,16 @@
           'url': '/kit-digital',
         },
         {
+          'name': 'Servicios',
+          'url': '/servicios',
+        },
+        {
           'name': 'Nosotros',
           'url': '/nosotros',
+        },
+        {
+          'name': 'Proyectos',
+          'url': '/proyectos',
         }
       ],
       footerLinks: [

@@ -2,7 +2,7 @@
   <div id="navbar" :class="'isSmall' ? 'small' : ''">
     <div class="navbar-header">
       <a id="navbar-logo" href="/">
-        <img src="@/assets/logos/logo.svg" alt="Aurie logo" height="100%" width="100%"/>
+        <img src="@/assets/logos/logo.webp" alt="Aurie logo" height="100%" width="100%"/>
       </a>
       <a id="navbar-title" href="/">
         Aurie
@@ -11,11 +11,8 @@
     <div class="spacer">
     </div>
     <div class="navbar-items" v-if="!isSmall">
-      <a class="navbar-item"  @click="scrollToSection(link.url)" v-for="(link, i) in links" :key="i">
+      <a class="navbar-item"  :href="link.url" v-for="(link, i) in links" :key="i">
         {{ link.name }}
-      </a>
-      <a class="navbar-item" href="/">
-        Inicio
       </a>
     </div>
     <div :class="['dropdown', showDropdown ? 'show' : '']" v-else>
@@ -25,11 +22,8 @@
         </button>
       </div>
       <div class="dropdown-items">
-        <a class="dropdown-item" @click="scrollToSection(link.url)" v-for="(link, i) in links" :key="i">
+        <a class="dropdown-item" :href="link.url" v-for="(link, i) in links" :key="i">
           {{ link.name }}
-        </a>
-        <a class="dropdown-item" href="/">
-          Inicio
         </a>
       </div>
     </div>
@@ -73,12 +67,11 @@ export default {
   z-index: 2;
   padding: 10px;
   display: flex;
-  position: sticky;
   transition: background .15s ease-in-out;
   top: 0;
   right: 0;
   left: 0;
-  background: rgb(66, 31, 27);
+  background: rgba(0, 0, 0, 0.144);
 }
 .spacer {
   flex: 1;
@@ -99,12 +92,37 @@ export default {
   display: flex;
   gap: 5px;
   align-items: center;
+  justify-content: center;
 }
 .navbar-header {
   padding-left: 25px;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+.navbar-end {
+  padding-left: 25px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+.navbar-end a {
+  height: 30px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  text-decoration: none;
 }
 .navbar-item {
   padding: 10px;
@@ -113,7 +131,7 @@ export default {
   margin: 5px;
   margin-top: 0px;
   border-radius: 5px;
-  color: #E3E3E3;
+  color: var(--text);
   user-select: none;
   text-decoration: none;
   transition: background .5s ease;
@@ -121,16 +139,16 @@ export default {
 }
 
 .navbar-item:hover {
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .1);
 }
 
 #navbar-logo {
   height: 60px;
-  width: 60px !important;
+  min-width: 60px !important;
 }
 .dropdown {
   height: 80px;
-  width: 100px;
+  width: 93px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -143,7 +161,7 @@ export default {
   transition: transform .3s ease-out, opacity .2s ease-out;
   transform: translateY(0px);
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
   top: 0;
   right: -10px;
   position: absolute;

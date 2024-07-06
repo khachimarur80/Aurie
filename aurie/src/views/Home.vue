@@ -1,14 +1,12 @@
 <template>
   <div id="home" @scroll="handleScroll" ref="pageContents" @mousemove="handleMouse">
-    <!--<div class="blob" v-for="(blob, i) in blobs" :style="{'top':blob.top+'px', 'left':blob.left+'px'}" :key="i">
-    </div>
-    <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>-->
     <vNavbar :links="links"/>
     <vBanner/>
+    <vBanner1/>
     <vBanner2/>
     <vNosotros/>
-    <vServicios/>
     <vPaquetes/>
+    <vServicios/>
     <vFooter :links="footerLinks"/>
     <vGoToTop :show="show"/>
   </div>
@@ -17,6 +15,7 @@
 <script>
 import vNavbar from "@/components/vNavbar.vue"
 import vBanner from '@/components/vBanner.vue'
+import vBanner1 from '@/components/vBanner1.vue'
 import vBanner2 from '@/components/vBanner2.vue'
 import vNosotros from '@/components/vNosotros.vue'
 import vServicios from '@/components/vServicios.vue'
@@ -35,6 +34,7 @@ export default {
     vFooter,
     vGoToTop,
     vBanner2,
+    vBanner1
   },
   data: () => ({
     links: [
@@ -43,8 +43,16 @@ export default {
         'url': '/kit-digital',
       },
       {
+        'name': 'Servicios',
+        'url': '/servicios',
+      },
+      {
         'name': 'Nosotros',
         'url': '/nosotros',
+      },
+      {
+        'name': 'Proyectos',
+        'url': '/proyectos',
       },
       {
         'name': 'Contacto',
@@ -160,18 +168,18 @@ export default {
   }
   #home {
     height: calc(100vh);
-    width: 100h !important;
+    box-sizing: border-box;
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
     user-select: none;
     position: relative;
-    background-color: #171717;
+    background-color: var(--background-dark) !important;
   }
 
   #home::-webkit-scrollbar {
     width: 7px;
-    background: rgba(255, 150, 150, .5);
+    background: rgba(208, 150, 255, 0.5) !important;
   }
   #home::-webkit-scrollbar-thumb {
     background-color: var(--primary);
@@ -220,3 +228,4 @@ export default {
   }
 
 </style>
+ 
