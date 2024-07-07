@@ -7,11 +7,11 @@
       </div>
       <div class="stat">
         <span>100%</span>
-        <p>Clientes satisfechos</p>
+        <p>De nuestros trabajos hechos con cariño</p>
       </div>
       <div class="stat">
-        <span>100%</span>
-        <p>Clientes satisfechos</p>
+        <span>+10</span>
+        <p>Tipos de servicios</p>
       </div>
     </div>
     <div class="service">

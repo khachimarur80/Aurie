@@ -111,7 +111,7 @@ h1 {
 }
 @media screen and (min-width: 1000px) {
   #banner {
-    height: 600px;
+    height: 800px;
   }
   h1 {
     font-size: 40px;

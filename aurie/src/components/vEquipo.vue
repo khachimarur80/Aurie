@@ -31,14 +31,14 @@
       <div class="name-card" style="text-align: end" b>
         Kei Rodríguez Hachimaru
       </div>
-      <p>
-        Actualmente cursando un grado superior en ASIR y cuento con un grado medio en Microinformática y redes.
+      <p style="text-align: end" >
+        Apasionado por la ingeniería desde siempre, encontré mi verdadera vocación en la programación. 
       </p>
-      <p>
-        Soy un apasionado del hardware y los videojuegos.
+      <p style="text-align: end" >
+        Me encanta aprender, esforzarme, y sobre todo, plantearme nuevos desafíos. 
       </p>
-      <p>
-        En mi tiempo libre, disfruto haciendo deporte, escuchando música y aprendiendo habilidades nuevas.
+      <p style="text-align: end" >
+        La programación me permite relacionar y combinar mis vocaciones en una gran pasión, la creación de Software.
       </p>
     </div>
   </div>
@@ -59,11 +59,14 @@ export default {
   display: flex;
 }
 #equipo {
+  width: 90%;
   padding: 30px;
   display: flex;
   color: white;
   align-items: center;
   justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 .name-card {
   font-size: 26px;
@@ -77,7 +80,7 @@ p {
 }
 .col:nth-child(2n+1) {
   width: 25%;
-  max-width: 300px;
+  max-width: 600px;
 }
 .image-row {
   display: flex;
@@ -91,6 +94,7 @@ p {
   flex: 1;
   z-index: 2;
   background-size: cover;
+  max-width: 250px;
 }
 .img[b] {
   background: url('@/assets/images/retrato_anton.webp');

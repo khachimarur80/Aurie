@@ -56,7 +56,7 @@
         </div>
         <div class="card">
           <p>
-            Optimización On-Page
+            Optimización<br>On-Page
           </p>
           <div class="img">
           </div>
@@ -64,7 +64,7 @@
         </div>
         <div class="card">
           <p>
-            Optimización Off-Page
+            Optimización<br>Off-Page
           </p>
           <div class="img">
           </div>
@@ -79,12 +79,13 @@
           <a href="/servicios">Saber más ></a>
         </div>
       </div>
-      <br><br><br>
-      <h1 style="max-width: 500px; text-align: center;">Una plataforma diseñada para crecer</h1>
-      <p style="color: var(--text); opacity: .7; margin-top: -30px; text-align: center;">Con herramientas que te ayudaran a escalar tu negocio</p>
-      <br><br><br>
-      <a class="start" href="/servicios">EMPECEMOS</a>
+      <br><br><br><br><br><br>
     </div>
+    <br><br><br><br><br><br>
+    <h1 style="max-width: 500px; text-align: center;">Una plataforma diseñada para crecer</h1>
+    <p style="color: var(--text); opacity: .7; margin-top: -30px; text-align: center;">Con herramientas que te ayudaran a escalar tu negocio</p>
+    <br><br><br>
+    <a class="start" href="/servicios">EMPECEMOS</a>
     <br><br><br>
     <br><br><br>
   </div>
@@ -530,7 +531,10 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
+  .card p {
+    font-size: 14px;
+  }
   .left, .right {
     position: unset;
     width: 100%;
@@ -554,10 +558,53 @@ h1 {
   }
   .cards {
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    justify-content: center;
   }
   .card {
     width: 40%;
+    max-width: 200px;
+  }
+  .right {
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .spacing {
+    height: 30px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .left, .right {
+    position: unset;
+    width: 100%;
+    transform: unset;
+  }
+  .contents {
+    max-height: 1000px;
+  }
+  .left {
+    transform: unset;
+    width: 85%;
+    aspect-ratio: 16/9 !important;
+    max-width: 600px;
+  }
+  .right {
+    width: 85%;
+  }
+  .contents {
+    flex-direction: column !important;
+    max-height: unset;
+  }
+  .cards {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .card {
+    width: 40%;
+    max-width: 200px;
   }
   .right {
     max-width: 500px;
@@ -584,6 +631,9 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .cards {
+    width: 1200px;
   }
 }
 </style>

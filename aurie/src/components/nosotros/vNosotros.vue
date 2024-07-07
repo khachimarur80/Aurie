@@ -21,12 +21,17 @@ satisfacer las necesidades de nuestros clientes. GRACIAS por confiar en nosotros
     <div class="section-text">
       Nuestro equipo está formado por Antón (la mente maestra detrás de cada proyecto) y Kei (el motor imparable que los impulsa). Juntos, somos la combinación perfecta para diseñar y llevar a cabo proyectos con precisión y creatividad.
     </div>
+    <vEquipo/>
   </div>
 </template>
 
 <script>
+import vEquipo from '@/components/vEquipo.vue'
 export default {
   name: 'vNosotros',
+  components: {
+    vEquipo,
+  },
   props: {
   },
   mounted() {
@@ -173,6 +178,9 @@ h1::after {
   align-items: center;
   flex-direction: column;
   width: 100h;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('@/assets/images/nosotros-background.webp');
+  background-size: cover;
+  padding-top: 150px;
 }
 .contents {
   font-size: 24px;

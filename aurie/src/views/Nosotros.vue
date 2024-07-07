@@ -5,7 +5,6 @@
       <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>-->
       <vNavbar :links="links"/>
       <vNosotros/>
-      <vEquipo/>
       <vNosotros1/>
       <vFooter :links="footerLinks"/>
       <vGoToTop :show="show"/>
@@ -16,7 +15,6 @@
   import vNavbar from "@/components/nosotros/vNavbar.vue"
   import vNosotros from '@/components/nosotros/vNosotros.vue'
   import vNosotros1 from '@/components/nosotros/vNosotros1.vue'
-  import vEquipo from '@/components/vEquipo.vue'
   import vFooter from '@/components/vFooter.vue'
   import vGoToTop from '@/components/vGoToTop.vue'
   
@@ -25,7 +23,6 @@
     components: {
       vNavbar,
       vNosotros,
-      vEquipo,
       vFooter,
       vGoToTop,
       vNosotros1

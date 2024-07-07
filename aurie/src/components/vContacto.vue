@@ -200,7 +200,7 @@ export default {
     border-radius: 50%;
     transform: translateX(-50%);
     z-index: 2;
-    box-shadow: 0px 0px 10px 1px #333;
+    box-shadow: 0px 0px 30px 1px #333;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -257,7 +257,7 @@ export default {
     border: 2px solid white;
   }
   .slogan {
-    font-size: 25px;
+    font-size: 20px;
     color: var(--text);
     font-weight: 100;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -383,12 +383,21 @@ export default {
     }
   }
   @media only screen and (min-width: 1701px) {
+    .col:nth-child(1) .circle::before {
+      top: -50px;
+    }
+    .col:nth-child(4) .circle::before  {
+      top: -50px;
+    }
     .circle {
-      font-size: 25px;
+      max-width: 200px;
+    }
+    .circle {
+      font-size: 20px;
     }
     .circle img[a] {
-      height: 75px;
-      width: 75px;
+      height: 60px;
+      width: 60px;
     }
     .next-button {
       height: 35px;

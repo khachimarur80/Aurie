@@ -4,10 +4,10 @@
     <br><br>
     <div class="contents">
       <div class="left">
-        <h2>DOMINA EL <span style="color: #2C8CC1; font-family: var(--title-font);">MERCADO</span>.</h2>
+        <h2><span style="text-decoration: underline; font-family: var(--title-font);">DOMINA</span> EL <span style="color: #2C8CC1; font-family: var(--title-font);">MERCADO</span></h2>
         <div class="left-inner">
-          <h2>POTENCIA TU <span style="color: #962FD6; font-family: var(--title-font);">NEGOCIO</span>.</h2>
-          <p>Bienvenido a Aurie, donde empresas y profesionales empiezan a conseguir resultados únicos</p>
+          <h2 style="margin-left: 0px; padding-left: 0px;"><span style="text-decoration: underline; font-family: var(--title-font);">POTENCIA</span> TU <span style="color: #962FD6; font-family: var(--title-font);">NEGOCIO</span></h2>
+          <p style="padding-left: 10px;">Bienvenido a Aurie, donde empresas y profesionales empiezan a conseguir resultados únicos</p>
         </div>
         <div class="left-second">
           <img src="@/assets/images/flecha-correcta_1.webp">
@@ -252,26 +252,36 @@ h1, h2 {
   color: var(--text);
 }
 .contents {
+  min-height: calc(100vh - 150px);
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .left, .right {
-  max-width: 400px;
+  max-width: 500px;
   width: 50%;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
 }
 .right {
   display: flex;
   justify-content: center;
+  padding-top: 5%;
 }
 .left-inner {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   max-width: 390px;
+  width: 90%;
+  margin-left: 10%;
 }
 .left-second {
-  width: 100%;
+  width: 75%;
   aspect-ratio: 1;
   display: flex;
   justify-content: center;
@@ -313,8 +323,8 @@ p {
     transform: translateX(-50%)  rotate(90deg);
   }
   .left-inner {
-    width: 90%;
-    margin-left: 10%;
+    width: 80%;
+    margin-left: 20%;
   }
   .up-corner::after {
     content: '';
@@ -348,6 +358,11 @@ p {
     background: black;
     position: absolute;
     transform: rotate(-45deg) translate(-50%, 50%);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .portrait {
+    height: 400px;
   }
 }
 </style>

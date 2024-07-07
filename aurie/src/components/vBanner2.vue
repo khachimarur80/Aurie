@@ -177,8 +177,9 @@
     margin: 0px;
     color: #E3E3E3;
     opacity: .7;
-    width: 80%;
-    margin-left: 15px;
+    width: calc(100% - 20px);
+    margin: 0px;
+    font-size: 14px;
     text-align: center;
   }
   .text-row {
@@ -204,6 +205,8 @@
     align-items: center;
     padding-bottom: 15px;
     aspect-ratio: 4/5;
+    background: #101010;
+    max-width: 400px;
   }
   h5 {
     color: var(--text);

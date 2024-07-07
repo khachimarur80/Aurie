@@ -2,13 +2,13 @@
   <footer id="footer">
     <div class="row">
       <div class="col">
-        <h6>CONTACTO</h6>
+        <h5 style="font-family: 'Helvetica'; color: white;">CONTACTO</h5>
         <p>+34 665 54 25 94</p>
         <p>contacto@aurie.es</p>
         <a style="text-decoration: underline;">Agendar reunión</a>
       </div>
       <div class="col">
-        <h6>RECURSOS</h6>
+        <h5 style="font-family: 'Helvetica'; color: white;">RECURSOS</h5>
         <a href="/nosotros">Nosotros</a>
         <a href="/servicios">Servicios</a>
         <a href="/proyectos">Proyectos</a>
@@ -16,7 +16,7 @@
         <a href="/kit-digital">Kit Digital</a>
       </div>
       <div class="col">
-        <h6>PRODUCTOS</h6>
+        <h5 style="font-family: 'Helvetica'; color: white;">PRODUCTOS</h5>
         <a>Kit Digital</a>
         <a>Diseño y desarrollo web</a>
         <a>Marketing Digital</a>

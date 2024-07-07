@@ -210,7 +210,7 @@ h1 {
   font-weight: 900;
   position: relative;
   margin-top: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 #nosotros {
@@ -293,6 +293,7 @@ h1 {
   font-size: 20px;
   width: 90%;
   text-align: center;
+  margin-bottom: 80px;
  }
  .contents {
   margin-top: -100px;
@@ -303,6 +304,14 @@ h1 {
  .contents {
   margin-top: -100px;
   margin-bottom: -60px;
+ }
+ .left, .right {
+  height: 40px;
+  width: 40px;
+ }
+ .left img, .right img {
+  height: 22px;
+  width: 22px;
  }
 }
 </style>

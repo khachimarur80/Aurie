@@ -47,6 +47,12 @@ export default {
     font-style: normal;
   }
   @font-face {
+    font-family: 'HelveticaNeue';
+    src: url('~@/assets/fonts/HelveticaNeue/HelveticaNeueLight.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
     font-family: 'Hanson';
     src: url('~@/assets/fonts/Hanson/Hanson-Bold.ttf') format('truetype');
     font-weight: bold;
@@ -69,7 +75,7 @@ export default {
     height: 0;
   }
   * {
-    font-family: 'Helvetica';
+    font-family: 'HelveticaNeue';
   }
   h1, h2, h3, h4,  h5, h6 {
     font-family: 'Hanson';

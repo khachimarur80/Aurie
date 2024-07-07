@@ -189,7 +189,7 @@ h2 {
   }
   .project {
     width: 100%;
-    paddign: 0px;
+    padding: 0px;
     margin: 0px;
   }
   .projects {

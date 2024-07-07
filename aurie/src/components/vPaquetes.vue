@@ -333,7 +333,8 @@
   .services {
     background: url('@/assets/images/ipad.png');
     border-top: 1px solid #777676;
-    width: 90vh ;
+    width: 80% ;
+    max-width: 750px;
     aspect-ratio: 12/9 !important;
     overflow: hidden;
     background-size: 100%;

@@ -68,7 +68,6 @@ export default {
   top: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.144);
 }
 .spacer {
   flex: 1;
@@ -87,9 +86,10 @@ export default {
 .navbar-items {
   padding: 10px;
   display: flex;
-  gap: 5px;
+  gap: 0px;
   align-items: center;
   justify-content: center;
+  margin-right: calc(25% - 160px);
 }
 .navbar-header {
   padding-left: 25px;
@@ -146,7 +146,7 @@ export default {
 }
 .dropdown {
   height: 80px;
-  width: 93px;
+  width: 100px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -165,6 +165,7 @@ export default {
   position: absolute;
   background: rgba(38, 38, 38, .5);
   border-bottom-left-radius: 10px;
+  width: 105px;
 }
 .dropdown.show .dropdown-items {
   opacity: 1;
@@ -219,3 +220,4 @@ export default {
   cursor: pointer;
 }
 </style>
+

@@ -225,7 +225,6 @@ h1::after {
   text-align: center;
 }
 #nosotros1 {
-  padding-top: 130px;
   margin-top: -5px;
   display: flex;
   align-items: center;

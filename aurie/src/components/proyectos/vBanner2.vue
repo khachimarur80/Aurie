@@ -12,7 +12,7 @@
             <div class="card-img" a>
               <img src="@/assets/logos/Mysetup.webp" width="50%">
             </div>
-            <h5>MySetup (2024)</h5>
+            <h5>MySetup (2023)</h5>
             <p>MySetup es un proyecto creado para tal y cual de los mejores sisisi ok lorem ipsum</p>
           </div>
           <div class="card">
@@ -208,6 +208,7 @@
     align-items: center;
     padding-bottom: 15px;
     aspect-ratio: 4/5;
+    background: #101010;
   }
   h5 {
     color: var(--text);
@@ -287,7 +288,7 @@
   }
   @media only screen and (min-width: 1701px) {
     .text-row {
-      font-size: 40px;
+      font-size: 30px;
     }
     .banner-contents {
       max-width: 1100px;
