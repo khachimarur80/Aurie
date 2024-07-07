@@ -488,9 +488,13 @@
   
   @media only screen and (max-width: 600px) {
     .services {
+      background: none;
       width: calc(100% - 10px);
       border-radius: 10px;
       aspect-ratio: 12/9 !important;
+      border: 15px solid #111;
+      box-sizing: border-box;
+      outline: 1px solid #333;
     }
     .services h3 {
       font-size: 18px !important;
