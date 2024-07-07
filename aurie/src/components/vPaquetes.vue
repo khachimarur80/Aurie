@@ -346,6 +346,7 @@
     align-items: center;
     flex-direction: column;
     background-repeat: no-repeat;
+    border: 1px solid red;
   }
   .services h3 {
     padding-top: 10px;
@@ -400,7 +401,7 @@
     padding: 20px;
     margin: 0px;
     margin-top: -5px;
-    color: var(--background-dark);
+    background: var(--background-dark);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -477,13 +478,12 @@
     background: none;
     border: 1px solid var(--color);
     gap: 10px;
-    background: var(--background);
+    background: red;
     transition: background ease-in .15s;
     width: 150px;
     height: 55px;
   }
   .project img {
-    background: none;
     border-radius: 50%;
   }
   
