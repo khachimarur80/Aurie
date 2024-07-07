@@ -345,6 +345,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-repeat: no-repeat;
   }
   .services h3 {
     padding-top: 10px;

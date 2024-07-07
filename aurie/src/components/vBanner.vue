@@ -271,6 +271,9 @@ p {
   filter: brightness(0) saturate(100%) invert(48%) sepia(17%) saturate(6648%) hue-rotate(334deg) brightness(102%) contrast(98%);
 }
 @media only screen and (max-width: 800px) {
+  .button-row a {
+    padding-bottom: 0px;
+  }
   h1 {
     font-size: 25px !important;
     text-align: center;

@@ -229,6 +229,9 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
+  #banner {
+    display: none;
+  }
   h1 {
     font-size: 25px !important;
   }
