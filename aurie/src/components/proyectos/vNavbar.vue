@@ -2,7 +2,7 @@
   <div id="navbar" :class="'isSmall' ? 'small' : ''">
     <div class="navbar-header">
       <a id="navbar-logo" href="/">
-        <img src="@/assets/logos/logo.webp" alt="Aurie logo" height="100%" width="100%"/>
+        <img src="@/assets/logos/logo.webp" alt="Aurie logo" height="60px" width="60px"/>
       </a>
     </div>
     <div class="spacer">
