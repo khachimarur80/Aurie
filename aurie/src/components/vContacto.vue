@@ -18,7 +18,9 @@
       </div>
       <div class="col">
         <div class="circle">
-          <img src="@/assets/icons/reunion_1.webp" height="50px" a>
+          <a href="https://calendar.app.google/iMbAhcVSx6Gh3SRn8">
+            <img src="@/assets/icons/reunion_1.webp" height="50px" a>
+          </a>
           <div class="next-button">
             <img src="@/assets/icons/arrow.png" style="transform: rotate(180deg)" height="15px" width="15px">
           </div>

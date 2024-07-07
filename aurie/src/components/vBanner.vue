@@ -157,7 +157,7 @@ h2 {
   color: transparent;
   margin: 0px;
   font-weight: 900;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 2px white;
   text-transform: uppercase;
 }
 p {

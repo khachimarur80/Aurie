@@ -5,7 +5,7 @@
         <h5 style="font-family: 'Helvetica'; color: white;">CONTACTO</h5>
         <p>+34 665 54 25 94</p>
         <p>contacto@aurie.es</p>
-        <a style="text-decoration: underline;">Agendar reunión</a>
+        <a style="text-decoration: underline;" target="_blank" href="https://calendar.app.google/iMbAhcVSx6Gh3SRn8">Agendar reunión</a>
       </div>
       <div class="col">
         <h5 style="font-family: 'Helvetica'; color: white;">RECURSOS</h5>
