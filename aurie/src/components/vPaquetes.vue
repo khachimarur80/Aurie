@@ -483,7 +483,7 @@
     height: 55px;
   }
   .project img {
-    background: var(--background);
+    background: none;
     border-radius: 50%;
   }
   
