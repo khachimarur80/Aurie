@@ -21,11 +21,12 @@
         <a>Diseño y desarrollo web</a>
         <a>Marketing Digital</a>
       </div>
+      <a target="_blank" href="https://calendar.app.google/iMbAhcVSx6Gh3SRn8" class="agendar-2"></a>
     </div>
     <div style="width: 90%;  height: 1px; background: #6D6D6D;;"></div>
     <div class="row" style="margin-bottom: 20px; align-items: center; justify-content: center;">
       <div style="width: 28%; display: flex; justify-content: center;">
-        <p t>© 2024 Aurie. Todos los derechos reservados</p>
+        <p t>© 2024 Aurie.<span k>Todos los derechos reservados</span></p>
       </div>
       <div style="width: 28%; display: flex; justify-content: center;">
         <img height="50px" width="50px" src="@/assets/logos/logo.webp">
@@ -78,6 +79,9 @@ export default {
 </script>
 
 <style scoped>
+.agendar-2 {
+  display: none;
+}
 #footer {
   display: flex;
   flex-direction: column;
@@ -113,6 +117,14 @@ p, a {
   }
   p[t] {
     font-size: 13px;
+    color: white;
+    font-weight: bold;
+  }
+  span[k] {
+    display: none;
+  }
+  .col:nth-child(2), .col:nth-child(3) {
+    display: none;
   }
 }
 </style>

@@ -170,7 +170,7 @@ export default {
   top: 0;
   right: -10px;
   position: absolute;
-  background: rgba(38, 38, 38, .5);
+  background: rgba(38, 38, 38, .8);
   border-bottom-left-radius: 10px;
   width: 105px;
 }
@@ -210,7 +210,7 @@ export default {
   background: transparent;
 }
 .show .dropdown-toggle {
-  background: rgba(38, 38, 38, .5);
+  background: rgba(38, 38, 38, .8);
 }
 .dropdown-toggle button {
   height: 45px;
