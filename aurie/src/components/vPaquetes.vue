@@ -346,7 +346,6 @@
     align-items: center;
     flex-direction: column;
     background-repeat: no-repeat;
-    border: 1px solid red;
   }
   .services h3 {
     padding-top: 10px;
@@ -491,6 +490,7 @@
     .services {
       width: calc(100% - 10px);
       border-radius: 10px;
+      aspect-ratio: 12/9 !important;
     }
     .services h3 {
       font-size: 18px !important;
