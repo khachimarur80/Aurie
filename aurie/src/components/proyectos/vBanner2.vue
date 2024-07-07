@@ -13,14 +13,14 @@
               <img src="@/assets/logos/Mysetup.webp" width="50%">
             </div>
             <h5>MySetup (2023)</h5>
-            <p>MySetup es un proyecto creado para tal y cual de los mejores sisisi ok lorem ipsum</p>
+            <p>Podrás diseñar y montar un equipo y espacio gamer personalizado ajustado a tu presupuesto.</p>
           </div>
           <div class="card">
             <div class="card-img" b>
               <img src="@/assets/logos/logo.webp" width="50%">
             </div>
             <h5>Aurie (2024)</h5>
-            <p>Aurie es un proyecto creado para tal y cual de los mejores sisisi ok lorem ipsum.</p>
+            <p>Aurie es un proyecto centrado en el desarrollo de servicios digitales para autónomos y empresas.</p>
           </div>
           <div class="card">
             <div class="card-img" c>
@@ -215,6 +215,7 @@
     text-align: center;
     font-family: 'Helvetica';
     font-size: 16px;
+    margin-top: 10px;
   }
 
   

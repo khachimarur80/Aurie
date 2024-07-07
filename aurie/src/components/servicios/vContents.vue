@@ -16,7 +16,7 @@
     </div>
     <div class="service">
       <div class="left">
-        <h2>Diseño y Diseño Web</h2><br>
+        <h2 style="font-family: 'HelveticaNeueBold'">Diseño y Diseño Web</h2><br>
         <p>Creación de sitios webs a medida</p>
         <p>Creamos y diseñamos las webs de forma personalizada
           para cliente, creando así un espacio totalmente único.</p>
@@ -38,7 +38,7 @@
     <br><br>
     <div class="service2">
       <div class="left2">
-        <h2>Diseño 3D</h2><br>
+        <h2 style="font-family: 'HelveticaNeueBold'">Diseño 3D</h2><br>
         <p>Sumérgete en el futuro del diseño web con nuestros diseños 3D, creando entornos inmersivos que transportan a tus clientes a locales, zonas o cualquier lugar que puedas imaginar.</p>
         <br>
         <p>
@@ -635,6 +635,9 @@ h2 {
 @media only screen and (min-width: 1200px) {
   .service, .service2 {
     max-width: 1100px;
+  }
+  .stat span {
+    font-size: 60px;
   }
 }
 </style>

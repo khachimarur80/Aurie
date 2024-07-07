@@ -144,6 +144,9 @@ export default {
   height: 60px;
   min-width: 60px !important;
 }
+#navbar-logo img {
+  aspect-ratio: 1 !important;
+}
 .dropdown {
   height: 80px;
   width: 100px;

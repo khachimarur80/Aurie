@@ -169,7 +169,7 @@ export default {
   aspect-ratio: 1;
   border-radius: 20%;
   z-index: 0;
-  filter: blur(100px) brightness(200%);
+  filter: blur(100px) brightness(300%);
 }
 .left {
   position: absolute;
@@ -232,7 +232,7 @@ h1 {
   position: relative;
   transition: all .2s ease-out;
   flex-wrap: wrap;
-  aspect-ratio: 16/9;
+  aspect-ratio: 14/9;
 }
 .card-inner {
   height: calc(100% - 20px);
@@ -263,6 +263,8 @@ h1 {
 .card:nth-child(1) {
   transform: translateX(-35%);
   height: 55%;/*733010*/
+  opacity: .6;
+  filter: blur(2px);
 }
 #gmfincas {
   background: linear-gradient(#2D2D2D, #656565);
@@ -270,6 +272,8 @@ h1 {
 .card:nth-child(3) {
   transform: translateX(35%);
   height: 55%;
+  opacity: .6;
+  filter: blur(2px);
 }
 #mysetup {
   background: linear-gradient(#320144, #202020);

@@ -85,6 +85,7 @@
   .card-img[c] {
     background: url('@/assets/images/optimiza.jpg');
     background-size: cover;
+    background-position: center center;
   }
   .card-img {
     width: 100%;
@@ -287,6 +288,7 @@
   @media only screen and (min-width: 1701px) {
     .text-row {
       font-size: 40px;
+      min-width: 800px;
     }
     .banner-contents {
       max-width: 1100px;

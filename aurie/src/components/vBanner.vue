@@ -7,10 +7,10 @@
         <div class="text-row" style="flex-direction: column; gap: 0px;">
           <h1>Innovación digital</h1>
           <h2>Crecimiento y ventas</h2>
-          <br>
+          <br><br>
           <p style="font-family: 'Hanson';">Moderniza tu empresa de forma rápida y segura.</p>
         </div>
-        <br>
+        <br><br>
         <div class="button-row">
           <a href="/servicios">Precios</a>
           <a href="/contacto">Contáctanos</a>

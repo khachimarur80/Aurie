@@ -4,9 +4,6 @@
       <a id="navbar-logo" href="/">
         <img src="@/assets/logos/logo.webp" alt="Aurie logo" height="100%" width="100%"/>
       </a>
-      <a id="navbar-title" href="/">
-        Aurie
-      </a>
     </div>
     <div class="spacer">
     </div>
@@ -146,6 +143,9 @@ export default {
 #navbar-logo {
   height: 60px;
   min-width: 60px !important;
+}
+#navbar-logo img {
+  aspect-ratio: 1 !important;
 }
 .dropdown {
   height: 80px;

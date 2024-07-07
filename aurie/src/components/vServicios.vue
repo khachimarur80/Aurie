@@ -82,7 +82,7 @@
       <br><br><br><br><br><br>
     </div>
     <br><br><br><br><br><br>
-    <h1 style="max-width: 500px; text-align: center;">Una plataforma diseñada para crecer</h1>
+    <h1 style="max-width: 500px; text-align: center; font-family: 'HelveticaNeueBold'">Una plataforma <br>diseñada para crecer</h1>
     <p style="color: var(--text); opacity: .7; margin-top: -30px; text-align: center;">Con herramientas que te ayudaran a escalar tu negocio</p>
     <br><br><br>
     <a class="start" href="/servicios">EMPECEMOS</a>
@@ -457,6 +457,7 @@ export default {
 h3 {
   color: var(--text);
   text-align: center;
+  font-family: 'HelveticaNeueBold';
 }
 .contents p {
   color: var(--text);

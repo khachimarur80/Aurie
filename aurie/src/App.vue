@@ -53,6 +53,12 @@ export default {
     font-style: normal;
   }
   @font-face {
+    font-family: 'HelveticaNeueBold';
+    src: url('~@/assets/fonts/HelveticaNeue/HelveticaNeueBlack.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
     font-family: 'Hanson';
     src: url('~@/assets/fonts/Hanson/Hanson-Bold.ttf') format('truetype');
     font-weight: bold;

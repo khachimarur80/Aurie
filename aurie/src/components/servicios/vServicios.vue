@@ -364,5 +364,20 @@ p {
   .portrait {
     height: 400px;
   }
+  .left {
+    min-width: 800px;
+  }
+  .left-inner {
+    min-width: 480px;
+    padding-left: 70px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  p {
+  }
+  .left-second {
+    width: 300px;
+  }
 }
 </style>

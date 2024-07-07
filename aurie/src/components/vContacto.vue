@@ -18,12 +18,10 @@
       </div>
       <div class="col">
         <div class="circle">
-          <a href="https://calendar.app.google/iMbAhcVSx6Gh3SRn8">
-            <img src="@/assets/icons/reunion_1.webp" height="50px" a>
-          </a>
-          <div class="next-button">
+          <img src="@/assets/icons/reunion_1.webp" height="50px" a>
+          <a class="next-button" href="https://calendar.app.google/iMbAhcVSx6Gh3SRn8" target="_blank">
             <img src="@/assets/icons/arrow.png" style="transform: rotate(180deg)" height="15px" width="15px">
-          </div>
+          </a>
         </div>
       </div>
       <div class="col">
@@ -257,6 +255,8 @@ export default {
     aspect-ratio: 1;
     border-radius: 50%;
     border: 2px solid white;
+    background:  linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('@/assets/images/moon.jpg');
+    background-size: cover;
   }
   .slogan {
     font-size: 20px;
