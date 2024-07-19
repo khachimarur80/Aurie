@@ -4,9 +4,6 @@
       <a id="navbar-logo" href="/">
         <img src="@/assets/logos/logo.webp" alt="Aurie logo" height="60px" width="60px"/>
       </a>
-      <a id="navbar-title" href="/">
-        Aurie
-      </a>
     </div>
     <div class="spacer">
     </div>

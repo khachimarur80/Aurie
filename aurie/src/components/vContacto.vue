@@ -245,6 +245,7 @@ export default {
     position: relative;
     overflow: hidden;
     display: flex;
+    margin-bottom: 100px;
   }
   .moon-inner {
     position: absolute;
@@ -302,6 +303,10 @@ export default {
       align-items: center;
       gap: 60px;
       overflow: unset;
+      background:  linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('@/assets/images/moon.jpg');
+      background-size: cover;
+      padding-top: 50px;
+      padding-bottom: 100px;
     }
     .col {
       width: 50%;
@@ -316,32 +321,44 @@ export default {
       transform: none;
     }
     .grid img {
-      height: 40px;
-      width: 40px;
+      height: 35px;
+      width: 35px;
     }
     .grid {
       gap: 20px;
+      transform: translateY(15px);
     }
     img[a] {
-      height: 80px;
-      width: 80px;
+      transform: translateY(35px);
+      height: 60px;
+      width: 60px;
+    }
+    .next-button {
+      transform: translateY(15px) rotate(180deg);
     }
     .col:nth-child(1) .circle::before {
       top: 50px;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
     }
     .col:nth-child(2) .circle::before  {
       top: 50px;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
     }
     .col:nth-child(3) .circle::before  {
-      top: -30px;
+      top: 30px;
       text-align: center;
+      width: 50%;
     }
     .col:nth-child(4) .circle::before  {
-      top: -30px;
+      top: 40px;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
     }
     .moon::before {
       content: '';
-      height: 100%;
+      height: calc(100% - 150px);
       position: absolute;
       left: 50%;
       transform: translateX(-50%);

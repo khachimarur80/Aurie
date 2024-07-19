@@ -126,5 +126,16 @@ p, a {
   .col:nth-child(2), .col:nth-child(3) {
     display: none;
   }
+  .col:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .col:nth-child(1) h5 {
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>

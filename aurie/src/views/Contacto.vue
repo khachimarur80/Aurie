@@ -5,7 +5,6 @@
       <div id="blob" :style="{'top':blob.top+'px', 'left':blob.left+'px', 'transform': 'scale('+blob.scale+')'}"></div>-->
       <vNavbar :links="links"/>
       <vContacto/>
-      <br><br><br><br><br><br><br><br><br>
       <vFooter :links="footerLinks"/>
       <vGoToTop :show="show"/>
     </div>

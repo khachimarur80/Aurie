@@ -581,10 +581,67 @@ h2 {
   opacity: .7;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 600px) {
+  .stats .stat:nth-child(1) {
+    display: none;
+  }
+  .stats .stat:nth-child(3) {
+    display: none;
+  }
   .stats {
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  .stat {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .stat  span {
+    text-align: center;
+  }
+  .stat p {
+    text-align: center;
+  }
+  .service {
+    flex-direction: column;
+    background: #111111;
+  }
+  .service2 {
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+    padding: 20px;
+  }
+  .mid {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+  }
+  .left2 {
+    width: 100%;
+    padding: 20px;
+  }
+  .mid2 {
+    display: none;
+  }
+  .right2 {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 850px) {
+  .stats {
+    display: flex;
+    justify-content: space-around;
     box-sizing: border-box;
     align-items: center;
   }
